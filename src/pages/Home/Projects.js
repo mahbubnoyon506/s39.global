@@ -67,10 +67,10 @@ const Projects = () => {
         },
     ]
     return (
-        <div className='bg-dark'>
+        <div className=' ' style={{background: '#000000'}}>
             <div className='container'>
                 <h3 className='projectTitle'>Our projects</h3>
-                <div className='d-grid'>
+                <div className='row g-5'>
                     {
                         projects.map((project, index) =>
                             <div key={index} className='col-lg-4 col-md-6  text-white'>
