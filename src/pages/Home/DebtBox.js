@@ -15,7 +15,7 @@ const DebtBox = () => {
                 </p>
                 <div className='row '>
                     <div className='col-md-4'>
-                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717' }}>
+                        <Card className='py-4 mt-4 mt-md-0' style={{ border: '2px solid #454545', background: '#171717',maxHeight:'255px'  }}>
                             <Card.Body>
                                 <h2 className='step'>Step 1</h2>
                                 <p className='stepText'>Purchase a software mining license and activate it. Your license must be activated before it will begin mining.
@@ -24,7 +24,7 @@ const DebtBox = () => {
                         </Card>
                     </div>
                     <div className='col-md-4'>
-                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717' }}>
+                        <Card className='py-4 mt-4 mt-md-0' style={{ border: '2px solid #454545', background: '#171717' ,maxHeight:'255px' }}>
                             <Card.Body>
                                 <h2 className='step'>Step 2</h2>
                                 <p className='stepText'>
@@ -33,8 +33,8 @@ const DebtBox = () => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className='col-md-4'>
-                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717' }}>
+                    <div className='col-md-4 mt-4 mt-md-0'>
+                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717', maxHeight:'255px' }}>
                             <Card.Body>
                                 <h2 className='step'>Step 3</h2>
                                 <p className='stepText'>Withdraw your rewards and exchange them for other DEBT Box tokens, other currencies or use them to make DEBT Box ecosystem purchases.

@@ -15,7 +15,7 @@ function Banner() {
                 <img style={{marginLeft:'30%'}} className='mb-4 ' width='28%' src={logo} alt="D.E.B.T."/> <br/>
                 <button className='btn btn-light mt-4 px-4 fw-bold'>SIGN UP NOW <TrendingFlatIcon/></button>
             </div>
-            <div className='col-lg-6 col-sm-12'>
+            <div className='col-lg-6 col-sm-12 mt-md-0 mt-5'>
                 <img className='' width="100%" src={BannerPhoto} alt=""/>
             </div>
             </div>
