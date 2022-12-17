@@ -6,7 +6,7 @@ import { AiFillInstagram, AiFillTwitterCircle } from 'react-icons/ai';
 
 const Footer = () => {
     return (
-        <div className='bg-dark py-5'>
+        <div className=' py-5' style={{background: '#000000'}}>
             <div className='container d-flex justify-content-center'>
                 <div className='text-center text-white'>
                     <div ><img style={{width: '175px'}} src={Logo} alt="" /></div>

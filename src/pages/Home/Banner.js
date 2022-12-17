@@ -12,7 +12,7 @@ function Banner() {
             <div  className='col-lg-6 col-sm-12 text-white'>
                 <p className='fs-4 mt-5'>WHERE CRYPTO MEETS <br/> COMMODITIES</p>
                 <p className='fs-1 fw-bold'>DECENTRALIZED  ECO-FRIENDLY<br/>  BLOCKCHAIN <br/> TECHNOLOGY</p>
-                <img className='mb-4 ' width='28%' src={logo} alt="D.E.B.T."/> <br/>
+                <img style={{marginLeft:'30%'}} className='mb-4 ' width='28%' src={logo} alt="D.E.B.T."/> <br/>
                 <button className='btn btn-light mt-4 px-4 fw-bold'>SIGN UP NOW <TrendingFlatIcon/></button>
             </div>
             <div className='col-lg-6 col-sm-12'>
