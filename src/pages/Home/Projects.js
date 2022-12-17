@@ -73,7 +73,7 @@ const Projects = () => {
                 <div className='row g-5'>
                     {
                         projects.map((project, index) =>
-                            <div key={index} className='col-lg-4 col-md-6  text-white'>
+                            <div key={index} className='col-lg-3 col-md-6  text-white'>
                                 <Card className='bg-dark py-4' style={{  border: '2px solid #454545' }}>
                                     <Card.Img style={{ width: '85px', margin: '0 auto' }} variant="top" src={project.image} />
                                     <Card.Body>
