@@ -3,12 +3,11 @@ import { Card } from 'react-bootstrap';
 
 const DebtBox = () => {
     return (
-        <div className='' style={{background: '#000000'}}>
+        <div className='' style={{background: '#000000', padding: '80px 0px'}}>
             <div className='container'>
-
                 <p className='earnSubTitle'>Start earning today</p>
-                <h2 className='earnTitle'>How DEBT BOX works?</h2>
-                <p>
+                <h2 className='earnTitle pt-5'>How DEBT BOX works?</h2>
+                <p className='earnText py-5 w-50'>
                     Utilizing DEBT's Box's proprietary software, you can create a
                     portfolio of blockchain miners. By purchasing and managing different
                     software node licenses you can earn rewards from several asset
