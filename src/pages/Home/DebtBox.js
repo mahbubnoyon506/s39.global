@@ -13,7 +13,7 @@ const DebtBox = () => {
                     software node licenses you can earn rewards from several asset
                     classes, all from the comfort and convenience of your own home.
                 </p>
-                <div className='d-grid'>
+                <div className='row g-5'>
                     <div className='col-md-4'>
                         <Card className='bg-dark py-4' style={{ border: '2px solid #454545' }}>
                             <Card.Body>
