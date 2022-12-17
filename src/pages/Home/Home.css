@@ -1,14 +1,25 @@
-.licenseDiv{
+.licenseDiv {
     padding: 0px 20%;
 }
+
 @media only screen and (max-width:700px) {
-    .licenseDiv{
+    .licenseDiv {
         padding: 0px 10px;
+    }
+
+    .card1 {
+        font-size: 21px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.082);
+        color: #B9B5B5;
+        padding: 25px;
+        border: 2px solid #4e4b4b;
+        border-radius: 10px;
     }
 }
 
 
-.card1{
+.card1 {
     font-size: 21px;
     width: 50%;
     background-color: rgba(255, 255, 255, 0.082);
@@ -17,7 +28,9 @@
     border: 2px solid #4e4b4b;
     border-radius: 10px;
 }
-.card2{
+
+.card2 {
+    margin: 20px 20%;
     font-size: 21px;
     width: 60%;
     background-color: rgba(255, 255, 255, 0.082);
@@ -26,7 +39,9 @@
     border: 2px solid #4e4b4b;
     border-radius: 10px;
 }
-.card3{
+
+.card3 {
+    margin: 20px 45%;
     font-size: 21px;
     width: 50%;
     background-color: rgba(255, 255, 255, 0.082);
@@ -35,7 +50,9 @@
     border: 2px solid #4e4b4b;
     border-radius: 10px;
 }
-.card4{
+
+.card4 {
+    /* margin: 20px 0px; */
     font-size: 21px;
     width: 70%;
     background-color: rgba(255, 255, 255, 0.082);

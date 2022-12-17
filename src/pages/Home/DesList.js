@@ -4,7 +4,8 @@ import React from 'react';
 
 function DesList() {
     return (
-        <div className='licenseDiv' style={{ backgroundImage: 'radial-gradient(closest-side at 30% 55%, #393939, #393939, #1A1A1A, black)'}}>
+        <div className='' style={{ backgroundImage: 'radial-gradient(closest-side at 30% 55%, #393939, #393939, #1A1A1A, black)'}}>
+            <div className=' licenseDiv '>
             <div className='card1'>
             <ul>
                 <li> Nodes enforce the rules of the protocol.</li>
@@ -25,6 +26,7 @@ function DesList() {
                 <li>Each blockchain has a different protocol or way of validating transactions e.g. the Bitcoin protocol is different to that of Ethereum and has a different means of 'consensus'. Thus, what a node actually does in any given blockchain protocol will vary.</li>
             </ul>
             </div>
+        </div>
         </div>
     )
 }
