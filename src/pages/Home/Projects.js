@@ -70,14 +70,14 @@ const Projects = () => {
         <div className=' ' style={{background: '#000000'}}>
             <div className='container'>
                 <h3 className='projectTitle'>Our projects</h3>
-                <div className='row g-5'>
+                <div className='row g-4'>
                     {
                         projects.map((project, index) =>
                             <div key={index} className='col-lg-3 col-md-6  text-white'>
                                 <Card className='bg-dark py-4' style={{  border: '2px solid #454545' }}>
                                     <Card.Img style={{ width: '85px', margin: '0 auto' }} variant="top" src={project.image} />
                                     <Card.Body>
-                                        <Card.Title className='text-uppercase text-center'>{project.title}</Card.Title>
+                                        <Card.Title className='text-uppercase text-center' style={{fontSize: '30px'}}>{project.title}</Card.Title>
                                         <Card.Title className='text-uppercase text-center'>{project.subTitle}</Card.Title>
                                     </Card.Body>
                                 </Card>
