@@ -3,7 +3,7 @@ import eco from '../../assets/images/eco.png'
 
 const Ecosystem = () => {
     return (
-        <div className='bg-dark'>
+        <div className='' style={{background: '#000000'}}>
             <div className='container d-md-flex align-items-center'>
                 <div>
                     <h2 className='systemTitle text-start'>Looking at the DEBT ecosystem</h2>

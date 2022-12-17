@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 
 const DebtBox = () => {
     return (
-        <div className='bg-dark'>
+        <div className='' style={{background: '#000000'}}>
             <div className='container'>
 
                 <p className='earnSubTitle'>Start earning today</p>

@@ -67,7 +67,7 @@ const Projects = () => {
         },
     ]
     return (
-        <div className='bg-dark'>
+        <div className=' ' style={{background: '#000000'}}>
             <div className='container'>
                 <h3 className='projectTitle'>Our projects</h3>
                 <div className='d-grid'>
