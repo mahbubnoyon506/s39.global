@@ -11,7 +11,7 @@ import Projects from './Projects';
 
 const Home = () => {
     return (
-        <div>
+        <div style={{backgroundColor:'#000'}}>
             <Banner />
             <License/>
             <DesList/>

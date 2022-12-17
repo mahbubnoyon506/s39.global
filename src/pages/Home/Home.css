@@ -2,14 +2,44 @@
     padding: 0px 20%;
 }
 
-@media only screen and (max-width:700px) {
+@media only screen and (max-width:650px) {
     .licenseDiv {
         padding: 0px 10px;
     }
 
     .card1 {
-        font-size: 21px;
-        width: 100%;
+        margin: 0% !important;
+        font-size: 21px; 
+        background-color: rgba(255, 255, 255, 0.082);
+        color: #B9B5B5;
+        padding: 25px;
+        border: 2px solid #4e4b4b;
+        border-radius: 10px;
+    }
+
+    .card2 { 
+        margin: 0% !important;
+        font-size: 21px; 
+        background-color: rgba(255, 255, 255, 0.082);
+        color: #B9B5B5;
+        padding: 25px;
+        border: 2px solid #4e4b4b;
+        border-radius: 10px;
+    }
+
+    .card3 {  
+        margin: 0% !important;
+        font-size: 21px; 
+        background-color: rgba(255, 255, 255, 0.082);
+        color: #B9B5B5;
+        padding: 25px;
+        border: 2px solid #4e4b4b;
+        border-radius: 10px;
+    }
+
+    .card4 { 
+        margin: 0% !important;
+        font-size: 21px; 
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -18,10 +48,17 @@
     }
 }
 
-
+.absoluteNumber{
+    position: absolute;
+    top: -45px;
+    right: 0;
+    font-size: 60px;
+    font-weight: 800;
+}
 .card1 {
-    font-size: 21px;
-    width: 50%;
+    position:relative;
+    margin-right: 50%;
+    font-size: 21px; 
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -29,10 +66,11 @@
     border-radius: 10px;
 }
 
-.card2 {
-    margin: 20px 20%;
-    font-size: 21px;
-    width: 60%;
+.card2 { 
+    position:relative;
+    margin-left: 25%;
+    margin-right: 15%;
+    font-size: 21px; 
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -40,10 +78,10 @@
     border-radius: 10px;
 }
 
-.card3 {
-    margin: 20px 45%;
-    font-size: 21px;
-    width: 50%;
+.card3 { 
+    position:relative;
+    margin-left: 50%;
+    font-size: 21px; 
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -51,10 +89,10 @@
     border-radius: 10px;
 }
 
-.card4 {
-    /* margin: 20px 0px; */
-    font-size: 21px;
-    width: 70%;
+.card4 { 
+    position:relative;
+    margin-right: 30%; 
+    font-size: 21px; 
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -62,7 +100,9 @@
     border-radius: 10px;
 }
 
-.projectTitle, .commodityTitle, .systemTitle .earnTitle {
+.projectTitle,
+.commodityTitle,
+.systemTitle .earnTitle {
     color: #fff;
     font-family: micrabold;
     font-size: 34px;
@@ -72,12 +112,14 @@
     text-align: center;
     text-transform: uppercase;
 }
+
 .systemText {
     color: #b9b5b5;
-    font-family: "Montserrat" !important;
+    font-family: "Montserrat";
     font-size: 20px;
     margin-top: 20px;
 }
+
 .earnSubTitle {
     font-family: Micra;
     font-size: 22px;
@@ -87,6 +129,7 @@
     letter-spacing: 0;
     color: #fff;
 }
+
 .step {
     color: #b9b5b5;
     font-family: micrabold;
@@ -95,9 +138,10 @@
     font-size: 34px;
     line-height: 111.6%;
 }
+
 .stepText {
     color: #b9b5b5;
-    font-family: "Montserrat" !important;
+    font-family: "Montserrat";
     font-size: 20px;
     margin: 20px 0;
 }
