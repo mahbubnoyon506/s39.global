@@ -11,7 +11,7 @@ import micra from '../fonts/Micra Normal.ttf';
 const NavMenu = () => {
     return (
         <div >
-            <Navbar style={{backgroundColor:'#000000', color:"white", fontFamily:micra}} collapseOnSelect expand="lg" >
+            <Navbar style={{backgroundColor:'#000000', color:"white", }} collapseOnSelect expand="lg" >
                 <Container>
                     <Navbar.Brand href="#home"><img style={{width: '175px'}} src={Logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle className='text-white' aria-controls="responsive-navbar-nav"  >
