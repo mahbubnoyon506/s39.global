@@ -36,7 +36,7 @@ const DebtBox = () => {
                     <div className='col-md-4'>
                         <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717' }}>
                             <Card.Body>
-                                <h2 className='step'>Step 1</h2>
+                                <h2 className='step'>Step 3</h2>
                                 <p className='stepText'>Withdraw your rewards and exchange them for other DEBT Box tokens, other currencies or use them to make DEBT Box ecosystem purchases.
                                 </p>
                             </Card.Body>
