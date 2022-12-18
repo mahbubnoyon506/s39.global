@@ -37,23 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-.slick-dots {
-  color: #fff !important;
-}
-
-.slick-slide {
-  margin: 0 10px !important;
-}
-
-.slick-list {
-  margin: 0 -10px !important;
-}
-
-.slick-slide>div {
-  margin: 0 10px;
-}
-
-.slick-list {
-  margin: 0 -10px;
-}

@@ -25,7 +25,7 @@ const NavMenu = () => {
                         <Nav className='text-center' >
                             <Nav.Link as={Link} to='howItWorks' className='text-white fs-5 me-md-5 font-micra' href="#howItWorks">HOW IT WORKS</Nav.Link>
                             <Nav.Link className='text-white fs-5 me-md-5 font-micra' href="#projects">PROJECTS</Nav.Link>
-                            <Nav.Link className='text-white fs-5 me-md-5' href="#hosting">HOSTING</Nav.Link>
+                            <Nav.Link as={Link} to="hosting" className='text-white fs-5 me-md-5' href="#hosting">HOSTING</Nav.Link>
                             <Nav.Link className='text-white fs-5 me-md-5 mt-2' href="#login"
                                 style={{ border: '2px solid white', borderRadius: '10px', padding: '2px 30px', maxHeight: "40px", width: '140px', margin: '0px auto' }}>LOGIN</Nav.Link>
                         </Nav>
