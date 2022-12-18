@@ -26,7 +26,7 @@ const Projects = () => {
             subTitle: 'Mining Now'
         },
         {
-            image: `${project3}`,
+            image: `${project7}`,
             title: 'GROW',
             subTitle: 'Mining Now'
         },
