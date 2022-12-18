@@ -1,4 +1,7 @@
-.projectTitle, .commodityTitle, .systemTitle, .earnTitle {
+.projectTitle,
+.commodityTitle,
+.systemTitle,
+.earnTitle {
     color: #fff;
     font-family: micrabold;
     font-size: 34px;
@@ -8,12 +11,14 @@
     text-align: center;
     text-transform: uppercase;
 }
+
 .systemText {
     color: #b9b5b5;
     font-family: "Montserrat" !important;
     font-size: 20px;
     margin-top: 20px;
 }
+
 .earnSubTitle {
     font-family: Micra;
     font-size: 22px;
@@ -24,6 +29,7 @@
     color: #fff;
     text-align: center;
 }
+
 .earnText {
     font-family: "Montserrat" !important;
     font-size: 22px;
@@ -41,15 +47,32 @@
     font-size: 34px;
     line-height: 111.6%;
 }
+
 .stepText {
     color: #b9b5b5;
     font-family: "Montserrat" !important;
     font-size: 20px;
-    margin: 20px 0;}
-    
-.licenseDiv{
-    padding: 0px 20%;
+    margin: 20px 0;
 }
+
+.licenseDiv {
+    padding: 0px 15%;
+}
+
+
+.slick-dots {
+    color: #fff !important;
+}
+
+
+.slick-slide {
+    /* margin: 0 10px; */
+}
+
+/* .slick-list {
+    margin: 0 -10px !important;
+} */
+
 
 @media only screen and (max-width:650px) {
     .licenseDiv {
@@ -58,7 +81,7 @@
 
     .card1 {
         margin: 0% !important;
-        font-size: 21px; 
+        font-size: 21px;
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -66,9 +89,9 @@
         border-radius: 10px;
     }
 
-    .card2 { 
+    .card2 {
         margin: 0% !important;
-        font-size: 21px; 
+        font-size: 21px;
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -76,9 +99,9 @@
         border-radius: 10px;
     }
 
-    .card3 {  
+    .card3 {
         margin: 0% !important;
-        font-size: 21px; 
+        font-size: 21px;
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -86,9 +109,9 @@
         border-radius: 10px;
     }
 
-    .card4 { 
+    .card4 {
         margin: 0% !important;
-        font-size: 21px; 
+        font-size: 21px;
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -97,17 +120,18 @@
     }
 }
 
-.absoluteNumber{
+.absoluteNumber {
     position: absolute;
     top: -45px;
     right: 0;
     font-size: 60px;
     font-weight: 800;
 }
+
 .card1 {
-    position:relative;
+    position: relative;
     margin-right: 50%;
-    font-size: 21px; 
+    font-size: 21px;
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -116,11 +140,11 @@
 }
 
 
-.card2 { 
-    position:relative;
+.card2 {
+    position: relative;
     margin-left: 25%;
     margin-right: 15%;
-    font-size: 21px; 
+    font-size: 21px;
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -128,10 +152,10 @@
     border-radius: 10px;
 }
 
-.card3 { 
-    position:relative;
-    margin-left: 50%;
-    font-size: 21px; 
+.card3 {
+    position: relative;
+    margin-left: 30%;
+    font-size: 21px;
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -139,10 +163,10 @@
     border-radius: 10px;
 }
 
-.card4 { 
-    position:relative;
-    margin-right: 30%; 
-    font-size: 21px; 
+.card4 {
+    position: relative;
+    margin-right: 30%;
+    font-size: 21px;
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -155,6 +179,7 @@
 .systemTitle .earnTitle {
     color: #fff;
 }
+
 .introText {
     font-family: micrabold;
     padding: 100px 0;
@@ -196,4 +221,10 @@
     font-family: "Montserrat";
     font-size: 20px;
     margin: 20px 0;
+}
+
+@media only screen and (max-width: 480px) {
+    .introText {
+        font-size: 24px;
+    }
 }

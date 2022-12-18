@@ -13,19 +13,21 @@ const DebtBox = () => {
                     software node licenses you can earn rewards from several asset
                     classes, all from the comfort and convenience of your own home.
                 </p>
-                <div className='row g-5'>
-                    <div className='col-md-4'>
-                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717' }}>
-                            <Card.Body>
+
+                <div className='row g-3'>
+                    <div className='col-md-4 ' >
+                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717', minHeight: '270px' }}>
+                            <Card.Body className='pb-0'>
                                 <h2 className='step'>Step 1</h2>
                                 <p className='stepText'>Purchase a software mining license and activate it. Your license must be activated before it will begin mining.
                                 </p>
                             </Card.Body>
                         </Card>
                     </div>
+
                     <div className='col-md-4'>
-                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717' }}>
-                            <Card.Body>
+                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717', minHeight: '270px', }}>
+                            <Card.Body className='pb-0'>
                                 <h2 className='step'>Step 2</h2>
                                 <p className='stepText'>
                                     Earn rewards daily through the mining process. You can watch them roll in on the Rewards section of your dashboard.
@@ -33,10 +35,11 @@ const DebtBox = () => {
                             </Card.Body>
                         </Card>
                     </div>
+
                     <div className='col-md-4'>
-                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717' }}>
-                            <Card.Body>
-                                <h2 className='step'>Step 1</h2>
+                        <Card className='py-4' style={{ border: '2px solid #454545', background: '#171717', minHeight: '270px' }}>
+                            <Card.Body className='pb-0 '>
+                                <h2 className='step'>Step 3</h2>
                                 <p className='stepText'>Withdraw your rewards and exchange them for other DEBT Box tokens, other currencies or use them to make DEBT Box ecosystem purchases.
                                 </p>
                             </Card.Body>
