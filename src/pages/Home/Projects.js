@@ -1,5 +1,8 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 import project1 from '../../assets/images/project1.png'
 import project2 from '../../assets/images/project2.png'
@@ -66,25 +69,69 @@ const Projects = () => {
             subTitle: 'Mining Now'
         },
     ]
+
+
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 777,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    };
+
+
+
     return (
-        <div className=' ' style={{background: '#000000'}}>
+        <div className=' ' style={{ background: '#000000' }}>
             <div className='container'>
                 <h3 className='projectTitle'>Our projects</h3>
-                <div className='row g-4'>
-                    {
-                        projects.map((project, index) =>
-                            <div key={index} className='col-lg-3 col-md-6  text-white'>
-                                <Card className='bg-dark py-4' style={{  border: '2px solid #454545' }}>
-                                    <Card.Img style={{ width: '85px', margin: '0 auto' }} variant="top" src={project.image} />
-                                    <Card.Body>
-                                        <Card.Title className='text-uppercase text-center' style={{fontSize: '30px'}}>{project.title}</Card.Title>
-                                        <Card.Title className='text-uppercase text-center'>{project.subTitle}</Card.Title>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                        )
-                    }
+                <div className='row g-2'>
+                    <Slider {...settings}>
+                        {
+                            projects.map((project, index) =>
+                                <div key={index} className='col-lg-3 col-md-6 text-white'>
+                                    <Card className='bg-dark py-4' style={{ border: '2px solid #454545' }}>
+                                        <Card.Img style={{ width: '85px', margin: '0 auto' }} variant="top" src={project.image} />
+                                        <Card.Body>
+                                            <Card.Title className='text-uppercase text-center' style={{ fontSize: '30px' }}>{project.title}</Card.Title>
+                                            <Card.Title className='text-uppercase text-center'>{project.subTitle}</Card.Title>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            )
+                        }
+                    </Slider>
                 </div>
+
+
             </div>
         </div>
     );

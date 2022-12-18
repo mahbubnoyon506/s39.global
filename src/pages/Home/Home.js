@@ -11,11 +11,11 @@ import Introduction from './Introduction';
 
 const Home = () => {
     return (
-        <div style={{backgroundColor:'#000'}}>
+        <div style={{ backgroundColor: '#000' }}>
             <Banner />
-            <License/>
-            <DesList/>
-            <Introduction/>
+            <License />
+            <DesList />
+            <Introduction />
             <DebtBox />
             <Ecosystem />
             <CommodityProject />
