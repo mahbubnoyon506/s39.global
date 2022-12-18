@@ -7,9 +7,9 @@ import NavMenu from './NavMenu';
 const Main = () => {
     return (
         <div>
-           <NavMenu/>
-            <Outlet/>
-            <Footer/>
+            <NavMenu />
+            <Outlet />
+            <Footer />
         </div>
     );
 };
