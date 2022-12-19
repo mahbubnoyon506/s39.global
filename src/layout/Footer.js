@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/images/logo.png'
+import Logo from '../assets/images/logo2.png'
 import { AiFillInstagram, AiFillTwitterCircle, AiOutlineWhatsApp } from 'react-icons/ai';
 import { BsFacebook, BsLinkedin } from 'react-icons/bs';
 
 
 const Footer = () => {
     return (
-        <div className=' pt-5 pb-2' style={{ background: '#000000' }}>
+        <div className=' pt-5 pb-2 bg-darkblue'>
             <div className='container d-flex justify-content-center'>
                 <div className='text-center text-white'>
                     <div ><img style={{ width: '175px' }} src={Logo} alt="" /></div>

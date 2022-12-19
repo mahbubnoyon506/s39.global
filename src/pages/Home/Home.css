@@ -1,8 +1,16 @@
+
+.primary{
+    color: #FFC000;
+  }
+  .bg-darkblue{
+    background: #011734;
+  }
+
 .projectTitle,
 .commodityTitle,
 .systemTitle,
-.earnTitle {
-    color: #fff;
+.earnTitle, 
+.nodeTitle {
     font-family: micrabold;
     font-size: 34px;
     font-weight: 700;
@@ -11,9 +19,14 @@
     text-align: center;
     text-transform: uppercase;
 }
+.nodeText {
+    font-size: 19px;
+    font-family: "Montserrat" !important;
+    line-height: 25px;
+    /* text-transform: uppercase; */
+}
 
-.systemText {
-    color: #b9b5b5;
+.systemText, .partnershipText {
     font-family: "Montserrat" !important;
     font-size: 20px;
     margin-top: 20px;
@@ -36,11 +49,10 @@
     margin: 0 auto;
     line-height: 25px;
     letter-spacing: 0;
-    color: #fff;
+    text-align: center;
 }
 
 .step {
-    color: #b9b5b5;
     font-family: micrabold;
     font-style: normal;
     font-weight: 700;
@@ -49,7 +61,6 @@
 }
 
 .stepText {
-    color: #b9b5b5;
     font-family: "Montserrat" !important;
     font-size: 20px;
     margin: 20px 0;
@@ -58,20 +69,6 @@
 .licenseDiv {
     padding: 0px 15%;
 }
-
-
-.slick-dots {
-    color: #fff !important;
-}
-
-
-.slick-slide {
-    /* margin: 0 10px; */
-}
-
-/* .slick-list {
-    margin: 0 -10px !important;
-} */
 
 
 @media only screen and (max-width:650px) {
@@ -132,20 +129,19 @@
     position: relative;
     margin-right: 50%;
     font-size: 21px;
-    background-color: rgba(255, 255, 255, 0.082);
+    background-color: #171717;
     color: #B9B5B5;
     padding: 25px;
     border: 2px solid #4e4b4b;
     border-radius: 10px;
 }
 
-
 .card2 {
     position: relative;
     margin-left: 25%;
     margin-right: 15%;
     font-size: 21px;
-    background-color: rgba(255, 255, 255, 0.082);
+    background-color: #171717;
     color: #B9B5B5;
     padding: 25px;
     border: 2px solid #4e4b4b;
@@ -174,9 +170,7 @@
     border-radius: 10px;
 }
 
-.projectTitle,
-.commodityTitle,
-.systemTitle .earnTitle {
+.projectTitle {
     color: #fff;
 }
 
@@ -190,25 +184,20 @@
     letter-spacing: 0;
 }
 
-.systemText {
-    color: #b9b5b5;
-    font-family: "Montserrat";
-    font-size: 20px;
-    margin-top: 20px;
-}
 
-.earnSubTitle {
+.earnSubTitle, 
+.nodeSubTitle, 
+.desSubTitle {
     font-family: Micra;
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 400;
     line-height: 25px;
     letter-spacing: 0;
-    color: #fff;
 }
 
+
 .step {
-    color: #b9b5b5;
     font-family: micrabold;
     font-style: normal;
     font-weight: 700;
@@ -217,11 +206,11 @@
 }
 
 .stepText {
-    color: #b9b5b5;
     font-family: "Montserrat";
     font-size: 20px;
     margin: 20px 0;
 }
+
 
 @media only screen and (max-width: 480px) {
     .introText {
