@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 import DesList from './DesList';
 import License from './License';
-import CommodityProject from './CommodityProject';
+import Partnership from './Partnership';
 import DebtBox from './DebtBox';
 import Ecosystem from './Ecosystem';
 import './Home.css'
@@ -11,14 +11,14 @@ import Introduction from './Introduction';
 
 const Home = () => {
     return (
-        <div style={{ backgroundColor: '#000' }}>
+        <div className='bg-darkblue'>
             <Banner />
             <License />
+            <Partnership />
             <DesList />
-            <Introduction />
+            {/* <Introduction /> */}
             <DebtBox />
             <Ecosystem />
-            <CommodityProject />
             <Projects />
         </div>
     );

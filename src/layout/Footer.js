@@ -7,7 +7,7 @@ import { BsFacebook, BsLinkedin } from 'react-icons/bs';
 
 const Footer = () => {
     return (
-        <div className=' pt-5 pb-2' style={{ background: '#000000' }}>
+        <div className=' pt-5 pb-2 bg-darkblue'>
             <div className='container d-flex justify-content-center'>
                 <div className='text-center text-white'>
                     <div ><img style={{ width: '175px' }} src={Logo} alt="" /></div>

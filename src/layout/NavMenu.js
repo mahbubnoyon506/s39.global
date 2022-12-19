@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const NavMenu = () => {
     return (
         <div >
-            <Navbar style={{ backgroundColor: '#000000', color: "white", }} collapseOnSelect expand="lg" >
+            <Navbar className='bg-darkblue' collapseOnSelect expand="lg" >
                 <Container>
                     <Navbar.Brand as={Link} to="/" href="#/home"><img style={{ width: '175px' }} src={Logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle className='text-white' aria-controls="responsive-navbar-nav"  >
@@ -22,14 +22,13 @@ const NavMenu = () => {
 
                         <Nav className="me-auto text-white">
                         </Nav>
-                        <Nav className='text-center' >
-                            <Nav.Link as={Link} to='howItWorks' className='text-white fs-5 me-md-5 font-micra' href="#howItWorks">HOW IT WORKS</Nav.Link>
-                            <Nav.Link className='text-white fs-5 me-md-5 font-micra' href="#projects">PROJECTS</Nav.Link>
-                            <Nav.Link as={Link} to="hosting" className='text-white fs-5 me-md-5' href="#hosting">HOSTING</Nav.Link>
-                            <Nav.Link className='text-white fs-5 me-md-5 mt-2' href="#login"
-                                style={{ border: '2px solid white', borderRadius: '10px', padding: '2px 30px', maxHeight: "40px", width: '140px', margin: '0px auto' }}>LOGIN</Nav.Link>
+                        <Nav className='primary text-center' >
+                            <Nav.Link as={Link} to='howItWorks' className='fs-5 me-md-5 font-micra' style={{color: '#FFC000'}} href="#howItWorks">HOW IT WORKS</Nav.Link>
+                            <Nav.Link className='fs-5 me-md-5 font-micra' style={{color: '#FFC000'}} href="#projects">PROJECTS</Nav.Link>
+                            <Nav.Link as={Link} to="hosting" className='fs-5 me-md-5' style={{color: '#FFC000'}} href="#hosting">HOSTING</Nav.Link>
+                            <Nav.Link className='fs-5 me-md-5 mt-2' href="#login"
+                                style={{background: '#FFC000', color: '#000', padding: '2px 30px', maxHeight: "40px", width: '140px', margin: '0px auto' }}>LOGIN</Nav.Link>
                         </Nav>
-
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
