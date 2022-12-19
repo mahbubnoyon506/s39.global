@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import Logo from '../assets/images/logo.png'
+import Logo from '../assets/images/logo2.png'
 import '../pages/Home/Home.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';

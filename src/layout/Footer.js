@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/images/logo.png'
+import Logo from '../assets/images/logo2.png'
 import { AiFillInstagram, AiFillTwitterCircle, AiOutlineWhatsApp } from 'react-icons/ai';
 import { BsFacebook, BsLinkedin } from 'react-icons/bs';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo2.png';
 import BannerPhoto from '../../assets/images/HomeHero.png';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
