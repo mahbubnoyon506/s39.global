@@ -23,10 +23,10 @@ const NavMenu = () => {
                         <Nav className="me-auto text-white">
                         </Nav>
                         <Nav className='primary text-center' >
-                            <Nav.Link as={Link} to='howItWorks' className='fs-5 me-md-5 font-micra' style={{color: '#FFC000'}} href="#howItWorks">HOW IT WORKS</Nav.Link>
-                            <Nav.Link className='fs-5 me-md-5 font-micra' style={{color: '#FFC000'}} href="#projects">PROJECTS</Nav.Link>
-                            <Nav.Link as={Link} to="hosting" className='fs-5 me-md-5' style={{color: '#FFC000'}} href="#hosting">HOSTING</Nav.Link>
-                            <Nav.Link className='fs-5 me-md-5 mt-2' href="#login"
+                            <Nav.Link as={Link} to='howItWorks' className='fs-5 me-md-5 font-mira' style={{color: '#FFC000'}} href="#howItWorks">HOW IT WORKS</Nav.Link>
+                            <Nav.Link className='fs-5 me-md-5 font-mira' style={{color: '#FFC000'}} href="#projects">PROJECTS</Nav.Link>
+                            <Nav.Link as={Link} to="hosting" className='fs-5 me-md-5 font-mira' style={{color: '#FFC000'}} href="#hosting">HOSTING</Nav.Link>
+                            <Nav.Link className='fs-5 me-md-5 mt-2 font-mira' href="#login"
                                 style={{background: '#FFC000', color: '#000', padding: '2px 30px', maxHeight: "40px", width: '140px', margin: '0px auto' }}>LOGIN</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

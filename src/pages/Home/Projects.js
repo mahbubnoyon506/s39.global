@@ -57,8 +57,8 @@ const Projects = () => {
                                 <Card className='bg-dark py-4' style={{ minHeight: '250px', borderRadius: '40px' }}>
                                     <Card.Img style={{ width: '85px', margin: '0 auto' }} variant="top" src={project.image} />
                                     <Card.Body>
-                                        <Card.Title className='text-uppercase text-center' style={{ fontSize: '30px', color: '#FFC000' }}>{project.title}</Card.Title>
-                                        <Card.Title className='text-uppercase text-center' style={{ color: '#FFC000' }}>{project.subTitle}</Card.Title>
+                                        <Card.Title className='font-mira text-uppercase text-center' style={{ fontSize: '30px', color: '#FFC000' }}>{project.title}</Card.Title>
+                                        <Card.Title className='font-mira text-uppercase text-center' style={{ color: '#FFC000' }}>{project.subTitle}</Card.Title>
                                     </Card.Body>
                                 </Card>
                             </div>
