@@ -1,15 +1,15 @@
 import React from 'react';
-import graph from '../../assets/images/coin.png'
+import graph from '../../assets/images/coin2.png'
 
 function License() {
     return (
         <div>
             <div className='container py-5'>
-                <div className='row g-5 align-items-center'>
-                    <div className='col-lg-5 col-sm-12'>
+                <div className='row g-5 align-items-center' style={{ backgroundImage: 'radial-gradient(closest-side at 30% 60%, #362B24, #362A24, #262228, #000A17)'}}>
+                    <div className='col-lg-6 col-sm-12' >
                         <img width="100%" src={graph} alt="" />
                     </div>
-                    <div className='col-lg-7 col-sm-12'>
+                    <div className='col-lg-6 col-sm-12'>
                         {/* <p className='fs-1 fw-bold'>LOOKING AT SOFTWARE MINING LICENSES (NODE)</p> */}
                         <p className='nodeTitle text-start'>What is S39 Token?</p>
                         <p className='nodeText'>S39 token is the community driven token established in the year 2021 with the purpose to create multi-decentralized utility projects to enhance the community to become business community towards financial freedom community.
