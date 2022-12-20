@@ -49,16 +49,16 @@ const Projects = () => {
     return (
         <div className=' pt-5'>
             <div className='container'>
-                <h3 className='projectTitle mb-5'>Our projects</h3>
+                <h3 className='projectTitle text-center'>Our projects</h3>
                 <div className='row g-4 pb-3'>
                     {
                         projects.map((project, index) =>
-                            <div key={index} className='col-lg-4 col-md-6  text-white' >
-                                <Card className='bg-dark py-4' style={{ minHeight: '250px', borderRadius: '40px' }}>
+                            <div key={index} className='col-lg-4 col-md-6 text-white' >
+                                <Card className='pt-4' style={{ minHeight: '250px', borderRadius: '40px', background: '#171717' }}>
                                     <Card.Img style={{ width: '85px', margin: '0 auto' }} variant="top" src={project.image} />
                                     <Card.Body>
-                                        <Card.Title className='font-mira text-uppercase text-center' style={{ fontSize: '30px', color: '#FFC000' }}>{project.title}</Card.Title>
-                                        <Card.Title className='font-mira text-uppercase text-center' style={{ color: '#FFC000' }}>{project.subTitle}</Card.Title>
+                                        <Card.Title className='text-center' style={{ fontSize: '30px', }}>{project.title}</Card.Title>
+                                        <Card.Title className='text-uppercase text-center'>{project.subTitle}</Card.Title>
                                     </Card.Body>
                                 </Card>
                             </div>
