@@ -14,7 +14,7 @@ const NavMenu = () => {
         <div >
             <Navbar className='bg-darkblue' collapseOnSelect expand="lg" >
                 <Container>
-                    <Navbar.Brand as={Link} to="/" href="#/home"><img style={{ width: '175px' }} src={Logo} alt="" /></Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/" href="#/home"><img style={{ width: '220px' }} src={Logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle className='text-white' aria-controls="responsive-navbar-nav"  >
                         <MenuIcon style={{ fontSize: '40px' }} id="responsive-navbar-nav" />
                     </Navbar.Toggle>
@@ -26,7 +26,7 @@ const NavMenu = () => {
                             <Nav.Link as={Link} to='howItWorks' className=' text-white fs-5 me-md-5 font-mira'  href="#howItWorks">HOW IT WORKS</Nav.Link>
                             <Nav.Link className='text-white fs-5 me-md-5 font-mira'  href="#projects">PROJECTS</Nav.Link>
                             <Nav.Link as={Link} to="hosting" className='text-white fs-5 me-md-5 font-mira'  href="#hosting">HOSTING</Nav.Link>
-                            <Nav.Link className='fs-5 me-md-5 mt-2 font-mira' href="#login"
+                            <Nav.Link className='fs-5 me-md-5 mt-2 font-mira fw-semibold' href="#login"
                                 style={{background: '#FFC000', color: '#000', padding: '2px 30px', maxHeight: "40px", width: '140px', margin: '0px auto' }}>LOGIN</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
