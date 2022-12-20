@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/images/logo2.png'
+import '../pages/Home/Home.css'
+import Logo from '../assets/images/logo3.png'
 import { AiFillInstagram, AiFillTwitterCircle, AiOutlineWhatsApp } from 'react-icons/ai';
 import { BsFacebook, BsLinkedin } from 'react-icons/bs';
 
@@ -11,12 +12,12 @@ const Footer = () => {
             <div className='container d-flex justify-content-center'>
                 <div className='text-center text-white'>
                     <div ><img style={{ width: '175px' }} src={Logo} alt="" /></div>
-                    <Link className='hover-color text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>Projects</Link>
-                    <Link className='hover-color text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>hoisting</Link>
-                    <Link className='hover-color text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>specifications</Link>
-                    <Link className='hover-color text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>privacy policy</Link>
-                    <Link className='hover-color text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>terms and conditions</Link>
-                    <Link className='hover-color text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>store</Link>
+                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>Projects</Link>
+                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>hoisting</Link>
+                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>specifications</Link>
+                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>privacy policy</Link>
+                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>terms and conditions</Link>
+                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>store</Link>
 
                     <div className='d-flex gap-3 justify-content-center '>
                         <a className='' href="#" target="_blank" rel="noopener noreferrer"><AiFillInstagram size='40' color='#fff' /></a>
@@ -27,7 +28,7 @@ const Footer = () => {
 
                     </div>
 
-                    <p className='font-mira mt-3' style={{ fontSize: '12px' }}>© 2022 DEBT. All rights reserved.</p>
+                    <p className='font-khula mt-3' style={{ fontSize: '12px' }}>© 2022 DEBT. All rights reserved.</p>
                 </div>
             </div>
         </div>

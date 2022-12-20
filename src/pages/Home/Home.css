@@ -9,44 +9,30 @@
     background: #000A17;
 }
 
-.font-mira {
+.font-khula{
     font-family: 'Khula', sans-serif;
 }
 
 .bannerTitle,
-.bannerSubTitle {
-    font-family: 'Khula', sans-serif;
-}
-
 .projectTitle,
-.commodityTitle,
+.partnershipTitle,
 .systemTitle,
 .earnTitle,
 .nodeTitle {
     font-family: 'Khula', sans-serif;
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 38px;
-    letter-spacing: 0;
-    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 32px;
+    color: #fff;
+    font-size: 48px;
+    line-height: 66px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
-.nodeText {
-    font-size: 19px;
-    font-family: 'Khula', sans-serif;
-    line-height: 25px;
-    /* text-transform: uppercase; */
-}
-
-.systemText,
-.partnershipText {
-    font-family: 'Khula', sans-serif;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.earnSubTitle {
+.bannerSubTitle,
+.earnSubTitle,
+.nodeSubTitle,
+.desSubTitle {
     font-family: 'Khula', sans-serif;
     font-size: 22px;
     text-transform: uppercase;
@@ -54,16 +40,18 @@
     line-height: 25px;
     letter-spacing: 0;
     color: #fff;
-    text-align: center;
 }
 
-.earnText {
-    font-family: 'Khula', sans-serif;
-    font-size: 22px;
-    margin: 0 auto;
-    line-height: 25px;
-    letter-spacing: 0;
-    text-align: center;
+.nodeText,
+.partnershipText,
+.systemText,
+.desText,
+.earnText,
+.stepText {
+    font-family: Khula, sans-serif;
+    color: #bbbbbe;
+    font-size: 18px;
+    line-height: 32px;
 }
 
 .step {
@@ -72,12 +60,6 @@
     font-weight: 700;
     font-size: 34px;
     line-height: 111.6%;
-}
-
-.stepText {
-    font-family: 'Khula', sans-serif;
-    font-size: 20px;
-    margin: 20px 0;
 }
 
 .licenseDiv {
@@ -184,10 +166,6 @@
     border-radius: 10px;
 }
 
-.projectTitle {
-    color: #fff;
-}
-
 .introText {
     font-family: 'Khula', sans-serif;
     padding: 100px 0;
@@ -198,19 +176,6 @@
     letter-spacing: 0;
 }
 
-
-.earnSubTitle,
-.nodeSubTitle,
-.desSubTitle {
-    font-family: 'Khula', sans-serif;
-    font-size: 22px;
-    text-transform: uppercase;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0;
-}
-
-
 .step {
     font-family: 'Khula', sans-serif;
     font-style: normal;
@@ -218,13 +183,6 @@
     font-size: 34px;
     line-height: 111.6%;
 }
-
-.stepText {
-    font-family: "Montserrat";
-    font-size: 20px;
-    margin: 20px 0;
-}
-
 
 @media only screen and (max-width: 480px) {
     .introText {
