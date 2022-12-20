@@ -1,6 +1,7 @@
 .primary {
     color: #FFFFFF;
 }
+
 .hover-color:hover {
     color: #FFC000;
 }
@@ -9,7 +10,7 @@
     background: #000A17;
 }
 
-.font-khula{
+.font-khula {
     font-family: 'Khula', sans-serif;
 }
 
@@ -68,6 +69,17 @@
 
 
 @media only screen and (max-width:650px) {
+
+    .bannerTitle,
+    .projectTitle,
+    .partnershipTitle,
+    .systemTitle,
+    .earnTitle,
+    .nodeTitle {
+        font-size: 32px;
+        line-height: 48px;
+    }
+
     .licenseDiv {
         padding: 0px 10px;
     }
@@ -182,6 +194,28 @@
     font-weight: 700;
     font-size: 34px;
     line-height: 111.6%;
+}
+
+@media only screen and (max-width: 580px) {
+    body{
+        overflow-x: hidden;
+    }
+    .bannerTitle,
+    .projectTitle,
+    .partnershipTitle,
+    .systemTitle,
+    .earnTitle,
+    .nodeTitle {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .bannerSubTitle,
+.earnSubTitle,
+.nodeSubTitle,
+.desSubTitle{
+    font-size: 18px;
+    line-height: 24px;  
+}
 }
 
 @media only screen and (max-width: 480px) {
