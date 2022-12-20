@@ -11,12 +11,12 @@ const Footer = () => {
             <div className='container d-flex justify-content-center'>
                 <div className='text-center text-white'>
                     <div ><img style={{ width: '175px' }} src={Logo} alt="" /></div>
-                    <Link className='text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>Projects</Link>
-                    <Link className='text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>hoisting</Link>
-                    <Link className='text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>specifications</Link>
-                    <Link className='text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>privacy policy</Link>
-                    <Link className='text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>terms and conditions</Link>
-                    <Link className='text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>store</Link>
+                    <Link className='font-mira text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>Projects</Link>
+                    <Link className='font-mira text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>hoisting</Link>
+                    <Link className='font-mira text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>specifications</Link>
+                    <Link className='font-mira text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>privacy policy</Link>
+                    <Link className='font-mira text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>terms and conditions</Link>
+                    <Link className='font-mira text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>store</Link>
 
                     <div className='d-flex gap-3 justify-content-center '>
                         <a className='' href="#" target="_blank" rel="noopener noreferrer"><AiFillInstagram size='40' color='#fff' /></a>
@@ -27,7 +27,7 @@ const Footer = () => {
 
                     </div>
 
-                    <p className='mt-3' style={{ fontSize: '12px' }}>© 2022 DEBT. All rights reserved.</p>
+                    <p className='font-mira mt-3' style={{ fontSize: '12px' }}>© 2022 DEBT. All rights reserved.</p>
                 </div>
             </div>
         </div>

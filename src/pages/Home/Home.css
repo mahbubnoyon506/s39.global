@@ -5,7 +5,12 @@
   .bg-darkblue{
     background: #000A17;
   }
-
+  .font-mira{
+    font-family: micrabold;
+  }
+.bannerTitle, .bannerSubTitle{
+    font-family: micrabold;
+}
 .projectTitle,
 .commodityTitle,
 .systemTitle,
