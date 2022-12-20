@@ -1,22 +1,29 @@
-
-.primary{
-    color: #FFC000;
-  }
-  .bg-darkblue{
-    background: #000A17;
-  }
-  .font-mira{
-    font-family: micrabold;
-  }
-.bannerTitle, .bannerSubTitle{
-    font-family: micrabold;
+.primary {
+    color: #FFFFFF;
 }
+.hover-color:hover {
+    color: #FFC000;
+}
+
+.bg-darkblue {
+    background: #000A17;
+}
+
+.font-mira {
+    font-family: 'Khula', sans-serif;
+}
+
+.bannerTitle,
+.bannerSubTitle {
+    font-family: 'Khula', sans-serif;
+}
+
 .projectTitle,
 .commodityTitle,
 .systemTitle,
-.earnTitle, 
+.earnTitle,
 .nodeTitle {
-    font-family: micrabold;
+    font-family: 'Khula', sans-serif;
     font-size: 34px;
     font-weight: 700;
     line-height: 38px;
@@ -24,21 +31,23 @@
     text-align: center;
     text-transform: uppercase;
 }
+
 .nodeText {
     font-size: 19px;
-    font-family: "Montserrat" !important;
+    font-family: 'Khula', sans-serif;
     line-height: 25px;
     /* text-transform: uppercase; */
 }
 
-.systemText, .partnershipText {
-    font-family: "Montserrat" !important;
+.systemText,
+.partnershipText {
+    font-family: 'Khula', sans-serif;
     font-size: 20px;
     margin-top: 20px;
 }
 
 .earnSubTitle {
-    font-family: Micra;
+    font-family: 'Khula', sans-serif;
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 400;
@@ -49,7 +58,7 @@
 }
 
 .earnText {
-    font-family: "Montserrat" !important;
+    font-family: 'Khula', sans-serif;
     font-size: 22px;
     margin: 0 auto;
     line-height: 25px;
@@ -58,7 +67,7 @@
 }
 
 .step {
-    font-family: micrabold;
+    font-family: 'Khula', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 34px;
@@ -66,7 +75,7 @@
 }
 
 .stepText {
-    font-family: "Montserrat" !important;
+    font-family: 'Khula', sans-serif;
     font-size: 20px;
     margin: 20px 0;
 }
@@ -180,7 +189,7 @@
 }
 
 .introText {
-    font-family: micrabold;
+    font-family: 'Khula', sans-serif;
     padding: 100px 0;
     text-align: center;
     font-size: 27px;
@@ -190,10 +199,10 @@
 }
 
 
-.earnSubTitle, 
-.nodeSubTitle, 
+.earnSubTitle,
+.nodeSubTitle,
 .desSubTitle {
-    font-family: Micra;
+    font-family: 'Khula', sans-serif;
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 400;
@@ -203,7 +212,7 @@
 
 
 .step {
-    font-family: micrabold;
+    font-family: 'Khula', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 34px;
