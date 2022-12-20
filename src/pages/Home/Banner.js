@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/images/logo3.png';
-import BannerPhoto from '../../assets/images/HomeHero.png';
+import BannerPhoto from '../../assets/images/homes39.png';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
 
