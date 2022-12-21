@@ -28,10 +28,10 @@ const NavMenu = () => {
                         <Nav className="me-auto text-white">
                         </Nav>
                         <Nav className='text-white text-center' >
-                            {/* <Nav.Link as={Link} to='howItWorks' className=' text-white fs-5 me-md-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link> */}
+                            <Nav.Link as={Link} to='howItWorks' className=' text-white fs-5 me-md-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
                             <Nav.Link className='text-white fs-5 me-md-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
-                            <Nav.Link as={Link} to="hosting" className='text-white fs-5 me-md-5 font-mira' href="#hosting">HOSTING</Nav.Link>
-                            <Nav.Link onClick={setOpen} href="#login"><TopButton>LOGIN</TopButton></Nav.Link>
+                            {/* <Nav.Link as={Link} to="hosting" className='text-white fs-5 me-md-5 font-mira' href="#hosting">HOSTING</Nav.Link> */}
+                            <Nav.Link onClick={setOpen} href="#login"><TopButton>LOGIN with Wallet</TopButton></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
