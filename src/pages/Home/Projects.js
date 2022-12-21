@@ -42,7 +42,7 @@ const Projects = () => {
         },
         {
             image: `${project6}`,
-            title: 'NFTS',
+            title: `NFTs`,
             subTitle: 'COMING SOON'
         },
 

@@ -7,6 +7,7 @@ import { BsFacebook, BsLinkedin } from 'react-icons/bs';
 
 
 const Footer = () => {
+    const year =  new Date().getFullYear();
     return (
         <div className=' pt-5 pb-2 bg-darkblue'>
             <div className='container d-flex justify-content-center'>
@@ -28,7 +29,7 @@ const Footer = () => {
 
                     </div>
 
-                    <p className='font-khula mt-3' style={{ fontSize: '12px' }}>© 2022 DEBT. All rights reserved.</p>
+                    <p className='font-khula mt-3' style={{ fontSize: '12px' }}>© {year} S39 Global. All rights reserved.</p>
                 </div>
             </div>
         </div>

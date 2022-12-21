@@ -10,10 +10,10 @@
   list-style: none;
   text-decoration: none;
 }
+
 body {
   font-family: 'Khula', sans-serif;
   width: 100%;
   background: #011734;
+  overflow-x: hidden;
 }
-
-
