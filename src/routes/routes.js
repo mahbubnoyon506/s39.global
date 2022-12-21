@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import Hosting from "../pages/Hosting/Hosting";
-import HowItWorks from "../pages/HowItWorks/HowItWorks";
+import Projects from "../pages/Projects/Projects";
 
 
 const routes = createBrowserRouter([
@@ -15,12 +15,12 @@ const routes = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: 'howItWorks',
-                element: <HowItWorks />
-            },
-            {
                 path: 'hosting',
                 element: <Hosting />
+            },
+            {
+                path: 'projects',
+                element: <Projects />
             },
         ]
     }

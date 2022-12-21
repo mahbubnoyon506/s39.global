@@ -15,5 +15,5 @@ body {
   font-family: 'Khula', sans-serif;
   width: 100%;
   background: #011734;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
