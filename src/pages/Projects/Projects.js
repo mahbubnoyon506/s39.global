@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Agriculture from './Agriculture';
 import Ecommerce from './Ecommerce';
 import Mineral from './Mineral';
