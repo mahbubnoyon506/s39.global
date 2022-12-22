@@ -19,7 +19,7 @@
   }
   
   .cardDash {
-    background-color: #272d47;
+    background-color: #272d47 !important;
     cursor: pointer;
     min-height: 140px;
   }
