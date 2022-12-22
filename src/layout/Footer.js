@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className='text-center text-white'>
                     <div ><img style={{ width: '175px' }} src={Logo} alt="" /></div>
                     <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>Projects</Link>
-                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>hoisting</Link>
+                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>hosting</Link>
                     <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>specifications</Link>
                     <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>privacy policy</Link>
                     <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>terms and conditions</Link>

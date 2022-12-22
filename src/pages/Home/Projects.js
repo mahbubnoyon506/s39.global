@@ -25,7 +25,7 @@ const Projects = () => {
         {
             id: 2,
             image: `${project3}`,
-            title: 'AGRICULTURAL',
+            title: 'AGRICULTURE',
             subTitle: 'Mining Now'
         },
         {
