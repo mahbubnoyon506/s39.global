@@ -11,36 +11,43 @@ import project5 from '../../assets/images/Picture4.png'
 import project6 from '../../assets/images/Picture5.png'
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import './Home.css'
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
 
     const projects = [
         {
+            id: 1,
             image: `${project1}`,
             title: 'MINERAL',
             subTitle: 'Mining Now'
         },
         {
+            id: 2,
             image: `${project3}`,
             title: 'AGRICULTURAL',
             subTitle: 'Mining Now'
         },
         {
+            id: 3,
             image: `${project2}`,
             title: 'ECOMMERCE',
             subTitle: 'ONLINE NOW'
         },
         {
+            id: 4,
             image: `${project4}`,
             title: 'REAL ESTATE',
             subTitle: 'COMING SOON'
         },
         {
+            id: 5,
             image: `${project5}`,
             title: 'GOLD',
             subTitle: 'COMING SOON'
         },
         {
+            id: 6,
             image: `${project6}`,
             title: `NFTs`,
             subTitle: 'COMING SOON'

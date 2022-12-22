@@ -1,8 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
+
 import Main from "../layout/Main";
+import AdminProfileUpdate from "../pages/Dashboard/Admin/AdminProfileUpdate";
+import Admins from "../pages/Dashboard/Admin/Admins";
+import AdminDashboard from "../pages/Dashboard/AdminDashboard/AdminDashboard";
+import Dashboard from "../pages/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
-import Hosting from "../pages/Hosting/Hosting";
-import HowItWorks from "../pages/HowItWorks/HowItWorks";
+import HowItworks from "../pages/HowItworks/HowItworks";
+import Hosting from "../pages/HowItworks/HowItworks";
+import Projects from "../pages/Projects/Projects";
 
 
 const routes = createBrowserRouter([
@@ -16,14 +22,33 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'howItWorks',
-                element: <HowItWorks />
+                element: <HowItworks />
             },
             {
-                path: 'hosting',
-                element: <Hosting />
+                path: 'projects',
+                element: <Projects />
             },
         ]
+    },
+    {
+        path : '/dashboard',
+        element: <Dashboard/>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <AdminDashboard/>
+            },
+            {
+                path: '/dashboard/admins',
+                element: <Admins/>
+            },
+            {
+                path:'/dashboard/updateadmin',
+                element: <AdminProfileUpdate/>
+            }
+        ]
     }
+
 ])
 
 export default routes;
