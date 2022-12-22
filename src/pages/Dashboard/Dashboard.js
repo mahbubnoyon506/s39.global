@@ -7,12 +7,13 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import "./Dashboard.css";
-import { Divider } from "@mui/material";
+import { Button } from '@mui/material';
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import { MdDashboard } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
+import { FcLeft } from "react-icons/fc";
 import logo from '../../assets/images/logo3.png'
 
 
@@ -81,6 +82,8 @@ function Dashboard(props) {
           </span>
           ADMINS
         </NavLink>
+        <div style={{height: '60vh'}}></div>
+        <Link className="text-decoration-none" to='/'><Button sx={{ borderRadius: '10px', background: '#FFC000', color: '#000', marginRight: '10px', fontWeight: '700', '&:hover': { background: '#FFC000' } }} variant='contained'> <FcLeft/>Back to Home </Button></Link>
       </div>
     </div>
   );

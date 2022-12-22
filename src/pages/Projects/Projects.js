@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Agriculture from './Agriculture';
 import Ecommerce from './Ecommerce';
 import Mineral from './Mineral';
 import S39 from './S39';
 
 const Projects = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
     return (
         <div className='py-5 bg-darkblue'>
             {/* <h2 className='text-center text-uppercase primary'>Projects</h2> */}

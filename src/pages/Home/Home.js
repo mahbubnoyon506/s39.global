@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from './Banner';
 import DesList from './DesList';
 import License from './License';
@@ -10,6 +10,9 @@ import Projects from './Projects';
 import Introduction from './Introduction';
 
 const Home = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
     return (
         <div className='bg-darkblue'>
             <Banner />
