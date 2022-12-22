@@ -11,7 +11,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import "./Dashboard.css";
 import { Divider } from "@mui/material";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
-import { MdDashboard} from "react-icons/md";
+import { MdDashboard } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
 import logo from '../../assets/images/logo3.png'
 
@@ -50,9 +50,11 @@ function Dashboard(props) {
 
   const drawer = (
     <div className="sideBar">
-      <Toolbar />
-      <img className="mx-auto" src={logo} alt="" style={{width: '220px'}}/>
-      <Divider />
+      {/* <Toolbar /> */}
+      <div className="pt-3">
+        <img className="mx-auto" src={logo} alt="" style={{ width: '220px' }} />
+      </div>
+      <hr />
       <div className="menuDiv">
         <NavLink
           className="dashboardMenu"
