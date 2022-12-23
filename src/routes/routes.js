@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import AdminProfileUpdate from "../pages/Dashboard/Admin/AdminProfileUpdate";
 import Admins from "../pages/Dashboard/Admin/Admins";
+import Goals from "../pages/Dashboard/Admin/Goals/Goals";
+import Wallets from "../pages/Dashboard/Admin/Wallets/Wallets";
 import AdminDashboard from "../pages/Dashboard/AdminDashboard/AdminDashboard";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
@@ -31,21 +33,29 @@ const routes = createBrowserRouter([
         ]
     },
     {
-        path : '/dashboard',
-        element: <Dashboard/>,
+        path: '/dashboard',
+        element: <Dashboard />,
         children: [
             {
                 path: '/dashboard',
-                element: <AdminDashboard/>
+                element: <AdminDashboard />
             },
             {
                 path: '/dashboard/admins',
-                element: <Admins/>
+                element: <Admins />
             },
             {
-                path:'/dashboard/updateadmin',
-                element: <AdminProfileUpdate/>
-            }
+                path: '/dashboard/updateadmin',
+                element: <AdminProfileUpdate />
+            },
+            {
+                path: '/dashboard/wallets',
+                element: <Wallets />
+            },
+            {
+                path: '/dashboard/golas',
+                element: <Goals />
+            },
         ]
     }
 
