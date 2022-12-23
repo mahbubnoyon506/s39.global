@@ -82,8 +82,37 @@ function Dashboard(props) {
           </span>
           ADMINS
         </NavLink>
-        <div style={{height: '60vh'}}></div>
-        <Link className="text-decoration-none" to='/'><Button sx={{ borderRadius: '10px', background: '#FFC000', color: '#000', marginRight: '10px', fontWeight: '700', '&:hover': { background: '#FFC000' } }} variant='contained'> <FcLeft/>Back to Home </Button></Link>
+
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="/dashboard/wallets"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <RiAdminFill style={{ fontSize: "20px" }} />
+          </span>
+          Wallets
+        </NavLink>
+
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="/dashboard/golas"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <RiAdminFill style={{ fontSize: "20px" }} />
+          </span>
+          GOALS
+        </NavLink>
+
+
+
+        <div style={{ height: '60vh' }}></div>
+        <Link className="text-decoration-none" to='/'><Button sx={{ borderRadius: '10px', background: '#FFC000', color: '#000', marginRight: '10px', fontWeight: '700', '&:hover': { background: '#FFC000' } }} variant='contained'> <FcLeft />Back to Home </Button></Link>
       </div>
     </div>
   );
