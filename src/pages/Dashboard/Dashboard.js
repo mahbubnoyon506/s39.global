@@ -14,7 +14,9 @@ import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import { MdDashboard } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
 import { FcLeft } from "react-icons/fc";
+import { SiGoogleanalytics } from "react-icons/si";
 import logo from '../../assets/images/logo3.png'
+import { GrGoogleWallet } from "react-icons/gr";
 
 
 const menuLinkStyles = ({ isActive }) => {
@@ -91,7 +93,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <RiAdminFill style={{ fontSize: "20px" }} />
+            <GrGoogleWallet style={{ fontSize: "20px" }} />
           </span>
           Wallets
         </NavLink>
@@ -104,7 +106,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <RiAdminFill style={{ fontSize: "20px" }} />
+            <SiGoogleanalytics style={{ fontSize: "20px" }} />
           </span>
           GOALS
         </NavLink>

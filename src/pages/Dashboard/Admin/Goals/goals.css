@@ -1,7 +1,7 @@
 .newText {
     border: 1px solid #fff;
     padding: 5px;
-
+    box-shadow: 1px 2px 10px 2px #621647;
 }
 
 .goalsBg {
@@ -13,12 +13,48 @@
     background-color: #0a0915;
 }
 
+.goals {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    margin: 0 auto;
+    background: #1a1c33
+}
+
+.bg-1 {
+
+    border-radius: 100%;
+    padding: 20px;
+    background-image: linear-gradient(to right, #2f3755, #246384);
+}
+
+.starIcon {
+    font-size: 250px;
+    /* background-image: linear-gradient(to right, #2f3755, #246384); */
+    color: #246384;
+    /* position: absolute !important;
+    top: -100 !important;
+    left: -200 !important; */
+    z-index: -10 !important;
+}
+
 .line {
     height: 5px;
-    width: 100px;
+    width: 80px;
     margin-top: 5px;
     border-radius: 10px;
-    background-color: gold;
+    background-image: linear-gradient(to right, #ab4113, yellow);
+    z-index: 2;
+
+}
+
+.line2 {
+    height: 5px;
+    width: 80px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #39b0c2, #ad56a2);
     z-index: 2;
 
 }

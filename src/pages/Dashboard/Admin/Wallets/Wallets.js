@@ -9,9 +9,14 @@ const Wallets = () => {
 
     return (
         <div>
-            <div className='text-white'>
-                <h2>DEBT WALLET</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
+            <div className='d-flex justify-content-between'>
+                <div className='text-white'>
+                    <h2>DEBT WALLET</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div className=' position-relative'>
+                    <span className='position-absolute bottom-0 mb-2 end-50 text-white textBg p-1 rounded-circle' style={{ background: '#7039ca' }}>$0</span>
+                </div>
             </div>
 
             <div class="row  g-3">
@@ -36,8 +41,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='bg-primary me-2 border-0 p-2  rounded'>Button</button>
-                            <button className='bg-white border-0 p-2 rounded'>Button</button>
+                            <button className=' me-2 border-0 p-2 px-3 text-white rounded' style={{ background: '#3e73ad' }}>Button</button>
+                            <button className='bg-white border-0 px-3 p-2 rounded'>Button</button>
                         </div>
                     </div>
                 </div>
@@ -63,8 +68,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='bg-primary me-2 border-0 p-2  rounded'>Button</button>
-                            <button className='bg-white border-0 p-2 rounded'>Button</button>
+                            <button className='text-white me-2 border-0 p-2 px-3  rounded' style={{ background: '#3e73ad' }}>Button</button>
+                            <button className='bg-white border-0 p-2  px-3  rounded'>Button</button>
                         </div>
                     </div>
                 </div>
@@ -90,8 +95,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='bg-primary me-2 border-0 p-2  rounded'>Button</button>
-                            <button className='bg-white border-0 p-2 rounded'>Button</button>
+                            <button className='text-white me-2 border-0 p-2 px-3 rounded' style={{ background: '#3e73ad' }}>Button</button>
+                            <button className='bg-white border-0 p-2 px-3 rounded'>Button</button>
                         </div>
                     </div>
                 </div>
@@ -117,8 +122,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='bg-primary me-2 border-0 p-2  rounded'>Button</button>
-                            <button className='bg-white border-0 p-2 rounded'>Button</button>
+                            <button className='text-white me-2 border-0 p-2 px-3 rounded' style={{ background: '#3e73ad' }}>Button</button>
+                            <button className='bg-white border-0 p-2 px-3 rounded'>Button</button>
                         </div>
                     </div>
                 </div>
@@ -144,8 +149,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='bg-primary me-2 border-0 p-2  rounded'>Button</button>
-                            <button className='bg-white border-0 p-2 rounded'>Button</button>
+                            <button className='text-white me-2 border-0 p-2  px-3 rounded' style={{ background: '#3e73ad' }}>Button</button>
+                            <button className='bg-white border-0 p-2  px-3 rounded'>Button</button>
                         </div>
                     </div>
                 </div>
@@ -170,8 +175,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='bg-primary me-2 border-0 p-2  rounded'>Button</button>
-                            <button className='bg-white border-0 p-2 rounded'>Button</button>
+                            <button className='text-white me-2 border-0 p-2 px-3 rounded' style={{ background: '#3e73ad' }}>Button</button>
+                            <button className='bg-white border-0 p-2 px-3 rounded'>Button</button>
                         </div>
                     </div>
                 </div>
