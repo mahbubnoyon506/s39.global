@@ -74,6 +74,18 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
+          to="/dashboard/reward"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <RiAdminFill style={{ fontSize: "20px" }} />
+          </span>
+          REWARD
+        </NavLink>
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
           to="/dashboard/admins"
         >
           {" "}
@@ -93,7 +105,20 @@ function Dashboard(props) {
           <span className="navIconAdmin">
             <GrGoogleWallet style={{ fontSize: "20px" }} />
           </span>
-          Wallets
+          WALLETS
+        </NavLink>
+
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="/dashboard/vote"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <GrGoogleWallet style={{ fontSize: "20px" }} />
+          </span>
+          COMMUNITY VOTE
         </NavLink>
 
         <NavLink
@@ -113,6 +138,18 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
+          to="/dashboard/ngwb"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <SiGoogleanalytics style={{ fontSize: "20px" }} />
+          </span>
+          NGWB
+        </NavLink>
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
           to="/dashboard/portfound"
         >
           {" "}
@@ -122,7 +159,20 @@ function Dashboard(props) {
           PORTFOUND
         </NavLink>
 
-        <div style={{ height: "60vh" }}></div>
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="/dashboard/hosting"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <SiGoogleanalytics style={{ fontSize: "20px" }} />
+          </span>
+          HOSTING
+        </NavLink>
+
+        <div style={{ height: "20vh" }}></div>
         <Link className="text-decoration-none" to="/">
           <Button
             sx={{
