@@ -9,13 +9,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import "./Dashboard.css";
-import { Button } from '@mui/material';
+import { Button } from "@mui/material";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import { MdDashboard } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
 import { FcLeft } from "react-icons/fc";
-import logo from '../../assets/images/logo3.png'
-
+import { SiGoogleanalytics } from "react-icons/si";
+import logo from "../../assets/images/logo3.png";
+import { GrGoogleWallet } from "react-icons/gr";
 
 const menuLinkStyles = ({ isActive }) => {
   return {
@@ -25,7 +26,6 @@ const menuLinkStyles = ({ isActive }) => {
 const drawerWidth = 280;
 
 function Dashboard(props) {
-
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hide, setHide] = useState(false);
@@ -47,13 +47,13 @@ function Dashboard(props) {
     setAnchorEl(null);
   };
 
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   const drawer = (
     <div className="sideBar">
       {/* <Toolbar /> */}
       <div className="pt-3">
-        <img className="mx-auto" src={logo} alt="" style={{ width: '220px' }} />
+        <img className="mx-auto" src={logo} alt="" style={{ width: "220px" }} />
       </div>
       <hr />
       <div className="menuDiv">
@@ -82,8 +82,64 @@ function Dashboard(props) {
           </span>
           ADMINS
         </NavLink>
-        <div style={{height: '60vh'}}></div>
-        <Link className="text-decoration-none" to='/'><Button sx={{ borderRadius: '10px', background: '#FFC000', color: '#000', marginRight: '10px', fontWeight: '700', '&:hover': { background: '#FFC000' } }} variant='contained'> <FcLeft/>Back to Home </Button></Link>
+
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="/dashboard/wallets"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <GrGoogleWallet style={{ fontSize: "20px" }} />
+          </span>
+          Wallets
+        </NavLink>
+
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="/dashboard/golas"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <SiGoogleanalytics style={{ fontSize: "20px" }} />
+          </span>
+          GOALS
+        </NavLink>
+
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="/dashboard/portfound"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <SiGoogleanalytics style={{ fontSize: "20px" }} />
+          </span>
+          PORTFOUND
+        </NavLink>
+
+        <div style={{ height: "60vh" }}></div>
+        <Link className="text-decoration-none" to="/">
+          <Button
+            sx={{
+              borderRadius: "10px",
+              background: "#FFC000",
+              color: "#000",
+              marginRight: "10px",
+              fontWeight: "700",
+              "&:hover": { background: "#FFC000" },
+            }}
+            variant="contained"
+          >
+            {" "}
+            <FcLeft />
+            Back to Home{" "}
+          </Button>
+        </Link>
       </div>
     </div>
   );
