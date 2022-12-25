@@ -5,13 +5,17 @@ import AdminProfileUpdate from "../pages/Dashboard/Admin/AdminProfileUpdate";
 import Admins from "../pages/Dashboard/Admin/Admins";
 import Goals from "../pages/Dashboard/Admin/Goals/Goals";
 import PortFound from "../pages/Dashboard/Admin/PortFound/PortFound";
+import Hosting from "../pages/Dashboard/Admin/Hosting/Hosting";
 import Wallets from "../pages/Dashboard/Admin/Wallets/Wallets";
 import AdminDashboard from "../pages/Dashboard/AdminDashboard/AdminDashboard";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
 import HowItworks from "../pages/HowItworks/HowItworks";
-import Hosting from "../pages/HowItworks/HowItworks";
+// import Hosting from "../pages/HowItworks/HowItworks";
 import Projects from "../pages/Projects/Projects";
+import Reward from "../pages/Dashboard/Admin/Reward/Reward";
+import CommunityVote from "../pages/Dashboard/Admin/CommunityVote/CommunityVote";
+import Ngwb from "../pages/Dashboard/Admin/NGWB/Ngwb";
 
 const routes = createBrowserRouter([
   {
@@ -41,6 +45,10 @@ const routes = createBrowserRouter([
         element: <AdminDashboard />,
       },
       {
+        path: "/dashboard/reward",
+        element: <Reward />,
+      },
+      {
         path: "/dashboard/admins",
         element: <Admins />,
       },
@@ -53,12 +61,24 @@ const routes = createBrowserRouter([
         element: <Wallets />,
       },
       {
+        path: "/dashboard/vote",
+        element: <CommunityVote />,
+      },
+      {
         path: "/dashboard/golas",
         element: <Goals />,
       },
       {
+        path: "/dashboard/ngwb",
+        element: <Ngwb />,
+      },
+      {
         path: "/dashboard/portfound",
         element: <PortFound />,
+      },
+      {
+        path: "/dashboard/hosting",
+        element: <Hosting />,
       },
     ],
   },
