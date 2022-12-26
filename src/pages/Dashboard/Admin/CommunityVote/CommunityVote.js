@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Active from './Active';
 
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -48,25 +49,31 @@ const CommunityVote = () => {
     return (
         <div>
             <Box sx={{ width: '100%' }}>
-                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <Tabs 
-                    value={value} 
-                    onChange={handleChange} 
-                    aria-label="basic tabs example"
-                    variant="fullWidth"
+                <Box sx={{ borderBottom: 1, borderColor: 'divider', color: '#fff' }}>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        aria-label="basic tabs example"
+                        variant="fullWidth"
+                        textColor= '#fff'
+                        TabIndicatorProps={{
+                            sx: {
+                              backgroundColor: '#fff'
+                            },
+                          }}
                     >
                         <Tab label="Active" {...a11yProps(0)} />
                         <Tab label="Reward" {...a11yProps(1)} />
                         <Tab label="Astard" {...a11yProps(2)} />
                     </Tabs>
                 </Box>
-                <TabPanel value={value} index={0}>
-                   <Active/>
+                <TabPanel  value={value} index={0}>
+                    <Active />
                 </TabPanel>
-                <TabPanel value={value} index={1}>
+                <TabPanel  value={value} index={1}>
                     Item Two
                 </TabPanel>
-                <TabPanel value={value} index={2}>
+                <TabPanel  value={value} index={2}>
                     Item Three
                 </TabPanel>
             </Box>

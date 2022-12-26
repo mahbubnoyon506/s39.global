@@ -155,7 +155,6 @@ const Goals = () => {
                                         <h2>0%</h2>
                                         <p>GOALS</p>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
