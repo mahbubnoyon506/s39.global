@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./AdminDashboard.css";
-import Chart from "./Chart";
+import DashboardChart from "./DashboardChart";
 import image from '../../../assets/images/icon/aave.png'
 import { AiFillCaretUp } from 'react-icons/ai';
 
@@ -13,7 +13,7 @@ const AdminDashboard = () => {
       <div className="">
         <h5 className="text-white  pb-3">DASHBOARD</h5>
         <div className="row py-5">
-          <div className="col-lg-3 d-flex align-items-center">
+          <div className="col-lg-3 d-flex align-items-center mb-3 mb-lg-0">
             <div className="d-flex justify-content-center align-items-center mx-auto" style={{ width: '150px', height: '150px', borderRadius: '30px', background: `${background}`, }}>
               <div className="d-flex justify-content-center align-items-center" style={{ width: '140px', height: '140px', borderRadius: '30px', background: `${background}`, transform: 'rotate(45deg)' }}>
                 <div className="d-flex justify-content-center align-items-center mx-auto" style={{ background: '#121936', borderRadius: '100px', border: '2px solid #9E9CB2', width: '120px', height: '120px', transform: 'rotate(-45deg)' }}>
@@ -25,48 +25,40 @@ const AdminDashboard = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-5 py-5 py-md-0">
-            <Chart />
+          <div className="col-lg-6 py-5 py-md-0">
+            <DashboardChart />
           </div>
-          <div className="col-lg-4">
-            <div className="d-flex" style={{ background: '#121936',borderRadius: '10px', boxShadow: '0px 0px 15px 15px #33518C' }}>
+          <div className="col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-start mt-5 mt-lg-0">
+            <div className="d-flex align-items-center" style={{ background: '#121936', borderRadius: '10px', boxShadow: '0px 0px 15px 15px #33518C' }}>
               <div className="p-2">
-                <p className="fs-3 fw-bold primary text-start text-uppercase">Token values</p>
-                <div className="d-flex align-items-center m-0" style={{ borderBottom: '2px solid #161D35' }}>
+                <p className="fs-4 fw-bold primary text-start text-uppercase">Token values</p>
+                <div className="d-flex justify-content-between align-items-center m-0" style={{ borderBottom: '2px solid #161D35' }}>
                   <div className="d-flex align-items-center mb-3">
                     <img src={image} alt="" style={{ width: '30px' }} />
-                    <p className="primary my-auto ms-1">Burn Notice:NATG</p>
+                    <p className="my-auto ms-1 primary" style={{ fontSize: '12px' }}>Burn Notice:NATG</p>
                   </div>
-                  <div>
-                    <p className="" style={{ color: '#06A41A', fontSize: '12px' }}> <AiFillCaretUp /> 3.27%</p>
-                  </div>
+                    <p className="" style={{ color: '#06A41A', fontSize: '11px' }}> <AiFillCaretUp /> 3.27%</p>
                 </div>
-                <div className="d-flex align-items-center m-0" style={{ borderBottom: '2px solid #161D35' }}>
+                <div className="d-flex justify-content-between align-items-center m-0" style={{ borderBottom: '2px solid #161D35' }}>
                   <div className="d-flex align-items-center mb-3">
                     <img src={image} alt="" style={{ width: '30px' }} />
-                    <p className="primary my-auto ms-1">Burn Notice:NATG</p>
+                    <p className="my-auto ms-1 primary" style={{ fontSize: '12px' }}>Burn Notice:NATG</p>
                   </div>
-                  <div>
-                    <p className="" style={{ color: '#06A41A', fontSize: '12px' }}> <AiFillCaretUp /> 3.27%</p>
-                  </div>
+                    <p className="" style={{ color: '#06A41A', fontSize: '11px' }}> <AiFillCaretUp /> 3.27%</p>
                 </div>
-                <div className="d-flex align-items-center m-0" style={{ borderBottom: '2px solid #161D35' }}>
+                <div className="d-flex justify-content-between align-items-center m-0" style={{ borderBottom: '2px solid #161D35' }}>
                   <div className="d-flex align-items-center mb-3">
                     <img src={image} alt="" style={{ width: '30px' }} />
-                    <p className="primary my-auto ms-1">Burn Notice:NATG</p>
+                    <p className="my-auto ms-1 primary" style={{ fontSize: '12px' }}>Burn Notice:NATG</p>
                   </div>
-                  <div>
-                    <p className="" style={{ color: '#06A41A', fontSize: '12px' }}> <AiFillCaretUp /> 3.27%</p>
-                  </div>
+                    <p className="" style={{ color: '#06A41A', fontSize: '11px' }}> <AiFillCaretUp /> 3.27%</p>
                 </div>
-                <div className="d-flex align-items-center m-0" style={{ borderBottom: '2px solid #161D35' }}>
+                <div className="d-flex justify-content-between align-items-center m-0" style={{ borderBottom: '2px solid #161D35' }}>
                   <div className="d-flex align-items-center mb-3">
                     <img src={image} alt="" style={{ width: '30px' }} />
-                    <p className="primary my-auto ms-1">Burn Notice:NATG</p>
+                    <p className="my-auto ms-1 primary" style={{ fontSize: '12px' }}>Burn Notice:NATG</p>
                   </div>
-                  <div>
-                    <p className="" style={{ color: '#06A41A', fontSize: '12px' }}> <AiFillCaretUp /> 3.27%</p>
-                  </div>
+                    <p className="" style={{ color: '#06A41A', fontSize: '11px' }}> <AiFillCaretUp /> 3.27%</p>
                 </div>
               </div>
             </div>
@@ -98,7 +90,7 @@ const AdminDashboard = () => {
             </div>
           </div>
           <div className="col-lg-4">
-            <div className="d-flex justify-content-center align-items-center mx-auto" style={{ background: '#121936', borderRadius: '100px',  width: '170px', height: '170px', boxShadow: '0px 0px 15px 15px #33518C' }}>
+            <div className="d-flex justify-content-center align-items-center mx-auto" style={{ background: '#121936', borderRadius: '100px', width: '170px', height: '170px', boxShadow: `0px 0px 15px 15px #33518C` }}>
               <div>
                 <p className="primary text-center" style={{ fontSize: '16px' }}>$0</p>
                 <p className="primary text-center" style={{ fontSize: '12px' }}>(Amount in Piggy Bank)</p>

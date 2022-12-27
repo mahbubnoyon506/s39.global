@@ -8,6 +8,7 @@ import image from '../../../../../src/assets/images/icon/aave.png'
 import './goals.css'
 
 const Goals = () => {
+    const background = 'linear-gradient(to right bottom, #166c76, #006387, #27568f, #5d4083, #7f2060)'
     return (
         <div>
 
@@ -23,7 +24,7 @@ const Goals = () => {
                         <p className='ps-3 goalsBg py-3 text-white'>Lorem ipsum dolor sit amet consectetur</p>
                     </div>
 
-                    <div className='text-white' style={{ marginTop: '200px' }}>
+                    <div className='text-white' style={{ marginTop: '100px' }}>
                         <p class="fs-6 text-center">ALL TIME MINED BY LICENSE</p>
                         <div>
 
@@ -140,20 +141,17 @@ const Goals = () => {
 
                 <div className='col-12 col-lg-6'>
                     <div className='text-center'>
-                        <h5 className='text-white'>Total Mined value</h5>
-                        <h2 className='text-white mt-5'>$0</h2>
+                        <h5 className='text-white text-uppercase'>Total Mined value</h5>
+                        <h2 className='text-white'>$0</h2>
                     </div>
 
-                    <div className='text-white d-flex align-items-center justify-content-center text-center mt-5'>
-                        <div className='bg-1 '>
-                            <div className='goals position-relative'>
-                                <div>
-                                    {/* <span className='starIcon '><BsStarFill className='' /></span> */}
-                                </div>
-                                <div className='position-absolute top-50 start-50 translate-middle'>
+                    <div className='text-white d-flex align-items-center justify-content-center text-center my-3 mt-lg-5'>
+                        <div className="d-flex justify-content-center align-items-center mx-auto" style={{ width: '150px', height: '150px', borderRadius: '30px', background: `${background}`, }}>
+                            <div className="d-flex justify-content-center align-items-center" style={{ width: '140px', height: '140px', borderRadius: '30px', background: `${background}`, transform: 'rotate(45deg)' }}>
+                                <div className="d-flex justify-content-center align-items-center mx-auto" style={{ background: '#121936', borderRadius: '100px', border: '2px solid #9E9CB2', width: '120px', height: '120px', transform: 'rotate(-45deg)' }}>
                                     <div>
-                                        <h2>0%</h2>
-                                        <p>GOALS</p>
+                                        <p className="fs-2 fw-bold text-center primary m-0">0%</p>
+                                        <p className="primary text-center text-uppercase fs-5" style={{ fontSize: '16px' }}>Goals</p>
                                     </div>
                                 </div>
                             </div>

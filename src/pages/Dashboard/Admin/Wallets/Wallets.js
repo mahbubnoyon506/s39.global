@@ -4,6 +4,8 @@ import image from '../../../../../src/assets/images/icon/aave.png'
 import image2 from '../../../../../src/assets/images/icon/icons8-bitcoin-48.png'
 import image3 from '../../../../../src/assets/images/icon/usdt.png'
 import teether from '../../../../../src/assets/images/icon/teether.png'
+import { Button } from '@mui/material';
+
 
 const Wallets = () => {
 
@@ -41,8 +43,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className=' me-2 border-0 p-2 px-3 text-white rounded' style={{ background: '#3e73ad' }}>Button</button>
-                            <button className='bg-white border-0 px-3 p-2 rounded'>Button</button>
+                            <Button sx={{ background: '#3E73AD', marginRight: '10px', '&:hover': { background: '#3E73AD' }, marginBottom: '5px' }} variant='contained'>Button</Button>
+                            <Button sx={{ background: '#fff', color: '#000', '&:hover': { background: '#fff' }, marginBottom: '5px' }} variant='contained'>Button</Button>
                         </div>
                     </div>
                 </div>
@@ -68,8 +70,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='text-white me-2 border-0 p-2 px-3  rounded' style={{ background: '#3e73ad' }}>Button</button>
-                            <button className='bg-white border-0 p-2  px-3  rounded'>Button</button>
+                            <Button sx={{ background: '#3E73AD', marginRight: '10px', '&:hover': { background: '#3E73AD' }, marginBottom: '5px' }} variant='contained'>Button</Button>
+                            <Button sx={{ background: '#fff', color: '#000', '&:hover': { background: '#fff' }, marginBottom: '5px' }} variant='contained'>Button</Button>
                         </div>
                     </div>
                 </div>
@@ -95,8 +97,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='text-white me-2 border-0 p-2 px-3 rounded' style={{ background: '#3e73ad' }}>Button</button>
-                            <button className='bg-white border-0 p-2 px-3 rounded'>Button</button>
+                            <Button sx={{ background: '#3E73AD', marginRight: '10px', '&:hover': { background: '#3E73AD' }, marginBottom: '5px' }} variant='contained'>Button</Button>
+                            <Button sx={{ background: '#fff', color: '#000', '&:hover': { background: '#fff' }, marginBottom: '5px' }} variant='contained'>Button</Button>
                         </div>
                     </div>
                 </div>
@@ -122,8 +124,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='text-white me-2 border-0 p-2 px-3 rounded' style={{ background: '#3e73ad' }}>Button</button>
-                            <button className='bg-white border-0 p-2 px-3 rounded'>Button</button>
+                            <Button sx={{ background: '#3E73AD', marginRight: '10px', '&:hover': { background: '#3E73AD' }, marginBottom: '5px' }} variant='contained'>Button</Button>
+                            <Button sx={{ background: '#fff', color: '#000', '&:hover': { background: '#fff' }, marginBottom: '5px' }} variant='contained'>Button</Button>
                         </div>
                     </div>
                 </div>
@@ -149,8 +151,8 @@ const Wallets = () => {
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='text-white me-2 border-0 p-2  px-3 rounded' style={{ background: '#3e73ad' }}>Button</button>
-                            <button className='bg-white border-0 p-2  px-3 rounded'>Button</button>
+                            <Button sx={{ background: '#3E73AD', marginRight: '10px', '&:hover': { background: '#3E73AD' }, marginBottom: '5px' }} variant='contained'>Button</Button>
+                            <Button sx={{ background: '#fff', color: '#000', '&:hover': { background: '#fff' }, marginBottom: '5px' }} variant='contained'>Button</Button>
                         </div>
                     </div>
                 </div>
@@ -169,19 +171,17 @@ const Wallets = () => {
                             </div>
 
                             <div className=''>
-                                <span className='p-2 ' style={{ border: '1px solid', borderRadius: '100%' }}>3</span>
+                                <span className='p-2' style={{ border: '1px solid', borderRadius: '100%' }}>3</span>
                                 <span className='p-2 ms-2' style={{ border: '1px solid', borderRadius: '100%' }}>2</span>
                             </div>
                         </div>
 
                         <div className='mt-3 '>
-                            <button className='text-white me-2 border-0 p-2 px-3 rounded' style={{ background: '#3e73ad' }}>Button</button>
-                            <button className='bg-white border-0 p-2 px-3 rounded'>Button</button>
+                            <Button sx={{ background: '#3E73AD', marginRight: '10px', '&:hover': { background: '#3E73AD' }, marginBottom: '5px' }} variant='contained'>Button</Button>
+                            <Button sx={{ background: '#fff', color: '#000', '&:hover': { background: '#fff' }, marginBottom: '5px' }} variant='contained'>Button</Button>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     );
