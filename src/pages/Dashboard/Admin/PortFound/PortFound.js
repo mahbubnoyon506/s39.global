@@ -13,6 +13,7 @@ import "./PortFound.css";
 import image2 from "../../../../../src/assets/images/icon/icons8-bitcoin-48.png";
 import image from "../../../../../src/assets/images/icon/aave.png";
 import { RiSurroundSoundFill } from "react-icons/ri";
+import PortFoundChart from "./PortFoundChart";
 
 const data = [
   {
@@ -74,7 +75,7 @@ const PortFound = () => {
             </h6>
           </div>
           <div className="total-portfound-chart-container">
-            {/* <ResponsiveContainer width="100%" height="100%"> */}
+             {/* <ResponsiveContainer width="100%" height="100%"> 
             <LineChart
               width={600}
               height={300}
@@ -89,7 +90,7 @@ const PortFound = () => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
-              {/* <Tooltip /> */}
+             <Tooltip /> 
               <Legend />
               <Line
                 type="monotone"
@@ -104,13 +105,14 @@ const PortFound = () => {
                 strokeDasharray="3 4 5 2"
               />
             </LineChart>
-            {/* </ResponsiveContainer> */}
+             </ResponsiveContainer>  */}
+             <PortFoundChart/>
           </div>
 
           <div className="license-retail-value mt-5">
             <h6 className="text-white">LICENSE RETAIL VALUE</h6>
 
-            <div class="row g-2 text-white">
+            <div class="row g-2 text-white mt-2">
               <div class="col-6 col-md-4">
                 <div className=" p-2 rounded goalBg">
                   <div className="d-flex justify-content-between">
@@ -232,8 +234,8 @@ const PortFound = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-lg-4">
-          <h6 className="text-white mb-2">WALLET VALUE</h6>
+        <div className="col-12 col-lg-4 py-4 py-md-0">
+          <h6 className="text-white mb-2 mt-3 mt-lg-0">WALLET VALUE</h6>
 
           <div className="each-wallet-value d-flex justify-content-between text-white">
             <div className="d-flex align-items-center gap-1">
@@ -285,16 +287,14 @@ const PortFound = () => {
             <span>$0</span>
           </div>
 
-          <h6 className="text-white mb-2 mt-3">REWORD VALUE</h6>
-          <div className="text-white d-flex align-items-center justify-content-center text-center mt-5">
-            <div className="goals position-relative">
-              <div className="position-absolute top-50 start-50 translate-middle">
-                <div>
-                  <p className="mb-0">Lorem, 0$ dolor.</p>
-                </div>
+          <h6 className="text-white mb-2 mt-4 ">REWORD VALUE</h6>
+          <div className="d-flex justify-content-center align-items-center mx-auto mt-5 mb-5 mb-lg-0" style={{ background: '#121936', borderRadius: '100px',  width: '170px', height: '170px', boxShadow: '0px 0px 15px 15px #33518C' }}>
+              <div>
+                <p className="primary text-center" style={{ fontSize: '16px' }}>$0</p>
+                <p className="primary text-center" style={{ fontSize: '12px' }}>(Amount in Piggy Bank)</p>
+                <p className="circle-title text-center">Portfound</p>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

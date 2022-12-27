@@ -47,7 +47,7 @@ const Reward = () => {
             <div className='row g-5'>
                 {
                     rewards.map(reward =>
-                        <div className='col-md-3 align-items-center'>
+                        <div className='col-md-6 col-lg-3 align-items-center'>
                             <Card className='' style={{ borderRadius: '30px', background: '#262626' }}>
                                 <Card.Body>
                                     <div className='d-flex justify-content-center'>
