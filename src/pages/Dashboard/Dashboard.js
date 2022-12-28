@@ -14,9 +14,12 @@ import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import { MdDashboard } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
 import { FcLeft } from "react-icons/fc";
-import { SiGoogleanalytics } from "react-icons/si";
+import { SiGoogleanalytics, SiProcessingfoundation } from "react-icons/si";
 import logo from "../../assets/images/logo3.png";
-import { GrGoogleWallet } from "react-icons/gr";
+import { CgCommunity, CgGhost } from "react-icons/cg";
+import { BiLogOut } from "react-icons/bi";
+import { GiOnTarget } from "react-icons/gi";
+import { FaGift, FaWallet } from "react-icons/fa";
 
 const menuLinkStyles = ({ isActive }) => {
   return {
@@ -78,7 +81,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <RiAdminFill style={{ fontSize: "20px" }} />
+            <FaGift style={{ fontSize: "20px" }} />
           </span>
           REWARD
         </NavLink>
@@ -103,7 +106,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <GrGoogleWallet style={{ fontSize: "20px" }} />
+            <FaWallet style={{ fontSize: "20px" }} />
           </span>
           WALLETS
         </NavLink>
@@ -116,7 +119,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <GrGoogleWallet style={{ fontSize: "20px" }} />
+            <CgCommunity style={{ fontSize: "20px" }} />
           </span>
           COMMUNITY VOTE
         </NavLink>
@@ -129,7 +132,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <SiGoogleanalytics style={{ fontSize: "20px" }} />
+            <GiOnTarget style={{ fontSize: "20px" }} />
           </span>
           GOALS
         </NavLink>
@@ -154,7 +157,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <SiGoogleanalytics style={{ fontSize: "20px" }} />
+            <SiProcessingfoundation style={{ fontSize: "20px" }} />
           </span>
           PORTFOUND
         </NavLink>
@@ -167,12 +170,24 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <SiGoogleanalytics style={{ fontSize: "20px" }} />
+            <CgGhost color="#fff" style={{ fontSize: "20px" }} />
           </span>
           HOSTING
         </NavLink>
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+         to=''
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <BiLogOut style={{ fontSize: "20px" }} />
+          </span>
+         LOGOUT
+        </NavLink>
 
-        <div style={{ height: "20vh" }}></div>
+        <div style={{ height: "10vh" }}></div>
         <Link className="text-decoration-none" to="/">
           <Button
             sx={{

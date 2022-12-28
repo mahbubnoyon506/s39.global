@@ -9,7 +9,7 @@ const Projects = () => {
         window.scrollTo(0, 0);
       }, [])
     return (
-        <div className='py-5 bg-darkblue'>
+        <div className='py-2 bg-darkblue'>
             {/* <h2 className='text-center text-uppercase primary'>Projects</h2> */}
             <div>
                 <S39/>

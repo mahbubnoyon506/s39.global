@@ -20,6 +20,9 @@ import Specifications from "../pages/Specifications/Specifications";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import TermsCondition from "../pages/TermsCondition/TermsCondition";
 import Store from "../pages/Store/Store";
+import AdminResetPassword from '../components/Auth/AdminResetPassword';
+import ForgetPassword from "../components/Auth/ForgetPassword";
+import Otp from "../components/Auth/Otp";
 
 const routes = createBrowserRouter([
   {
@@ -54,6 +57,16 @@ const routes = createBrowserRouter([
         path: "store",
         element: <Store />,
       },
+      //Authentications
+      {
+        path: '/forgetpass',
+        element: <ForgetPassword/>
+      },
+      {
+        path: '/otp',
+        element: <Otp/>
+      },
+
     ],
   },
   {
