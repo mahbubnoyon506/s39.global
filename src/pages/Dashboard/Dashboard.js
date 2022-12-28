@@ -80,7 +80,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard/reward"
+          to="reward"
         >
           {" "}
           <span className="navIconAdmin">
@@ -92,7 +92,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard/admins"
+          to="admins"
         >
           {" "}
           <span className="navIconAdmin">
@@ -105,7 +105,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard/wallets"
+          to="wallets"
         >
           {" "}
           <span className="navIconAdmin">
@@ -118,7 +118,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard/vote"
+          to="vote"
         >
           {" "}
           <span className="navIconAdmin">
@@ -131,7 +131,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard/golas"
+          to="golas"
         >
           {" "}
           <span className="navIconAdmin">
@@ -144,7 +144,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard/ngwb"
+          to="ngwb"
         >
           {" "}
           <span className="navIconAdmin">
@@ -156,7 +156,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard/portfound"
+          to="portfound"
         >
           {" "}
           <span className="navIconAdmin">
@@ -169,7 +169,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard/hosting"
+          to="hosting"
         >
           {" "}
           <span className="navIconAdmin">
