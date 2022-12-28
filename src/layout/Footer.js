@@ -13,12 +13,12 @@ const Footer = () => {
             <div className='container d-flex justify-content-center'>
                 <div className='text-center text-white'>
                     <div ><img style={{ width: '175px' }} src={Logo} alt="" /></div>
-                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>Projects</Link>
-                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>hosting</Link>
-                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>specifications</Link>
-                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>privacy policy</Link>
-                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>terms and conditions</Link>
-                    <Link className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }} to='#'>store</Link>
+                    <Link to='/projects' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>Projects</Link>
+                    {/* <Link to='/' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>hosting</Link> */}
+                    <Link to='/specification' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>specifications</Link>
+                    <Link to='/privacypolicy' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>privacy policy</Link>
+                    <Link to='/termscondition' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>terms and conditions</Link>
+                    <Link to='/store' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>store</Link>
 
                     <div className='d-flex gap-3 justify-content-center '>
                         <a className='' href="#" target="_blank" rel="noopener noreferrer"><AiFillInstagram size='40' color='#fff' /></a>
