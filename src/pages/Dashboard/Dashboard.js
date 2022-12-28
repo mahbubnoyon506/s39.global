@@ -26,6 +26,9 @@ const menuLinkStyles = ({ isActive }) => {
     backgroundColor: isActive ? "#1A1C33" : "",
   };
 };
+
+const activeClass = "bg-primary";
+
 const drawerWidth = 280;
 
 function Dashboard(props) {
@@ -64,7 +67,7 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="/dashboard"
+          to="dashboard"
         >
           <span className="navIconAdmin">
             <MdDashboard style={{ fontSize: "20px" }} />
@@ -174,20 +177,13 @@ function Dashboard(props) {
           </span>
           HOSTING
         </NavLink>
-        <NavLink
-          className="dashboardMenu"
-          style={menuLinkStyles}
-          onClick={handleClose}
-         to=''
-        >
-          {" "}
+        <button className="text-white border-0 text-start text-uppercase" style={{background: 'transparent'}}>
           <span className="navIconAdmin">
             <BiLogOut style={{ fontSize: "20px" }} />
           </span>
-         LOGOUT
-        </NavLink>
-
-        <div style={{ height: "10vh" }}></div>
+          Logout
+        </button>
+        <div style={{ height: "5vh" }}></div>
         <Link className="text-decoration-none" to="/">
           <Button
             sx={{

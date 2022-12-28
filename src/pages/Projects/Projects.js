@@ -9,9 +9,8 @@ const Projects = () => {
         window.scrollTo(0, 0);
       }, [])
     return (
-        <div className='py-2 bg-darkblue'>
-            {/* <h2 className='text-center text-uppercase primary'>Projects</h2> */}
-            <div>
+        <div className='py-2 bg-darkblue' >
+            <div style={{overflow:'hidden'}}>
                 <S39/>
                 <Mineral/>
                 <Agriculture/>

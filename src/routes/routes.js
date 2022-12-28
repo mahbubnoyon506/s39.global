@@ -75,11 +75,11 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: <Dashboard />,
     children: [
       {
-        path: "/dashboard",
+        path: "dashboard",
         element: <AdminDashboard />,
       },
       {
