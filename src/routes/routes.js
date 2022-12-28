@@ -16,6 +16,15 @@ import Projects from "../pages/Projects/Projects";
 import Reward from "../pages/Dashboard/Admin/Reward/Reward";
 import CommunityVote from "../pages/Dashboard/Admin/CommunityVote/CommunityVote";
 import Ngwb from "../pages/Dashboard/Admin/NGWB/Ngwb";
+import Specifications from "../pages/Specifications/Specifications";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
+import TermsCondition from "../pages/TermsCondition/TermsCondition";
+import Store from "../pages/Store/Store";
+import ForgetPassword from "../components/Auth/ForgetPassword";
+import Otp from "../components/Auth/Otp";
+import Login from "../components/Auth/Login";
+
+
 
 const routes = createBrowserRouter([
   {
@@ -34,14 +43,43 @@ const routes = createBrowserRouter([
         path: "projects",
         element: <Projects />,
       },
+      {
+        path: "specification",
+        element: <Specifications />,
+      },
+      {
+        path: "privacypolicy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "termscondition",
+        element: <TermsCondition />,
+      },
+      {
+        path: "store",
+        element: <Store />,
+      },
+      //Authentications
+      {
+        path: '/login',
+        element: <Login/>
+      },
+      {
+        path: '/forgetpassword',
+        element: <ForgetPassword/>
+      },
+      {
+        path: '/otp',
+        element: <Otp/>
+      },
     ],
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: <Dashboard />,
     children: [
       {
-        path: "/dashboard",
+        path: "dashboard",
         element: <AdminDashboard />,
       },
       {

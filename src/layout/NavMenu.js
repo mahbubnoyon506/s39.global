@@ -16,7 +16,7 @@ const NavMenu = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="position-sticky top-0" style={{ zIndex: 1023 }}>
+        <div className="position-sticky top-0" style={{ zIndex: 1023, borderBottom: '1px solid #FEF6A3' }}>
             <Navbar className='bg-darkblue py-3' collapseOnSelect expand="lg" >
                 <Container>
                     <Navbar.Brand as={Link} to="/" href="#/home"><img  src={Logo} alt="" /></Navbar.Brand>

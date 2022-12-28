@@ -16,8 +16,8 @@ const Wallets = () => {
                     <h2>DEBT WALLET</h2>
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
-                <div className=' position-relative'>
-                    <span className='position-absolute bottom-0 mb-2 end-50 text-white textBg p-1 rounded-circle' style={{ background: '#7039ca' }}>$0</span>
+                <div className='position-relative'>
+                    <div className='rounded-circle d-flex align-items-center justify-content-center text-white' style={{width:'35px', height: '35px', background: '#7039ca' }}> $4 </div>
                 </div>
             </div>
 
@@ -36,9 +36,9 @@ const Wallets = () => {
                                 </div>
                             </div>
 
-                            <div className=''>
-                                <span className='p-2 ' style={{ border: '1px solid', borderRadius: '100%' }}>4</span>
-                                <span className='p-2 ms-2' style={{ border: '1px solid', borderRadius: '100%' }}>2</span>
+                            <div className='d-flex align-items-center justify-content-center'>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center me-2' style={{width:'35px', height: '35px', border: '1px solid' }}> 4 </div>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center' style={{width:'35px', height: '35px', border: '1px solid' }}> 2 </div>
                             </div>
                         </div>
 
@@ -63,9 +63,9 @@ const Wallets = () => {
                                 </div>
                             </div>
 
-                            <div className=''>
-                                <span className='p-2 ' style={{ border: '1px solid', borderRadius: '100%' }}>3</span>
-                                <span className='p-2 ms-2' style={{ border: '1px solid', borderRadius: '100%' }}>4</span>
+                            <div className='d-flex align-items-center justify-content-center'>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center me-2' style={{width:'35px', height: '35px', border: '1px solid' }}> 2 </div>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center' style={{width:'35px', height: '35px', border: '1px solid' }}> 4 </div>
                             </div>
                         </div>
 
@@ -90,9 +90,9 @@ const Wallets = () => {
                                 </div>
                             </div>
 
-                            <div className=''>
-                                <span className='p-2 ' style={{ border: '1px solid', borderRadius: '100%' }}>6</span>
-                                <span className='p-2 ms-2' style={{ border: '1px solid', borderRadius: '100%' }}>5</span>
+                            <div className='d-flex align-items-center justify-content-center'>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center me-2' style={{width:'35px', height: '35px', border: '1px solid' }}> 6 </div>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center' style={{width:'35px', height: '35px', border: '1px solid' }}> 3 </div>
                             </div>
                         </div>
 
@@ -117,9 +117,9 @@ const Wallets = () => {
                                 </div>
                             </div>
 
-                            <div className=''>
-                                <span className='p-2 ' style={{ border: '1px solid', borderRadius: '100%' }}>1</span>
-                                <span className='p-2 ms-2' style={{ border: '1px solid', borderRadius: '100%' }}>2</span>
+                            <div className='d-flex align-items-center justify-content-center'>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center me-2' style={{width:'35px', height: '35px', border: '1px solid' }}> 3 </div>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center' style={{width:'35px', height: '35px', border: '1px solid' }}> 6 </div>
                             </div>
                         </div>
 
@@ -143,10 +143,9 @@ const Wallets = () => {
                                     <p className='mb-0 text-danger'>+ 1002.32</p>
                                 </div>
                             </div>
-
-                            <div className=''>
-                                <span className='p-2 ' style={{ border: '1px solid', borderRadius: '100%' }}>3</span>
-                                <span className='p-2 ms-2' style={{ border: '1px solid', borderRadius: '100%' }}>2</span>
+                            <div className='d-flex align-items-center justify-content-center'>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center me-2' style={{width:'35px', height: '35px', border: '1px solid' }}> 4 </div>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center' style={{width:'35px', height: '35px', border: '1px solid' }}> 2 </div>
                             </div>
                         </div>
 
@@ -170,9 +169,9 @@ const Wallets = () => {
                                 </div>
                             </div>
 
-                            <div className=''>
-                                <span className='p-2' style={{ border: '1px solid', borderRadius: '100%' }}>3</span>
-                                <span className='p-2 ms-2' style={{ border: '1px solid', borderRadius: '100%' }}>2</span>
+                            <div className='d-flex align-items-center justify-content-center'>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center me-2' style={{width:'35px', height: '35px', border: '1px solid' }}> 2 </div>
+                                <div className='rounded-circle d-flex align-items-center justify-content-center' style={{width:'35px', height: '35px', border: '1px solid' }}> 4 </div>
                             </div>
                         </div>
 
