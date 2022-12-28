@@ -75,7 +75,7 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "dashboard",
+    path: "/admin",
     element: <Dashboard />,
     children: [
       {
@@ -83,39 +83,39 @@ const routes = createBrowserRouter([
         element: <AdminDashboard />,
       },
       {
-        path: "/dashboard/reward",
+        path: "reward",
         element: <Reward />,
       },
       {
-        path: "/dashboard/admins",
+        path: "admins",
         element: <Admins />,
       },
       {
-        path: "/dashboard/updateadmin",
+        path: "updateadmin",
         element: <AdminProfileUpdate />,
       },
       {
-        path: "/dashboard/wallets",
+        path: "wallets",
         element: <Wallets />,
       },
       {
-        path: "/dashboard/vote",
+        path: "vote",
         element: <CommunityVote />,
       },
       {
-        path: "/dashboard/golas",
+        path: "golas",
         element: <Goals />,
       },
       {
-        path: "/dashboard/ngwb",
+        path: "ngwb",
         element: <Ngwb />,
       },
       {
-        path: "/dashboard/portfound",
+        path: "portfound",
         element: <PortFound />,
       },
       {
-        path: "/dashboard/hosting",
+        path: "hosting",
         element: <Hosting />,
       },
     ],
