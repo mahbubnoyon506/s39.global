@@ -6,6 +6,8 @@ import { AiFillLock } from "react-icons/ai";
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { useTimer } from "react-timer-hook";
+import coin from '../../assets/images/coin2.png'
+import { FaPaste } from "react-icons/fa";
 
 
 const Otp = ({ expiryTimestamp }) => {
@@ -69,15 +71,15 @@ const Otp = ({ expiryTimestamp }) => {
     <div>
       <div className="handleTheLoginBody">
         <div className="container mx-auto">
-          <div className=" forCard  w-50 p-5 rounded mx-auto">
+          <div className=" forCard  w-lg-50 p-5 rounded mx-auto">
             <div className="mx-auto text-center">
               <img
                 style={{
-                  width: "80px",
-                  marginTop: "-20px",
+                  // marginTop: "-20px",
                 }}
-                src="https://testnet.grighund.net/static/media/logo192.ea779dfe5e580c22a76f.png"
-                className="handleLogoLogin"
+                src={coin}
+                width={150}
+                className=""
                 alt="logo"
               />
               <p className="text-dark mt-3 pb-3">
@@ -106,7 +108,7 @@ const Otp = ({ expiryTimestamp }) => {
                       className="bg-dark text-light border-0"
                       onClick={() => handlePasteText()}
                     >
-                      <i className="fas fa-paste"></i>
+                      <FaPaste  />
                     </InputGroup.Text>
                   </CustomTooltip>
                 </InputGroup>

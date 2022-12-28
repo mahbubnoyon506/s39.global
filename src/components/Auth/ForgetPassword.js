@@ -5,6 +5,7 @@ import { FiSend } from "react-icons/fi";
 import { AiOutlineLogin, AiOutlineMail } from "react-icons/ai";
 import "./ForgetPassword.css";
 import MailIcon from "@mui/icons-material/Mail";
+import coin from '../../assets/images/coin2.png'
 
 const ForgetPassword = () => {
 
@@ -17,15 +18,12 @@ const ForgetPassword = () => {
     <div>
       <div className="handleTheLoginBody">
         <div className="container mx-auto">
-          <div className=" forCard  w-50 p-5 rounded mx-auto">
+          <div className=" forCard p-5 rounded mx-auto">
             <div className="mx-auto text-center">
               <img
-                style={{
-                  width: "80px",
-                  marginTop: "-20px",
-                }}
-                src="https://testnet.grighund.net/static/media/logo192.ea779dfe5e580c22a76f.png"
+                src={coin}
                 alt="logo"
+                width={150}
               />
               <p className="py-1" style={{ fontSize: "34px" }}>
                 Forget Password
