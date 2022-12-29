@@ -11,9 +11,10 @@ const Wallets = () => {
 
     return (
         <div>
+            <h5 className="dashboard-title">Wallet</h5>
             <div className='d-flex justify-content-between'>
                 <div className='text-white'>
-                    <h2>DEBT WALLET</h2>
+                    {/* <h2>DEBT WALLET</h2> */}
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
                 <div className='position-relative'>

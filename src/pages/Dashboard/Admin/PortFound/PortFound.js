@@ -63,9 +63,10 @@ const data = [
 const PortFound = () => {
   return (
     <div>
+      <h5 className="dashboard-title">Portfound</h5>
       <div className="row">
         <div className="col-12 col-lg-8">
-          <div className="chart-header-container d-flex text-white justify-content-between">
+          {/* <div className="chart-header-container d-flex text-white justify-content-between">
             <h6 className="">PORTFOUND TOTAL VALUE</h6>
             <h6
               className="px-2 py-1 rounded-pill"
@@ -73,7 +74,7 @@ const PortFound = () => {
             >
               $0
             </h6>
-          </div>
+          </div> */}
           <div className="total-portfound-chart-container">
              {/* <ResponsiveContainer width="100%" height="100%"> 
             <LineChart

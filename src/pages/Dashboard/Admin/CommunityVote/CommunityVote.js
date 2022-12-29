@@ -48,6 +48,7 @@ const CommunityVote = () => {
     };
     return (
         <div>
+            <h5 className="dashboard-title">Community vote</h5>
             <Box sx={{ width: '100%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider', color: '#fff' }}>
                     <Tabs

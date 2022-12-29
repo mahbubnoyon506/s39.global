@@ -7,7 +7,7 @@ const Hosting = () => {
 
     return (
         <div>
-            <p className='hosting-title'>S39.Global Hosting</p>
+            <p className='dashboard-title'>S39.Global Hosting</p>
             <div className='d-flex justify-content-center'>
                 <div>
                     <Card className='py-4' style={{ border: '3px solid #6BEDD4', borderTop: 'none', background: '#171717', minHeight: '270px' }}>

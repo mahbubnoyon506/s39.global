@@ -25,7 +25,7 @@ const Admins = () => {
 
   return (
     <div className='adminBody'>
-      <h5 className='text-white'>ADMINS</h5>
+      <h5 className="dashboard-title">Admins</h5>
       <div className='adminCard py-2'>
         <div className="adminBtnDiv text-end">
           <button onClick={() => setModalShowNewAdmin(true)} className='adminBtn'>NEW ADMIN</button>

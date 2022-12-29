@@ -44,6 +44,7 @@ const Reward = () => {
 
     return (
         <div className='mx-5'>
+            <h5 className="dashboard-title">Reward</h5>
             <div className='row g-5'>
                 {
                     rewards.map(reward =>
