@@ -12,10 +12,10 @@ const Goals = () => {
     return (
         <div>
 
-
+<h5 className="dashboard-title">Goals</h5>
             <div className='row g-3'>
                 <div className='col-12 col-lg-6'>
-                    <h2 className='text-center text-white mb-5'>GOALS</h2>
+                    {/* <h2 className='text-center text-white mb-5'>GOALS</h2> */}
                     <div className='mb-5'>
                         <div className=' d-flex justify-content-end'>
                             <span className='text-white newText mb-3 rounded px-3'>New Goal</span>

@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   return (
     <div>
       <div className="">
-        <h5 className="text-white  pb-3">DASHBOARD</h5>
+        <h5 className="dashboard-title">DASHBOARD</h5>
         <div className="row py-5">
           <div className="col-lg-3 d-flex align-items-center mb-3 mb-lg-0">
             <div className="d-flex justify-content-center align-items-center mx-auto" style={{ width: '150px', height: '150px', borderRadius: '30px', background: `${background}`, }}>
