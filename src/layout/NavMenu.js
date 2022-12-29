@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import TopButton from '../components/TopLoginButton/TopButton';
 import WalletLogin from '../components/WalletLogin';
 import './layout.css'
+import coin from '../assets/images/coin2.png'
 
 
 const NavMenu = () => {
@@ -24,15 +25,15 @@ const NavMenu = () => {
                         <MenuIcon style={{ fontSize: '40px' }} id="responsive-navbar-nav" />
                     </Navbar.Toggle>
                     <Navbar.Collapse className='text-white' id="responsive-navbar-nav">
-
                         <Nav className="me-auto text-white">
                         </Nav>
-                        <Nav className='text-white text-center' >
+                        <Nav className='text-white text-center d-flex align-items-center' >
                             <Nav.Link as={Link} to='howItWorks' className=' text-white fs-5 me-md-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
                             <Nav.Link className='text-white fs-5 me-md-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
                             {/* <Nav.Link as={Link} to="hosting" className='text-white fs-5 me-md-5 font-mira' href="#hosting">HOSTING</Nav.Link> */}
-                            <Nav.Link onClick={setOpen} href="#login"><TopButton>LOGIN with Wallet</TopButton></Nav.Link>
+                            <Nav.Link onClick={setOpen} href="#login"><TopButton><img style={{marginLeft: '-15px', marginRight: '-10px'}} src={coin} width={50} alt="" /> LOGIN with Wallet</TopButton></Nav.Link>
                         </Nav>
+                 
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
