@@ -12,7 +12,7 @@ const AdminDashboard = () => {
     <div>
       <div className="">
         <h5 className="dashboard-title">DASHBOARD</h5>
-        <div className="row py-5">
+        <div className="row pb-5">
           <div className="col-lg-3 d-flex align-items-center mb-3 mb-lg-0">
             <div className="d-flex justify-content-center align-items-center mx-auto" style={{ width: '150px', height: '150px', borderRadius: '30px', background: `${background}`, }}>
               <div className="d-flex justify-content-center align-items-center" style={{ width: '140px', height: '140px', borderRadius: '30px', background: `${background}`, transform: 'rotate(45deg)' }}>
