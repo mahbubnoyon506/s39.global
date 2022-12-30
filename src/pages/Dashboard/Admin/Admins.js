@@ -123,29 +123,15 @@ const Admins = () => {
             </tbody>
           </Table>
         </div>
-        {/* <AdminPopUp
-          open={open}
-          handleClose={handleClose}
-        >
-        </AdminPopUp>
 
-        <DeletePopUp
-          handleCloseDelete={handleCloseDelete}
-          openDelete={openDelete}
-        >
-
-        </DeletePopUp> */}
 
         <AddNewAdmin
+          refetch={refetch}
+          setRefetch={setRefetch}
           show={modalShowNewAdmin}
-          // setIsLoadingAdmin={setIsLoadingAdmin}
-          // isLoadingAdmin={isLoadingAdmin}
-          // refetch={refetch}
-          // setRefetch={setRefetch}
           setModalShowNewAdmin={setModalShowNewAdmin}
           onHide={() => setModalShowNewAdmin(false)}
-        // allAdmin={allAdmin}
-        // setAllAdmin={setAllAdmin}
+
         />
       </div>
     </div>
