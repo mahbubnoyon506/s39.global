@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React from 'react';
 import { FaRegCopy } from 'react-icons/fa';
 import {
@@ -28,7 +29,7 @@ const Profile = () => {
                                     <img src='' width={200} height={200} className='d-flex justify-content-start' alt="" />
                                 </div>
                                 <div className="mt-3">
-                                    <label className='fw-bold'>Update your profile image<span>*</span></label>
+                                    <label className=''>Update your profile image<span>*</span></label>
                                     <div className='d-flex'>
                                         <input className='w-100 border py-2 cursor-pointer' onChange='' type="file" accept='image/*' name="image" id="image" />
                                         <button
@@ -39,7 +40,7 @@ const Profile = () => {
                                     </div>
                                 </div>
                                 <div className="mt-3">
-                                    <label className='fw-bold'>Update your Full Name<span>*</span></label>
+                                    <label className=''>Update your Full Name<span>*</span></label>
                                     <div className='d-flex'>
                                         <input
                                             id="fname" name="name" className="w-100 form-control-mod ps-2 profile-inputs" placeholder='Please update your Full Name.'
@@ -54,7 +55,7 @@ const Profile = () => {
                                     <span>This will appear in your certificates.</span>
                                 </div>
                                 <div className=" mt-3">
-                                    <label className='fw-bold'>Update your email/username<span>*</span></label>
+                                    <label className=''>Update your email/username<span>*</span></label>
                                     <div className='d-flex'>
                                         <input
                                             id="email" name="email" className="w-100 ps-2" placeholder='Please update your email/username' defaultValue='' type="email" required />
@@ -76,7 +77,7 @@ const Profile = () => {
                             <div className="">
 
                                 <div className=" mb-3">
-                                    <label className='fw-bold'>Your Affiliate Code<span>*</span></label>
+                                    <label className=''>Your Affiliate Code<span>*</span></label>
                                     <div className="d-flex">
                                         <input
                                             type="text"
@@ -96,7 +97,7 @@ const Profile = () => {
                                     </div>
                                 </div>
                                 <div className=" mb-3">
-                                    <label className='fw-bold'>Your Affiliate Link<span>*</span></label>
+                                    <label className=''>Your Affiliate Link<span>*</span></label>
                                     <div className="d-flex">
                                         <input
                                             type="text"
@@ -117,11 +118,11 @@ const Profile = () => {
                                     </div>
                                 </div>
                                 <div className=" mb-3 ">
-                                    <label className='fw-bold'>Your Membership ID<span>*</span></label>
+                                    <label className=''>Your Membership ID<span>*</span></label>
                                     <input className="w-100 form-control-mod ps-2 py-2" placeholder='Membership ID' defaultValue='' />
                                 </div>
                                 <div className=" mb-3">
-                                    <label className='fw-bold'>Your Wallet Address<span>*</span></label>
+                                    <label className=''>Your Wallet Address<span>*</span></label>
                                     <div className="d-flex">
                                         <input
                                             type="text"
@@ -144,7 +145,7 @@ const Profile = () => {
                                 <div>
                                     <div className="">
                                         <div>
-                                            <span className='pt-2 fw-bold text-start mb-3'>Share Affiliate Link</span>
+                                            <span className='pt-2  text-start mb-3'>Share Affiliate Link</span>
                                             <div className='d-flex gap-2 mb-3'>
                                                 <TwitterShareButton url='' title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
                                                     <TwitterIcon size={40} round={true} />
