@@ -17,7 +17,7 @@ export default function WishlistProvider({ children }) {
 
     await axios
       .post(`https://backend.dslcommerce.com/api/wishlist/create`, {
-        walletAddress: user.walletAddress,
+        walletAddress: user?.walletAddress,
         productId: product._id,
       })
       .then((res) => {

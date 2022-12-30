@@ -10,9 +10,9 @@ export default function AdminProvider({ children }) {
     const [isAuthenticating, setIsAuthenticating] = useState(false);
     // console.log(localStorage)
     useEffect(() => {
-        axios.get("https://backend.dslcommerce.com/api/admin/admin", {
+        axios.get("https://testnetback.s39global.com/api/v1/admin/admin", {
             headers: {
-                'authorization': `Bearer ${localStorage.getItem('adminDslCommerce')}`
+                'authorization': `Bearer ${localStorage.getItem('adminS39Global')}`
             }
         })
             .then(res => {
@@ -30,7 +30,8 @@ export default function AdminProvider({ children }) {
 
 
     const login = async (email, password) => {
-        await axios.post('https://backend.dslcommerce.com/api/admin/login', {
+        console.log(email, password)
+        await axios.post('https://testnetback.s39global.com/api/v1/admin/login', {
             email,
             password
         })
@@ -44,6 +45,7 @@ export default function AdminProvider({ children }) {
             })
             .catch(error => {
                 // alert(error.response.data.message);
+                console.log(error)
                 swal({
                     title: "Attention",
                     text: `${error.response?.data?.message}`,
@@ -56,7 +58,7 @@ export default function AdminProvider({ children }) {
     }
 
     const verifyOtp = async (otp) => {
-        await axios.post('https://backend.dslcommerce.com/api/admin/verify-otp/', {
+        await axios.post('https://testnetback.s39global.com/api/v1/admin/verify-otp/', {
             otp
         }, {
             headers: {
@@ -67,7 +69,7 @@ export default function AdminProvider({ children }) {
                 if (res.status === 200) {
                     setIsAuthenticating(false);
                     setAdmin(res.data.admin);
-                    localStorage.setItem('adminDslCommerce', res.data.token);
+                    localStorage.setItem('adminS39Global', res.data.token);
                     localStorage.removeItem('verify-tokens');
                 }
             })
@@ -85,7 +87,7 @@ export default function AdminProvider({ children }) {
 
     const logout = () => {
         setAdmin(null);
-        localStorage.removeItem("adminDslCommerce");
+        localStorage.removeItem("adminS39Global");
     }
 
     return (

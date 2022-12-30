@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,15 +6,34 @@ import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../assets/images/logo3.png'
 import '../pages/Home/Home.css'
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import TopButton from '../components/TopLoginButton/TopButton';
 import WalletLogin from '../components/WalletLogin';
 import './layout.css'
 import coin from '../assets/images/coin2.png'
+import { S39GlobalContext } from '../contexts/S39GlobalContext';
+import swal from 'sweetalert';
 
 
 const NavMenu = () => {
-    const [open, setOpen] = useState(false);
+    const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
+    console.log(user)
+    const navigate = useNavigate;
+
+
+    const Logout = () => {
+        logOut();
+        // setOpen(false);
+        navigate("/");
+        closeWalletModal();
+        swal({
+            // title: "S",
+            text: "You have successfully logged out.",
+            icon: "success",
+            button: "OK!",
+            className: "modal_class_success",
+        });
+    };
 
     return (
         <div className="position-sticky top-0" style={{ zIndex: 1023, borderBottom: '1px solid #FEF6A3' }}>
@@ -30,15 +49,16 @@ const NavMenu = () => {
                         <Nav className='text-white text-center d-flex justify-content-center align-items-center ' >
                             <Nav.Link as={Link} to='howItWorks' className=' text-white  me-lg-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
                             <Nav.Link className='text-white  me-lg-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
-                            <Nav.Link className='mx-auto' onClick={setOpen} href="#login"><TopButton><img style={{marginLeft: '-15px', marginRight: '-10px'}} src={coin} width={50} alt="" /> LOGIN with Wallet</TopButton></Nav.Link>
+                            {user?.walletAddress ?
+                                <Nav.Link onClick={Logout} href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" />Logout</TopButton></Nav.Link>
+                                :
+                                <Nav.Link onClick={() => openWalletModal()} href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" /> LOGIN with Wallet</TopButton></Nav.Link>}
                         </Nav>
 
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            {
-                open && <WalletLogin setOpen={setOpen} open={open}></WalletLogin>
-            }
+
         </div>
     );
 };
