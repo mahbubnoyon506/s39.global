@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { BsPersonCircle } from 'react-icons/bs';
@@ -6,22 +6,64 @@ import { Link } from 'react-router-dom';
 
 import './Admins.css';
 import AddNewAdmin from './AddNewAdmin';
+import swal from 'sweetalert';
+import axios from 'axios';
 
 
 const Admins = () => {
+  const [open, setOpen] = useState(false);
+  const [allAdmin, setAllAdmin] = useState([]);
   const [modalShowNewAdmin, setModalShowNewAdmin] = useState(false);
+  const [refetch, setRefetch] = useState(false);
 
-  const handleAdminDelete = () => {
+  useEffect(() => {
+    axios.get("https://testnetback.s39global.com/api/v1/admin/").then((res) => {
+      setAllAdmin(res.data);
+      // console.log(res.data)
+    });
+  }, [open, refetch]);
 
+  const handleAdminDelete = (id) => {
+    swal({
+      text: "Are you sure, you want to delete this admin?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        axios
+          .delete(`https://testnetback.s39global.com/api/v1/admin/${id}`, {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("adminS39Global")}`,
+            },
+          })
+          .then((res) => {
+            if (res.status === 200) {
+              // alert(res.data.message);
+              swal({
+                // title: "Success",
+                text: res.data.message,
+                icon: "success",
+                button: "OK!",
+                className: "modal_class_success",
+              });
+              setRefetch(!refetch);
+              setAllAdmin(allAdmin.filter((admin) => admin._id !== id));
+            }
+          })
+          .catch((error) => {
+            // alert(error.response.data.message);
+            swal({
+              title: "Attention",
+              text: error.response.data.message,
+              icon: "warning",
+              button: "OK!",
+              className: "modal_class_success",
+            });
+          });
+      }
+    });
   }
-
-  const allAdmin = [
-    {id: 1},
-    {id: 1},
-    {id: 1},
-    {id: 1},
-    {id: 1}
-  ]
 
   return (
     <div className='adminBody'>
@@ -38,32 +80,44 @@ const Admins = () => {
             <thead>
               <tr>
                 <th className='text-center'>Image</th>
-                <th className='text-start'>Username</th>
+
                 <th className='text-start adminHidden'>Email</th>
                 <th className='text-start adminHidden'>Mobile</th>
                 <th className='text-start'>Action</th>
               </tr>
             </thead>
             <tbody>
-              {
-                allAdmin?.map(admin => (
-                  <tr className='tableRow' key={admin._id}>
-                    <td align='center'>
-                      <BsPersonCircle/>
-                    </td>
+              {allAdmin?.map((admin) => (
+                <tr className="tableRow" key={admin._id}>
+                  <td align="center">
+                    {admin?.avatar ? (
+                      <img
+                        className="imgAdmin"
+                        src={admin?.avatar}
+                        alt="profilePic"
+                      />
+                    ) : (
+                      <img
+                        className="imgAdmin"
+                        src="https://backend.dslcommerce.com/assets/1660396587217.jpeg"
+                        alt="profilePic"
+                      />
+                    )}
+                  </td>
 
-                    <td style={{ textTransform: 'lowercase' }} className='text-start'>username</td>
-                    <td className='text-start adminHidden'>admin@gmail.com</td>
-                    <td className='text-start adminHidden'>+8801682021411</td>
-                    <td className='action'>
-                      <div className="actionDiv text-start">
-                        <Link to='/dashboard/updateadmin'><button className="editBtn"><FaEdit/></button></Link>
-                        <button onClick={() => handleAdminDelete(admin._id)} className="deleteBtn"><FaTrashAlt/></button>
-                      </div>
-                    </td>
-                  </tr>
-                ))
-              }
+
+                  <td className="text-start adminHidden">{admin.email}</td>
+                  <td className="text-start adminHidden">{admin.phone || "Mobile"}</td>
+
+
+                  <td className='action'>
+                    <div className="actionDiv text-start">
+                      <Link to={`/dashboard/updateadmin/${admin._id}`}><button className="editBtn"><FaEdit /></button></Link>
+                      <button onClick={() => handleAdminDelete(admin._id)} className="deleteBtn"><FaTrashAlt /></button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
 
 
             </tbody>

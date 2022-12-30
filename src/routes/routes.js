@@ -23,7 +23,8 @@ import Store from "../pages/Store/Store";
 import ForgetPassword from "../components/Auth/ForgetPassword";
 import Otp from "../components/Auth/Otp";
 import Login from "../components/Auth/Login";
-
+import ResetPassword from "../components/Auth/ResetPassword";
+import { useEffect } from "react";
 
 
 const routes = createBrowserRouter([
@@ -62,15 +63,19 @@ const routes = createBrowserRouter([
       //Authentications
       {
         path: '/login',
-        element: <Login/>
+        element: <Login />
       },
       {
         path: '/forgetpassword',
-        element: <ForgetPassword/>
+        element: <ForgetPassword />
       },
       {
-        path: '/otp',
-        element: <Otp/>
+        path: '/reset-password/:token',
+        element: <ResetPassword />
+      },
+      {
+        path: '/admin/otp/:token',
+        element: <Otp />
       },
     ],
   },

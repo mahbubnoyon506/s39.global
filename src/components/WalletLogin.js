@@ -4,23 +4,25 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import { Card, Col, Row } from 'react-bootstrap';
+import Slide from '@mui/material/Slide';
+import { S39GlobalContext } from '../contexts/S39GlobalContext';
+import { forwardRef, useContext } from 'react';
 
-export default function WalletLogin({ setOpen, open }) {
-    //   const [open, setOpen] = React.useState(false);
+const Transition = forwardRef(function Transition(props, ref) {
+    return <Slide direction="top" ref={ref} {...props} />;
+});
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
 
-    const handleClose = () => {
-        setOpen(false);
-    };
+export default function WalletLogin() {
+    const { connectToMetamask, walletModal, closeWalletModal, } = useContext(S39GlobalContext);
 
     return (
         <div>
             <Dialog
-                open={setOpen}
-                onClose={handleClose}
+                open={walletModal}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={closeWalletModal}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
@@ -33,11 +35,13 @@ export default function WalletLogin({ setOpen, open }) {
                                         <Card.Img variant="top" style={{ width: "50px" }} src="https://i.ibb.co/vVf533V/1.png" className="maskImg mx-auto" />
                                         <Card.Body className='border-0'>
                                             <Card.Title className='walletName'>Metamask</Card.Title>
-                                            <Button sx={{
-                                                background: '#F6851B', '&:hover': {
-                                                    backgroundColor: "#F6851B",
-                                                }
-                                            }} variant="contained" disableElevation>
+                                            <Button
+                                                onClick={() => connectToMetamask()}
+                                                sx={{
+                                                    background: '#F6851B', '&:hover': {
+                                                        backgroundColor: "#F6851B",
+                                                    }
+                                                }} variant="contained" disableElevation>
                                                 Click here to login
                                             </Button>
                                         </Card.Body>
@@ -51,7 +55,7 @@ export default function WalletLogin({ setOpen, open }) {
                                     /connecting-metamask-to-binance-smart-chain</a></p>
                             </div>
                             <p className='text-center mt-4'>
-                                <Button onClick={handleClose} className="text-white fs-6 bg-danger">Cancel</Button>
+                                <Button onClick={closeWalletModal} className="text-white fs-6 bg-danger">Cancel</Button>
                             </p>
                         </DialogContentText>
                     </DialogContent>

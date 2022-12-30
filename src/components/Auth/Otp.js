@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -8,15 +8,37 @@ import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { useTimer } from "react-timer-hook";
 import coin from '../../assets/images/coin2.png'
 import { FaPaste } from "react-icons/fa";
+import swal from "sweetalert";
+import { useNavigate, useParams } from "react-router-dom";
+import { AdminContext } from "../../contexts/AdminContext";
+import axios from "axios";
 
 
-const Otp = ({ expiryTimestamp }) => {
+const Otp = () => {
 
-
+  const { token } = useParams();
+  const { admin, setAdmin } = useContext(AdminContext);
   const [forEnable, setForEnable] = useState(false);
   const [pasteText, setPasteText] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (admin?._id) {
+      navigate("/admin");
+    }
+  }, [admin, navigate]);
 
 
+  const expiryTimestamp = new Date();
+  expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 180);
+  const [isLoading, setIsLoading] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
 
 
   // for maintaining re-send otp button's disable enable
@@ -41,11 +63,67 @@ const Otp = ({ expiryTimestamp }) => {
   });
 
   const resendOTP = () => {
+    axios
+      .get(`https://testnetback.s39global.com/api/v1/admin/resend-otp`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          // alert(res.data.message);
+          // alert("OTP resent");
+          swal({
+            text: "OTP resent",
+            icon: "success",
+            button: "OK!",
+            className: "modal_class_success",
+          });
+          setForEnable(false);
+        }
+      })
+      .catch((err) => {
+        // alert(err.res.data.message);
+        swal({
+          text: err.res.data.message,
+          icon: "warning",
+          button: "OK!",
+          className: "modal_class_success",
+        });
+      });
   };
 
   const handleOTP = (e) => {
     e.preventDefault();
     const otp = e.target.otp.value;
+    axios
+      .post(
+        `https://testnetback.s39global.com/api/v1/admin/verify-otp/`,
+        {
+          otp,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        if (res.status === 200) {
+          setAdmin(res.data.admin);
+          localStorage.setItem("adminS39Global", res.data.token);
+          localStorage.removeItem("verify-tokens");
+          navigate("/admin/dashboard");
+        }
+      })
+      .catch((err) => {
+        swal({
+          text: err.response.data.message,
+          icon: "warning",
+          button: "OK!",
+          className: "modal_class_success",
+        });
+      });
   };
 
   const CustomTooltip = styled(({ className, ...props }) => (
@@ -66,7 +144,6 @@ const Otp = ({ expiryTimestamp }) => {
     );
     setPasteText(null);
   };
-
   return (
     <div>
       <div className="handleTheLoginBody">
@@ -108,7 +185,7 @@ const Otp = ({ expiryTimestamp }) => {
                       className="bg-dark text-light border-0"
                       onClick={() => handlePasteText()}
                     >
-                      <FaPaste  />
+                      <FaPaste />
                     </InputGroup.Text>
                   </CustomTooltip>
                 </InputGroup>

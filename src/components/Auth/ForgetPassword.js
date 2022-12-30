@@ -6,14 +6,53 @@ import { AiOutlineLogin, AiOutlineMail } from "react-icons/ai";
 import "./ForgetPassword.css";
 import MailIcon from "@mui/icons-material/Mail";
 import coin from '../../assets/images/coin2.png'
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+import axios from "axios";
 
 const ForgetPassword = () => {
 
-  const sendResetLink = async (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
+  const navigate = useNavigate();
+
+  const handleGoToLogin = () => {
+    navigate("/login");
   };
 
+  const sendResetLink = async (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    // console.log(email)
+
+    await axios
+      .post(
+        "https://testnetback.s39global.com/api/v1/admin/send-reset-password-link/",
+        { email }
+      )
+      .then((res) => {
+        if (res.status === 200) {
+          // alert(res.data.message);
+          swal({
+            // title: "Success",
+            text: `${res.data.message}`,
+            icon: "success",
+            button: "OK!",
+            className: "modal_class_success",
+          });
+          navigate("/login");
+        }
+      })
+      .catch((err) => {
+        // alert(err.response.data.message);
+        swal({
+          title: "Attention",
+          text: `${err.response.data.message}`,
+          icon: "warning",
+          button: "OK!",
+          className: "modal_class_success",
+        });
+      });
+  };
   return (
     <div>
       <div className="handleTheLoginBody">
@@ -60,7 +99,7 @@ const ForgetPassword = () => {
                     style={{ backgroundColor: "#f74545", height: "28px" }}
                     className="button-34 px-4"
                     type="submit"
-                    // onClick={handleGoToLogin}
+                  // onClick={handleGoToLogin}
                   >
                     <FiSend></FiSend> Send
                   </Button>
@@ -68,6 +107,7 @@ const ForgetPassword = () => {
                     style={{ backgroundColor: "#f74545", height: "28px" }}
                     className="button-34 px-4"
                     type="button"
+                    onClick={handleGoToLogin}
                   >
                     <AiOutlineLogin /> Login
                   </Button>

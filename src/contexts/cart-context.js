@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
 import { DSLCommerceContext } from "./DSLCommerceContext";
+import { S39GlobalContext } from "./S39GlobalContext";
 
 export const CartContext = createContext();
 
@@ -9,7 +10,7 @@ export default function CartProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [carts, setCarts] = useState([]);
   const [cartRefetch, setCartRefetch] = useState(false);
-  const { user } = useContext(DSLCommerceContext);
+  const { user } = useContext(S39GlobalContext);
   const [payablePrice, setPayablePrice] = useState(null)
 
   const addTotalPrice = (total) => {

@@ -11,7 +11,13 @@
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6, p{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-family: 'Khula', sans-serif;
 }
 
@@ -22,3 +28,20 @@ body {
   overflow-x: hidden !important;
 }
 
+/* swal */
+.modal_class_success {
+  background-color: #2D313A;
+  color: white !important;
+}
+
+.modal_class_success .swal-icon::before {
+  background-color: transparent;
+}
+
+.modal_class_success .swal-icon::after {
+  background-color: transparent;
+}
+
+.swal-icon--success__hide-corners {
+  display: none;
+}

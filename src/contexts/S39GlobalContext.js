@@ -21,7 +21,7 @@ import {
   chainId,
 } from "../utils/constant";
 
-export const DSLCommerceContext = createContext();
+export const S39GlobalContext = createContext();
 
 const { ethereum } = window;
 
@@ -162,7 +162,7 @@ const signBuyFunction = async (id, price, tokenAddress, refAddress, uri) => {
   };
 };
 
-export default function DslProvider({ children }) {
+export default function S39Provider({ children }) {
   const [loginModal, setLoginModal] = useState(false);
   const [currentAccount, setCurrentAccount] = useState(null);
   const [user, setUser] = useState({});
@@ -722,7 +722,7 @@ export default function DslProvider({ children }) {
           setCurrentAccount(accounts[0]);
 
           await axios
-            .post(`https://backend.dslcommerce.com/api/users/`, {
+            .post(`https://testnetback.s39global.com/api/v1/wallet-user/`, {
               walletAddress: accounts[0],
             })
             .then((res) => {
@@ -731,7 +731,7 @@ export default function DslProvider({ children }) {
                 setUser(res.data.user);
                 setLoading(false);
                 closeWalletModal();
-                localStorage.setItem("tokendslcommerce", res.data.token);
+                localStorage.setItem("s39GlobalToken", res.data.token);
                 const wrapper = document.createElement("div");
                 wrapper.innerHTML = `<p class='text-break text-white fs-6'>You have succesfully logged in with <br/>Binance Chain.</p>`;
                 return swal({
@@ -796,7 +796,7 @@ export default function DslProvider({ children }) {
       setCurrentAccount(accounts[0]);
 
       await axios
-        .post(`https://backend.dslcommerce.com/api/users/`, {
+        .post(`https://testnetback.s39global.com/api/v1/wallet-user/`, {
           walletAddress: accounts[0],
         })
         .then((res) => {
@@ -805,7 +805,7 @@ export default function DslProvider({ children }) {
             setUser(res.data.user);
             setLoading(false);
             closeCoinbaseModal();
-            localStorage.setItem("tokendslcommerce", res.data.token);
+            localStorage.setItem("s39GlobalToken", res.data.token);
             const wrapper = document.createElement("div");
             wrapper.innerHTML = `<p class='text-break text-white fs-6'>You have succesfully logged in with <br/>Coin Base.</p>`;
             return swal({
@@ -868,7 +868,7 @@ export default function DslProvider({ children }) {
           setCurrentAccount(accounts[0]);
 
           await axios
-            .post(`https://backend.dslcommerce.com/api/users/`, {
+            .post(`https://testnetback.s39global.com/api/v1/wallet-user/`, {
               walletAddress: accounts[0],
             })
             .then((res) => {
@@ -879,7 +879,7 @@ export default function DslProvider({ children }) {
 
                 setLoading(false);
                 closeWalletModal();
-                localStorage.setItem("tokendslcommerce", res.data.token);
+                localStorage.setItem("s39GlobalToken", res.data.token);
                 const wrapper = document.createElement("div");
                 wrapper.innerHTML = `<p class='text-break text-white fs-6'>You have succesfully logged in with <br/>Binance (Testnet).</p>`;
                 return swal({
@@ -930,12 +930,12 @@ export default function DslProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    if (currentAccount && localStorage.getItem("tokendslcommerce")) {
+    if (currentAccount && localStorage.getItem("s39GlobalToken")) {
       setLoading(true);
       axios
-        .get(`https://backend.dslcommerce.com/api/users/`, {
+        .get(`https://testnetback.s39global.com/api/v1/wallet-user/`, {
           headers: {
-            authorization: `Bearer ${localStorage.getItem("tokendslcommerce")}`,
+            authorization: `Bearer ${localStorage.getItem("s39GlobalToken")}`,
           },
         })
         .then((res) => {
@@ -964,7 +964,7 @@ export default function DslProvider({ children }) {
   }, [requestLoading]);
 
   return (
-    <DSLCommerceContext.Provider
+    <S39GlobalContext.Provider
       value={{
         connectWallet,
         currentAccount,
@@ -1012,6 +1012,6 @@ export default function DslProvider({ children }) {
       }}
     >
       {children}
-    </DSLCommerceContext.Provider>
+    </S39GlobalContext.Provider>
   );
 }
