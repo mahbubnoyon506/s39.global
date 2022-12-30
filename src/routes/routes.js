@@ -23,6 +23,8 @@ import Store from "../pages/Store/Store";
 import ForgetPassword from "../components/Auth/ForgetPassword";
 import Otp from "../components/Auth/Otp";
 import Login from "../components/Auth/Login";
+import Profile from "../pages/Profile/Profile";
+
 import ResetPassword from "../components/Auth/ResetPassword";
 import { useEffect } from "react";
 
@@ -59,6 +61,10 @@ const routes = createBrowserRouter([
       {
         path: "store",
         element: <Store />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
       },
       //Authentications
       {

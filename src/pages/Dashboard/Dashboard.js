@@ -19,7 +19,7 @@ import logo from "../../assets/images/logo3.png";
 import { CgCommunity, CgGhost } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
 import { GiOnTarget } from "react-icons/gi";
-import { FaGift, FaWallet } from "react-icons/fa";
+import { FaGift, FaHome, FaWallet } from "react-icons/fa";
 
 const menuLinkStyles = ({ isActive }) => {
   return {
@@ -177,30 +177,38 @@ function Dashboard(props) {
           </span>
           HOSTING
         </NavLink>
-        <button className="text-white border-0 text-start text-uppercase" style={{background: 'transparent'}}>
-          <span className="navIconAdmin">
-            <BiLogOut style={{ fontSize: "20px" }} />
-          </span>
-          Logout
-        </button>
-        <div style={{ height: "5vh" }}></div>
-        <Link className="text-decoration-none" to="/">
+        <div className="mt-2">
+          <Link className="text-decoration-none" to="/">
+            <Button
+              sx={{
+                borderRadius: "8px",
+                background: "#FFC000",
+                color: '#2F3655',
+                marginRight: "10px",
+                fontWeight: "700",
+                "&:hover": { background: "#FFC000" },
+              }}
+              variant="contained"
+            >
+              <FaHome className="me-1" size={20} />
+              Home
+            </Button>
+          </Link>
           <Button
             sx={{
-              borderRadius: "10px",
+              borderRadius: "8px",
               background: "#FFC000",
-              color: "#000",
               marginRight: "10px",
               fontWeight: "700",
               "&:hover": { background: "#FFC000" },
+              color: '#2F3655'
             }}
             variant="contained"
           >
-            {" "}
-            <FcLeft />
-            Back to Home{" "}
+            <BiLogOut className="me-1" size={20} />
+            Logout
           </Button>
-        </Link>
+        </div>
       </div>
     </div>
   );
