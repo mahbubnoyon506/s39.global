@@ -57,33 +57,33 @@ export default function AdminProvider({ children }) {
 
     }
 
-    const verifyOtp = async (otp) => {
-        await axios.post('https://testnetback.s39global.com/api/v1/admin/verify-otp/', {
-            otp
-        }, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-            .then(res => {
-                if (res.status === 200) {
-                    setIsAuthenticating(false);
-                    setAdmin(res.data.admin);
-                    localStorage.setItem('adminS39Global', res.data.token);
-                    localStorage.removeItem('verify-tokens');
-                }
-            })
-            .catch(error => {
-                // alert(error.response.data.message);
-                swal({
-                    title: "Attention",
-                    text: `${error.response?.data?.message}`,
-                    icon: "warning",
-                    button: "OK!",
-                    className: "modal_class_success",
-                });
-            });
-    }
+    // const verifyOtp = async (otp) => {
+    //     await axios.post('https://testnetback.s39global.com/api/v1/admin/verify-otp/', {
+    //         otp
+    //     }, {
+    //         headers: {
+    //             Authorization: `Bearer ${token}`
+    //         }
+    //     })
+    //         .then(res => {
+    //             if (res.status === 200) {
+    //                 setIsAuthenticating(false);
+    //                 setAdmin(res.data.admin);
+    //                 localStorage.setItem('adminS39Global', res.data.token);
+    //                 localStorage.removeItem('verify-tokens');
+    //             }
+    //         })
+    //         .catch(error => {
+    //             // alert(error.response.data.message);
+    //             swal({
+    //                 title: "Attention",
+    //                 text: `${error.response?.data?.message}`,
+    //                 icon: "warning",
+    //                 button: "OK!",
+    //                 className: "modal_class_success",
+    //             });
+    //         });
+    // }
 
     const logout = () => {
         setAdmin(null);
@@ -97,7 +97,7 @@ export default function AdminProvider({ children }) {
             setAdmin,
             logout,
             login,
-            verifyOtp,
+            // verifyOtp,
             token,
             setIsAuthenticating,
         }}>{children}</AdminContext.Provider>

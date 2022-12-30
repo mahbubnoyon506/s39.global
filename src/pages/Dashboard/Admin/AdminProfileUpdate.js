@@ -68,17 +68,16 @@ const AdminProfileUpdate = () => {
     if (password === cPassword) {
       await axios
         .put(
-          `https://testnetback.s39global.com/api/v1/admin/make-admin${id}`,
+          `https://testnetback.s39global.com/api/v1/admin/update/${id}`,
           formDataSingleAdmin,
           {
             headers: {
-              authorization: `Bearer ${localStorage.getItem(
-                "adminS39Global"
-              )}`,
+              authorization: `Bearer ${localStorage.getItem("adminS39Global")}`,
             },
           }
         )
         .then((res) => {
+          console.log(res)
           if (res.status === 200) {
             // alert(res.data.message);
             swal({
@@ -90,7 +89,7 @@ const AdminProfileUpdate = () => {
             });
             setonLoading(false);
             setSingleAdmin(res.data.admin);
-            navigate("/admin/adminUser");
+            navigate("/admin/admins");
           }
         })
         .catch((error) => {

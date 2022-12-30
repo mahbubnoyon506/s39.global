@@ -58,7 +58,7 @@ const AddNewAdmin = (props) => {
         })
         .then((res) => {
           console.log(res)
-          if (res.status === 200) {
+          if (res.status === 201) {
             setModalShowNewAdmin(false);
             setRefetch(!refetch);
             event.target.reset();
