@@ -35,7 +35,7 @@ const Ngwb = () => {
         },
     ]
     return (
-        <div className='row g-4'>
+        <div className='row gx-4'>
             <h5 className="dashboard-title">NGWB</h5>
             <div className='col-md-5'>
                 {

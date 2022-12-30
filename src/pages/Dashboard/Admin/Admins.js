@@ -27,7 +27,7 @@ const Admins = () => {
     <div className='adminBody'>
       <h5 className="dashboard-title">Admins</h5>
       <div className='adminCard py-2'>
-        <div className="adminBtnDiv text-end">
+        <div className="d-flex justify-content-center justify-content-lg-end text-end me-lg-5">
           <button onClick={() => setModalShowNewAdmin(true)} className='adminBtn'>NEW ADMIN</button>
         </div>
         <div className="tableNormal ">
@@ -57,7 +57,7 @@ const Admins = () => {
                     <td className='text-start adminHidden'>+8801682021411</td>
                     <td className='action'>
                       <div className="actionDiv text-start">
-                        <Link to='/dashboard/updateadmin'><button className="editBtn"><FaEdit/></button></Link>
+                        <Link to='/admin/updateadmin'><button className="editBtn"><FaEdit/></button></Link>
                         <button onClick={() => handleAdminDelete(admin._id)} className="deleteBtn"><FaTrashAlt/></button>
                       </div>
                     </td>
