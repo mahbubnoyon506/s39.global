@@ -7,6 +7,7 @@ import "react-phone-number-input/style.css";
 // import Loader from '../../loader/Loader';
 import "./AddNewAdmin.css";
 import swal from "sweetalert";
+import axios from "axios";
 
 const AddNewAdmin = (props) => {
   const {
@@ -21,12 +22,12 @@ const AddNewAdmin = (props) => {
   const [value, setValue] = useState();
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
-  // if (isLoadingAdmin) {
-  //     return <Loader></Loader>
-  // }
+
+  console.log("test")
   const subNewAdmin = async (event) => {
     event.preventDefault();
     const image = event.target.image.files[0];
+    console.log(image, "here the image");
     const name = event.target.name.value;
     const phone = value;
     const password = event.target.password.value;
@@ -40,51 +41,46 @@ const AddNewAdmin = (props) => {
     formDataAddAdmin.append("image", image);
     formDataAddAdmin.append("password", password);
 
-    // if (password !== confirmPassword) {
-    //   return swal({
-    //     title: "Attention",
-    //     text: "Confirm Password not match!",
-    //     icon: "warning",
-    //     button: "OK!",
-    //     className: "modal_class_success",
-    //   });
-    // } else {
-    //   await axios
-    //     .post("https://backend.dslcommerce.com/api/admin/", formDataAddAdmin, {
-    //       headers: {
-    //         authorization: `Bearer ${localStorage.getItem("adminDslCommerce")}`,
-    //       },
-    //     })
-    //     .then((res) => {
-    //       if (res.status === 201) {
-    //         // setAllAdmin(res.data.newAdmin);
-    //         // setIsLoadingAdmin(false);
-    //         setModalShowNewAdmin(false);
-    //         setRefetch(!refetch);
-    //         event.target.reset();
-    //         // alert(res.data.message);
-    //         swal({
-    //           // title: "Success",
-    //           text: res.data.message,
-    //           icon: "success",
-    //           button: "OK!",
-    //           className: "modal_class_success",
-    //         });
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       // alert(error.response.data.message);
-    //       swal({
-    //         title: "Attention",
-    //         text: error.response.data.message,
-    //         icon: "warning",
-    //         button: "OK!",
-    //         className: "modal_class_success",
-    //       });
-    //       // console.log(error);
-    //       // setIsLoadingAdmin(false);
-    //     });
-    // }
+    if (password !== confirmPassword) {
+      return swal({
+        title: "Attention",
+        text: "Confirm Password not match!",
+        icon: "warning",
+        button: "OK!",
+        className: "modal_class_success",
+      });
+    } else {
+      await axios
+        .post("https://testnetback.s39global.com/api/v1/admin/", formDataAddAdmin, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("adminS39Global")}`,
+          },
+        })
+        .then((res) => {
+          console.log(res)
+          if (res.status === 200) {
+            setModalShowNewAdmin(false);
+            setRefetch(!refetch);
+            event.target.reset();
+            swal({
+              text: res.data.message,
+              icon: "success",
+              button: "OK!",
+              className: "modal_class_success",
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          swal({
+            title: "Attention",
+            text: error.response.data,
+            icon: "warning",
+            button: "OK!",
+            className: "modal_class_success",
+          });
+        });
+    }
   };
 
   return (

@@ -102,7 +102,7 @@ const routes = createBrowserRouter([
         element: <Admins />,
       },
       {
-        path: "updateadmin",
+        path: "updateadmin/:id",
         element: <AdminProfileUpdate />,
       },
       {

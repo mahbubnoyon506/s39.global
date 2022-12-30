@@ -15,7 +15,7 @@ const AdminProfileUpdate = () => {
   const { id } = useParams();
   const [onLoading, setonLoading] = useState(false);
   const navigate = useNavigate();
-
+  // console.log(id.id);
 
   const [valueProfilePhn, setValueProfilePhn] = useState();
   const [visibleCPassword, setVisibleCPassword] = useState(false);
@@ -26,141 +26,94 @@ const AdminProfileUpdate = () => {
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   // console.log(singleAdmin)
-  // useEffect(() => {
-  //   if (id) {
-  //     axios
-  //       .get(``)
-  //       .then((res) => {
-  //         setSingleAdmin(res.data.admin);
-  //         setEmail(res.data.admin.email);
-  //         setUserName(res.data.admin.username);
-  //         setValueProfilePhn(res.data.admin.phone);
-  //         setCurrentPasswordPro(res.data.admin.password);
-  //       });
-  //   }
-  // }, [id]);
+  useEffect(() => {
+    if (id) {
+      axios
+        .get(`https://testnetback.s39global.com/api/v1/admin/${id}`)
+        .then((res) => {
+          setSingleAdmin(res.data.admin);
+          setEmail(res.data.admin.email);
+          setUserName(res.data.admin.username);
+          setValueProfilePhn(res.data.admin.phone);
+          setCurrentPasswordPro(res.data.admin.password);
+        });
+    }
+  }, [id]);
 
   // if (onLoading) {
   //     return <Loader />
   // }
 
-  // const subProfile = async (event) => {
-  //   event.preventDefault();
-  //   const name = event.target.name.value;
-  //   const phone = valueProfilePhn;
-  //   const currentPassword = event.target.currentPassword.value;
-  //   const password = event.target.password.value;
-  //   const cPassword = event.target.cPassword.value;
-  //   const avatar = event.target.avatar.files[0];
+  const subProfile = async (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const phone = valueProfilePhn;
+    const currentPassword = event.target.currentPassword.value;
+    const password = event.target.password.value;
+    const cPassword = event.target.cPassword.value;
+    const avatar = event.target.avatar.files[0];
 
-  //   const formDataSingleAdmin = new FormData();
-  //   formDataSingleAdmin.append("name", name);
-  //   formDataSingleAdmin.append("username", userName);
-  //   formDataSingleAdmin.append("email", email);
-  //   formDataSingleAdmin.append("phone", phone);
-  //   formDataSingleAdmin.append("password", password);
-  //   // formDataSingleAdmin.append('newPassword', newPassword)
-  //   // formDataSingleAdmin.append('cPassword', cPassword)
-  //   formDataSingleAdmin.append("image", avatar);
-  //   console.log(...formDataSingleAdmin);
-  //   setonLoading(true);
+    const formDataSingleAdmin = new FormData();
+    formDataSingleAdmin.append("name", name);
+    formDataSingleAdmin.append("username", userName);
+    formDataSingleAdmin.append("email", email);
+    formDataSingleAdmin.append("phone", phone);
+    formDataSingleAdmin.append("password", password);
+    // formDataSingleAdmin.append('newPassword', newPassword)
+    // formDataSingleAdmin.append('cPassword', cPassword)
+    formDataSingleAdmin.append("image", avatar);
+    console.log(...formDataSingleAdmin);
+    setonLoading(true);
 
-  //   if (password === cPassword) {
-  //     await axios
-  //       .put(
-  //         ``,
-  //         formDataSingleAdmin,
-  //         {
-  //           headers: {
-  //             authorization: `Bearer ${localStorage.getItem(
-  //               "adminDslCommerce"
-  //             )}`,
-  //           },
-  //         }
-  //       )
-  //       .then((res) => {
-  //         if (res.status === 200) {
-  //           // alert(res.data.message);
-  //           swal({
-  //             // title: "Success",
-  //             text: res.data.message,
-  //             icon: "success",
-  //             button: "OK!",
-  //             className: "modal_class_success",
-  //           });
-  //           setonLoading(false);
-  //           setSingleAdmin(res.data.admin);
-  //           navigate("/admin/adminUser");
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         // alert(error.response.data.message);
-  //         swal({
-  //           title: "Attention",
-  //           text: `${error.response.data.message}`,
-  //           icon: "warning",
-  //           button: "OK!",
-  //           className: "modal_class_success",
-  //         });
-  //         setonLoading(false);
-  //       });
-  //   } else {
-  //     swal({
-  //       title: "Attention",
-  //       text: "Password does not matched",
-  //       icon: "warning",
-  //       button: "OK!",
-  //       className: "modal_class_success",
-  //     });
-  //   }
-  // };
-
-  // const changePassword = async (e) => {
-  //   e.preventDefault();
-  //   const currentPassword = e.target.currentPassword.value;
-  //   const newPassword = e.target.newPassword.value;
-  //   const cPassword = e.target.cPassword.value;
-
-  //   if (newPassword !== cPassword) {
-  //     return alert("Confirm Password not match!");
-  //   }
-  //   setonLoading(true);
-  //   await axios
-  //     .put(
-  //       ``,
-  //       { currentPassword, newPassword },
-  //       {
-  //         headers: {
-  //           authorization: `Bearer ${localStorage.getItem("admin")}`,
-  //         },
-  //       }
-  //     )
-  //     .then((res) => {
-  //       if (res.status === 200) {
-  //         alert(res.data.message);
-  //         swal({
-  //           // title: "Success",
-  //           text: res.data.message,
-  //           icon: "success",
-  //           button: "OK!",
-  //           className: "modal_class_success",
-  //         });
-  //         setonLoading(false);
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       // alert(error.response.data.message);
-  //       swal({
-  //         title: "Attention",
-  //         text: error.response.data.message,
-  //         icon: "warning",
-  //         button: "OK!",
-  //         className: "modal_class_success",
-  //       });
-  //       setonLoading(false);
-  //     });
-  // };
-
+    if (password === cPassword) {
+      await axios
+        .put(
+          `https://testnetback.s39global.com/api/v1/admin/make-admin${id}`,
+          formDataSingleAdmin,
+          {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem(
+                "adminS39Global"
+              )}`,
+            },
+          }
+        )
+        .then((res) => {
+          if (res.status === 200) {
+            // alert(res.data.message);
+            swal({
+              // title: "Success",
+              text: res.data.message,
+              icon: "success",
+              button: "OK!",
+              className: "modal_class_success",
+            });
+            setonLoading(false);
+            setSingleAdmin(res.data.admin);
+            navigate("/admin/adminUser");
+          }
+        })
+        .catch((error) => {
+          // alert(error.response.data.message);
+          swal({
+            title: "Attention",
+            text: `${error.response.data.message}`,
+            icon: "warning",
+            button: "OK!",
+            className: "modal_class_success",
+          });
+          setonLoading(false);
+        });
+    } else {
+      swal({
+        title: "Attention",
+        text: "Password does not matched",
+        icon: "warning",
+        button: "OK!",
+        className: "modal_class_success",
+      });
+    }
+  };
   return (
     <>
       <div className=" ">
@@ -169,7 +122,7 @@ const AdminProfileUpdate = () => {
         >
           Profile
         </h5>
-        <form >
+        <form onSubmit={subProfile}>
           <div className="profileDiv">
             <div className="row mx-auto gx-5">
               <div className="col-lg-7 p-2">
@@ -238,7 +191,7 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleCPassword(!visibleCPassword)}
                       className="iconBoxBtn password_togoler text-center text-white"
                     >
-                      <AiFillEyeInvisible/>
+                      <AiFillEyeInvisible />
                     </button>
                   </span>
                 </p>
@@ -258,7 +211,7 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleEnPassword(!visibleEnPassword)}
                       className="iconBoxBtn password_togoler text-center text-white"
                     >
-                     <AiFillEyeInvisible/>
+                      <AiFillEyeInvisible />
                     </button>
                   </span>
                 </p>
@@ -278,13 +231,13 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleCnPassword(!visibleCnPassword)}
                       className="password_togoler iconBoxBtn text-white text-center"
                     >
-                    <AiFillEyeInvisible/>
+                      <AiFillEyeInvisible />
                     </button>
                   </span>
                 </p>
               </div>
               <div className="col-lg-5 text-center">
-              <BsPersonCircle size={40} color='#fff'/>
+                <BsPersonCircle size={40} color='#fff' />
                 <br />
                 <input
                   type="file"
