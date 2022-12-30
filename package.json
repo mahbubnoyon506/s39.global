@@ -22,6 +22,7 @@
     "react-phone-number-input": "^3.2.13",
     "react-router-dom": "^6.5.0",
     "react-scripts": "5.0.1",
+    "react-share": "^4.4.1",
     "react-slick": "^0.29.0",
     "react-slider": "^2.0.4",
     "react-timer-hook": "^3.0.5",
