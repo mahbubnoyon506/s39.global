@@ -29,7 +29,7 @@ const AdminProfileUpdate = () => {
   // useEffect(() => {
   //   if (id) {
   //     axios
-  //       .get(`https://backend.dslcommerce.com/api/admin/${id}`)
+  //       .get(``)
   //       .then((res) => {
   //         setSingleAdmin(res.data.admin);
   //         setEmail(res.data.admin.email);
@@ -68,7 +68,7 @@ const AdminProfileUpdate = () => {
   //   if (password === cPassword) {
   //     await axios
   //       .put(
-  //         `https://backend.dslcommerce.com/api/admin/update/${id}`,
+  //         ``,
   //         formDataSingleAdmin,
   //         {
   //           headers: {
@@ -127,7 +127,7 @@ const AdminProfileUpdate = () => {
   //   setonLoading(true);
   //   await axios
   //     .put(
-  //       `https://backend.dslcommerce.com/api/admin/update/password/${id}`,
+  //       ``,
   //       { currentPassword, newPassword },
   //       {
   //         headers: {
@@ -163,16 +163,15 @@ const AdminProfileUpdate = () => {
 
   return (
     <>
-      <div className="handleEditAdminHeight">
+      <div className=" ">
         <h5
-          className="text-start text-light"
-          style={{ textTransform: "uppercase" }}
+          className="dashboard-title"
         >
           Profile
         </h5>
         <form >
           <div className="profileDiv">
-            <div className="row mx-auto g-5">
+            <div className="row mx-auto gx-5">
               <div className="col-lg-7 p-2">
                 <p className="d-flex col-12 inputProfile">
                   <span className="iconCreator">
@@ -295,14 +294,14 @@ const AdminProfileUpdate = () => {
               </div>
             </div>
 
-            <div className="mx-auto text-center">
-              <Link to="/dashboard/admins">
-                <button className="profileBtnChange bg-danger me-3 text-white w-25 text-uppercase">
+            <div className=" d-md-flexd text-center">
+              <Link to="/admin/dashboard">
+                <button className="profileBtnChange bg-danger me-3 text-white text-uppercase">
                   Cancel
                 </button>
               </Link>
               <button
-                className="profileBtnChange text-white w-25 text-uppercase"
+                className="profileBtnChange text-white text-uppercase"
                 type="submit"
               >
                 Save
@@ -311,6 +310,7 @@ const AdminProfileUpdate = () => {
           </div>
         </form>
       </div>
+
     </>
   );
 };

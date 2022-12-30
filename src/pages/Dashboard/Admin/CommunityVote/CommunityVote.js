@@ -5,6 +5,8 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Active from './Active';
+import Reward from './Reward';
+import Astard from './Astard';
 
 
 function TabPanel(props) {
@@ -72,10 +74,10 @@ const CommunityVote = () => {
                     <Active />
                 </TabPanel>
                 <TabPanel  value={value} index={1}>
-                    Item Two
+                    <Reward/>
                 </TabPanel>
                 <TabPanel  value={value} index={2}>
-                    Item Three
+                   <Astard/>
                 </TabPanel>
             </Box>
         </div>

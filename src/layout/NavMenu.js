@@ -46,10 +46,9 @@ const NavMenu = () => {
                     <Navbar.Collapse className='text-white' id="responsive-navbar-nav">
                         <Nav className="me-auto text-white">
                         </Nav>
-                        <Nav className='text-white text-center d-flex align-items-center' >
-                            <Nav.Link as={Link} to='howItWorks' className=' text-white fs-5 me-md-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
-                            <Nav.Link className='text-white fs-5 me-md-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
-                            {/* <Nav.Link as={Link} to="hosting" className='text-white fs-5 me-md-5 font-mira' href="#hosting">HOSTING</Nav.Link> */}
+                        <Nav className='text-white text-center d-flex justify-content-center align-items-center ' >
+                            <Nav.Link as={Link} to='howItWorks' className=' text-white  me-lg-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
+                            <Nav.Link className='text-white  me-lg-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
                             {user?.walletAddress ?
                                 <Nav.Link onClick={Logout} href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" />Logout</TopButton></Nav.Link>
                                 :
