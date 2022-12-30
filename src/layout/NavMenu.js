@@ -20,19 +20,19 @@ const NavMenu = () => {
         <div className="position-sticky top-0" style={{ zIndex: 1023, borderBottom: '1px solid #FEF6A3' }}>
             <Navbar className='bg-darkblue py-3' collapseOnSelect expand="lg" >
                 <Container>
-                    <Navbar.Brand as={Link} to="/" href="#/home"><img  src={Logo} alt="" /></Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/" href="#/home"><img src={Logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle className='text-white' aria-controls="responsive-navbar-nav"  >
                         <MenuIcon style={{ fontSize: '40px' }} id="responsive-navbar-nav" />
                     </Navbar.Toggle>
                     <Navbar.Collapse className='text-white' id="responsive-navbar-nav">
                         <Nav className="me-auto text-white">
                         </Nav>
-                        <Nav className='text-white text-center d-flex align-items-center' >
-                            <Nav.Link as={Link} to='howItWorks' className=' text-white  me-md-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
-                            <Nav.Link className='text-white  me-md-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
-                            <Nav.Link onClick={setOpen} href="#login"><TopButton><img style={{marginLeft: '-15px', marginRight: '-10px'}} src={coin} width={50} alt="" /> LOGIN with Wallet</TopButton></Nav.Link>
+                        <Nav className='text-white text-center d-flex justify-content-center align-items-center ' >
+                            <Nav.Link as={Link} to='howItWorks' className=' text-white  me-lg-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
+                            <Nav.Link className='text-white  me-lg-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
+                            <Nav.Link className='mx-auto' onClick={setOpen} href="#login"><TopButton><img style={{marginLeft: '-15px', marginRight: '-10px'}} src={coin} width={50} alt="" /> LOGIN with Wallet</TopButton></Nav.Link>
                         </Nav>
-                 
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

@@ -294,14 +294,14 @@ const AdminProfileUpdate = () => {
               </div>
             </div>
 
-            <div className=" mx-auto text-center">
+            <div className=" d-md-flexd text-center">
               <Link to="/admin/dashboard">
-                <button className="profileBtnChange bg-danger me-3 text-white w-md-25 text-uppercase">
+                <button className="profileBtnChange bg-danger me-3 text-white text-uppercase">
                   Cancel
                 </button>
               </Link>
               <button
-                className="profileBtnChange text-white w-25 text-uppercase"
+                className="profileBtnChange text-white text-uppercase"
                 type="submit"
               >
                 Save

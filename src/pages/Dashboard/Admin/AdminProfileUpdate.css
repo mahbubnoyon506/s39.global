@@ -64,6 +64,7 @@
 }
 
 .profileBtnChange {
+    width: 20vw;
     border: none;
     padding: 10px 15px;
     border-radius: 8px;
@@ -155,4 +156,9 @@
     .overflow-margin{
         height: 15vh;
     }
+    }
+    @media only screen and (max-width: 375px){
+        .profileBtnChange{
+            width: 40% !important;
+        }
     }
