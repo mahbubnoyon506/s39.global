@@ -18,6 +18,8 @@ const AdminProfileUpdate = () => {
   // console.log(id.id);
 
   const [valueProfilePhn, setValueProfilePhn] = useState();
+  const [image, setImage] = useState();
+  const [imagePreview, setImagePreview] = useState();
   const [visibleCPassword, setVisibleCPassword] = useState(false);
   const [visibleEnPassword, setVisibleEnPassword] = useState(false);
   const [visibleCnPassword, setVisibleCnPassword] = useState(false);
@@ -36,6 +38,7 @@ const AdminProfileUpdate = () => {
           setUserName(res.data.admin.username);
           setValueProfilePhn(res.data.admin.phone);
           setCurrentPasswordPro(res.data.admin.password);
+          setImage(res.data.admin.avatar);
         });
     }
   }, [id]);
@@ -119,7 +122,7 @@ const AdminProfileUpdate = () => {
         <h5
           className="dashboard-title"
         >
-          Profile
+          Update Profile
         </h5>
         <form onSubmit={subProfile}>
           <div className="profileDiv">
@@ -236,9 +239,15 @@ const AdminProfileUpdate = () => {
                 </p>
               </div>
               <div className="col-lg-5 text-center">
-                <BsPersonCircle size={40} color='#fff' />
+                {/* <BsPersonCircle size={40} color='#fff' /> */}
+                {imagePreview ?
+                  <img className='ProfileImg' src={URL.createObjectURL(imagePreview)} alt="avatar" />
+                  :
+                  <img className='ProfileImg' src={image} alt="avatar" />
+                }
                 <br />
                 <input
+                  onChange={(e) => setImagePreview(e.target.files[0])}
                   type="file"
                   className="ImageInput form-control"
                   name="avatar"

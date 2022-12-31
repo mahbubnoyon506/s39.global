@@ -1,3 +1,10 @@
+.ProfileImg {
+    width: 150px;
+    border-radius: 50%;
+    margin: auto !important;
+}
+
+
 .profileDiv {
     background-color: #303651 !important;
     padding: 50px;
@@ -83,9 +90,10 @@
     display: flex !important;
     background-color: #303651 !important;
 }
+
 .countryInput .PhoneInputInput {
-   border: none;
-   padding: 8px 0;
+    border: none;
+    padding: 8px 0;
 }
 
 .password_togoler {
@@ -153,12 +161,13 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .overflow-margin{
+    .overflow-margin {
         height: 15vh;
     }
+}
+
+@media only screen and (max-width: 375px) {
+    .profileBtnChange {
+        width: 40% !important;
     }
-    @media only screen and (max-width: 375px){
-        .profileBtnChange{
-            width: 40% !important;
-        }
-    }
+}
