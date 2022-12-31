@@ -2,6 +2,15 @@
     width: 100px;
     border-radius: 50%;
 }
+.swal-title{
+    color: white !important;
+}
+.swal-text{
+    color: white !important;
+}
+.swal-modal{
+    background-color: #2D313A !important;
+}
 
 .modelAddAdmin {
     /* background: linear-gradient(to right, #02aab0 0%, #00cdac 51%, #02aab0 100%); */

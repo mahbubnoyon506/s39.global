@@ -6,7 +6,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 // import Loader from '../../loader/Loader';
 import "./AddNewAdmin.css";
-import swal from "sweetalert";
+import swal from 'sweetalert';
 import axios from "axios";
 
 const AddNewAdmin = (props) => {
@@ -22,8 +22,7 @@ const AddNewAdmin = (props) => {
   const [value, setValue] = useState();
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
-
-  console.log("test")
+ 
   const subNewAdmin = async (event) => {
     event.preventDefault();
     const image = event.target.image.files[0];
@@ -63,34 +62,35 @@ const AddNewAdmin = (props) => {
             setRefetch(!refetch);
             event.target.reset();
             swal({
+              title: "Successful",
               text: res.data.message,
               icon: "success",
-              button: "OK!",
+              button: "OK",
               className: "modal_class_success",
-            });
+          });
           }
         })
         .catch((error) => {
-          console.log(error)
-          swal({
-            title: "Attention",
-            text: error.response.data,
-            icon: "warning",
-            button: "OK!",
-            className: "modal_class_success",
-          });
+           swal({
+              title: "Attention",
+              text: error?.response?.data,
+              icon: "error",
+              button: "OK",
+              className: "modal_class_success",
+            });
         });
     }
   };
 
   return (
-    <Modal
+    <Modal 
       {...props}
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
-      centered
+      centered 
+      className="mt-5" 
     >
-      <Modal.Header closeButton className="modelAddAdmin">
+      <Modal.Header closeButton closeVariant="white" className="modelAddAdmin">
         <Modal.Title
           id="contained-modal-title-vcenter"
           className="fs-5 text-light"
