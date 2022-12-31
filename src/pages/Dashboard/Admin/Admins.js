@@ -45,6 +45,7 @@ const Admins = () => {
                 text: res.data.message,
                 icon: "success",
                 button: "OK!",
+                className: "modal_class_success",
               });
               setRefetch(!refetch);
               setAllAdmin(allAdmin.filter((admin) => admin._id !== id));

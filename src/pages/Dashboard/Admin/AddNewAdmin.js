@@ -63,10 +63,11 @@ const AddNewAdmin = (props) => {
             event.target.reset();
             swal({
               title: "Successful",
-              text: "Admin created successfully",
+              text: res.data.message,
               icon: "success",
               button: "OK",
-            });
+              className: "modal_class_success",
+          });
           }
         })
         .catch((error) => {
@@ -75,6 +76,7 @@ const AddNewAdmin = (props) => {
               text: error?.response?.data,
               icon: "error",
               button: "OK",
+              className: "modal_class_success",
             });
         });
     }
@@ -88,7 +90,7 @@ const AddNewAdmin = (props) => {
       centered 
       className="mt-5" 
     >
-      <Modal.Header closeButton className="modelAddAdmin">
+      <Modal.Header closeButton closeVariant="white" className="modelAddAdmin">
         <Modal.Title
           id="contained-modal-title-vcenter"
           className="fs-5 text-light"

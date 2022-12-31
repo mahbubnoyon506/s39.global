@@ -2,13 +2,16 @@
     width: 100px;
     border-radius: 50%;
 }
- 
-.modal_class_success{
+.swal-title{
     color: white !important;
 }
-.swal-overlay{
-    background-color: rgba(43, 165, 137, 0.45);
-    }
+.swal-text{
+    color: white !important;
+}
+.swal-modal{
+    background-color: #2D313A !important;
+}
+
 .modelAddAdmin {
     /* background: linear-gradient(to right, #02aab0 0%, #00cdac 51%, #02aab0 100%); */
     background-color: #303651 !important;
