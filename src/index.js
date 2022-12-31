@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import S39Provider from './contexts/S39GlobalContext';
+import AdminProvider from './contexts/AdminContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AdminProvider>
+      <S39Provider>
+        <App />
+      </S39Provider>
+    </AdminProvider>
   </React.StrictMode>
 );
 

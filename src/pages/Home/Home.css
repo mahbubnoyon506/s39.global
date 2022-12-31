@@ -1,64 +1,94 @@
-.projectTitle, .commodityTitle, .systemTitle, .earnTitle {
+.primary {
+    color: #FFFFFF;
+}
+
+.hover-color:hover {
+    color: #FFC000;
+}
+
+.bg-darkblue {
+    background: #000A17;
+}
+
+.font-khula {
+    font-family: 'Khula', sans-serif;
+}
+
+.bannerTitle,
+.projectTitle,
+.partnershipTitle,
+.systemTitle,
+.earnTitle,
+.nodeTitle,
+.projectTitle {
+    font-family: 'Khula', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 32px;
     color: #fff;
-    font-family: micrabold;
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 38px;
-    letter-spacing: 0;
-    text-align: center;
+    font-size: 48px;
+    line-height: 66px;
     text-transform: uppercase;
+    font-weight: bold;
 }
-.systemText {
-    color: #b9b5b5;
-    font-family: "Montserrat" !important;
-    font-size: 20px;
-    margin-top: 20px;
-}
-.earnSubTitle {
-    font-family: Micra;
+
+.bannerSubTitle,
+.earnSubTitle,
+.nodeSubTitle,
+.desSubTitle {
+    font-family: 'Khula', sans-serif;
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 400;
     line-height: 25px;
     letter-spacing: 0;
     color: #fff;
-    text-align: center;
 }
-.earnText {
-    font-family: "Montserrat" !important;
-    font-size: 22px;
-    margin: 0 auto;
-    line-height: 25px;
-    letter-spacing: 0;
-    color: #fff;
+
+.nodeText,
+.partnershipText,
+.systemText,
+.desText,
+.earnText,
+.stepText,
+.projectText {
+    font-family: Khula, sans-serif;
+    color: #bbbbbe;
+    font-size: 18px;
+    line-height: 32px;
 }
 
 .step {
-    color: #b9b5b5;
-    font-family: micrabold;
+    font-family: 'Khula', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 34px;
     line-height: 111.6%;
 }
-.stepText {
-    color: #b9b5b5;
-    font-family: "Montserrat" !important;
-    font-size: 20px;
-    margin: 20px 0;}
-    
-.licenseDiv{
-    padding: 0px 20%;
+
+.licenseDiv {
+    padding: 0px 15%;
 }
 
+
 @media only screen and (max-width:650px) {
+
+    .bannerTitle,
+    .projectTitle,
+    .partnershipTitle,
+    .systemTitle,
+    .earnTitle,
+    .nodeTitle {
+        font-size: 32px;
+        line-height: 48px;
+    }
+
     .licenseDiv {
         padding: 0px 10px;
     }
 
     .card1 {
         margin: 0% !important;
-        font-size: 21px; 
+        font-size: 21px;
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -66,9 +96,9 @@
         border-radius: 10px;
     }
 
-    .card2 { 
+    .card2 {
         margin: 0% !important;
-        font-size: 21px; 
+        font-size: 21px;
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -76,9 +106,9 @@
         border-radius: 10px;
     }
 
-    .card3 {  
+    .card3 {
         margin: 0% !important;
-        font-size: 21px; 
+        font-size: 21px;
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -86,9 +116,9 @@
         border-radius: 10px;
     }
 
-    .card4 { 
+    .card4 {
         margin: 0% !important;
-        font-size: 21px; 
+        font-size: 21px;
         background-color: rgba(255, 255, 255, 0.082);
         color: #B9B5B5;
         padding: 25px;
@@ -97,30 +127,41 @@
     }
 }
 
-.absoluteNumber{
+.absoluteNumber {
     position: absolute;
     top: -45px;
     right: 0;
     font-size: 60px;
     font-weight: 800;
 }
+
 .card1 {
-    position:relative;
+    position: relative;
     margin-right: 50%;
-    font-size: 21px; 
-    background-color: rgba(255, 255, 255, 0.082);
+    font-size: 21px;
+    background-color: #171717;
     color: #B9B5B5;
     padding: 25px;
     border: 2px solid #4e4b4b;
     border-radius: 10px;
 }
 
-
-.card2 { 
-    position:relative;
+.card2 {
+    position: relative;
     margin-left: 25%;
     margin-right: 15%;
-    font-size: 21px; 
+    font-size: 21px;
+    background-color: #171717;
+    color: #B9B5B5;
+    padding: 25px;
+    border: 2px solid #4e4b4b;
+    border-radius: 10px;
+}
+
+.card3 {
+    position: relative;
+    margin-left: 30%;
+    font-size: 21px;
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -128,10 +169,10 @@
     border-radius: 10px;
 }
 
-.card3 { 
-    position:relative;
-    margin-left: 50%;
-    font-size: 21px; 
+.card4 {
+    position: relative;
+    margin-right: 30%;
+    font-size: 21px;
     background-color: rgba(255, 255, 255, 0.082);
     color: #B9B5B5;
     padding: 25px;
@@ -139,66 +180,53 @@
     border-radius: 10px;
 }
 
-.card4 { 
-    position:relative;
-    margin-right: 30%; 
-    font-size: 21px; 
-    background-color: rgba(255, 255, 255, 0.082);
-    color: #B9B5B5;
-    padding: 25px;
-    border: 2px solid #4e4b4b;
-    border-radius: 10px;
-}
-
-.projectTitle,
-.commodityTitle,
-.systemTitle .earnTitle {
-    color: #fff;
-}
 .introText {
-    font-family: micrabold;
+    font-family: 'Khula', sans-serif;
     padding: 100px 0;
     text-align: center;
-    font-size: 34px;
+    font-size: 27px;
     font-weight: 700;
     line-height: 38px;
     letter-spacing: 0;
 }
 
-.systemText {
-    color: #b9b5b5;
-    font-family: "Montserrat";
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.earnSubTitle {
-    font-family: Micra;
-    font-size: 22px;
-    text-transform: uppercase;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0;
-    color: #fff;
-}
-
 .step {
-    color: #b9b5b5;
-    font-family: micrabold;
+    font-family: 'Khula', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 34px;
     line-height: 111.6%;
 }
 
-.stepText {
-    color: #b9b5b5;
-    font-family: "Montserrat";
-    font-size: 20px;
-    margin: 20px 0;
-}
-@media only screen and (max-width: 480px){
-    .introText{
+@media only screen and (max-width: 580px) {
+    body{
+        overflow-x: hidden;
+    }
+    .bannerTitle,
+    .projectTitle,
+    .partnershipTitle,
+    .systemTitle,
+    .earnTitle,
+    .nodeTitle {
         font-size: 24px;
-    } 
+        line-height: 32px;
+    }
+    .bannerSubTitle,
+.earnSubTitle,
+.nodeSubTitle,
+.desSubTitle{
+    font-size: 18px;
+    line-height: 24px;  
+}
+}
+
+@media only screen and (max-width: 480px) {
+    .introText {
+        font-size: 24px;
+    }
+}
+@media only screen and (max-width: 321px){
+    .learn-more{
+        margin-top: 10px !important;
+    }
 }

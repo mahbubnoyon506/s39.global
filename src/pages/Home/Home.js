@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from './Banner';
 import DesList from './DesList';
 import License from './License';
-import CommodityProject from './CommodityProject';
+import Partnership from './Partnership';
 import DebtBox from './DebtBox';
 import Ecosystem from './Ecosystem';
 import './Home.css'
@@ -10,15 +10,18 @@ import Projects from './Projects';
 import Introduction from './Introduction';
 
 const Home = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
     return (
-        <div style={{backgroundColor:'#000'}}>
+        <div className='bg-darkblue'>
             <Banner />
-            <License/>
-            <DesList/>
-            <Introduction/>
+            <License />
+            <Partnership />
+            <DesList />
+            {/* <Introduction /> */}
             <DebtBox />
             <Ecosystem />
-            <CommodityProject />
             <Projects />
         </div>
     );
