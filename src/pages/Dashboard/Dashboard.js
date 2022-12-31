@@ -178,22 +178,6 @@ function Dashboard(props) {
           HOSTING
         </NavLink>
         <div className="mt-2">
-          <Link className="text-decoration-none" to="/">
-            <Button
-              sx={{
-                borderRadius: "8px",
-                background: "#FFC000",
-                color: '#2F3655',
-                marginRight: "10px",
-                fontWeight: "700",
-                "&:hover": { background: "#FFC000" },
-              }}
-              variant="contained"
-            >
-              <FaHome className="me-1" size={20} />
-              Home
-            </Button>
-          </Link>
           <Button
             sx={{
               borderRadius: "8px",
