@@ -178,7 +178,7 @@ const AdminProfileUpdate = () => {
                     defaultCountry="SG"
                     value={valueProfilePhn}
                     onChange={setValueProfilePhn}
-                    className="countryInput input_phone form-control"
+                    className="countryInput input_phone form-control text-white"
                   />
                 </p>
                 <p className="d-flex col-12 inputProfile">
@@ -197,7 +197,7 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleCPassword(!visibleCPassword)}
                       className="iconBoxBtn password_togoler text-center text-white"
                     >
-                      <AiFillEyeInvisible />
+                      <AiFillEyeInvisible size={25} />
                     </button>
                   </span>
                 </p>
@@ -217,7 +217,7 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleEnPassword(!visibleEnPassword)}
                       className="iconBoxBtn password_togoler text-center text-white"
                     >
-                      <AiFillEyeInvisible />
+                      <AiFillEyeInvisible size={25} />
                     </button>
                   </span>
                 </p>
@@ -237,7 +237,7 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleCnPassword(!visibleCnPassword)}
                       className="password_togoler iconBoxBtn text-white text-center"
                     >
-                      <AiFillEyeInvisible />
+                      <AiFillEyeInvisible size={25} />
                     </button>
                   </span>
                 </p>
