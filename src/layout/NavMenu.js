@@ -50,7 +50,7 @@ const NavMenu = () => {
                             <Nav.Link as={Link} to='howItWorks' className=' text-white  me-lg-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
                             <Nav.Link className='text-white  me-lg-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
                             {user?.walletAddress ?
-                                <Nav.Link as={Link} to='howItWorks' href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" />Logout</TopButton></Nav.Link>
+                                <Nav.Link as={Link} to='profile' href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" />Profile</TopButton></Nav.Link>
                                 :
                                 <Nav.Link onClick={() => openWalletModal()} href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" /> LOGIN with Wallet</TopButton></Nav.Link>}
                         </Nav>

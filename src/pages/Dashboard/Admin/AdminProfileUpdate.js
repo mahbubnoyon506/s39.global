@@ -50,6 +50,7 @@ const AdminProfileUpdate = () => {
   const subProfile = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
+    const userName = event.target.username.value;
     const phone = valueProfilePhn;
     const currentPassword = event.target.currentPassword.value;
     const password = event.target.password.value;
@@ -150,6 +151,9 @@ const AdminProfileUpdate = () => {
                     name="username"
                     placeholder="Username"
                     value={userName}
+                    onChange={(e) =>
+                      setUserName(e.target.value.toLocaleLowerCase())
+                    }
                   />
                 </p>
                 <p className="d-flex col-12 inputProfile">

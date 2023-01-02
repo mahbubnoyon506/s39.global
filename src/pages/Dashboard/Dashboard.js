@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -7,7 +7,7 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { Button } from "@mui/material";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
@@ -16,10 +16,12 @@ import { RiAdminFill } from "react-icons/ri";
 import { FcLeft } from "react-icons/fc";
 import { SiGoogleanalytics, SiProcessingfoundation } from "react-icons/si";
 import logo from "../../assets/images/logo3.png";
-import { CgCommunity, CgGhost } from "react-icons/cg";
+import { CgCommunity, CgGhost, CgLogOut } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
 import { GiOnTarget } from "react-icons/gi";
 import { FaGift, FaHome, FaWallet } from "react-icons/fa";
+import { S39GlobalContext } from "../../contexts/S39GlobalContext";
+import swal from "sweetalert";
 
 const menuLinkStyles = ({ isActive }) => {
   return {
@@ -35,6 +37,24 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hide, setHide] = useState(false);
+  const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
+  console.log(user)
+  const navigate = useNavigate;
+
+
+  const Logout = () => {
+    logOut();
+    // setOpen(false);
+    navigate("/");
+    closeWalletModal();
+    swal({
+      // title: "S",
+      text: "You have successfully logged out.",
+      icon: "success",
+      button: "OK!",
+      className: "modal_class_success",
+    });
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -70,11 +90,23 @@ function Dashboard(props) {
           to="dashboard"
         >
           <span className="navIconAdmin">
-            <MdDashboard style={{ fontSize: "20px" }} />
+            <MdDashboard size={20} />
           </span>
           DASHBOARD
         </NavLink>
         <br />
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="admins"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <RiAdminFill size={20} />
+          </span>
+          ADMINS
+        </NavLink>
 
         <NavLink
           className="dashboardMenu"
@@ -84,21 +116,9 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <FaGift style={{ fontSize: "20px" }} />
+            <FaGift size={20} />
           </span>
           REWARD
-        </NavLink>
-        <NavLink
-          className="dashboardMenu"
-          style={menuLinkStyles}
-          onClick={handleClose}
-          to="admins"
-        >
-          {" "}
-          <span className="navIconAdmin">
-            <RiAdminFill style={{ fontSize: "20px" }} />
-          </span>
-          ADMINS
         </NavLink>
 
         <NavLink
@@ -109,7 +129,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <FaWallet style={{ fontSize: "20px" }} />
+            <FaWallet size={20} />
           </span>
           WALLETS
         </NavLink>
@@ -122,7 +142,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <CgCommunity style={{ fontSize: "20px" }} />
+            <CgCommunity size={20} />
           </span>
           COMMUNITY VOTE
         </NavLink>
@@ -135,7 +155,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <GiOnTarget style={{ fontSize: "20px" }} />
+            <GiOnTarget size={20} />
           </span>
           GOALS
         </NavLink>
@@ -148,7 +168,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <SiGoogleanalytics style={{ fontSize: "20px" }} />
+            <SiGoogleanalytics size={20} />
           </span>
           NGWB
         </NavLink>
@@ -160,7 +180,7 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <SiProcessingfoundation style={{ fontSize: "20px" }} />
+            <SiProcessingfoundation size={20} />
           </span>
           PORTFOUND
         </NavLink>
@@ -173,23 +193,25 @@ function Dashboard(props) {
         >
           {" "}
           <span className="navIconAdmin">
-            <CgGhost color="#fff" style={{ fontSize: "20px" }} />
+            <CgGhost color="#fff" size={20} />
           </span>
           HOSTING
         </NavLink>
         <div className="mt-2">
           <Button
+            onClick={CgLogOut}
             sx={{
               borderRadius: "8px",
               background: "#FFC000",
               marginRight: "10px",
               fontWeight: "700",
               "&:hover": { background: "#FFC000" },
-              color: '#2F3655'
+              color: '#2F3655',
+              paddingLeft: '5px'
             }}
             variant="contained"
           >
-            <BiLogOut className="me-1" size={20} />
+            <BiLogOut className="ms-1 me-3" size={25} />
             Logout
           </Button>
         </div>

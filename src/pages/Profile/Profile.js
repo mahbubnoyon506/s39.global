@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaRegCopy } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import {
     TwitterShareButton,
     TwitterIcon,
@@ -15,8 +16,28 @@ import {
     TelegramShareButton,
     TelegramIcon,
 } from "react-share";
+import swal from 'sweetalert';
+import { S39GlobalContext } from '../../contexts/S39GlobalContext';
 
 const Profile = () => {
+    const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
+    console.log(user)
+    const navigate = useNavigate;
+
+
+    const Logout = () => {
+        logOut();
+        navigate("/");
+        // setOpen(false);
+        closeWalletModal();
+        swal({
+            // title: "S",
+            text: "You are successfully logged out.",
+            icon: "success",
+            button: "OK!",
+            className: "modal_class_success",
+        });
+    };
     return (
 
         <div className='bg-darkblue text-white'>
@@ -174,7 +195,7 @@ const Profile = () => {
                                             className='border-0 px-4 p-2 me-4 profile-btns' type='submit'
                                             style={{ backgroundColor: "#15407f", color: '#ffffff', width: "28%" }}
                                         >Go to courses</button>
-                                        <button className='border-0 px-4 p-2 ms profile-btns' type="button" style={{ color: '#ffffff', backgroundColor: '#FF5421', width: "28%" }} >Logout</button>
+                                        <button onClick={Logout} className='border-0 px-4 p-2 ms profile-btns' type="button" style={{ color: '#ffffff', backgroundColor: '#FF5421', width: "28%" }} >Logout</button>
                                     </div>
                                 </div>
                             </div>
