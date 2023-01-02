@@ -50,6 +50,7 @@ const AdminProfileUpdate = () => {
   const subProfile = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
+    const userName = event.target.username.value;
     const phone = valueProfilePhn;
     const currentPassword = event.target.currentPassword.value;
     const password = event.target.password.value;
@@ -150,6 +151,9 @@ const AdminProfileUpdate = () => {
                     name="username"
                     placeholder="Username"
                     value={userName}
+                    onChange={(e) =>
+                      setUserName(e.target.value.toLocaleLowerCase())
+                    }
                   />
                 </p>
                 <p className="d-flex col-12 inputProfile">
@@ -174,7 +178,7 @@ const AdminProfileUpdate = () => {
                     defaultCountry="SG"
                     value={valueProfilePhn}
                     onChange={setValueProfilePhn}
-                    className="countryInput input_phone form-control"
+                    className="countryInput input_phone form-control text-white"
                   />
                 </p>
                 <p className="d-flex col-12 inputProfile">
@@ -193,7 +197,7 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleCPassword(!visibleCPassword)}
                       className="iconBoxBtn password_togoler text-center text-white"
                     >
-                      <AiFillEyeInvisible />
+                      <AiFillEyeInvisible size={25} />
                     </button>
                   </span>
                 </p>
@@ -213,7 +217,7 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleEnPassword(!visibleEnPassword)}
                       className="iconBoxBtn password_togoler text-center text-white"
                     >
-                      <AiFillEyeInvisible />
+                      <AiFillEyeInvisible size={25} />
                     </button>
                   </span>
                 </p>
@@ -233,7 +237,7 @@ const AdminProfileUpdate = () => {
                       onClick={() => setVisibleCnPassword(!visibleCnPassword)}
                       className="password_togoler iconBoxBtn text-white text-center"
                     >
-                      <AiFillEyeInvisible />
+                      <AiFillEyeInvisible size={25} />
                     </button>
                   </span>
                 </p>

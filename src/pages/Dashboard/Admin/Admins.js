@@ -32,11 +32,13 @@ const Admins = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`https://testnetback.s39global.com/api/v1/admin/${id}`, {
-            headers: {
-              authorization: `Bearer ${localStorage.getItem("adminS39Global")}`,
-            },
-          })
+          .delete(`https://testnetback.s39global.com/api/v1/admin/${id}`, 
+          // {
+          //   headers: {
+          //     authorization: `Bearer ${localStorage.getItem("adminS39Global")}`,
+          //   },
+          // }
+          )
           .then((res) => {
             if (res.status === 200) {
               // alert(res.data.message);
@@ -64,6 +66,8 @@ const Admins = () => {
     });
   }
 
+  console.log(allAdmin)
+
   return (
     <div className='adminBody'>
       <h5 className="dashboard-title">Admins</h5>
@@ -79,7 +83,7 @@ const Admins = () => {
             <thead>
               <tr>
                 <th className='text-center'>Image</th>
-
+                <th className='text-start adminHidden'>Name</th>
                 <th className='text-start adminHidden'>Email</th>
                 <th className='text-start adminHidden'>Mobile</th>
                 <th className='text-start'>Action</th>
@@ -105,8 +109,9 @@ const Admins = () => {
                   </td>
 
 
-                  <td className="text-start adminHidden">{admin.email}</td>
-                  <td className="text-start adminHidden">{admin.phone || "Mobile"}</td>
+                  <td className="text-start adminHidden">{admin?.name || 'adminName'}</td>
+                  <td className="text-start adminHidden">{admin?.email}</td>
+                  <td className="text-start adminHidden">{admin?.phone || "Mobile"}</td>
 
 
                   <td className='action'>
@@ -117,8 +122,6 @@ const Admins = () => {
                   </td>
                 </tr>
               ))}
-
-
             </tbody>
           </Table>
         </div>
