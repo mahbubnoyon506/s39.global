@@ -34,20 +34,19 @@ const BackToTop = () => {
         <div>
             <Button
                 sx={{
-                    borderRadius: "45px",
-                    background: "#FFC000",
-                    color: "#000",
-                    marginRight: "10px",
-                    fontWeight: "900",
-                    "&:hover": { background: "#FFC000" },
+                    fontWeight: '700',
+                    color: '#000A17',
+                    borderRadius: '45px',
+                    background: '#FFC000',
+                    '&:hover': { background: '#09626C', color: '#fff' },
                     bottom: '10px', right: '10px', position: 'fixed', opacity: '0.8'
                 }}
                 variant="contained" className='m-1 text-4xl text-red-600 opacity-80' onClick={backtoTop ? scrollUp : scrollToBottom}>
                 {
                     backtoTop ?
-                        <MdVerticalAlignTop size={25} color='#000A17' />
+                        <MdVerticalAlignTop size={25} color='' />
                         :
-                        <AiOutlineVerticalAlignBottom size={25} color='#000A17' />
+                        <AiOutlineVerticalAlignBottom size={25} color='' />
                 }
             </Button >
         </div>
