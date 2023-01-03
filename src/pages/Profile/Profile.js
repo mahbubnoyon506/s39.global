@@ -22,7 +22,7 @@ import { S39GlobalContext } from '../../contexts/S39GlobalContext';
 const Profile = () => {
     const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
     console.log(user)
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
 
     const Logout = () => {

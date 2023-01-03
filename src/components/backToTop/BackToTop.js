@@ -5,7 +5,6 @@ import { MdVerticalAlignTop } from 'react-icons/md';
 
 const BackToTop = () => {
     const [backtoTop, setBacktoTop] = useState(false);
-    const [backtoBottom, setBacktoBottom] = useState(false);
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 0) {
