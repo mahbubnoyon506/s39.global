@@ -33,11 +33,11 @@ const Admins = () => {
       if (willDelete) {
         axios
           .delete(`https://testnetback.s39global.com/api/v1/admin/${id}`, 
-          // {
-          //   headers: {
-          //     authorization: `Bearer ${localStorage.getItem("adminS39Global")}`,
-          //   },
-          // }
+          {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("adminS39Global")}`,
+            },
+          }
           )
           .then((res) => {
             if (res.status === 200) {

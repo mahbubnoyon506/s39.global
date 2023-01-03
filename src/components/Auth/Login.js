@@ -25,7 +25,7 @@ const Login = () => {
       navigate(`/admin/otp/${token}`, { replace: true });
     }
     if (admin?._id) {
-      navigate("/admin", { replace: true });
+      navigate("/admin/dashboard", { replace: true });
     }
   }, [admin, navigate, isAuthenticating, token]);
 
