@@ -4,7 +4,7 @@ import project from '../../assets/images/DiagramInfographicGraph.png'
 
 const Partnership = () => {
     return (
-        <div className='' style={{ padding: '80px 0px', overflow:'hidden' }} >
+        <div className='' style={{overflow:'hidden' }} >
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-4'></div>

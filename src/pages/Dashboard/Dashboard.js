@@ -39,7 +39,7 @@ function Dashboard(props) {
   const [hide, setHide] = useState(false);
   const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
   console.log(user)
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
 
   const Logout = () => {
@@ -199,7 +199,7 @@ function Dashboard(props) {
         </NavLink>
         <div className="mt-2">
           <Button
-            onClick={CgLogOut}
+            onClick={Logout}
             sx={{
               borderRadius: "8px",
               background: "#FFC000",

@@ -64,7 +64,9 @@ const Projects = () => {
                         projects.map((project, index) =>
                             <div key={index} className='col-lg-4 col-md-6 text-white' >
                                 <Card className='pt-4' style={{ minHeight: '250px', borderRadius: '40px', background: '#171717' }}>
-                                    <Card.Img style={{ width: '85px', margin: '0 auto' }} variant="top" src={project.image} />
+                                    <div className='d-flex justify-content-center align-items-center' style={{ width: '85px', margin: '0 auto', minHeight: '85px' }}>
+                                        <img className='img-fluid' src={project.image} alt="" />
+                                    </div>
                                     <Card.Body>
                                         <Card.Title className='text-center' style={{ fontSize: '30px', }}>{project.title}</Card.Title>
                                         <Card.Title className='text-uppercase text-center'>{project.subTitle}</Card.Title>
@@ -74,9 +76,6 @@ const Projects = () => {
                         )
                     }
                 </div>
-                {/* <div className='d-flex justify-content-center'>
-                <button className='btn btn-light mt-4 px-4 fw-bold'>Learn More <TrendingFlatIcon /></button>
-                </div> */}
             </div>
         </div>
     );

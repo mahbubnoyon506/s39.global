@@ -4,7 +4,8 @@ import BannerPhoto from '../../assets/images/homes39.png';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { useNavigate } from 'react-router-dom';
 import { S39GlobalContext } from '../../contexts/S39GlobalContext';
-
+import { Button } from '@mui/material';
+import { FaAngleRight } from 'react-icons/fa'
 
 
 function Banner() {
@@ -20,10 +21,10 @@ function Banner() {
                         <p className='bannerSubTitle'>WHERE CRYPTO MEETS COMMODITIES</p>
                         <p className='bannerTitle'>DECENTRALIZED ECOFRIENDLY<br />  BLOCKCHAIN <br /> TECHNOLOGY</p>
                         {/* <img style={{ marginLeft: '30%' }} className='mb-4 ' width='28%' src={logo} alt="D.E.B.T." /> <br /> */}
-                        <button onClick={() => openWalletModal()} className='btn btn-light mt-4 px-4 fw-bold rounded-pill border-0' style={{background: '#FFC000'}}>LOGIN WITH WALLET <TrendingFlatIcon /></button>
+                        <Button onClick={() => openWalletModal()} sx={{fontSize: '',fontWeight: '700', color: '#000A17', borderRadius: '45px', background: '#FFC000', '&:hover': { background: '#09626C', color: '#fff' } }} variant='contained'>LOGIN WITH WALLET <FaAngleRight size={18}/> </Button>
                     </div>
                     <div className='col-lg-6 col-sm-12 mt-4 mt-lg-0' >
-                        <img className=''   width="100%" src={BannerPhoto} alt="" />
+                        <img className='' width="100%" src={BannerPhoto} alt="" />
                     </div>
                 </div>
             </div>
