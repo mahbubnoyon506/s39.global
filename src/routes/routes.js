@@ -27,7 +27,8 @@ import Profile from "../pages/Profile/Profile";
 
 import ResetPassword from "../components/Auth/ResetPassword";
 import { useEffect } from "react";
-import MinarelTokens from "../pages/Dashboard/Admin/MinarelTokens/MinarelTokens";
+import MinarelTokens from "../pages/MinarelTokens/MinarelTokens";
+import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 
 
 const routes = createBrowserRouter([
@@ -87,6 +88,10 @@ const routes = createBrowserRouter([
       {
         path: "/mineraltoken",
         element: <MinarelTokens />,
+      },
+      {
+        path: "/claimtoken",
+        element: <ClaimToken />,
       },
     ],
   },

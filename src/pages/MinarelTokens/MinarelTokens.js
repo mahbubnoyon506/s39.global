@@ -1,11 +1,18 @@
 import React, { useEffect } from 'react';
 import { Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import MineralTable from './MineralTable';
 
 const MinarelTokens = () => {
+    const navigate = useNavigate()
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/claimtoken')
+    }
     return (
         <div className='py-2 bg-darkblue' >
             <div className='container' style={{ overflow: 'hidden' }}>
@@ -46,7 +53,7 @@ const MinarelTokens = () => {
                                 <p style={{ fontSize: '18px', fontWeight: '700' }}>Mine mineral tokens</p>
                                 <p style={{ fontSize: '18px', fontWeight: '700' }}>500 S Point</p>
                             </div>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div className='d-flex justify-content-between primary pb-2'>
                                     <button className='border-0 primary px-3 py-1' disabled style={{ background: '#000', minWidth: '120px' }}>Amount</button>
                                     <input className='w-100' type="text" name="" id="" />
