@@ -27,6 +27,7 @@ import Profile from "../pages/Profile/Profile";
 
 import ResetPassword from "../components/Auth/ResetPassword";
 import { useEffect } from "react";
+import MinarelTokens from "../pages/Dashboard/Admin/MinarelTokens/MinarelTokens";
 
 
 const routes = createBrowserRouter([
@@ -83,6 +84,10 @@ const routes = createBrowserRouter([
         path: '/admin/otp/:token',
         element: <Otp />
       },
+      {
+        path: "/mineraltoken",
+        element: <MinarelTokens />,
+      },
     ],
   },
   {
@@ -129,6 +134,7 @@ const routes = createBrowserRouter([
         path: "hosting",
         element: <Hosting />,
       },
+
     ],
   },
 ]);
