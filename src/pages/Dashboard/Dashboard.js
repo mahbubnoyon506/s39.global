@@ -17,7 +17,7 @@ import { FcLeft } from "react-icons/fc";
 import { SiGoogleanalytics, SiProcessingfoundation } from "react-icons/si";
 import logo from "../../assets/images/logo3.png";
 import { CgCommunity, CgGhost, CgLogOut } from "react-icons/cg";
-import { BiLogOut } from "react-icons/bi";
+import { BiLogOut, BiUserCircle } from "react-icons/bi";
 import { GiOnTarget } from "react-icons/gi";
 import { FaGift, FaHome, FaWallet } from "react-icons/fa";
 import { S39GlobalContext } from "../../contexts/S39GlobalContext";
@@ -39,7 +39,7 @@ function Dashboard(props) {
   const [hide, setHide] = useState(false);
   const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
   console.log(user)
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
 
   const Logout = () => {
@@ -197,9 +197,21 @@ function Dashboard(props) {
           </span>
           HOSTING
         </NavLink>
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="user"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <BiUserCircle color="#fff" size={20} />
+          </span>
+          USER
+        </NavLink>
         <div className="mt-2">
           <Button
-            onClick={CgLogOut}
+            onClick={Logout}
             sx={{
               borderRadius: "8px",
               background: "#FFC000",

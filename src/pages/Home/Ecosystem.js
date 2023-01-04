@@ -6,7 +6,7 @@ const Ecosystem = () => {
         <div className='' >
             <div className='container'>
                 <div className='row align-items-center'>
-                    <div className='col-md-6'>
+                    <div className='col-md-6 mt-lg-5'>
                         <h2 className='systemTitle'>S39 GLOBAL ECOSYSTEM</h2>
                         <p className='systemText'>
                             Blockchain and cryptocurrencies can be complex and overwhelming to many individuals. For years we have been hearing about blockchain and many of us want to get involved, but simply don't know how.

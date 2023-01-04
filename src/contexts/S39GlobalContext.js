@@ -270,7 +270,7 @@ export default function S39Provider({ children }) {
   const logOut = async () => {
     setCurrentAccount(null);
     setUser({});
-    localStorage.removeItem("token");
+    localStorage.removeItem("s39GlobalToken");
   };
 
   const payByTestnetBNB = async (data) => {
@@ -981,6 +981,7 @@ export default function S39Provider({ children }) {
         // signBuyFunction,
         setID,
         setUserRefetch,
+        userRefetch,
         chain,
         pageLoading,
         payAmount,

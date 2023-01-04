@@ -12,13 +12,13 @@ const Footer = () => {
         <div className=' pt-5 pb-2 bg-darkblue'>
             <div className='container d-flex justify-content-center'>
                 <div className='text-center text-white'>
-                    <div ><img style={{ width: '175px' }} src={Logo} alt="" /></div>
-                    <Link to='/projects' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>Projects</Link>
-                    {/* <Link to='/' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>hosting</Link> */}
-                    <Link to='/specification' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>specifications</Link>
-                    <Link to='/privacypolicy' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>privacy policy</Link>
-                    <Link to='/termscondition' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>terms and conditions</Link>
-                    <Link to='/store' className='hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '20px' }}>store</Link>
+                    <div className='d-flex justify-content-center'><img className='pb-1' style={{ width: '200px' }} src={Logo} alt="" /></div>
+                    <Link to='/projects' className='py-1 hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '18px' }}>Projects</Link>
+                    {/* <Link to='/' className='py-1 hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '18px' }}>hosting</Link> */}
+                    <Link to='/specification' className='py-1 hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '18px' }}>specifications</Link>
+                    <Link to='/privacypolicy' className='py-1 hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '18px' }}>privacy policy</Link>
+                    <Link to='/termscondition' className='py-1 hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '18px' }}>terms and conditions</Link>
+                    <Link to='/store' className='py-1 hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '18px' }}>store</Link>
 
                     <div className='d-flex gap-3 justify-content-center '>
                         <a className='' href="#" target="_blank" rel="noopener noreferrer"><AiFillInstagram size='40' color='#fff' /></a>
@@ -28,7 +28,6 @@ const Footer = () => {
                         <a href="#" target="_blank" rel="noopener noreferrer"><BsLinkedin size='40' color='#fff' /></a>
 
                     </div>
-
                     <p className='font-khula mt-3' style={{ fontSize: '12px' }}>© {year} S39 Global. All rights reserved.</p>
                 </div>
             </div>

@@ -28,6 +28,7 @@ import Profile from "../pages/Profile/Profile";
 import ResetPassword from "../components/Auth/ResetPassword";
 import { useEffect } from "react";
 import AdminRoutes from "../components/ProtectedRoutes/AdminRoutes";
+import User from "../pages/Dashboard/User/User";
 
 
 const routes = createBrowserRouter([
@@ -89,7 +90,7 @@ const routes = createBrowserRouter([
   {
     path: "/admin",
     element: <AdminRoutes>
-    <Dashboard />
+      <Dashboard />
     </AdminRoutes>,
     children: [
       {
@@ -131,6 +132,10 @@ const routes = createBrowserRouter([
       {
         path: "hosting",
         element: <Hosting />,
+      },
+      {
+        path: "user",
+        element: <User />,
       },
     ],
   },
