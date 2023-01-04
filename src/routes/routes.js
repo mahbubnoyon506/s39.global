@@ -29,9 +29,14 @@ import ResetPassword from "../components/Auth/ResetPassword";
 import { useEffect } from "react";
 import AdminRoutes from "../components/ProtectedRoutes/AdminRoutes";
 import User from "../pages/Dashboard/User/User";
+import MinarelTokens from "../pages/MinarelTokens/MinarelTokens";
+import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 
+const time = new Date();
+time.setSeconds(time.getSeconds() + 180);
 
 const routes = createBrowserRouter([
+
   {
     path: "/",
     element: <Main />,
@@ -66,7 +71,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile />,
+        element: <Profile expiryTimestamp={time} />,
       },
       //Authentications
       {
@@ -84,6 +89,14 @@ const routes = createBrowserRouter([
       {
         path: '/admin/otp/:token',
         element: <Otp />
+      },
+      {
+        path: "/mineraltoken",
+        element: <MinarelTokens />,
+      },
+      {
+        path: "/claimtoken",
+        element: <ClaimToken />,
       },
     ],
   },
@@ -137,6 +150,7 @@ const routes = createBrowserRouter([
         path: "user",
         element: <User />,
       },
+
     ],
   },
 ]);

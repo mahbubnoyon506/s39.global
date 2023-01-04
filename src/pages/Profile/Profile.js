@@ -2,7 +2,8 @@ import { Button } from '@mui/material';
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { FaRegCopy } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useTimer } from 'react-timer-hook';
 import {
     TwitterShareButton,
     TwitterIcon,
@@ -20,20 +21,91 @@ import {
 import swal from 'sweetalert';
 import Swal from 'sweetalert2';
 import { S39GlobalContext } from '../../contexts/S39GlobalContext';
+import EmailVerificationModal from './EmailVerificationModal';
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import copy from "copy-to-clipboard";
 
-const Profile = () => {
-    const { user, openWalletModal, closeWalletModal, logOut, setUserRefetch, userRefetch } = useContext(S39GlobalContext);
-    console.log(user);
+
+const Profile = ({ expiryTimestamp }) => {
+    const { user, openWalletModal, getBalanceTestnet, closeWalletModal, logOut, setUserRefetch, userRefetch } = useContext(S39GlobalContext);
+    // console.log(user);
+    const locations = useLocation().state
     const [openEmail, setOpenEmail] = useState(false);
     const [previewImage, setPreviewImage] = useState("");
     const [CurrentFile, setCurrentFile] = useState("");
     const [fullName, setFullName] = useState("");
+    const [emailOtpVerify, setEmailOtpVerify] = useState(false);
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
 
-    // useEffect(() => {
-    //     setFullName(user?.name)
-    // }, [])
+
+    // Copy Text 
+    const [copyTextAffiliateCode, setCopyTextAffiliateCode] = useState("");
+    const [copyTextAffiliateLink, setCopyTextAffiliateLink] = useState("");
+    const [copyTextWalletAddress, setCopyTextWalletAddress] = useState("");
+    const [tabIndex, setTabIndex] = useState(locations?.name || 0);
+
+
+
+
+
+
+
+
+
+
+    useEffect(() => {
+        getBalanceTestnet();
+        setCopyTextWalletAddress(user?.walletAddress ? user?.walletAddress : "");
+        setCopyTextAffiliateCode(user?.myReferralCode ? user?.myReferralCode : "");
+        // setCopyTextAffiliateLink(
+        //   window.location.origin || user?.myReferralCode
+        //     ? window.location.origin + "/" + user?.myReferralCode
+        //     : ""
+        // );
+        setCopyTextAffiliateLink(
+            window.location.origin || user?.myReferralCode
+                ? window.location.origin + "/" + user?.myReferralCode
+                : ""
+        );
+        // if (!user?.email || !user.email === "undefined") {
+        //     // swal({
+        //     //     text: "Please update your email before proceeding further. You stand to win attractive prizes monthly.",
+        //     //     icon: "warning",
+        //     //     button: "OK",
+        //     //     dangerMode: true,
+        //     //     className: "modal_class_success swal-text swal-footer",
+        //     // });
+
+        //     const wrapper = document.createElement("div");
+        //     wrapper.innerHTML = `<p class='text-break text-white fs-5'>Please update your email before proceeding further. You stand to win attractive prizes monthly.</p>`;
+
+        //     Swal.fire(
+        //         {
+        //             html: wrapper,
+        //             icon: "warning",
+        //             customClass: "modal_class_success",
+        //         }
+        //     )
+        // }
+    }, [user]);
+
+
+    // Re-send OTP functionality
+    const {
+        seconds,
+        minutes,
+        resume,
+        restart,
+    } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
+
+    const restarting = (sec) => {
+        const time = new Date();
+        time.setSeconds(time.getSeconds() + sec);
+        restart(time)
+
+    }
 
     const Logout = () => {
         logOut();
@@ -123,14 +195,17 @@ const Profile = () => {
                 .then(res => {
                     console.log("update");
                     if (res.status === 200) {
-                        swal({
-                            title: "Successful",
-                            text: "Email updated successfully",
-                            icon: "success",
-                            button: "OK",
-                            className: "modal_class_success",
-                        });
+                        setEmailOtpVerify(false);
+                        setOpenEmail(false);
+                        // swal({
+                        //     title: "Successful",
+                        //     text: "Email updated successfully",
+                        //     icon: "success",
+                        //     button: "OK",
+                        //     className: "modal_class_success",
+                        // });
                         setEmail("");
+
                         setUserRefetch(!userRefetch);
                     }
                 })
@@ -147,7 +222,7 @@ const Profile = () => {
             console.log(email)
             await axios.post('https://testnetback.s39global.com/api/v1/email/send', { email })
                 .then(res => {
-                    console.log(res, '--data results gotten~');
+                    // console.log(res, '--data results gotten~');
                     if (res.status === 200) {
                         swal({
                             text: res.data.message,
@@ -155,6 +230,10 @@ const Profile = () => {
                             button: "OK!",
                             className: "modal_class_success",
                         });
+                        setOpenEmail(true);
+                        restarting(180);
+                        // setEmailOtpVerify(res.data.otp);
+
                     }
                 }).catch(err => {
                     // alert(err.response.data.message);
@@ -207,6 +286,195 @@ const Profile = () => {
         }
     }
 
+    // ********************************************** walletAddress
+    const copyToClipboardAffiliateCode = () => {
+        copy(copyTextAffiliateCode);
+        // alert(`You have copied "${copyTextReferralID}"`);
+        // copyTextAffiliateCode !== ""
+        //     ? swal({
+        //         title: "Copied",
+        //         text: `You have copied "${copyTextAffiliateCode}"`,
+        //         icon: "success",
+        //         button: "OK",
+        //         className: "modal_class_success",
+        //     })
+        //     : swal({
+        //         title: "Not Copied",
+        //         text: "Nothing to Copy",
+        //         icon: "warning",
+        //         button: "OK",
+        //         className: "modal_class_warning",
+        //     });
+
+
+        if (copyTextAffiliateCode !== "") {
+
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = `<p class='text-break text-white fs-5'>You have copied "${copyTextAffiliateCode}"</p>`;
+
+            Swal.fire(
+                {
+                    // title: 'Successfully updated your Full Name.',
+                    html: wrapper,
+                    icon: "success",
+                    customClass: "modal_class_success",
+                }
+            )
+
+
+        }
+        else {
+
+
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = `<p class='text-break text-white fs-5'>Nothing to Copy</p>`;
+
+            Swal.fire(
+                {
+                    html: wrapper,
+                    icon: "warning",
+                    customClass: "modal_class_success",
+                }
+            )
+        }
+    };
+
+    // ********************************************** Affiliate Link 
+    const copyToClipboardAffiliateLink = () => {
+        copy(copyTextAffiliateLink);
+
+        // copyTextAffiliateLink !== ""
+        // ? swal({
+        //     title: "Copied",
+        //     text: `You have copied "${copyTextAffiliateLink}"`,
+        //     icon: "success",
+        //     button: "OK",
+        //     className: "modal_class_success",
+        // })
+        // : swal({
+        //     title: "Not Copied",
+        //     text: "Nothing to Copy",
+        //     icon: "warning",
+        //     button: "OK",
+        //     className: "modal_class_warning",
+        // });
+
+        // alert(`You have copied "${copyTextAffiliateLink}"`);
+
+        if (copyTextAffiliateLink !== "") {
+            // swal({
+            //     title: "Copied",
+            //     text: `You have copied "${copyTextAffiliateCode}"`,
+            //     icon: "success",
+            //     button: "OK",
+            //     className: "modal_class_success",
+            // })
+
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = `<p class='text-break text-white fs-5'>You have copied "${copyTextAffiliateLink}"</p>`;
+
+            Swal.fire(
+                {
+                    // title: 'Successfully updated your Full Name.',
+                    html: wrapper,
+                    icon: "success",
+                    customClass: "modal_class_success",
+                }
+            )
+
+
+        }
+        else {
+            // swal({
+            //         title: "Not Copied",
+            //         text: "Nothing to Copy",
+            //         icon: "warning",
+            //         button: "OK",
+            //         className: "modal_class_warning",
+            //  });
+
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = `<p class='text-break text-white fs-5'>Nothing to Copy</p>`;
+
+            Swal.fire(
+                {
+                    html: wrapper,
+                    icon: "warning",
+                    customClass: "modal_class_success",
+                }
+            )
+        }
+
+    };
+
+    // ********************************************** walletAddress
+
+    const copyToClipboardWalletAddress = () => {
+        copy(copyTextWalletAddress);
+        // alert(`You have copied "${copyTextWalletAddress}"`);
+        // copyTextWalletAddress !== ""
+        //     ? swal({
+        //         title: "Copied",
+        //         text: `You have copied "${copyTextWalletAddress}"`,
+        //         icon: "success",
+        //         button: "OK",
+        //         className: "modal_class_success",
+        //     })
+        //     : swal({
+        //         title: "Not Copied",
+        //         text: "Nothing to Copy",
+        //         icon: "warning",
+        //         button: "OK",
+        //         className: "modal_class_warning",
+        //     });
+
+        if (copyTextWalletAddress !== "") {
+            // swal({
+            //     title: "Copied",
+            //     text: `You have copied "${copyTextAffiliateCode}"`,
+            //     icon: "success",
+            //     button: "OK",
+            //     className: "modal_class_success",
+            // })
+
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = `<p class='text-break text-white fs-5'>You have copied "${copyTextWalletAddress}"</p>`;
+
+            Swal.fire(
+                {
+                    // title: 'Successfully updated your Full Name.',
+                    html: wrapper,
+                    icon: "success",
+                    customClass: "modal_class_success",
+                }
+            )
+
+
+        }
+        else {
+            // swal({
+            //         title: "Not Copied",
+            //         text: "Nothing to Copy",
+            //         icon: "warning",
+            //         button: "OK",
+            //         className: "modal_class_warning",
+            //  });
+
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = `<p class='text-break text-white fs-5'>Nothing to Copy</p>`;
+
+            Swal.fire(
+                {
+                    html: wrapper,
+                    icon: "warning",
+                    customClass: "modal_class_success",
+                }
+            )
+        }
+    };
+
+
+
     return (
 
         <div className='bg-darkblue text-white'>
@@ -217,13 +485,14 @@ const Profile = () => {
                         <div id="login" className="mb-30 ">
                             <div className="">
                                 <div className="">
+                                    {(!user?.image && !previewImage) && <img src={"https://i.ibb.co/JtVwzXs/default.jpg"} width={200} height={200} className='d-flex justify-content-start' alt="" />}
                                     {(user?.image && !previewImage) && <img src={user?.image} width={200} height={200} className='d-flex justify-content-start' alt="" />}
                                     {previewImage && <img src={previewImage} width={200} height={200} className='d-flex justify-content-start' alt="" />}
                                 </div>
                                 <div className="mt-3">
                                     <label className=''>Update your profile image<span>*</span></label>
                                     <div className='d-flex'>
-                                        <input className='w-100 border py-2 cursor-pointer' onChange={selectFile} type="file" accept='image/*' name="image" id="image" defaultValue={user?.image ? user?.image : ""} />
+                                        <input className='w-100 border py-2 cursor-pointer' onChange={selectFile} type="file" accept='image/*' name="image" id="image" />
                                         {CurrentFile ? <button
                                             disabled={!previewImage || !CurrentFile}
                                             onClick={() => handleUpdateImage()}
@@ -270,9 +539,9 @@ const Profile = () => {
                                             id="email" name="email" className="w-100 ps-2" placeholder='Please update your email/username' defaultValue={user?.email ? user?.email : ""} type="email" required onChange={(e) => setEmail(e.target.value)} />
 
 
-                                        {email ?
+                                        {email && email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) ?
                                             <button
-                                                disabled={!email}
+                                                disabled={!email || !email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)}
                                                 className='border-0 px-4 p-2 w-25 d-flex justify-content-center' style={{ color: '#ffffff', backgroundColor: (!email) ? "rgb(151, 145, 145)" : '#FF5421' }}
                                                 onClick={() => handleVerifyEmail()}
 
@@ -315,6 +584,7 @@ const Profile = () => {
                                             className=""
                                             style={{ backgroundColor: "#15407f" }}
                                             type="button"
+                                            onClick={copyToClipboardAffiliateCode}
 
                                         >
                                             <FaRegCopy size={30} color='#fff' className='p-1' />
@@ -328,7 +598,7 @@ const Profile = () => {
                                             type="text"
                                             id="AffiliateLink"
                                             name="AffiliateLink"
-                                            defaultValue={`https://testnet.s39global.com/${user?.myReferralCode}`}
+                                            defaultValue={window.location.origin + "/" + user.myReferralCode}
                                             className="form-control text-dark"
                                             disabled
                                         />
@@ -336,7 +606,7 @@ const Profile = () => {
                                             className=""
                                             style={{ backgroundColor: "#15407f" }}
                                             type="button"
-
+                                            onClick={copyToClipboardAffiliateLink}
                                         >
                                             <FaRegCopy size={30} color='#fff' className='p-1' />
                                         </button>
@@ -361,6 +631,7 @@ const Profile = () => {
                                             className=""
                                             style={{ backgroundColor: "#15407f" }}
                                             type="button"
+                                            onClick={copyToClipboardWalletAddress}
 
                                         >
                                             <FaRegCopy size={30} color='#fff' className='p-1' />
@@ -372,22 +643,22 @@ const Profile = () => {
                                         <div>
                                             <span className='pt-2  text-start mb-3'>Share Affiliate Link</span>
                                             <div className='d-flex gap-2 mb-3'>
-                                                <TwitterShareButton url='' title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                <TwitterShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
                                                     <TwitterIcon size={40} round={true} />
                                                 </TwitterShareButton>
-                                                <LinkedinShareButton url='' title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                <LinkedinShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
                                                     <LinkedinIcon size={40} round={true} />
                                                 </LinkedinShareButton>
-                                                <WhatsappShareButton url='' title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                <WhatsappShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
                                                     <WhatsappIcon size={40} round={true} />
                                                 </WhatsappShareButton>
-                                                <FacebookShareButton url='' title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                <FacebookShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
                                                     <FacebookIcon size={40} round={true} />
                                                 </FacebookShareButton>
-                                                <PinterestShareButton url='' title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                <PinterestShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
                                                     <PinterestIcon size={40} round={true} />
                                                 </PinterestShareButton>
-                                                <TelegramShareButton url='' title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                <TelegramShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
                                                     <TelegramIcon size={40} round={true} />
                                                 </TelegramShareButton>
                                             </div>
@@ -407,6 +678,17 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
+            <EmailVerificationModal
+                handleUpdateEmail={handleUpdateEmail}
+                handleVerifyEmail={handleVerifyEmail}
+                minutes={minutes}
+                email={email}
+                seconds={seconds}
+                emailOtpVerify={emailOtpVerify}
+                setEmailOtpVerify={setEmailOtpVerify}
+                open={openEmail}
+                setOpenEmail={setOpenEmail}
+            />
         </div>
     );
 };

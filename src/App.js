@@ -6,8 +6,7 @@ import WalletLogin from "./components/WalletLogin";
 
 
 function App() {
-  const time = new Date();
-  time.setSeconds(time.getSeconds() + 180);
+
   return (
     <div>
       <WalletLogin></WalletLogin>

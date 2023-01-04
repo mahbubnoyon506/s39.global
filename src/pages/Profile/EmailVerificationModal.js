@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import CloseIcon from '@mui/icons-material/Close';
 import './profile.css'
 import { Button, Form, InputGroup } from 'react-bootstrap';
+import axios from 'axios';
 
 
 const style = {
@@ -25,7 +26,8 @@ const style = {
 };
 
 export default function EmailVerificationModal(
-    { open, setForEnable, setOpenEmail, otpVerify, setError, handleVerifyEmail, minutes, seconds, setEmailVerify, handleEmailSubmit }
+    { open, setForEnable, setOpenEmail, otpVerify, setError, handleVerifyEmail, minutes, seconds, setEmailVerify, handleUpdateEmail, handleEmailSubmit, email, emailOtpVerify
+        , setEmailOtpVerify }
 ) {
 
     const [otpCode, setOtpCode] = useState()
@@ -38,105 +40,98 @@ export default function EmailVerificationModal(
     const [count, setCount] = useState(2);
     const [disabled, setDisabled] = useState(false);
 
-    console.log(otpVerify, otpCode)
+    // console.log(emailOtpVerify, otpCode)
 
 
-    const hendelSubmit = (e) => {
+    const hendelSubmit = async (e) => {
         setCount(count - 1)
         e.preventDefault();
-        if (otpVerify == otpCode) {
+        try {
+            await axios.post(`https://testnetback.s39global.com/api/v1/email/verify-otp/${email}`, { otp: otpCode })
+                .then(res => {
+                    console.log("res", res)
+                    if (res.status === 200) {
+                        const wrapper = document.createElement("div");
+                        wrapper.innerHTML = `<p class='text-break text-white fs-5'>Email Verified.</p>`;
+                        handleUpdateEmail();
 
+                        handleClose()
+                        Swal.fire(
+                            {
+                                html: wrapper,
+                                icon: "success",
+                                customClass: "modal_class_success",
+                            }
+                        )
 
-            const wrapper = document.createElement("div");
-            wrapper.innerHTML = `<p class='text-break text-white fs-5'>Email Verified.</p>`;
-            handleEmailSubmit();
-            Swal.fire(
-                {
-                    html: wrapper,
-                    icon: "success",
-                    customClass: "modal_class_success",
-                }
-            )
-
-
-            setEmailVerify(true);
-            localStorage.setItem("isVerifiedEmail", true)
-            setForEnable(true);
-            setOtpError(false)
-            setError(false)
-            handleClose(false)
-            return;
+                    }
+                })
         }
-        if (count > 0) {
 
 
-            const wrapper = document.createElement("div");
-            wrapper.innerHTML = `<p class='text-break text-white fs-5'>You have entered wrong OTP. Please try again. You have another <br/><span style="color: #0d6efd;">0' + ${count} + '</span> more tries .</p>`;
-
-            Swal.fire(
-                {
-                    html: wrapper,
+        catch {
+            if (count > 0) {
+                const wrapper = document.createElement("div");
+                wrapper.innerHTML = `<p class='text-break text-white fs-5'>You have entered wrong OTP. Please try again. You have another <br/><span style="color: #0d6efd;">0${count} </span> more tries .</p>`;
+                swal({
+                    content: wrapper,
                     icon: "warning",
-                    customClass: "modal_class_success",
-                }
-            )
+                    button: "OK!",
+                    className: "modal_class_success",
+                })
 
 
 
-
-        } else {
-            setDisabled(true)
-
-
-            const wrapper = document.createElement("div");
-            wrapper.innerHTML = `<p class='text-break text-white fs-5'>You have entered wrong OTP, And you have no more tries left. You can request another OTP again</p>`;
-
-            Swal.fire(
-                {
-                    html: wrapper,
+            }
+            else {
+                setDisabled(true)
+                const wrapper = document.createElement("div");
+                wrapper.innerHTML = `<p class='text-break text-white fs-5'>You have entered wrong OTP, And you have no more tries left. You can request another OTP again</p>`;
+                swal({
+                    content: wrapper,
                     icon: "warning",
-                    customClass: "modal_class_success",
-                }
-            )
+                    button: "OK!",
+                    className: "modal_class_success",
+                })
 
+            }
         }
         setError('Email OTP Code not matched')
         setOtpError(true)
 
-
     }
     const verifyAlert = () => {
-        // swal({
-        //     text: "Please verify your email before closing!",
-        //     icon: "warning",
-        //     button: "OK!",
-        //     className: "modal_class_success",
-        // })
+        swal({
+            text: "Please verify your email before closing!",
+            icon: "warning",
+            button: "OK!",
+            className: "modal_class_success",
+        })
 
-        const wrapper = document.createElement("div");
-        wrapper.innerHTML = `<p class='text-break text-white fs-5'>Please verify your email before closing!</p>`;
+        // const wrapper = document.createElement("div");
+        // wrapper.innerHTML = `<p class='text-break text-dark fs-5' style="z-index: 5000;">Please verify your email before closing!</p>`;
 
-        Swal.fire(
-            {
-                html: wrapper,
-                icon: "warning",
-                customClass: "modal_class_success",
-            }
-        )
+        // Swal.fire(
+        //     {
+        //         html: wrapper,
+        //         icon: "warning",
+        //         customClass: "modal_class_success",
+        //     }
+        // )
 
     }
 
     return (
         <div>
             <Modal
-                open={open} P
-                onClose={otpVerify == otpCode && handleClose}
+                open={open}
+                onClose={emailOtpVerify && handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style} id="">
                     <div className='closeD pb-3'>
-                        <Button className='iconClose' onClick={otpVerify == otpCode ? handleClose : verifyAlert}><CloseIcon className='iconClose' style={{ color: "red" }} /></Button>
+                        <Button className='iconClose' onClick={verifyAlert}><CloseIcon className='iconClose' style={{ color: "red" }} /></Button>
                     </div>
                     <Typography id="modal-modal-title text-dark" className='text-light' variant="h6" component="h2">
                         Verify Email
