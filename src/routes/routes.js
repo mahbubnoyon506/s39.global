@@ -31,6 +31,7 @@ import AdminRoutes from "../components/ProtectedRoutes/AdminRoutes";
 import User from "../pages/Dashboard/User/User";
 import MinarelTokens from "../pages/MinarelTokens/MinarelTokens";
 import ClaimToken from "../pages/MinarelTokens/ClaimToken";
+import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWorksDashboard";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -150,6 +151,10 @@ const routes = createBrowserRouter([
       {
         path: "user",
         element: <User />,
+      },
+      {
+        path: "dashboardhowitworks",
+        element: <HowItWorksDashboard />,
       },
 
     ],

@@ -5,6 +5,7 @@ const User = () => {
         <div>
             <p className='dashboard-title'>USER</p>
 
+
         </div>
     );
 };
