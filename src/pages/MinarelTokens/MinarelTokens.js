@@ -1,17 +1,95 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import MineralTable from './MineralTable';
+import { Container, Form, InputGroup, Spinner, Table } from "react-bootstrap";
+import swal from 'sweetalert';
+
+const debounce = (func, delay) => {
+    let timeout;
+    return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), delay);
+    };
+};
 
 const MinarelTokens = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [ammount, setAmmount] = useState(0.00);
+    const [amountChange, setAmountChange] = useState(false);
+    const inputField = useRef(null);
+    const [convertedS, setConvertedS] = useState("0.00");
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
+    useEffect(() => {
+        const handleChange = debounce(function () {
+            if (!/^\d*[.]?\d*$/.test(this.value) || parseFloat(this.value) < 0) {
+                this.value = '';
+            } else {
+                this.value = parseFloat(this.value).toFixed(2);
+            }
+        }, 250);
+
+        inputField.current?.addEventListener('change', handleChange);
+        inputField.current?.addEventListener('paste', (event) => {
+            const clipboardData = event.clipboardData || window.clipboardData;
+            const pastedData = clipboardData.getData('Text');
+            if (/^\d*[.]?\d*$/.test(pastedData)) {
+                this.value = pastedData;
+            }
+            event.preventDefault();
+        });
+
+        return () => {
+            inputField.current?.removeEventListener('change', handleChange);
+            inputField.current?.removeEventListener('paste', (event) => {
+                const clipboardData = event.clipboardData || window?.clipboardData;
+                const pastedData = clipboardData.getData('Text');
+                if (/^\d*[.]?\d*$/.test(pastedData)) {
+                    this.value = pastedData;
+                }
+                event.preventDefault();
+            });
+        };
+    }, []);
+
+
+    const onchangeAmmountValue = async (e) => {
+
+        if (/^\d*[.]?\d*$/.test(e.target.value)) {
+            setAmmount(parseFloat(e.target.value).toFixed(2));
+            // setAmountChange(!amountChange);
+            let currentAmount = parseFloat(e.target.value);
+            let convertToS = currentAmount * 1.30;
+            if (convertToS) {
+                setConvertedS(() => convertToS.toFixed(2));
+            }
+            else {
+                setConvertedS(() => "0.00");
+            }
+
+        }
+
+    }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/claimtoken')
+        if (convertedS >= 10 || convertedS >= 10.00) {
+
+            navigate('/claimtoken')
+        }
+        else {
+            swal({
+                text: "Please enter an amount greater than 10.00",
+                icon: "warning",
+                button: "OK!",
+                className: "modal_class_success",
+            });
+        }
     }
 
 
@@ -51,22 +129,29 @@ const MinarelTokens = () => {
                 <div className='my-5'>
                     <Card className='' style={{ borderRadius: '30px', background: '#262626' }}>
                         <Card.Body>
-                            <div className='d-flex justify-content-between primary'>
+                            <div className='d-flex justify-content-between align-items-center primary'>
                                 <p style={{ fontSize: '18px', fontWeight: '700' }}>Mine mineral tokens</p>
-                                <p style={{ fontSize: '18px', fontWeight: '700' }}>500 S Point</p>
+                                {(ammount > 0) && <p style={{ fontSize: '18px', fontWeight: '700' }} className="text-warning">You can get {convertedS} S Points by mining</p>}
+                                <p style={{ fontSize: '18px', fontWeight: '700' }}>{convertedS} S Point</p>
                             </div>
                             <form onSubmit={handleSubmit}>
                                 <div className='d-flex justify-content-between primary pb-2'>
                                     <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Amount</button>
-                                    <input className='w-100 ps-1' type="text" name="" id="" placeholder='0.00'/>
+                                    {/* <input className='w-100 ps-1' type="text" name="" id="" placeholder='0.00' /> */}
+                                    <InputGroup className="w-100 ps-1">
+                                        <Form.Control aria-label="Dollar amount (with dot and two decimal places)" type="number" pattern="[0-9]*" inputmode="numeric" step="0.01" min={0.00} placeholder="0.00" defaultValue={"0.00"} ref={inputField} onChange={onchangeAmmountValue} />
+                                    </InputGroup>
                                 </div>
                                 <div className='d-flex justify-content-between primary pb-2'>
                                     <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Select Minting Bot</button>
                                     <select className='w-100' name="" id="">
-                                        <option value="" disabled>Please select your minting Bot</option>
-                                        <option value="">Please select your minting Bot</option>
-                                        <option value="">Please select your minting Bot</option>
-                                        <option value="">Please select your minting Bot</option>
+                                        <option value="">Mineral Tokens 01</option>
+                                        <option value="">Mineral Tokens 02</option>
+                                        <option value="">Mineral Tokens 03</option>
+                                        <option value="">Mineral Tokens 04</option>
+                                        <option value="">Mineral Tokens 05</option>
+                                        <option value="">Mineral Tokens 06</option>
+                                        <option value="">Mineral Tokens 07</option>
                                     </select>
                                 </div>
                                 <input className='primary w-100 border-0 py-2 my-2 fs-lg-4 text-uppercase' style={{ background: '#165CA9' }} type="submit" value="Mine this bot" />
