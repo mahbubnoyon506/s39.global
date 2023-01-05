@@ -72,9 +72,9 @@ const MinarelTokens = () => {
                         </Card.Body>
                     </Card>
                 </div>
-                <div className='mb-5'>
+                {/* <div className='mb-5'>
                     <MineralTable />
-                </div>
+                </div> */}
             </div>
         </div>
     );

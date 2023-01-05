@@ -8,8 +8,8 @@ const ClaimToken = () => {
     return (
         <div className='py-5 bg-darkblue'>
             <div className='container' style={{ overflow: 'hidden' }}>
-                <div className="row g-5">
-                    <div className='col-lg-6'>
+                <div className="">
+                    <div className=''>
                         <Card className='primary py-2' style={{ borderRadius: '30px', background: '#262626' }}>
                             <Card.Body>
                                 <div className='d-md-flex justify-content-between align-items-center pb-2'>
@@ -27,7 +27,7 @@ const ClaimToken = () => {
                                 </div>
                                 <div className='pb-4'>
                                     <div className='d-flex justify-content-between align-items-center '>
-                                        <div className='d-flex w-50'>
+                                        <div className='d-flex'>
                                             <div className='d-flex justify-content-center align-items-center me-2 rounded' style={{ width: '40px', height: '40px', background: '#999999' }}>
                                                 <AiFillCalendar color='#000' size={30} />
                                             </div>
@@ -36,7 +36,7 @@ const ClaimToken = () => {
                                                 <p className='mb-0'>2/25/2023 12:42:11</p>
                                             </div>
                                         </div>
-                                        <div className='d-flex w-50'>
+                                        <div className='d-flex'>
                                             <div className='d-flex justify-content-center align-items-center me-2 rounded' style={{ width: '40px', height: '40px', background: '#FFE5A1' }}>
                                                 <AiFillThunderbolt color='#F1A604' size={30} />
                                             </div>
@@ -71,7 +71,7 @@ const ClaimToken = () => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className='col-lg-6'>
+                    {/* <div className='col-lg-6'>
                         <Card className='primary py-2' style={{ borderRadius: '30px', background: '#262626' }}>
                             <Card.Body>
                                 <div className='d-md-flex justify-content-between align-items-center pb-2'>
@@ -132,7 +132,7 @@ const ClaimToken = () => {
                                 </div>
                             </Card.Body>
                         </Card>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
