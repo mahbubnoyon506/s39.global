@@ -259,52 +259,47 @@ const AdminProfileUpdate = () => {
                 />
               </div>
             </div>
+            <div className='row mt-3 ' style={{padding: '0px 15%'}}>
+              <div className="col-6">
+                <Link className="text-decoration-none" to="/admin/dashboard">
+                  <Button
+                    type='submit'
+                    sx={{
+                      width: '100%',
+                      borderRadius: "0px",
+                      background: "#15407F",
+                      marginRight: "10px",
+                      fontWeight: "500",
+                      "&:hover": { background: "#15407F" },
+                      color: '#fff',
+                      padding: '8px 10px',
 
-            {/* <div className=" d-md-flexd text-center">
-              <Link to="/admin/dashboard">
-                <button className="profileBtnChange bg-danger me-3 text-white text-uppercase">
-                  Cancel
-                </button>
-              </Link>
-              <button
-                className="profileBtnChange text-white text-uppercase"
-                type="submit"
-              >
-                Save
-              </button>
-            </div> */}
-            <div className='d-flex justify-content-center mt-3 mt-'>
-              <Button
-                type='submit'
-                sx={{
-                  borderRadius: "0px",
-                  background: "#15407F",
-                  marginRight: "10px",
-                  fontWeight: "500",
-                  "&:hover": { background: "#15407F" },
-                  color: '#fff',
-                  padding: '8px 10px',
-
-                }}
-                variant="contained"
-              >
-                Cancel
-              </Button>
-              <Button
-                sx={{
-                  borderRadius: "0px",
-                  background: "#FF5421",
-                  marginRight: "10px",
-                  fontWeight: "500",
-                  "&:hover": { background: "#FF5421" },
-                  color: '#fff',
-                  paddingLeft: '5px',
-                  padding: '8px 10px'
-                }}
-                variant="contained"
-              >
-                Save
-              </Button>
+                    }}
+                    variant="contained"
+                  >
+                    Cancel
+                  </Button>
+                </Link>
+              </div>
+              <div className="col-6">
+                <Button
+                  sx={{
+                    width: '100%',
+                    borderRadius: "0px",
+                    background: "#FF5421",
+                    marginRight: "10px",
+                    fontWeight: "500",
+                    "&:hover": { background: "#FF5421" },
+                    color: '#fff',
+                    paddingLeft: '5px',
+                    padding: '8px 10px'
+                  }}
+                  variant="contained"
+                  type="submit"
+                >
+                  Save
+                </Button>
+              </div>
             </div>
           </div>
         </form>
