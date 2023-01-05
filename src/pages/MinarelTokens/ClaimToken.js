@@ -107,13 +107,13 @@ const ClaimToken = () => {
                                     </div>
                                     <div >
                                         {/* <Button sx={{ maxWidth: '220px' }} variant='contained'>Pool duration: 30Days</Button> */}
-                                        <FormControl sx={{ m: 1, minWidth: "220px", backgroundColor: "#1976d2", color: "#fff" }} className="handleReducePadding rouneded">
+                                        <FormControl sx={{ m: 1, minWidth: "220px", backgroundColor: "#1976d2", color: "#fff" }} className=" rouneded">
                                             <Select
                                                 value={age}
                                                 onChange={handleChange}
                                                 displayEmpty
                                                 inputProps={{ 'aria-label': 'Without label' }}
-                                                className="text-light handleReducePadding rouneded"
+                                                className="text-light  rouneded"
                                             >
                                                 <MenuItem value="" className="text-uppercase">POOL DURATION: 15 DAYS</MenuItem>
                                                 <MenuItem value={30} className="text-uppercase">POOL DURATION: 30 DAYS</MenuItem>

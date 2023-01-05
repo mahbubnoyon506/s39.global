@@ -45,3 +45,15 @@ body {
 .swal-icon--success__hide-corners {
   display: none;
 }
+
+.handleReducePadding {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  font-size: 14px !important;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  font-size: 14px !important;
+}

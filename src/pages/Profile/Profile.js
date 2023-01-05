@@ -481,7 +481,7 @@ const Profile = ({ expiryTimestamp }) => {
             <div className='container py-5'>
                 <div className="row g-5" >
                     <div className="col-lg-6 md-mb-5 border-md-0 py-2 py-lg-5">
-                        <h4>PROFILE</h4>
+                        <h4 className='handleAlignBtn'>PROFILE</h4>
                         <div className="">
                             <div id="login" className="mb-30 ">
                                 <div className="">
@@ -567,7 +567,7 @@ const Profile = ({ expiryTimestamp }) => {
                     </div>
 
                     <div className="col-lg-6 border-md-0 py-2 py-lg-5">
-                        <div className='ms-auto handleAlignBtn'>
+                        <div className='ms-auto text-end'>
                             <Button variant="contained" onClick={() => navigate("/mineraltoken")}>MINE MINERAL TOKENS</Button>
                         </div>
                         <div className="">

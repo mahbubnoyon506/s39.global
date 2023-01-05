@@ -3,7 +3,7 @@
 }
 
 .handleAlignBtn {
-    text-align: end;
+    text-align: start;
 }
 
 .banner-button2 {
@@ -124,7 +124,7 @@
 
 @media only screen and (max-width:600px) {
     .handleAlignBtn {
-        text-align: left;
+        text-align: end;
         margin-bottom: 8px;
     }
 }
