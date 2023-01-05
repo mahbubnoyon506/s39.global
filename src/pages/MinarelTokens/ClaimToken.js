@@ -8,8 +8,8 @@ const ClaimToken = () => {
     return (
         <div className='py-5 bg-darkblue'>
             <div className='container' style={{ overflow: 'hidden' }}>
-                <div className="row g-5">
-                    <div className='col-lg-6'>
+                <div className="">
+                    <div className=''>
                         <Card className='primary py-2' style={{ borderRadius: '30px', background: '#262626' }}>
                             <Card.Body>
                                 <div className='d-md-flex justify-content-between align-items-center pb-2'>
@@ -22,12 +22,12 @@ const ClaimToken = () => {
                                     </div>
                                 </div>
                                 <div className='d-flex justify-content-between py-3'>
-                                    <p>Min Stake: 100 INRD</p>
-                                    <p>Max Stake: 2500000 INRD</p>
+                                    <p>Min Stake: 100 S POINTS</p>
+                                    <p>Max Stake: 2500000 S POINTS</p>
                                 </div>
                                 <div className='pb-4'>
                                     <div className='d-flex justify-content-between align-items-center '>
-                                        <div className='d-flex w-50'>
+                                        <div className='d-flex'>
                                             <div className='d-flex justify-content-center align-items-center me-2 rounded' style={{ width: '40px', height: '40px', background: '#999999' }}>
                                                 <AiFillCalendar color='#000' size={30} />
                                             </div>
@@ -36,7 +36,7 @@ const ClaimToken = () => {
                                                 <p className='mb-0'>2/25/2023 12:42:11</p>
                                             </div>
                                         </div>
-                                        <div className='d-flex w-50'>
+                                        <div className='d-flex'>
                                             <div className='d-flex justify-content-center align-items-center me-2 rounded' style={{ width: '40px', height: '40px', background: '#FFE5A1' }}>
                                                 <AiFillThunderbolt color='#F1A604' size={30} />
                                             </div>
@@ -64,14 +64,14 @@ const ClaimToken = () => {
                                 <div className='mt-4'>
                                     <div className='d-flex justify-content-between'>
                                         <p className='mb-0'>Total value locked:</p>
-                                        <p className='mb-0'>111.2 INRD</p>
+                                        <p className='mb-0'>111.2 S POINTS</p>
                                     </div>
                                     <Button sx={{ width: '100%' }} variant='contained'>Claim</Button>
                                 </div>
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className='col-lg-6'>
+                    {/* <div className='col-lg-6'>
                         <Card className='primary py-2' style={{ borderRadius: '30px', background: '#262626' }}>
                             <Card.Body>
                                 <div className='d-md-flex justify-content-between align-items-center pb-2'>
@@ -84,8 +84,8 @@ const ClaimToken = () => {
                                     </div>
                                 </div>
                                 <div className='d-flex justify-content-between py-3'>
-                                    <p>Min Stake: 100 INRD</p>
-                                    <p>Max Stake: 2500000 INRD</p>
+                                    <p>Min Stake: 100 S POINTS</p>
+                                    <p>Max Stake: 2500000 S POINTS</p>
                                 </div>
                                 <div className='pb-4'>
                                     <div className='d-flex justify-content-between align-items-center '>
@@ -126,13 +126,13 @@ const ClaimToken = () => {
                                 <div className='mt-4'>
                                     <div className='d-flex justify-content-between'>
                                         <p className='mb-0'>Total value locked:</p>
-                                        <p className='mb-0'>111.2 INRD</p>
+                                        <p className='mb-0'>111.2 S POINTS</p>
                                     </div>
                                     <Button sx={{ width: '100%' }} variant='contained'>Claim</Button>
                                 </div>
                             </Card.Body>
                         </Card>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

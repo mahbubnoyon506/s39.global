@@ -7,19 +7,18 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { Button } from "@mui/material";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import { MdDashboard, MdWorkspacesFilled } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
-import { FcLeft } from "react-icons/fc";
 import { SiGoogleanalytics, SiProcessingfoundation } from "react-icons/si";
 import logo from "../../assets/images/logo3.png";
 import { CgCommunity, CgGhost, CgLogOut } from "react-icons/cg";
 import { BiLogOut, BiUserCircle } from "react-icons/bi";
 import { GiOnTarget } from "react-icons/gi";
-import { FaGift, FaHome, FaWallet } from "react-icons/fa";
+import { FaGift, FaWallet } from "react-icons/fa";
 import { S39GlobalContext } from "../../contexts/S39GlobalContext";
 import swal from "sweetalert";
 
@@ -28,8 +27,6 @@ const menuLinkStyles = ({ isActive }) => {
     backgroundColor: isActive ? "#1A1C33" : "",
   };
 };
-
-const activeClass = "bg-primary";
 
 const drawerWidth = 280;
 

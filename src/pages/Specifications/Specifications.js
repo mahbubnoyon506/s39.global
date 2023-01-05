@@ -5,7 +5,7 @@ const Specifications = () => {
         window.scrollTo(0, 0);
       }, [])  
     return (
-        <div className='py-5 bg-darkblue' style={{ height: '40vh' }}>
+        <div className='py-5 bg-darkblue' style={{ height: '100vh' }}>
             <h2 className='text-center text-uppercase primary'>Specifications</h2>
         </div>
     );
