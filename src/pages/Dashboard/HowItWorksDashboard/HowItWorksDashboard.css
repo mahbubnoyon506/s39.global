@@ -21,8 +21,15 @@
 
 @media (max-width: 650px) {
 
+    .handleUpdateButton {
+        text-align: center;
+    }
 
     .nftDrop {
-        width: 290px !important;
+        width: 100% !important;
+        margin-left: 3px !important;
+        margin-right: 5px !important;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
     }
 }

@@ -87,8 +87,8 @@ const HowItWorksDashboard = () => {
                             }}
                         />
                     </div>
-                    <div>
-                        <Button className="nftDrop mb-5 text-uppercase" type='submit'>Update now</Button>
+                    <div className='handleUpdateButton'>
+                        <Button className="nftDrop mb-5 text-uppercase " type='submit'>Update</Button>
                     </div>
                 </div>
             </form>
