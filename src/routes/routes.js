@@ -27,11 +27,16 @@ import Profile from "../pages/Profile/Profile";
 
 import ResetPassword from "../components/Auth/ResetPassword";
 import { useEffect } from "react";
+import AdminRoutes from "../components/ProtectedRoutes/AdminRoutes";
+import User from "../pages/Dashboard/User/User";
 import MinarelTokens from "../pages/MinarelTokens/MinarelTokens";
 import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 
+const time = new Date();
+time.setSeconds(time.getSeconds() + 180);
 
 const routes = createBrowserRouter([
+
   {
     path: "/",
     element: <Main />,
@@ -66,7 +71,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile />,
+        element: <Profile expiryTimestamp={time} />,
       },
       //Authentications
       {
@@ -98,6 +103,9 @@ const routes = createBrowserRouter([
   {
     path: "/admin",
     element: <Dashboard />,
+    // <AdminRoutes>
+    //   <Dashboard />
+    // </AdminRoutes>,
     children: [
       {
         path: "dashboard",
@@ -138,6 +146,10 @@ const routes = createBrowserRouter([
       {
         path: "hosting",
         element: <Hosting />,
+      },
+      {
+        path: "user",
+        element: <User />,
       },
 
     ],

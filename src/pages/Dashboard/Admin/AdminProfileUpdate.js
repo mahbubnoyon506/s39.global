@@ -10,6 +10,7 @@ import "./AdminProfileUpdate.css";
 import swal from "sweetalert";
 import { BsPersonCircle } from "react-icons/bs";
 import { AiFillEyeInvisible } from "react-icons/ai";
+import { Button } from "@mui/material";
 
 const AdminProfileUpdate = () => {
   const { id } = useParams();
@@ -178,7 +179,7 @@ const AdminProfileUpdate = () => {
                     defaultCountry="SG"
                     value={valueProfilePhn}
                     onChange={setValueProfilePhn}
-                    className="countryInput input_phone form-control text-white"
+                    className="countryInput input_phone form-control text-white ps-1"
                   />
                 </p>
                 <p className="d-flex col-12 inputProfile">
@@ -259,7 +260,7 @@ const AdminProfileUpdate = () => {
               </div>
             </div>
 
-            <div className=" d-md-flexd text-center">
+            {/* <div className=" d-md-flexd text-center">
               <Link to="/admin/dashboard">
                 <button className="profileBtnChange bg-danger me-3 text-white text-uppercase">
                   Cancel
@@ -271,6 +272,39 @@ const AdminProfileUpdate = () => {
               >
                 Save
               </button>
+            </div> */}
+            <div className='d-flex justify-content-center mt-3 mt-'>
+              <Button
+                type='submit'
+                sx={{
+                  borderRadius: "0px",
+                  background: "#15407F",
+                  marginRight: "10px",
+                  fontWeight: "500",
+                  "&:hover": { background: "#15407F" },
+                  color: '#fff',
+                  padding: '8px 10px',
+
+                }}
+                variant="contained"
+              >
+                Cancel
+              </Button>
+              <Button
+                sx={{
+                  borderRadius: "0px",
+                  background: "#FF5421",
+                  marginRight: "10px",
+                  fontWeight: "500",
+                  "&:hover": { background: "#FF5421" },
+                  color: '#fff',
+                  paddingLeft: '5px',
+                  padding: '8px 10px'
+                }}
+                variant="contained"
+              >
+                Save
+              </Button>
             </div>
           </div>
         </form>

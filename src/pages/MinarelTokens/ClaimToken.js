@@ -22,8 +22,8 @@ const ClaimToken = () => {
                                     </div>
                                 </div>
                                 <div className='d-flex justify-content-between py-3'>
-                                    <p>Min Stake: 100 INRD</p>
-                                    <p>Max Stake: 2500000 INRD</p>
+                                    <p>Min Stake: 100 S POINTS</p>
+                                    <p>Max Stake: 2500000 S POINTS</p>
                                 </div>
                                 <div className='pb-4'>
                                     <div className='d-flex justify-content-between align-items-center '>
@@ -64,7 +64,7 @@ const ClaimToken = () => {
                                 <div className='mt-4'>
                                     <div className='d-flex justify-content-between'>
                                         <p className='mb-0'>Total value locked:</p>
-                                        <p className='mb-0'>111.2 INRD</p>
+                                        <p className='mb-0'>111.2 S POINTS</p>
                                     </div>
                                     <Button sx={{ width: '100%' }} variant='contained'>Claim</Button>
                                 </div>
@@ -84,8 +84,8 @@ const ClaimToken = () => {
                                     </div>
                                 </div>
                                 <div className='d-flex justify-content-between py-3'>
-                                    <p>Min Stake: 100 INRD</p>
-                                    <p>Max Stake: 2500000 INRD</p>
+                                    <p>Min Stake: 100 S POINTS</p>
+                                    <p>Max Stake: 2500000 S POINTS</p>
                                 </div>
                                 <div className='pb-4'>
                                     <div className='d-flex justify-content-between align-items-center '>
@@ -126,7 +126,7 @@ const ClaimToken = () => {
                                 <div className='mt-4'>
                                     <div className='d-flex justify-content-between'>
                                         <p className='mb-0'>Total value locked:</p>
-                                        <p className='mb-0'>111.2 INRD</p>
+                                        <p className='mb-0'>111.2 S POINTS</p>
                                     </div>
                                     <Button sx={{ width: '100%' }} variant='contained'>Claim</Button>
                                 </div>

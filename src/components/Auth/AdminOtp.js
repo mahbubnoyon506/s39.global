@@ -22,7 +22,7 @@ const AdminOtp = () => {
 
     useEffect(() => {
         if (admin?._id) {
-            navigate("/admin");
+            navigate("/admin/dashboard");
         }
     }, [admin, navigate]);
 

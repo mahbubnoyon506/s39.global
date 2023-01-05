@@ -13,6 +13,8 @@ const MinarelTokens = () => {
         e.preventDefault();
         navigate('/claimtoken')
     }
+
+
     return (
         <div className='py-2 bg-darkblue' >
             <div className='container' style={{ overflow: 'hidden' }}>
@@ -55,19 +57,19 @@ const MinarelTokens = () => {
                             </div>
                             <form onSubmit={handleSubmit}>
                                 <div className='d-flex justify-content-between primary pb-2'>
-                                    <button className='border-0 primary px-3 py-1' disabled style={{ background: '#000', minWidth: '120px' }}>Amount</button>
-                                    <input className='w-100' type="text" name="" id="" />
+                                    <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Amount</button>
+                                    <input className='w-100 ps-1' type="text" name="" id="" placeholder='0.00'/>
                                 </div>
                                 <div className='d-flex justify-content-between primary pb-2'>
-                                    <button className='border-0 primary px-3 py-1' disabled style={{ background: '#000', minWidth: '120px' }}>Select Pool</button>
+                                    <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Select Minting Bot</button>
                                     <select className='w-100' name="" id="">
-                                        <option value="" disabled>Please select pool</option>
-                                        <option value="">Please select pool</option>
-                                        <option value="">Please select pool</option>
-                                        <option value="">Please select pool</option>
+                                        <option value="" disabled>Please select your minting Bot</option>
+                                        <option value="">Please select your minting Bot</option>
+                                        <option value="">Please select your minting Bot</option>
+                                        <option value="">Please select your minting Bot</option>
                                     </select>
                                 </div>
-                                <input className='primary w-100 border-0 py-1 my-2 fs-lg-4' style={{ background: '#165CA9' }} type="submit" value="Mine in this pool" />
+                                <input className='primary w-100 border-0 py-2 my-2 fs-lg-4 text-uppercase' style={{ background: '#165CA9' }} type="submit" value="Mine this bot" />
                             </form>
                         </Card.Body>
                     </Card>
