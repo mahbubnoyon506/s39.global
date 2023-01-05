@@ -80,7 +80,7 @@ const MinarelTokens = () => {
         e.preventDefault();
         if (convertedS >= 10 || convertedS >= 10.00) {
 
-            navigate('/claimtoken')
+            navigate(`/claimtoken/${ammount}/${convertedS}`)
         }
         else {
             swal({

@@ -96,7 +96,7 @@ const routes = createBrowserRouter([
         element: <MinarelTokens />,
       },
       {
-        path: "/claimtoken",
+        path: "/claimtoken/:staked/:reward",
         element: <ClaimToken />,
       },
     ],
@@ -104,9 +104,9 @@ const routes = createBrowserRouter([
   {
     path: "/admin",
     element:
-    <AdminRoutes>
-      <Dashboard />
-    </AdminRoutes>,
+      <AdminRoutes>
+        <Dashboard />
+      </AdminRoutes>,
     children: [
       {
         path: "dashboard",

@@ -2,6 +2,10 @@
     text-align: right;
 }
 
+.handleAlignBtn {
+    text-align: end;
+}
+
 .banner-button2 {
     background-image: linear-gradient(to right, #FF512F 0%, #db1528 51%, #FF512F 100%);
     margin: 10px;
@@ -116,4 +120,11 @@
 
 .otp-bg-color {
     background-color: #ff5421 !important;
+}
+
+@media only screen and (max-width:600px) {
+    .handleAlignBtn {
+        text-align: left;
+        margin-bottom: 8px;
+    }
 }

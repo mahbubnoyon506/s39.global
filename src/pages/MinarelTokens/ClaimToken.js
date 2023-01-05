@@ -8,11 +8,13 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import './Token.css';
+import { useParams } from 'react-router-dom';
 
 
 const ClaimToken = () => {
     const [age, setAge] = React.useState("");
     const [dateEarlier, setDateEarlier] = useState("");
+    const { staked, reward } = useParams();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -153,11 +155,11 @@ const ClaimToken = () => {
                                 <div className='row gx-2'>
                                     <div className='col-4 py-2' style={{ border: '1px dashed #fff' }}>
                                         <p className='mb-0 text-center'>Staked</p>
-                                        <p className='mb-0 text-center'>200</p>
+                                        <p className='mb-0 text-center'>{staked}</p>
                                     </div>
                                     <div className='col-4 py-2' style={{ border: '1px dashed #fff' }}>
                                         <p className='mb-0 text-center'>Reward</p>
-                                        <p className='mb-0 text-center'>200</p>
+                                        <p className='mb-0 text-center'>{reward}</p>
                                     </div>
                                     <div className='col-4 py-2' style={{ border: '1px dashed #fff' }}>
                                         <p className='mb-0 text-center'>Accumulated</p>
@@ -167,7 +169,7 @@ const ClaimToken = () => {
                                 <div className='mt-4'>
                                     <div className='d-flex justify-content-between'>
                                         <p className='mb-0'>Total value locked:</p>
-                                        <p className='mb-0'>111.2 S POINTS</p>
+                                        <p className='mb-0'>{reward} POINTS</p>
                                     </div>
                                     <Button sx={{ width: '100%' }} variant='contained'>Claim</Button>
                                 </div>
