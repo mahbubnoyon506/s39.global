@@ -1,0 +1,28 @@
+.nftDrop {
+    width: 290px;
+    background-color: #8A2BE2 !important;
+    border-radius: 4px;
+    color: #fff !important;
+    display: inline-block;
+    font-size: 15px !important;
+    padding: 12px 5px !important;
+    text-transform: uppercase !important;
+    vertical-align: middle;
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    border: none !important;
+    margin: 5px !important;
+}
+
+.nftDrop:hover {
+    background-color: #761acc !important;
+}
+
+@media (max-width: 650px) {
+
+
+    .nftDrop {
+        width: 290px !important;
+    }
+}

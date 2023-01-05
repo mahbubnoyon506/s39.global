@@ -11,7 +11,7 @@ import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { Button } from "@mui/material";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard, MdWorkspacesFilled } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
 import { FcLeft } from "react-icons/fc";
 import { SiGoogleanalytics, SiProcessingfoundation } from "react-icons/si";
@@ -220,6 +220,18 @@ function Dashboard(props) {
             <CgGhost color="#fff" size={20} />
           </span>
           Mineral Tokens
+        </NavLink>
+        <NavLink
+          className="dashboardMenu text-uppercase"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="dashboardhowitworks"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <MdWorkspacesFilled color="#fff" size={20} />
+          </span>
+          How It Works
         </NavLink>
         <div className="mt-2">
           <Button
