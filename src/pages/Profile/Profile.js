@@ -50,11 +50,6 @@ const Profile = ({ expiryTimestamp }) => {
 
 
 
-
-
-
-
-
     useEffect(() => {
         getBalanceTestnet();
         setCopyTextWalletAddress(user?.walletAddress ? user?.walletAddress : "");
@@ -481,7 +476,11 @@ const Profile = ({ expiryTimestamp }) => {
             <div className='container py-5'>
                 <div className="row g-5" >
                     <div className="col-lg-6 md-mb-5 border-md-0 py-2 py-lg-5">
-                        <h4 className='handleAlignBtn'>PROFILE</h4>
+                        <h4 className='handleAlignBtn d-none d-lg-block'>PROFILE</h4>
+                        <div className='d-flex justify-content-between align-items-center d-lg-none mb-2'>
+                            <h4 >PROFILE</h4>
+                            <Button variant="contained" size="small" onClick={() => navigate("/mineraltoken")} style={{ marginTop: "-12px", }}>MINE MINERAL TOKENS</Button>
+                        </div>
                         <div className="">
                             <div id="login" className="mb-30 ">
                                 <div className="">
@@ -531,7 +530,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                 {user?.name ? "Updated" : "Update"}
                                             </button>}
                                         </div>
-                                        <span>This will appear in your certificates.</span>
+
                                     </div>
                                     <div className=" mt-3">
                                         <label className=''>Update your email/username<span>*</span></label>
@@ -567,7 +566,7 @@ const Profile = ({ expiryTimestamp }) => {
                     </div>
 
                     <div className="col-lg-6 border-md-0 py-2 py-lg-5">
-                        <div className='ms-auto text-end'>
+                        <div className='ms-auto text-end d-none d-lg-block'>
                             <Button variant="contained" onClick={() => navigate("/mineraltoken")}>MINE MINERAL TOKENS</Button>
                         </div>
                         <div className="">
@@ -617,8 +616,8 @@ const Profile = ({ expiryTimestamp }) => {
                                         </div>
                                     </div>
                                     <div className=" mb-3 ">
-                                        <label className=''>Your Membership ID<span>*</span></label>
-                                        <input className="w-100 form-control-mod ps-2 py-2" placeholder='Membership ID' defaultValue='' />
+                                        <label className=''>Membership ID<span>*</span></label>
+                                        <input className="w-100 form-control-mod ps-2 py-2" placeholder='Membership ID' value={user?.membershipId} readOnly />
                                     </div>
                                     <div className=" mb-3">
                                         <label className=''>Your Wallet Address<span>*</span></label>

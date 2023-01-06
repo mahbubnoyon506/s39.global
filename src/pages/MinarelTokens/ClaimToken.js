@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { AiFillCalendar, AiFillThunderbolt } from 'react-icons/ai';
 import InputLabel from '@mui/material/InputLabel';
@@ -8,13 +8,18 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import './Token.css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { S39GlobalContext } from '../../contexts/S39GlobalContext';
+import coin from '../../assets/images/coin2.png'
+import TopButton from '../../components/TopLoginButton/TopButton';
 
 
 const ClaimToken = () => {
     const [age, setAge] = React.useState("");
     const [dateEarlier, setDateEarlier] = useState("");
+    const { user, openWalletModal, getBalanceTestnet, closeWalletModal, logOut, setUserRefetch, userRefetch } = useContext(S39GlobalContext);
     const { staked, reward } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -27,7 +32,7 @@ const ClaimToken = () => {
         // Format the date as "mm/dd/yyyy"
         var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
         var day = currentDate.getDate().toString().padStart(2, '0');
-        var formattedDate = month + '/' + day + '/' + currentDate.getFullYear();
+        var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
 
         console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
 
@@ -49,7 +54,7 @@ const ClaimToken = () => {
             // Format the date as "mm/dd/yyyy"
             var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
             var day = currentDate.getDate().toString().padStart(2, '0');
-            var formattedDate = month + '/' + day + '/' + currentDate.getFullYear();
+            var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
 
             console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
 
@@ -65,7 +70,7 @@ const ClaimToken = () => {
             // Format the date as "mm/dd/yyyy"
             var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
             var day = currentDate.getDate().toString().padStart(2, '0');
-            var formattedDate = month + '/' + day + '/' + currentDate.getFullYear();
+            var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
 
             console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
 
@@ -89,7 +94,7 @@ const ClaimToken = () => {
         mm = '0' + mm;
     }
 
-    today = mm + '/' + dd + '/' + yyyy;
+    today = dd + '/' + mm + '/' + yyyy;
 
     console.log(today); // Output: "01/05/2023"
 
@@ -105,9 +110,9 @@ const ClaimToken = () => {
                                         <p className='mb-0 text-primary'>#Pool 1</p>
                                         <p className='mb-0'>10% APR</p>
                                     </div>
-                                    <div >
+                                    <div className='mx-auto text-center mx-md-0 text-md-end mt-2 mt-md-0'>
                                         {/* <Button sx={{ maxWidth: '220px' }} variant='contained'>Pool duration: 30Days</Button> */}
-                                        <FormControl sx={{ m: 1, minWidth: "220px", backgroundColor: "#1976d2", color: "#fff" }} className=" rouneded">
+                                        <FormControl sx={{ minWidth: "220px", backgroundColor: "#1976d2", color: "#fff" }} className="ms-0 ms-md-2 rouneded">
                                             <Select
                                                 value={age}
                                                 onChange={handleChange}
@@ -171,7 +176,13 @@ const ClaimToken = () => {
                                         <p className='mb-0'>Total value locked:</p>
                                         <p className='mb-0'>{reward} POINTS</p>
                                     </div>
-                                    <Button sx={{ width: '100%' }} variant='contained'>Claim</Button>
+                                    {(user?.walletAddress || user?.walletAddress === "undefined")
+                                        ? <Button sx={{ width: '100%' }} variant='contained' onClick={() => navigate("/claiming")}>Claim</Button> :
+
+                                        <Button sx={{ width: '100%' }} variant='contained' onClick={() => openWalletModal()}><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" /> LOGIN with Wallet</Button>
+                                    }
+
+
                                 </div>
                             </Card.Body>
                         </Card>

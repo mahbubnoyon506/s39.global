@@ -32,6 +32,7 @@ import User from "../pages/Dashboard/User/User";
 import MinarelTokens from "../pages/MinarelTokens/MinarelTokens";
 import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWorksDashboard";
+import WithdrawAndDeposit from "../pages/WithdrawAndDeposit/WithdrawAndDeposit";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -98,6 +99,10 @@ const routes = createBrowserRouter([
       {
         path: "/claimtoken/:staked/:reward",
         element: <ClaimToken />,
+      },
+      {
+        path: "/claiming",
+        element: <WithdrawAndDeposit />,
       },
     ],
   },
