@@ -50,7 +50,7 @@ const User = () => {
 
   return (
     <>
-      <h5 className="dashboard-title">CUSTOMERS</h5>
+      <h5 className="dashboard-title">USERS</h5>
 
       {/* <Search handleSearch={handleSearch} /> */}
       <div>
