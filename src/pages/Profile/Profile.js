@@ -646,22 +646,22 @@ const Profile = ({ expiryTimestamp }) => {
                                             <div>
                                                 <span className='pt-2  text-start mb-3'>Share Affiliate Link</span>
                                                 <div className='d-flex gap-2 mb-3'>
-                                                    <TwitterShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <TwitterShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <TwitterIcon size={40} round={true} />
                                                     </TwitterShareButton>
-                                                    <LinkedinShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <LinkedinShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <LinkedinIcon size={40} round={true} />
                                                     </LinkedinShareButton>
-                                                    <WhatsappShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <WhatsappShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <WhatsappIcon size={40} round={true} />
                                                     </WhatsappShareButton>
-                                                    <FacebookShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <FacebookShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <FacebookIcon size={40} round={true} />
                                                     </FacebookShareButton>
-                                                    <PinterestShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <PinterestShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <PinterestIcon size={40} round={true} />
                                                     </PinterestShareButton>
-                                                    <TelegramShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <TelegramShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <TelegramIcon size={40} round={true} />
                                                     </TelegramShareButton>
                                                 </div>

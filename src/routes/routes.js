@@ -166,7 +166,6 @@ const routes = createBrowserRouter([
         path: "dashboardhowitworks",
         element: <HowItWorksDashboard />,
       },
-
     ],
   },
 ]);
