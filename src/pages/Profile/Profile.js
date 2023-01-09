@@ -566,9 +566,9 @@ const Profile = ({ expiryTimestamp }) => {
                     </div>
 
                     <div className="col-lg-6 border-md-0 py-2 py-lg-5">
-                        <div className='ms-auto text-end d-none d-lg-block'>
+                        {/* <div className='ms-auto text-end d-none d-lg-block'>
                             <Button variant="contained" onClick={() => navigate("/mineraltoken")}>MINE MINERAL TOKENS</Button>
-                        </div>
+                        </div> */}
                         <div className="">
                             <div id="login" className="form-group mb-30 ">
                                 <div className="">
@@ -646,22 +646,22 @@ const Profile = ({ expiryTimestamp }) => {
                                             <div>
                                                 <span className='pt-2  text-start mb-3'>Share Affiliate Link</span>
                                                 <div className='d-flex gap-2 mb-3'>
-                                                    <TwitterShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <TwitterShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <TwitterIcon size={40} round={true} />
                                                     </TwitterShareButton>
-                                                    <LinkedinShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <LinkedinShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <LinkedinIcon size={40} round={true} />
                                                     </LinkedinShareButton>
-                                                    <WhatsappShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <WhatsappShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <WhatsappIcon size={40} round={true} />
                                                     </WhatsappShareButton>
-                                                    <FacebookShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <FacebookShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <FacebookIcon size={40} round={true} />
                                                     </FacebookShareButton>
-                                                    <PinterestShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <PinterestShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <PinterestIcon size={40} round={true} />
                                                     </PinterestShareButton>
-                                                    <TelegramShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at Blockchaincert.sg when you use my code.`}>
+                                                    <TelegramShareButton url={window.location.origin + "/" + user?.myReferralCode} title={`Get 5% discount at s39global.com when you use my code.`}>
                                                         <TelegramIcon size={40} round={true} />
                                                     </TelegramShareButton>
                                                 </div>
@@ -670,7 +670,7 @@ const Profile = ({ expiryTimestamp }) => {
                                         <p className='text-start'>Please share the affiliate code and start earning.</p>
                                         <div className='d-flex justify-content-start'>
                                             <Button
-                                                type='submit'
+                                                onClick={() => navigate("/mineraltoken")}
                                                 sx={{
                                                     borderRadius: "0px",
                                                     background: "#15407F",
@@ -683,7 +683,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                 }}
                                                 variant="contained"
                                             >
-                                                Go to courses
+                                               MINE MINERAL TOKENS
                                             </Button>
                                             <Button
                                                 onClick={Logout}
@@ -695,7 +695,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                     "&:hover": { background: "#FF5421" },
                                                     color: '#fff',
                                                     paddingLeft: '5px',
-                                                    padding: '8px 10px'
+                                                    padding: '8px 30px'
                                                 }}
                                                 variant="contained"
                                             >

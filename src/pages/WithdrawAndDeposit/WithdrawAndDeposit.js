@@ -33,6 +33,7 @@ const WithdrawAndDeposit = () => {
     let walletAddressTemplate = useRef();
     const [copyWalletAddress, setCopyWalletAddress] = useState("");
 
+
     useEffect(() => {
         const template = walletAddressTemplate.current;
         console.log(template)
@@ -106,6 +107,10 @@ const WithdrawAndDeposit = () => {
         }
 
     }
+
+    const [selectedItem, setSelectedItem] = useState('');
+    console.log('got item', selectedItem)
+
     return (
         <div className='py-5 bg-darkblue' style={{ minHeight: "100vh" }}>
             <div className='container'>
@@ -124,7 +129,7 @@ const WithdrawAndDeposit = () => {
                                         <div className='d-flex flex-sm-row flex-column justify-content-center align-items-center mb-3' style={{ gap: "15px" }}>
                                             <div className='handleWidthInput'>
                                                 <label className='pb-2'>Cryplocoin</label> <br />
-                                                <select className='w-100 bg-black border border-secondary rounded ps-2 py-2 text-light'>
+                                                <select className='w-100 bg-black border border-secondary rounded ps-2 py-2 text-light' onChange={e => setSelectedItem(e.target.value)}>
                                                     <option value="BTC">BTC</option>
                                                     <option value="BNB">BNB</option>
                                                     <option value="ETH">ETH</option>
@@ -137,13 +142,13 @@ const WithdrawAndDeposit = () => {
                                             </div>
 
                                             <div className='handleWidthInput'>
-                                                <label className='pb-2 ps-1'>Available 250.00000000000 SLGO</label> <br />
+                                                <label className='pb-2 ps-1'>Available 250.00000000000 {selectedItem}</label> <br />
                                                 <input type="text" className='w-100 bg-black border border-secondary rounded ps-2 py-2 text-light' placeholder='Enter Amount' />
                                             </div>
                                         </div>
                                         <div className='d-flex flex-sm-row flex-column justify-content-center align-items-center    ' style={{ gap: "15px" }}>
                                             <div className='handleWidthInput '>
-                                                <label className='pb-2 ps-1'>Available 250.00000000000 SLGO</label> <br />
+                                                <label className='pb-2 ps-1'>Available 250.00000000000 {selectedItem}</label> <br />
                                                 <input type="text" className='w-100 bg-black border border-secondary rounded ps-2 py-2 text-light' placeholder='Enter Amount' />
 
                                                 <div className='mt-3'>
@@ -155,8 +160,8 @@ const WithdrawAndDeposit = () => {
                                                             <p>Once you confirm your purchase, there is nothing more for you to do until the Pre-Sale concludes. Tolens will be sent to your Wallet shortly after purchase</p>
                                                         </div>
                                                         <div className='col'>
-                                                            <p>: 0.0200000000 SLGO</p>
-                                                            <p>: 10000.0000000 SLGO</p>
+                                                            <p>: 0.0200000000 {selectedItem}</p>
+                                                            <p>: 10000.0000000 {selectedItem}</p>
 
                                                         </div>
                                                     </div>

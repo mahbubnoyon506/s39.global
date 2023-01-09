@@ -1,17 +1,39 @@
 import React from 'react';
-import { Outlet } from "react-router-dom";
-import BackToTop from '../components/backToTop/BackToTop';
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from './Footer';
 import NavMenu from './NavMenu';
 
 
 const Main = () => {
+    const { pathname } = useLocation()
+    let content = ''
+    if (pathname.includes('forgetpassword')) {
+        content =
+            <div>
+                <Outlet />
+            </div>
+    } else if (pathname.includes('reset-password')) {
+        content =
+            <div>
+                <Outlet />
+            </div>
+    } else if (pathname.includes('otp')) {
+        content =
+            <div>
+                <Outlet />
+            </div>
+    } else {
+        content =
+            <div>
+                <NavMenu />
+                <Outlet />
+                <Footer />
+            </div>
+    }
+
     return (
         <div>
-            <NavMenu />
-            <Outlet />
-            <Footer />
-
+            {content}
         </div>
     );
 };
