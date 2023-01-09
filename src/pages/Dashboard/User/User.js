@@ -53,6 +53,9 @@ const User = () => {
       <h5 className="dashboard-title">CUSTOMERS</h5>
 
       {/* <Search handleSearch={handleSearch} /> */}
+      <div>
+        <input className="w-100 py-2 rounded ps-3 border-0" type="search" name="" id="" placeholder="Search..."/>
+      </div>
 
       <div className="productCard py-2">
         <div className="tableNormal ">

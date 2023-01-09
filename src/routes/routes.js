@@ -86,11 +86,11 @@ const routes = createBrowserRouter([
         element: <ForgetPassword />
       },
       {
-        path: '/reset-password',
+        path: '/reset-password/:token',
         element: <ResetPassword />
       },
       {
-        path: '/admin/otp',
+        path: '/admin/otp/:token',
         element: <Otp />
       },
       {
@@ -109,10 +109,10 @@ const routes = createBrowserRouter([
   },
   {
     path: "/admin",
-    element:  <Dashboard />,
-      // <AdminRoutes>
-      //   <Dashboard />
-      // </AdminRoutes>,
+    element: 
+      <AdminRoutes>
+        <Dashboard />
+      </AdminRoutes>,
     children: [
       {
         path: "dashboard",
