@@ -33,6 +33,7 @@ import MinarelTokens from "../pages/MinarelTokens/MinarelTokens";
 import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWorksDashboard";
 import WithdrawAndDeposit from "../pages/WithdrawAndDeposit/WithdrawAndDeposit";
+import UsersUpdate from "../pages/Dashboard/User/UsersUpdate";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -85,11 +86,11 @@ const routes = createBrowserRouter([
         element: <ForgetPassword />
       },
       {
-        path: '/reset-password/:token',
+        path: '/reset-password',
         element: <ResetPassword />
       },
       {
-        path: '/admin/otp/:token',
+        path: '/admin/otp',
         element: <Otp />
       },
       {
@@ -108,10 +109,10 @@ const routes = createBrowserRouter([
   },
   {
     path: "/admin",
-    element:
-      <AdminRoutes>
-        <Dashboard />
-      </AdminRoutes>,
+    element:  <Dashboard />,
+      // <AdminRoutes>
+      //   <Dashboard />
+      // </AdminRoutes>,
     children: [
       {
         path: "dashboard",
@@ -156,6 +157,10 @@ const routes = createBrowserRouter([
       {
         path: "user",
         element: <User />,
+      },
+      {
+        path: "users-update",
+        element: <UsersUpdate/>,
       },
       {
         path: "dashboardhowitworks",

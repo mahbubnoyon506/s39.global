@@ -51,7 +51,7 @@ export default function WalletLogin() {
                             <div className="contentDiv text-center" style={{ color: '#989898' }}>
                                 <p className='contents'>You can use Binance Chain to connect.</p>
                                 <p className='contents'>Add Binance Chain in your Metamask as follows.</p>
-                                <p className='contents px-2'><a className='contents1' style={{ color: '#989898' }} href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_any" >https://academy.binance.com/en/articles
+                                <p className='contents px-2'><a className='contents1' style={{ color: '#fff' }} href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_any" >https://academy.binance.com/en/articles
                                     /connecting-metamask-to-binance-smart-chain</a></p>
                             </div>
                             <p className='text-center mt-4'>

@@ -566,9 +566,9 @@ const Profile = ({ expiryTimestamp }) => {
                     </div>
 
                     <div className="col-lg-6 border-md-0 py-2 py-lg-5">
-                        <div className='ms-auto text-end d-none d-lg-block'>
+                        {/* <div className='ms-auto text-end d-none d-lg-block'>
                             <Button variant="contained" onClick={() => navigate("/mineraltoken")}>MINE MINERAL TOKENS</Button>
-                        </div>
+                        </div> */}
                         <div className="">
                             <div id="login" className="form-group mb-30 ">
                                 <div className="">
@@ -670,7 +670,7 @@ const Profile = ({ expiryTimestamp }) => {
                                         <p className='text-start'>Please share the affiliate code and start earning.</p>
                                         <div className='d-flex justify-content-start'>
                                             <Button
-                                                type='submit'
+                                                onClick={() => navigate("/mineraltoken")}
                                                 sx={{
                                                     borderRadius: "0px",
                                                     background: "#15407F",
@@ -683,7 +683,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                 }}
                                                 variant="contained"
                                             >
-                                                Go to courses
+                                               MINE MINERAL TOKENS
                                             </Button>
                                             <Button
                                                 onClick={Logout}
@@ -695,7 +695,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                     "&:hover": { background: "#FF5421" },
                                                     color: '#fff',
                                                     paddingLeft: '5px',
-                                                    padding: '8px 10px'
+                                                    padding: '8px 30px'
                                                 }}
                                                 variant="contained"
                                             >

@@ -1,17 +1,23 @@
 import React from 'react';
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import BackToTop from '../components/backToTop/BackToTop';
 import Footer from './Footer';
 import NavMenu from './NavMenu';
 
 
 const Main = () => {
+    const { pathname } = useLocation()
     return (
         <div>
-            <NavMenu />
+            {
+                !pathname.includes('forgetpassword') &&
+                <NavMenu />
+            }
             <Outlet />
-            <Footer />
-
+            {
+                !pathname.includes('forgetpassword') &&
+                <Footer />
+            }
         </div>
     );
 };
