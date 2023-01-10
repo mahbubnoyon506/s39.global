@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaEye, FaSearch, FaTrash } from "react-icons/fa";
+import { Card } from "react-bootstrap";
 
 // const FilterableTable = require("react-filterable-table");
 
 const User = () => {
   const [allCustomers, setAllCustomers] = useState([]);
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const fetchAllCustomers = () => {
     fetch(`https://backend.dslcommerce.com/api/users/all`)
@@ -53,20 +57,19 @@ const User = () => {
       <h5 className="dashboard-title">USERS</h5>
 
       {/* <Search handleSearch={handleSearch} /> */}
-      <div>
-        <input className="w-100 py-2 rounded ps-3 border-0" type="search" name="" id="" placeholder="Search..."/>
+      <div className="mb-5">
+        <input className="w-100 py-2 rounded ps-3 border-0" type="search" name="" id="" placeholder="Search..." />
       </div>
-
-      <div className="productCard py-2">
+      <div className="tableNormal rounded py-3" style={{ background: '#272D47' }}>
         <div className="tableNormal ">
-          <Table responsive="sm" className="text-white productDataTable ">
+          <Table responsive="sm" className="text-white productDataTable">
             <thead>
               <tr>
                 {/* <th className="text-left d-md-block d-none">USER ID</th> */}
                 <th className="text-left productHidden">USER ID</th>
-                <th className="text-left productHidden">WALLET ADDRESS</th>
-                <th className="text-left ">EMAIL</th>
-                <th className="text-left">ACTIONS</th>
+                <th className="text-start productHidden">WALLET ADDRESS</th>
+                <th className="text-start ">EMAIL</th>
+                <th className="text-end">ACTIONS</th>
               </tr>
             </thead>
             <tbody>
@@ -93,18 +96,20 @@ const User = () => {
                       <div>Email Address</div>
                     )}
                   </td>
-                  <td className="action col-sm-12 d-flex">
-                    <div className="actionDiv text-left">
-                      <Link to='/admin/users-update'
-                        className="viewBtn"
-                      >
-                        <FaEye color="#40C689" size={25}/>
-                      </Link>
-                      <button
-                        className="deleteBtn"
-                      >
-                        <FaTrash color="#fff" size={20}/>
-                      </button>
+                  <td className="action">
+                    <div className="d-flex justify-content-end align-items-center">
+                      <div className="actionDiv text-left">
+                        <Link to='/admin/userdetails'
+                          className="editBtn py-2"
+                        >
+                          <FaEye color="#fff" size={25} />
+                        </Link>
+                        <button
+                          className="deleteBtn"
+                        >
+                          <FaTrash color="#fff" size={20} />
+                        </button>
+                      </div>
                     </div>
                   </td>
                 </tr>

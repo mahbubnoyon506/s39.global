@@ -1,10 +1,12 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 import './hosting.css'
 
 const Hosting = () => {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])  
     return (
         <div>
             <p className='dashboard-title'>S39.Global Hosting</p>

@@ -107,7 +107,6 @@ const ClaimToken = () => {
                             <Card.Body>
                                 <div className='d-md-flex justify-content-between align-items-center pb-2'>
                                     <div>
-                                        <p className='mb-0 text-primary'>#Pool 1</p>
                                         <p className='mb-0'>10% APR</p>
                                     </div>
                                     <div className='mx-auto text-center mx-md-0 text-md-end mt-2 mt-md-0'>

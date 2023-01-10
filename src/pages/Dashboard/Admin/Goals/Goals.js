@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { RiSurroundSoundFill } from 'react-icons/ri';
 import { BsStarFill } from 'react-icons/bs';
 import image2 from '../../../../../src/assets/images/icon/icons8-bitcoin-48.png'
@@ -9,10 +9,13 @@ import './goals.css'
 
 const Goals = () => {
     const background = 'linear-gradient(to right bottom, #166c76, #006387, #27568f, #5d4083, #7f2060)'
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])  
     return (
         <div>
 
-<h5 className="dashboard-title">Goals</h5>
+            <h5 className="dashboard-title">Goals</h5>
             <div className='row g-3'>
                 <div className='col-12 col-lg-6'>
                     {/* <h2 className='text-center text-white mb-5'>GOALS</h2> */}

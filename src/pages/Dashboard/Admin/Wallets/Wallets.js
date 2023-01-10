@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BiCoin } from 'react-icons/bi';
 import image from '../../../../../src/assets/images/icon/aave.png'
 import image2 from '../../../../../src/assets/images/icon/icons8-bitcoin-48.png'
@@ -8,6 +8,9 @@ import { Button } from '@mui/material';
 
 
 const Wallets = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])  
 
     return (
         <div>

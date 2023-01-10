@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 import { BsDashLg } from 'react-icons/bs';
 import { RxDash } from 'react-icons/rx';
 
 const Reward = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])  
     const rewards = [
         {
             "name": "BGLD",

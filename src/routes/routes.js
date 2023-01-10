@@ -34,6 +34,7 @@ import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWorksDashboard";
 import WithdrawAndDeposit from "../pages/WithdrawAndDeposit/WithdrawAndDeposit";
 import UsersUpdate from "../pages/Dashboard/User/UsersUpdate";
+import UserDetails from "../pages/Dashboard/User/UserDetails";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -159,8 +160,8 @@ const routes = createBrowserRouter([
         element: <User />,
       },
       {
-        path: "users-update",
-        element: <UsersUpdate/>,
+        path: "userdetails",
+        element: <UserDetails/>,
       },
       {
         path: "dashboardhowitworks",

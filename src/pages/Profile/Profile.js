@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+// import { Button } from '@mui/material';
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { FaRegCopy } from 'react-icons/fa';
@@ -25,6 +25,7 @@ import EmailVerificationModal from './EmailVerificationModal';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import copy from "copy-to-clipboard";
+import { Button } from 'react-bootstrap';
 
 
 const Profile = ({ expiryTimestamp }) => {
@@ -669,7 +670,7 @@ const Profile = ({ expiryTimestamp }) => {
                                         </div>
                                         <p className='text-start'>Please share the affiliate code and start earning.</p>
                                         <div className='d-flex justify-content-start'>
-                                            <Button
+                                            {/* <Button
                                                 onClick={() => navigate("/mineraltoken")}
                                                 sx={{
                                                     borderRadius: "0px",
@@ -679,7 +680,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                     "&:hover": { background: "#15407F" },
                                                     color: '#fff',
                                                     padding: '8px 10px',
-
+                                                    maxWidth: '200px'
                                                 }}
                                                 variant="contained"
                                             >
@@ -687,6 +688,7 @@ const Profile = ({ expiryTimestamp }) => {
                                             </Button>
                                             <Button
                                                 onClick={Logout}
+                                                className='button-logut'
                                                 sx={{
                                                     borderRadius: "0px",
                                                     background: "#FF5421",
@@ -695,12 +697,15 @@ const Profile = ({ expiryTimestamp }) => {
                                                     "&:hover": { background: "#FF5421" },
                                                     color: '#fff',
                                                     paddingLeft: '5px',
-                                                    padding: '8px 30px'
+                                                    // padding: '8px 30px',
+                                                    // minWidth: '200px'
                                                 }}
                                                 variant="contained"
                                             >
                                                 Logout
-                                            </Button>
+                                            </Button> */}
+                                            <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 me-2 mine-mineral' style={{background: "#15407F",}}>MINE MINERAL TOKENS</Button>
+                                            <Button onClick={Logout} className='btn rounded-0 border-0 button-logut' style={{background: "#FF5421",}}>LOGOUT</Button>
                                         </div>
                                     </div>
                                 </div>

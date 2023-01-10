@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -11,7 +11,9 @@ import Astard from './Astard';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])  
     return (
         <div
             role="tabpanel"

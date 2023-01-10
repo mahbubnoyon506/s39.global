@@ -8,6 +8,9 @@ import { AiFillCaretUp } from 'react-icons/ai';
 const AdminDashboard = () => {
   const background = 'linear-gradient(to right bottom, #166c76, #006387, #27568f, #5d4083, #7f2060)'
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])  
   return (
     <div>
       <div className="">

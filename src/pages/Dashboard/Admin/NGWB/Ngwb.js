@@ -1,9 +1,12 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 import image from '../../../../assets/images/icon/aave.png'
 
 const Ngwb = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])  
     const cards = [
         {
             "title": "Lorem ipsum dolor",
