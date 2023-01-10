@@ -34,7 +34,7 @@ const UsersUpdate = () => {
 
   return (
     <>
-      <h5 className="dashboard-title">CUSTOMER UPDATE</h5>
+      <h5 className="dashboard-title">USER UPDATE</h5>
 
       <div className="productCard py-2">
         <div className="tableNormal ">

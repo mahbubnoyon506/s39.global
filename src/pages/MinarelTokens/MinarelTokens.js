@@ -130,7 +130,7 @@ const MinarelTokens = () => {
                     <Card className='' style={{ borderRadius: '30px', background: '#262626' }}>
                         <Card.Body>
                             <div className='d-flex justify-content-between align-items-center primary'>
-                                <p style={{ fontSize: '18px', fontWeight: '700' }}>Mine mineral tokens</p>
+                                <p style={{ fontSize: '18px', fontWeight: '700' }}>Mineral minting</p>
                                 {(ammount > 0) && <p style={{ fontSize: '18px', fontWeight: '700' }} className="text-warning">You can get {convertedS} S Points by mining</p>}
                                 <p style={{ fontSize: '18px', fontWeight: '700' }}>{convertedS} S Point</p>
                             </div>
@@ -145,16 +145,16 @@ const MinarelTokens = () => {
                                 <div className='d-flex justify-content-between primary pb-2'>
                                     <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Select Minting Bot</button>
                                     <select className='w-100' name="" id="">
-                                        <option value="">Mineral Tokens 01</option>
-                                        <option value="">Mineral Tokens 02</option>
-                                        <option value="">Mineral Tokens 03</option>
-                                        <option value="">Mineral Tokens 04</option>
-                                        <option value="">Mineral Tokens 05</option>
-                                        <option value="">Mineral Tokens 06</option>
-                                        <option value="">Mineral Tokens 07</option>
+                                        <option value="">Minting Bot 01</option>
+                                        <option value="">Minting Bot 02</option>
+                                        <option value="">Minting Bot 03</option>
+                                        <option value="">Minting Bot 04</option>
+                                        <option value="">Minting Bot 05</option>
+                                        <option value="">Minting Bot 06</option>
+                                        <option value="">Minting Bot 07</option>
                                     </select>
                                 </div>
-                                <input className='primary w-100 border-0 py-2 my-2 fs-lg-4 text-uppercase' style={{ background: '#165CA9' }} type="submit" value="Mine this bot" />
+                                <input className='primary w-100 border-0 py-2 my-2 fs-lg-4 text-uppercase' style={{ background: '#165CA9' }} type="submit" value="Start Minting" />
                             </form>
                         </Card.Body>
                     </Card>
