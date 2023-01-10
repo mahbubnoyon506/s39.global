@@ -210,18 +210,6 @@ function Dashboard(props) {
           className="dashboardMenu text-uppercase"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="mineraltoken"
-        >
-          {" "}
-          <span className="navIconAdmin">
-            <CgGhost color="#fff" size={20} />
-          </span>
-          Mineral Tokens
-        </NavLink>
-        <NavLink
-          className="dashboardMenu text-uppercase"
-          style={menuLinkStyles}
-          onClick={handleClose}
           to="dashboardhowitworks"
         >
           {" "}

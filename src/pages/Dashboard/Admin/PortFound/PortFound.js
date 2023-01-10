@@ -1,5 +1,5 @@
 import { Tooltip } from "bootstrap";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   CartesianGrid,
   Legend,
@@ -61,6 +61,9 @@ const data = [
 ];
 
 const PortFound = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])  
   return (
     <div>
       <h5 className="dashboard-title">Portfound</h5>

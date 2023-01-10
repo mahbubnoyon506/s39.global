@@ -17,6 +17,10 @@ const Admins = () => {
   const [refetch, setRefetch] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])  
+
+  useEffect(() => {
     axios.get("https://testnetback.s39global.com/api/v1/admin/").then((res) => {
       setAllAdmin(res.data);
       // console.log(res.data)
@@ -78,8 +82,6 @@ const Admins = () => {
         <div className="tableNormal ">
 
           <Table className='text-white adminDataTable '>
-
-
             <thead>
               <tr>
                 <th className='text-center'>Image</th>

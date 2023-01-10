@@ -13,6 +13,7 @@ const HowItWorksDashboard = () => {
     const [value, setValue] = useState(() => EditorState.createEmpty());
     const data = draftToHtml(convertToRaw(value.getCurrentContent()));
     const navigate = useNavigate();
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])

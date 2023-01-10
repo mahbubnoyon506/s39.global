@@ -128,3 +128,17 @@
         margin-bottom: 8px;
     }
 }
+
+.mine-mineral {
+    max-width: 200px;
+}
+
+.button-logut {
+    min-width: 200px;
+}
+
+@media only screen and (max-width:430px) {
+    .button-logut {
+        min-width: auto;
+    }
+}
