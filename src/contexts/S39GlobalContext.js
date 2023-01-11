@@ -949,7 +949,7 @@ export default function S39Provider({ children }) {
         });
       setUserRefetch(false);
     }
-  }, [currentAccount, userRefetch]);
+  }, [currentAccount, userRefetch, localStorage.getItem("s39GlobalToken")]);
 
   useEffect(() => {
     if (requestLoading) {
