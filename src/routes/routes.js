@@ -110,7 +110,7 @@ const routes = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: 
+    element:
       <AdminRoutes>
         <Dashboard />
       </AdminRoutes>,

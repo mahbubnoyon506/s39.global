@@ -480,7 +480,7 @@ const Profile = ({ expiryTimestamp }) => {
                         <h4 className='handleAlignBtn d-none d-lg-block'>PROFILE</h4>
                         <div className='d-flex justify-content-between align-items-center d-lg-none mb-2'>
                             <h4 >PROFILE</h4>
-                            <Button variant="contained" size="small" onClick={() => navigate("/mineraltoken")} style={{ marginTop: "-12px", }}>MINE MINERAL TOKENS</Button>
+                            {/* <Button variant="contained" size="small" onClick={() => navigate("/mineraltoken")} style={{ marginTop: "-12px", }}>MINE MINERAL TOKENS</Button> */}
                         </div>
                         <div className="">
                             <div id="login" className="mb-30 ">
@@ -581,7 +581,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                 type="text"
                                                 name="affiliateCode"
                                                 defaultValue={user?.myReferralCode}
-                                                className="form-control profileInput text-dark"
+                                                className="form-control profileInput text-dark rounded-start rounded-0"
                                                 disabled
                                             />
                                             <button
@@ -603,7 +603,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                 id="AffiliateLink"
                                                 name="AffiliateLink"
                                                 defaultValue={window.location.origin + "/" + user.myReferralCode}
-                                                className="form-control text-dark"
+                                                className="form-control text-dark rounded-start rounded-0"
                                                 disabled
                                             />
                                             <button
@@ -628,7 +628,7 @@ const Profile = ({ expiryTimestamp }) => {
                                                 id="walletAddress"
                                                 name="walletAddress"
                                                 defaultValue={user?.walletAddress}
-                                                className="form-control text-dark"
+                                                className="form-control text-dark rounded-start rounded-0"
                                                 disabled
                                             />
                                             <button
@@ -670,40 +670,6 @@ const Profile = ({ expiryTimestamp }) => {
                                         </div>
                                         <p className='text-start'>Please share the affiliate code and start earning.</p>
                                         <div className='d-flex justify-content-start'>
-                                            {/* <Button
-                                                onClick={() => navigate("/mineraltoken")}
-                                                sx={{
-                                                    borderRadius: "0px",
-                                                    background: "#15407F",
-                                                    marginRight: "10px",
-                                                    fontWeight: "500",
-                                                    "&:hover": { background: "#15407F" },
-                                                    color: '#fff',
-                                                    padding: '8px 10px',
-                                                    maxWidth: '200px'
-                                                }}
-                                                variant="contained"
-                                            >
-                                               MINE MINERAL TOKENS
-                                            </Button>
-                                            <Button
-                                                onClick={Logout}
-                                                className='button-logut'
-                                                sx={{
-                                                    borderRadius: "0px",
-                                                    background: "#FF5421",
-                                                    marginRight: "10px",
-                                                    fontWeight: "500",
-                                                    "&:hover": { background: "#FF5421" },
-                                                    color: '#fff',
-                                                    paddingLeft: '5px',
-                                                    // padding: '8px 30px',
-                                                    // minWidth: '200px'
-                                                }}
-                                                variant="contained"
-                                            >
-                                                Logout
-                                            </Button> */}
                                             <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 me-2 mine-mineral' style={{background: "#15407F",}}>MINE MINERAL TOKENS</Button>
                                             <Button onClick={Logout} className='btn rounded-0 border-0 button-logut' style={{background: "#FF5421",}}>LOGOUT</Button>
                                         </div>
