@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../assets/images/logo3.png'
 import '../pages/Home/Home.css'
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import TopButton from '../components/TopLoginButton/TopButton';
 import WalletLogin from '../components/WalletLogin';
 import './layout.css'
@@ -17,7 +17,7 @@ import swal from 'sweetalert';
 
 const NavMenu = () => {
     const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
-    console.log(user)
+    // console.log(user)
     const navigate = useNavigate;
 
 
@@ -34,6 +34,13 @@ const NavMenu = () => {
             className: "modal_class_success",
         });
     };
+    const activeClass = ({ isActive }) => {
+        return {
+          color: isActive ? "#EDE197" : "#fff",
+          textDecoration: 'none',
+          fontWeight: '500'
+        };
+      };
 
     return (
         <div className="position-sticky top-0" style={{ zIndex: 1023, borderBottom: '1px solid #FEF6A3' }}>
@@ -47,8 +54,8 @@ const NavMenu = () => {
                         <Nav className="me-auto text-white">
                         </Nav>
                         <Nav className='text-white text-center d-flex justify-content-center align-items-center ' >
-                            <Nav.Link as={Link} to='howItWorks' className=' text-white  me-lg-5 font-mira' href="#howItWorks">HOW IT WORKS</Nav.Link>
-                            <Nav.Link className='text-white  me-lg-5 font-mira' as={Link} to="projects" href="#projects">PROJECTS</Nav.Link>
+                            <NavLink as={Link} to='howItWorks' className='me-lg-5 font-mira py-1 py-lg-0' style={activeClass} href="#howItWorks">HOW IT WORKS</NavLink>
+                            <NavLink className='me-lg-5 font-mira py-1 py-lg-0' as={Link} to="projects" style={activeClass} href="#projects">PROJECTS</NavLink>
                             {user?.walletAddress ?
                                 <Nav.Link as={Link} to='profile' href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" />Profile</TopButton></Nav.Link>
                                 :

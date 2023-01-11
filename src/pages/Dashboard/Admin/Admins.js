@@ -85,7 +85,7 @@ const Admins = () => {
             <thead>
               <tr>
                 <th className='text-center'>Image</th>
-                <th className='text-start adminHidden'>Name</th>
+                <th className='text-start'>Name</th>
                 <th className='text-start adminHidden'>Email</th>
                 <th className='text-start adminHidden'>Mobile</th>
                 <th className='text-start'>Action</th>
@@ -111,7 +111,7 @@ const Admins = () => {
                   </td>
 
 
-                  <td className="text-start adminHidden">{admin?.name || 'adminName'}</td>
+                  <td className="text-start">{admin?.name || 'adminName'}</td>
                   <td className="text-start adminHidden">{admin?.email}</td>
                   <td className="text-start adminHidden">{admin?.phone || "Mobile"}</td>
 

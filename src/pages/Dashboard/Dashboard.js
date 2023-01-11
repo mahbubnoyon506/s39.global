@@ -104,7 +104,18 @@ function Dashboard(props) {
           </span>
           ADMINS
         </NavLink>
-
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="user"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <BiUserCircle color="#fff" size={20} />
+          </span>
+          USER
+        </NavLink>
         <NavLink
           className="dashboardMenu"
           style={menuLinkStyles}
@@ -195,18 +206,6 @@ function Dashboard(props) {
           HOSTING
         </NavLink>
         <NavLink
-          className="dashboardMenu"
-          style={menuLinkStyles}
-          onClick={handleClose}
-          to="user"
-        >
-          {" "}
-          <span className="navIconAdmin">
-            <BiUserCircle color="#fff" size={20} />
-          </span>
-          USER
-        </NavLink>
-        <NavLink
           className="dashboardMenu text-uppercase"
           style={menuLinkStyles}
           onClick={handleClose}
@@ -228,7 +227,8 @@ function Dashboard(props) {
               fontWeight: "700",
               "&:hover": { background: "#FFC000" },
               color: '#2F3655',
-              paddingLeft: '5px'
+              paddingLeft: '5px',
+              marginBottom: '30px'
             }}
             variant="contained"
           >
