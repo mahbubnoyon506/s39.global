@@ -177,6 +177,7 @@ export default function S39Provider({ children }) {
   const [metamaskBalanceLoading, setMetamaskBalanceLoading] = useState(false);
   const [coinbaseModal, setCoinbaseModal] = useState(false);
   const [userRefetch, setUserRefetch] = useState(false);
+  const [allUsers, setAllUsers] = useState([]);
 
   window.addEventListener("load", () => {
     setPageLoading(false);
@@ -925,6 +926,20 @@ export default function S39Provider({ children }) {
     }
   };
 
+  useEffect( () => {
+    setLoading(true);
+    axios.get('https://testnetback.s39global.com/api/v1/wallet-user/all')
+    .then((res) => {
+      setAllUsers(res.data.result)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+    .finally(() => {
+      setLoading(false)
+    })
+  }, [])
+
   useEffect(() => {
     checkIfWalletIsConnect();
   }, []);
@@ -1010,6 +1025,8 @@ export default function S39Provider({ children }) {
         payByTestnetS39,
         signBuyFunction,
         payByTestnetQuest,
+        allUsers,
+        setAllUsers,
       }}
     >
       {children}

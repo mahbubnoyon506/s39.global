@@ -35,7 +35,7 @@ function Dashboard(props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hide, setHide] = useState(false);
   const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
-  console.log(user)
+  // console.log(user)
   const navigate = useNavigate();
 
 
@@ -108,13 +108,13 @@ function Dashboard(props) {
           className="dashboardMenu"
           style={menuLinkStyles}
           onClick={handleClose}
-          to="user"
+          to="users"
         >
           {" "}
           <span className="navIconAdmin">
             <BiUserCircle color="#fff" size={20} />
           </span>
-          USER
+          USERS
         </NavLink>
         <NavLink
           className="dashboardMenu"
