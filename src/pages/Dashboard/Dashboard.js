@@ -35,7 +35,7 @@ function Dashboard(props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hide, setHide] = useState(false);
   const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
-  console.log(user)
+  // console.log(user)
   const navigate = useNavigate();
 
 
