@@ -70,7 +70,7 @@ const Admins = () => {
     });
   }
 
-  console.log(allAdmin)
+  // console.log(allAdmin)
 
   return (
     <div className='adminBody'>
@@ -110,14 +110,12 @@ const Admins = () => {
                     )}
                   </td>
 
-
                   <td className="text-start">{admin?.name || 'adminName'}</td>
                   <td className="text-start adminHidden">{admin?.email}</td>
                   <td className="text-start adminHidden">{admin?.phone || "Mobile"}</td>
 
-
                   <td className='action'>
-                    <div className="actionDiv text-start">
+                    <div className="actionDiv text-start d-flex justify-content-center align-items-center">
                       <Link to={`/admin/updateadmin/${admin._id}`}><button className="editBtn"><FaEdit /></button></Link>
                       <button onClick={() => handleAdminDelete(admin._id)} className="deleteBtn"><FaTrashAlt /></button>
                     </div>

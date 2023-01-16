@@ -261,7 +261,7 @@ const AdminProfileUpdate = () => {
             </div>
             <div className='row mt-3 ' style={{padding: '0px 15%'}}>
               <div className="col-6">
-                <Link className="text-decoration-none" to="/admin/dashboard">
+                <Link className="text-decoration-none" to="/admin/admins">
                   <Button
                     type='submit'
                     sx={{
