@@ -978,6 +978,8 @@ export default function S39Provider({ children }) {
     }
   }, [requestLoading]);
 
+  console.log(allUsers);
+
   return (
     <S39GlobalContext.Provider
       value={{

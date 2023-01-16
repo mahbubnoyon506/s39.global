@@ -11,12 +11,13 @@ const User = () => {
   const {allUsers} = useContext(S39GlobalContext)
   const navigate = useNavigate();
   const [openDialog, setOpendialog] = useState(null);
-  const [userId, setUserId] = useState('')
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
 
+  console.log(allUsers)
 
   return (
     <>
@@ -85,7 +86,7 @@ const User = () => {
             </tbody>
           {
             openDialog && 
-            <DeleteUser userId={userId} openDialog={openDialog} setOpendialog={setOpendialog} ></DeleteUser>
+            <DeleteUser openDialog={openDialog} setOpendialog={setOpendialog} ></DeleteUser>
           }
           </Table>
         </div>

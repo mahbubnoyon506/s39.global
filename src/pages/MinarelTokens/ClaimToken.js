@@ -12,6 +12,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { S39GlobalContext } from '../../contexts/S39GlobalContext';
 import coin from '../../assets/images/coin2.png'
 import TopButton from '../../components/TopLoginButton/TopButton';
+import LoginButton from '../../components/LoginButton/LoginButton';
 
 
 const ClaimToken = () => {
@@ -175,11 +176,12 @@ const ClaimToken = () => {
                                         <p className='mb-0'>Total value locked:</p>
                                         <p className='mb-0'>{reward} POINTS</p>
                                     </div>
-                                    {(user?.walletAddress || user?.walletAddress === "undefined")
+                                    {/* {(user?.walletAddress || user?.walletAddress === "undefined")
                                         ? <Button sx={{ width: '100%' }} variant='contained' onClick={() => navigate("/claiming")}>Claim</Button> :
 
                                         <Button sx={{ width: '100%' }} variant='contained' onClick={() => openWalletModal()}><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" /> LOGIN with Wallet</Button>
-                                    }
+                                    } */}
+                                    <LoginButton></LoginButton>
 
 
                                 </div>
