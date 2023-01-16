@@ -13,6 +13,7 @@ import './layout.css'
 import coin from '../assets/images/coin2.png'
 import { S39GlobalContext } from '../contexts/S39GlobalContext';
 import swal from 'sweetalert';
+import LoginButton from '../components/LoginButton/LoginButton';
 
 
 const NavMenu = () => {
@@ -36,11 +37,11 @@ const NavMenu = () => {
     };
     const activeClass = ({ isActive }) => {
         return {
-          color: isActive ? "#EDE197" : "#fff",
-          textDecoration: 'none',
-          fontWeight: '500'
+            color: isActive ? "#EDE197" : "#fff",
+            textDecoration: 'none',
+            fontWeight: '500'
         };
-      };
+    };
 
     return (
         <div className="position-sticky top-0" style={{ zIndex: 1023, borderBottom: '1px solid #FEF6A3' }}>
@@ -56,10 +57,12 @@ const NavMenu = () => {
                         <Nav className='text-white text-center d-flex justify-content-center align-items-center ' >
                             <NavLink as={Link} to='howItWorks' className='me-lg-5 font-mira py-1 py-lg-0' style={activeClass} href="#howItWorks">HOW IT WORKS</NavLink>
                             <NavLink className='me-lg-5 font-mira py-1 py-lg-0' as={Link} to="projects" style={activeClass} href="#projects">PROJECTS</NavLink>
-                            {user?.walletAddress ?
+                            <LoginButton></LoginButton>
+
+                            {/* {user?.walletAddress ?
                                 <Nav.Link as={Link} to='profile' href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" />Profile</TopButton></Nav.Link>
                                 :
-                                <Nav.Link onClick={() => openWalletModal()} href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" /> LOGIN with Wallet</TopButton></Nav.Link>}
+                                <Nav.Link onClick={() => openWalletModal()} href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" /> LOGIN with Wallet</TopButton></Nav.Link>} */}
                         </Nav>
 
                     </Navbar.Collapse>
