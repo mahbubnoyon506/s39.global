@@ -33,7 +33,6 @@ import MinarelTokens from "../pages/MinarelTokens/MinarelTokens";
 import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWorksDashboard";
 import WithdrawAndDeposit from "../pages/WithdrawAndDeposit/WithdrawAndDeposit";
-import UsersUpdate from "../pages/Dashboard/User/UsersUpdate";
 import UserDetails from "../pages/Dashboard/User/UserDetails";
 
 const time = new Date();
@@ -111,10 +110,10 @@ const routes = createBrowserRouter([
   {
     path: "/admin",
     element:
-    <Dashboard />,
-      // <AdminRoutes>
-      //   <Dashboard />
-      // </AdminRoutes>,
+    // <Dashboard />,
+      <AdminRoutes>
+        <Dashboard />
+      </AdminRoutes>,
     children: [
       {
         path: "dashboard",
