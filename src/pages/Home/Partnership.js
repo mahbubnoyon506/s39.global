@@ -24,7 +24,7 @@ const Partnership = () => {
                 </div>
                 <div className='pt-5'>
                     <h2 className='partnershipTitle text-start'>What is Super D’Apps Technology?</h2>
-                    <p className='partnershipText'>Super D’Apps is a global directory of blockchain decentralized applications (D’ Apps). Super D’Apps bridges D’Apps creators and users to further mass market adoption and growth of the multiple businesses. This Super D’Apps technology will be known as S39 Global <a href="http://www.s39global.com" target="_blank" rel="noopener noreferrer">www.s39global.com</a>.</p>
+                    <p className='partnershipText'>Super D’Apps is a global directory of blockchain decentralized applications (D’ Apps). Super D’Apps bridges D’Apps creators and users to further mass market adoption and growth of the multiple businesses. This Super D’Apps technology will be known as S39 Global <a href="https://testnet.s39global.com/" target="_blank" rel="noopener noreferrer">www.s39global.com</a>.</p>
                 </div>
             </div>
         </div>

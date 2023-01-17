@@ -19,7 +19,7 @@ function Banner() {
             <div className='container pb-4' >
                 <div className='row align-items-center'>
                     <div className='col-lg-6 col-sm-12 text-white'>
-                        <p className='bannerSubTitle'>WHERE CRYPTO MEETS COMMODITIES</p>
+                        <p className='bannerSubTitle' style={{  color:'#FFFFAE'}}>WHERE CRYPTO MEETS COMMODITIES</p>
                         <p className='bannerTitle'>DECENTRALIZED ECOFRIENDLY<br />  BLOCKCHAIN <br /> TECHNOLOGY</p>
                         {/* <img style={{ marginLeft: '30%' }} className='mb-4 ' width='28%' src={logo} alt="D.E.B.T." /> <br /> */}
                         {/* {

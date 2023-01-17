@@ -27,6 +27,9 @@ body {
   background: #011734;
   overflow-x: hidden !important;
 }
+.title-color{
+  color:#FFFFAE;
+}
 
 /* swal */
 .modal_class_success {

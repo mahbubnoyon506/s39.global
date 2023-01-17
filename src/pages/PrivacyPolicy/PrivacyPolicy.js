@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
       }, [])  
     return (
         <div className='py-5 bg-darkblue' style={{ height: '100vh' }}>
-            <h2 className='text-center text-uppercase primary'>Privacy policy</h2>
+            <h2 className='text-center text-uppercase title-color'>Privacy policy</h2>
         </div>
     );
 };

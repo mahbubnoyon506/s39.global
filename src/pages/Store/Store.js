@@ -6,7 +6,7 @@ const Store = () => {
       }, [])  
     return (
         <div className='py-5 bg-darkblue' style={{ height: '100vh' }}>
-            <h2 className='text-center text-uppercase primary'>Store</h2>
+            <h2 className='text-center text-uppercase title-color'>Store</h2>
         </div>
     );
 };
