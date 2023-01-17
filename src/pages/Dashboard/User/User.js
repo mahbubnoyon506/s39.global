@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaSearch, FaTrash } from "react-icons/fa";
@@ -8,7 +8,8 @@ import DeleteUser from "./DeleteUser";
 // const FilterableTable = require("react-filterable-table");
 
 const User = () => {
-  const {allUsers} = useContext(S39GlobalContext)
+  const { allUsers } = useContext(S39GlobalContext)
+  const [getEmail, setGetEmail] = useState()
   const navigate = useNavigate();
   const [openDialog, setOpendialog] = useState(null);
 
@@ -16,8 +17,99 @@ const User = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
+  const filterUsers = allUsers.filter((item) => item.email === getEmail);
+  console.log(filterUsers)
+  let content = '';
+  if (!filterUsers.length) {
+    content = allUsers.map((user) =>
+      <tr className="tableRow" key={user?.USER_ID}>
+        <td className="text-left text-capitalize productHidden">
+          {user?.myReferralCode ? (
+            <div>{user?.myReferralCode}</div>
+          ) : (
+            <div>User id</div>
+          )}
+        </td>
+        <td className="text-left productHidden">
 
-  console.log(allUsers)
+          {user?.walletAddress ? (
+            <div>{user?.walletAddress}</div>
+          ) : (
+            <div>WalletAddress</div>
+          )}
+        </td>
+        <td className="text-left  ">
+          {user?.email ? (
+            <div>{user?.email}</div>
+          ) : (
+            <div>Email Address</div>
+          )}
+        </td>
+        <td className="action">
+          <div className="d-flex justify-content-end align-items-center">
+            <div className="actionDiv text-left">
+              <Link to={`/admin/userdetails/${user?._id}`}
+                className="editBtn py-2"
+              >
+                <FaEye color="#fff" size={25} />
+              </Link>
+              <button
+                onClick={() => setOpendialog(user)}
+                className="deleteBtn"
+              >
+                <FaTrash color="#fff" size={20} />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    )
+  } else{
+    content = filterUsers.map((user) =>
+      <tr className="tableRow" key={user?.USER_ID}>
+        <td className="text-left text-capitalize productHidden">
+          {user?.myReferralCode ? (
+            <div>{user?.myReferralCode}</div>
+          ) : (
+            <div>User id</div>
+          )}
+        </td>
+        <td className="text-left productHidden">
+
+          {user?.walletAddress ? (
+            <div>{user?.walletAddress}</div>
+          ) : (
+            <div>WalletAddress</div>
+          )}
+        </td>
+        <td className="text-left  ">
+          {user?.email ? (
+            <div>{user?.email}</div>
+          ) : (
+            <div>Email Address</div>
+          )}
+        </td>
+        <td className="action">
+          <div className="d-flex justify-content-end align-items-center">
+            <div className="actionDiv text-left">
+              <Link to={`/admin/userdetails/${user?._id}`}
+                className="editBtn py-2"
+              >
+                <FaEye color="#fff" size={25} />
+              </Link>
+              <button
+                onClick={() => setOpendialog(user)}
+                className="deleteBtn"
+              >
+                <FaTrash color="#fff" size={20} />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    )
+  }
+
 
   return (
     <>
@@ -26,7 +118,7 @@ const User = () => {
       {/* <Search handleSearch={handleSearch} /> */}
       <div className="mb-5">
         {/* <FaSearch className="" style={{marginRight: '-20px', zIndex: '10'}}/> */}
-        <input className="w-100 py-2 rounded ps-3 border-0" type="search" name="" id="" placeholder="Search..." />
+        <input onChange={e => setGetEmail(e.target.value)} className="w-100 py-2 rounded ps-3 border-0" type="search" name="" id="" placeholder="Search by Email" />
       </div>
       <div className="tableNormal rounded py-3" style={{ background: '#272D47' }}>
         <div className="tableNormal ">
@@ -41,7 +133,7 @@ const User = () => {
               </tr>
             </thead>
             <tbody>
-              {allUsers?.map((user) => (
+              {/* {allUsers?.map((user) => (
                 <tr className="tableRow" key={user?.USER_ID}>
                   <td className="text-left text-capitalize productHidden">
                     {user?.myReferralCode ? (
@@ -51,6 +143,7 @@ const User = () => {
                     )}
                   </td>
                   <td className="text-left productHidden">
+
                     {user?.walletAddress ? (
                       <div>{user?.walletAddress}</div>
                     ) : (
@@ -73,7 +166,7 @@ const User = () => {
                           <FaEye color="#fff" size={25} />
                         </Link>
                         <button
-                        onClick={() => setOpendialog(user)}
+                          onClick={() => setOpendialog(user)}
                           className="deleteBtn"
                         >
                           <FaTrash color="#fff" size={20} />
@@ -82,12 +175,13 @@ const User = () => {
                     </div>
                   </td>
                 </tr>
-              ))}
+              ))} */}
+              {content}
             </tbody>
-          {
-            openDialog && 
-            <DeleteUser openDialog={openDialog} setOpendialog={setOpendialog} ></DeleteUser>
-          }
+            {
+              openDialog &&
+              <DeleteUser openDialog={openDialog} setOpendialog={setOpendialog} ></DeleteUser>
+            }
           </Table>
         </div>
       </div>

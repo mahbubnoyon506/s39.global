@@ -5,6 +5,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { Box } from '@mui/system';
 
 export default function Modal({open, setOpen}) {
 //   const [open, setOpen] = React.useState(false);
@@ -28,21 +29,13 @@ export default function Modal({open, setOpen}) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
+        <Box sx={{background: '#272D47'}}>
+
+        <DialogTitle sx={{textAlign: 'center', color: '#fff', padding: '100px'}} id="alert-dialog-title">
+          {"Will be update soon!"}
         </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous
-            location data to Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
-            Agree
-          </Button>
-        </DialogActions>
+         
+        </Box>
       </Dialog>
     </div>
   );
