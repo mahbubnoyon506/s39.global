@@ -6,7 +6,7 @@ const Specifications = () => {
       }, [])  
     return (
         <div className='py-5 bg-darkblue' style={{ height: '100vh' }}>
-            <h2 className='text-center text-uppercase primary'>Specifications</h2>
+            <h2 className='text-center text-uppercase title-color'>Specifications</h2>
         </div>
     );
 };

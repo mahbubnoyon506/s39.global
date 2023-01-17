@@ -22,7 +22,7 @@ const HowItworks = () => {
 
     return (
         <div className='pt-5 bg-darkblue' style={{ minHeight: '100vh' }}>
-            <h2 className='text-center text-uppercase primary'>How It works</h2>
+            <h2 className='text-center text-uppercase title-color'>How It works</h2>
             {loading && <LoaderTop></LoaderTop>}
             <div
                 dangerouslySetInnerHTML={{ __html: data }}

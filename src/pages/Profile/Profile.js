@@ -586,12 +586,12 @@ const Profile = ({ expiryTimestamp }) => {
                                             />
                                             <button
                                                 className=""
-                                                style={{ backgroundColor: "#15407f" }}
+                                                style={{ backgroundColor: "#15407f", border: '1px solid #15407F' }}
                                                 type="button"
                                                 onClick={copyToClipboardAffiliateCode}
 
                                             >
-                                                <FaRegCopy size={30} color='#fff' className='p-1' />
+                                                <FaRegCopy size={32} color='#fff' className='p-1' />
                                             </button>
                                         </div>
                                     </div>
@@ -608,11 +608,11 @@ const Profile = ({ expiryTimestamp }) => {
                                             />
                                             <button
                                                 className=""
-                                                style={{ backgroundColor: "#15407f" }}
+                                                style={{ backgroundColor: "#15407f", border: '1px solid #15407F' }}
                                                 type="button"
                                                 onClick={copyToClipboardAffiliateLink}
                                             >
-                                                <FaRegCopy size={30} color='#fff' className='p-1' />
+                                                <FaRegCopy size={32} color='#fff' className='p-1' />
                                             </button>
                                         </div>
                                     </div>
@@ -633,12 +633,12 @@ const Profile = ({ expiryTimestamp }) => {
                                             />
                                             <button
                                                 className=""
-                                                style={{ backgroundColor: "#15407f" }}
+                                                style={{ backgroundColor: "#15407f", border: '1px solid #15407F' }}
                                                 type="button"
                                                 onClick={copyToClipboardWalletAddress}
-
+                                                
                                             >
-                                                <FaRegCopy size={30} color='#fff' className='p-1' />
+                                                <FaRegCopy size={32} color='#fff' className='p-1'/>
                                             </button>
                                         </div>
                                     </div>
