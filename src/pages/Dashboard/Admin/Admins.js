@@ -8,6 +8,7 @@ import './Admins.css';
 import AddNewAdmin from './AddNewAdmin';
 import swal from 'sweetalert';
 import axios from 'axios';
+import { Tooltip } from '@mui/material';
 
 
 const Admins = () => {
@@ -76,8 +77,8 @@ const Admins = () => {
     <div className='adminBody'>
       <h5 className="dashboard-title">Admins</h5>
       <div className='adminCard py-2'>
-        <div className="d-flex justify-content-center justify-content-lg-end text-end me-lg-5">
-          <button onClick={() => setModalShowNewAdmin(true)} className='adminBtn'>NEW ADMIN</button>
+        <div className="d-flex justify-content-center justify-content-lg-end me-md-4">
+          <button onClick={() => setModalShowNewAdmin(true)} className='adminBtn px-4'>NEW ADMIN</button>
         </div>
         <div className="tableNormal ">
 
@@ -116,8 +117,8 @@ const Admins = () => {
 
                   <td className='action'>
                     <div className="actionDiv text-start d-flex justify-content-center align-items-center">
-                      <Link to={`/admin/updateadmin/${admin._id}`}><button className="editBtn"><FaEdit /></button></Link>
-                      <button onClick={() => handleAdminDelete(admin._id)} className="deleteBtn"><FaTrashAlt /></button>
+                      <Link to={`/admin/updateadmin/${admin._id}`}> <Tooltip title="View User Details" placement="top"><button className="editBtn"><FaEdit /></button></Tooltip></Link>
+                      <Tooltip title="Delete User" placement="top"><button onClick={() => handleAdminDelete(admin._id)} className="deleteBtn"><FaTrashAlt /></button></Tooltip>
                     </div>
                   </td>
                 </tr>

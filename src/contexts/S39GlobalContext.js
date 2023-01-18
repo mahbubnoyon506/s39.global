@@ -179,6 +179,8 @@ export default function S39Provider({ children }) {
   const [userRefetch, setUserRefetch] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
 
+  // console.log('Getting all users', allUsers, user)
+
   window.addEventListener("load", () => {
     setPageLoading(false);
   });

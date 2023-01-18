@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaSearch, FaTrash } from "react-icons/fa";
 import { S39GlobalContext } from "../../../contexts/S39GlobalContext";
 import DeleteUser from "./DeleteUser";
+import { Tooltip } from "@mui/material";
 
 // const FilterableTable = require("react-filterable-table");
 
@@ -13,6 +14,8 @@ const User = () => {
   const navigate = useNavigate();
   const [openDialog, setOpendialog] = useState(null);
 
+  console.log('Getting all users', allUsers)
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,7 +23,7 @@ const User = () => {
   const filterUsers = allUsers.filter((item) => item.email === getEmail);
   console.log(filterUsers)
   let content = '';
-  if (!filterUsers.length) {
+  if (allUsers.length) {
     content = allUsers.map((user) =>
       <tr className="tableRow" key={user?.USER_ID}>
         <td className="text-left text-capitalize productHidden">
@@ -48,23 +51,27 @@ const User = () => {
         <td className="action">
           <div className="d-flex justify-content-end align-items-center">
             <div className="actionDiv text-left">
-              <Link to={`/admin/userdetails/${user?._id}`}
-                className="editBtn py-2"
-              >
-                <FaEye color="#fff" size={25} />
-              </Link>
-              <button
-                onClick={() => setOpendialog(user)}
-                className="deleteBtn"
-              >
-                <FaTrash color="#fff" size={20} />
-              </button>
+              <Tooltip title="View User Details" placement="top">
+                <Link to={`/admin/userdetails/${user?._id}`}
+                  className="editBtn py-2"
+                >
+                  <FaEye color="#fff" size={25} />
+                </Link>
+              </Tooltip>
+              <Tooltip title="Delete User" placement="top">
+                <button
+                  onClick={() => setOpendialog(user)}
+                  className="deleteBtn"
+                >
+                  <FaTrash color="#fff" size={20} />
+                </button>
+              </Tooltip>
             </div>
           </div>
         </td>
       </tr>
     )
-  } else{
+  } else if(filterUsers.length) {
     content = filterUsers.map((user) =>
       <tr className="tableRow" key={user?.USER_ID}>
         <td className="text-left text-capitalize productHidden">
@@ -92,17 +99,21 @@ const User = () => {
         <td className="action">
           <div className="d-flex justify-content-end align-items-center">
             <div className="actionDiv text-left">
-              <Link to={`/admin/userdetails/${user?._id}`}
-                className="editBtn py-2"
-              >
-                <FaEye color="#fff" size={25} />
-              </Link>
-              <button
-                onClick={() => setOpendialog(user)}
-                className="deleteBtn"
-              >
-                <FaTrash color="#fff" size={20} />
-              </button>
+              <Tooltip title="View User Details" placement="top">
+                <Link to={`/admin/userdetails/${user?._id}`}
+                  className="editBtn py-2"
+                >
+                  <FaEye color="#fff" size={25} />
+                </Link>
+              </Tooltip>
+              <Tooltip title="Delete User" placement="top">
+                <button
+                  onClick={() => setOpendialog(user)}
+                  className="deleteBtn"
+                >
+                  <FaTrash color="#fff" size={20} />
+                </button>
+              </Tooltip>
             </div>
           </div>
         </td>
@@ -133,49 +144,55 @@ const User = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {allUsers?.map((user) => (
-                <tr className="tableRow" key={user?.USER_ID}>
-                  <td className="text-left text-capitalize productHidden">
-                    {user?.myReferralCode ? (
-                      <div>{user?.myReferralCode}</div>
-                    ) : (
-                      <div>User id</div>
-                    )}
-                  </td>
-                  <td className="text-left productHidden">
+              {/* {!getEmail ? 
+                filterUsers: allUsers.map((user) =>
+                  <tr className="tableRow" key={user?.USER_ID}>
+                    <td className="text-left text-capitalize productHidden">
+                      {user?.myReferralCode ? (
+                        <div>{user?.myReferralCode}</div>
+                      ) : (
+                        <div>User id</div>
+                      )}
+                    </td>
+                    <td className="text-left productHidden">
 
-                    {user?.walletAddress ? (
-                      <div>{user?.walletAddress}</div>
-                    ) : (
-                      <div>WalletAddress</div>
-                    )}
-                  </td>
-                  <td className="text-left  ">
-                    {user?.email ? (
-                      <div>{user?.email}</div>
-                    ) : (
-                      <div>Email Address</div>
-                    )}
-                  </td>
-                  <td className="action">
-                    <div className="d-flex justify-content-end align-items-center">
-                      <div className="actionDiv text-left">
-                        <Link to={`/admin/userdetails/${user?._id}`}
-                          className="editBtn py-2"
-                        >
-                          <FaEye color="#fff" size={25} />
-                        </Link>
-                        <button
-                          onClick={() => setOpendialog(user)}
-                          className="deleteBtn"
-                        >
-                          <FaTrash color="#fff" size={20} />
-                        </button>
+                      {user?.walletAddress ? (
+                        <div>{user?.walletAddress}</div>
+                      ) : (
+                        <div>WalletAddress</div>
+                      )}
+                    </td>
+                    <td className="text-left  ">
+                      {user?.email ? (
+                        <div>{user?.email}</div>
+                      ) : (
+                        <div>Email Address</div>
+                      )}
+                    </td>
+                    <td className="action">
+                      <div className="d-flex justify-content-end align-items-center">
+                        <div className="actionDiv text-left">
+                          <Tooltip title="View User Details" placement="top">
+                            <Link to={`/admin/userdetails/${user?._id}`}
+                              className="editBtn py-2"
+                            >
+                              <FaEye color="#fff" size={25} />
+                            </Link>
+                          </Tooltip>
+                          <Tooltip title="Delete User" placement="top">
+                            <button
+                              onClick={() => setOpendialog(user)}
+                              className="deleteBtn"
+                            >
+                              <FaTrash color="#fff" size={20} />
+                            </button>
+                          </Tooltip>
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-              ))} */}
+                    </td>
+                  </tr>
+                )
+              } */}
               {content}
             </tbody>
             {
