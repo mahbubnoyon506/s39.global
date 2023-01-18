@@ -27,6 +27,7 @@
     "react-filterable-table": "^0.3.442",
     "react-google-charts": "^4.0.0",
     "react-icons": "^4.7.1",
+    "react-paginate": "^8.1.4",
     "react-phone-number-input": "^3.2.13",
     "react-router-dom": "^6.5.0",
     "react-scripts": "5.0.1",
