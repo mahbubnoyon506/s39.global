@@ -16,6 +16,7 @@ import Projects from "../pages/Projects/Projects";
 import Reward from "../pages/Dashboard/Admin/Reward/Reward";
 import CommunityVote from "../pages/Dashboard/Admin/CommunityVote/CommunityVote";
 import Ngwb from "../pages/Dashboard/Admin/NGWB/Ngwb";
+import Pagination from "../pages/Dashboard/Admin/adminPagination/Pagination";
 import Specifications from "../pages/Specifications/Specifications";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import TermsCondition from "../pages/TermsCondition/TermsCondition";
@@ -126,6 +127,10 @@ const routes = createBrowserRouter([
       {
         path: "admins",
         element: <Admins />,
+      },
+      {
+        path: "admins/:allAdmins",
+        element: <Admins/>
       },
       {
         path: "updateadmin/:id",
