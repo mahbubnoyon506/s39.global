@@ -105,8 +105,6 @@ const Admins = ({ currentItems }) => {
   };
   //****************************** Pagination End ******************************/
 
-  console.log(currentItems)
-
   return (
     <div className='adminBody'>
       <h5 className="dashboard-title">Admins</h5>
