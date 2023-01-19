@@ -112,7 +112,7 @@ const NonVerified = () => {
                                     <td className='text-start'> PENDING </td>
                                     <td className='text-start'>
 
-                                        <Link to={`/admin/userDetails/${d.walletAddress}`}>
+                                        <Link to='#'>
                                             <span className='bg-primary p-2 me-3 rounded'>
                                                 < AiFillEye className='fs-5 text-white rounded' />
                                             </span>

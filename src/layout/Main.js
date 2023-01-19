@@ -12,12 +12,18 @@ const Main = () => {
             <div>
                 <Outlet />
             </div>
+    }else if (pathname.includes('signup')) {
+        content =
+            <div>
+                <Outlet />
+            </div>
     }else if (pathname.includes('forgetpassword')) {
         content =
             <div>
                 <Outlet />
             </div>
-    }else if (pathname.includes('reset-password')) {
+    }
+    else if (pathname.includes('reset-password')) {
         content =
             <div>
                 <Outlet />

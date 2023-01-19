@@ -94,7 +94,7 @@ const Pending = () => {
                                     <td className='text-start '>Pending</td>
                                     <td className='text-start '>
 
-                                        <Link to='/admin/userDetails'>
+                                        <Link to='#'>
                                             <span className='bg-primary p-2 me-3 rounded'>
                                                 < AiFillEye className='fs-5 text-white rounded' />
                                             </span>
