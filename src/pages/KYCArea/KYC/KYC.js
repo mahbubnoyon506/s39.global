@@ -20,6 +20,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { S39GlobalContext } from "../../../contexts/S39GlobalContext";
 import { KycContext } from "../../../contexts/KycContext";
+import { Button } from "@mui/material";
 
 const KYC = () => {
   const navigate = useNavigate();
@@ -114,7 +115,7 @@ const KYC = () => {
   return (
     <>
       {/* Top Header ************************ */}
-      <div style={{ background: "rgb(38, 38, 38)" }}>
+      {/* <div style={{ background: "rgb(38, 38, 38)" }}>
         <div className="container px-0 ">
           <div className="pt-2 pb-3 d-flex px-2 px-md-0 px-lg-0 align-items-center justify-content-between">
             <Link to="/" className="d-flex align-items-center">
@@ -135,30 +136,24 @@ const KYC = () => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <main
-        className="kycMainArea"
-        style={{ background: "#6f6f6f", minHeight: "100vh", color: "white" }}
+        className="kycMainArea bg-darkblue"
+        style={{ minHeight: "100vh", color: "white" }}
       >
         {/************************* Middle Header ************************ */}
         <div className="container px-4">
           <div className="pt-3 mb-4 d-flex flex-column flex-lg-row align-items-center justify-content-between">
             <span className="fs-4 fw-bold text-uppercase text-white ">
-              DSLCOMMERCE
+              S39.Global
             </span>
 
             <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-              <span
-                onClick={() => navigate("/kyc/profile/my-product")}
-                className="fs-4 text-decoration-underline text-white "
-                style={{ cursor: "pointer" }}
-              >
-                My Products
-              </span>
+              <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 me-2 mine-mineral text-white' style={{ background: "#15407F", }}>MINE MINERAL TOKENS</Button>
               <button
                 className="border-0 p-2 fw-bold rounded-2 fs-5"
-                onClick={() => navigate("/kyc/profile")}
+                onClick={() => navigate("/profile")}
               >
                 My Profile
               </button>
@@ -312,9 +307,9 @@ const KYC = () => {
                   )} */}
               </Tab>
 
-              <Tab>
+              {/* <Tab>
                 ADD PRODUCTS
-                {/* {(isVerifiedAddress == false && addressData?.isVerified == false) &&
+                {(isVerifiedAddress == false && addressData?.isVerified == false) &&
               <CloseIcon className="text-danger ms-1" style={{ fontSize: "18px" }} />
             }
 
@@ -324,8 +319,8 @@ const KYC = () => {
 
             {addressData?.isVerified == true &&
               <DoneIcon className="text-success ms-1" style={{ fontSize: "18px" }} />
-            } */}
-              </Tab>
+            }
+              </Tab> */}
             </TabList>
 
             <TabPanel>
@@ -360,9 +355,9 @@ const KYC = () => {
               />
             </TabPanel>
 
-            <TabPanel>
+            {/* <TabPanel>
               <KycAddProduct addressData={addressData} />
-            </TabPanel>
+            </TabPanel> */}
           </Tabs>
 
           {/* <Tabs
