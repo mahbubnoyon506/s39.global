@@ -5,6 +5,7 @@ import { FaEye, FaSearch, FaTrash } from "react-icons/fa";
 import { S39GlobalContext } from "../../../contexts/S39GlobalContext";
 import DeleteUser from "./DeleteUser";
 import { Tooltip } from "@mui/material";
+import Pagination from "../../../components/Pagination/Pagination";
 
 // const FilterableTable = require("react-filterable-table");
 
@@ -26,6 +27,14 @@ const User = () => {
     setFilterUsers(userEmail);
     console.log('getting user email', userEmail)
   }, [allUsers, getEmail])
+
+  // pagination code
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage] = useState(2);
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = filterUsers.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(filterUsers.length / recordsPerPage)
 
   return (
     <>
@@ -49,7 +58,7 @@ const User = () => {
               </tr>
             </thead>
             <tbody>
-              {!filterUsers ? allUsers : filterUsers.map((user) =>
+              {!filterUsers ? allUsers : currentRecords.map((user) =>
                 <tr className="tableRow" key={user?.USER_ID}>
                   <td className="text-left text-capitalize productHidden">
                     {user?.myReferralCode ? (
@@ -104,6 +113,11 @@ const User = () => {
               <DeleteUser openDialog={openDialog} setOpendialog={setOpendialog} ></DeleteUser>
             }
           </Table>
+        <Pagination
+          nPages={nPages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
         </div>
       </div>
     </>
