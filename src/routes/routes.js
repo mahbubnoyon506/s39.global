@@ -123,11 +123,17 @@ const routes = createBrowserRouter([
         element: <KycSignUp />
       },
       {
-        path: '/kyc/profile',
+        path: '/kyc',
         element:
           <RequireKycAuth>
             <KYC />
           </RequireKycAuth>,
+        children: [
+          {
+            path: "profile",
+            element: <KYC />,
+          },
+        ]
       },
 
       /****************************** KYC Start End ******************************/
