@@ -7,20 +7,23 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { Button } from "@mui/material";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
-import { MdDashboard, MdWorkspacesFilled } from "react-icons/md";
+import { MdDashboard, MdOutlineBusinessCenter, MdWorkspacesFilled } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
 import { SiGoogleanalytics, SiProcessingfoundation } from "react-icons/si";
 import logo from "../../assets/images/logo3.png";
 import { CgCommunity, CgGhost, CgLogOut } from "react-icons/cg";
 import { BiLogOut, BiUserCircle } from "react-icons/bi";
 import { GiOnTarget } from "react-icons/gi";
+import { BsFillCaretDownFill } from "react-icons/bs";
 import { FaGift, FaWallet } from "react-icons/fa";
 import { S39GlobalContext } from "../../contexts/S39GlobalContext";
 import swal from "sweetalert";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 const menuLinkStyles = ({ isActive }) => {
   return {
@@ -60,13 +63,12 @@ function Dashboard(props) {
     setMobileOpen(false);
   };
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose2 = () => {
-    handleClose();
     setAnchorEl(null);
   };
 
@@ -141,6 +143,52 @@ function Dashboard(props) {
           </span>
           WALLETS
         </NavLink>
+        <div>
+          <Button
+            className="dashboardMenu text-start"
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+          >
+            <span className="navIconAdmin">
+              <MdOutlineBusinessCenter size={20} />
+            </span>
+            KYC
+            <span className="ms-2">
+              <BsFillCaretDownFill />
+            </span>
+          </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose2}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }
+            }
+          >
+            <Box sx={{ paddingRight: '30px' }}>
+              <Link className="text-decoration-none" onClick={handleClose2} to="verified">
+                <MenuItem sx={{ color: "black" }} value={10}>
+                  Verified{" "}
+                </MenuItem>
+              </Link>
+              <Link className="text-decoration-none" onClick={handleClose2} to="non-verified">
+                <MenuItem sx={{ color: "black" }} value={20}>
+                  Non Verified
+                </MenuItem>
+              </Link>
+              <Link className="text-decoration-none" onClick={handleClose2} to="pending">
+                <MenuItem sx={{ color: "black" }} value={30}>
+                  Pending
+                </MenuItem>
+              </Link>
+            </Box>
+          </Menu>
+        </div>
 
         <NavLink
           className="dashboardMenu"

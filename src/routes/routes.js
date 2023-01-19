@@ -34,6 +34,9 @@ import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWorksDashboard";
 import WithdrawAndDeposit from "../pages/WithdrawAndDeposit/WithdrawAndDeposit";
 import UserDetails from "../pages/Dashboard/User/UserDetails";
+import Verified from "../pages/Dashboard/Admin/KYCItems/Verified";
+import NonVerified from "../pages/Dashboard/Admin/KYCItems/NonVerified";
+import Pending from "../pages/Dashboard/Admin/KYCItems/Pending";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -170,6 +173,19 @@ const routes = createBrowserRouter([
       {
         path: "dashboardhowitworks",
         element: <HowItWorksDashboard />,
+      },
+      // KYC Items
+      {
+        path: 'verified',
+        element: <Verified/>
+      },
+      {
+        path: 'non-verified',
+        element: <NonVerified/>
+      },
+      {
+        path: 'pending',
+        element: <Pending/>
       },
     ],
   },
