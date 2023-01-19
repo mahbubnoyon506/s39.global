@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -17,9 +17,20 @@ import LoginButton from '../components/LoginButton/LoginButton';
 
 
 const NavMenu = () => {
-    const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
-    // console.log(user)
+    const { logOut, connectToMetamask, walletModal, closeWalletModal, goToProfile, setGoToProfile } = useContext(S39GlobalContext);
     const navigate = useNavigate;
+    useEffect(() => {
+        const go = () => {
+            if (goToProfile) {
+
+                setTimeout(() => {
+                    setGoToProfile(false);
+                }, 1000);
+                return navigate("/profile");
+            }
+        }
+        go();
+    }, [goToProfile]);
 
 
     const Logout = () => {

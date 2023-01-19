@@ -5,24 +5,24 @@ import NavMenu from './NavMenu';
 
 
 const Main = () => {
-    const { pathname } = useLocation()
+    const { pathname } = useLocation();
     let content = ''
     if (pathname.includes('login')) {
         content =
             <div>
                 <Outlet />
             </div>
-    }else if (pathname.includes('forgetpassword')) {
+    } else if (pathname.includes('forgetpassword')) {
         content =
             <div>
                 <Outlet />
             </div>
-    }else if (pathname.includes('reset-password')) {
+    } else if (pathname.includes('reset-password')) {
         content =
             <div>
                 <Outlet />
             </div>
-    }else if (pathname.includes('otp')) {
+    } else if (pathname.includes('otp')) {
         content =
             <div>
                 <Outlet />

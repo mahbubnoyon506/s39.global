@@ -34,6 +34,7 @@ import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWorksDashboard";
 import WithdrawAndDeposit from "../pages/WithdrawAndDeposit/WithdrawAndDeposit";
 import UserDetails from "../pages/Dashboard/User/UserDetails";
+import WalletLogin from "../components/WalletLogin";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -110,10 +111,10 @@ const routes = createBrowserRouter([
   {
     path: "/admin",
     element:
-    <Dashboard />,
-      // <AdminRoutes>
-      //   <Dashboard />
-      // </AdminRoutes>,
+      // <Dashboard />,
+      <AdminRoutes>
+        <Dashboard />
+      </AdminRoutes>,
     children: [
       {
         path: "dashboard",
@@ -129,7 +130,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "admins/:allAdmins",
-        element: <Admins/>
+        element: <Admins />
       },
       {
         path: "updateadmin/:id",
@@ -165,7 +166,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "userdetails/:id",
-        element: <UserDetails/>,
+        element: <UserDetails />,
       },
       {
         path: "dashboardhowitworks",

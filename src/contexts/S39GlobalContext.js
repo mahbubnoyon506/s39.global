@@ -178,6 +178,7 @@ export default function S39Provider({ children }) {
   const [coinbaseModal, setCoinbaseModal] = useState(false);
   const [userRefetch, setUserRefetch] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
+  const [goToProfile, setGoToProfile] = useState(false);
 
 
   window.addEventListener("load", () => {
@@ -892,7 +893,13 @@ export default function S39Provider({ children }) {
                   button: "OK",
                   // dangerMode: true,
                   className: "modal_class_success",
-                });
+                })
+                  .then((willDelete) => {
+                    if (willDelete) {
+
+                      setGoToProfile(true);
+                    }
+                  })
               }
             });
         } else {
@@ -927,18 +934,18 @@ export default function S39Provider({ children }) {
     }
   };
 
-  useEffect( () => {
+  useEffect(() => {
     setLoading(true);
     axios.get('https://testnetback.s39global.com/api/v1/wallet-user/all')
-    .then((res) => {
-      setAllUsers(res.data.result)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-    .finally(() => {
-      setLoading(false)
-    })
+      .then((res) => {
+        setAllUsers(res.data.result)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
   }, [])
 
   useEffect(() => {
@@ -1027,6 +1034,8 @@ export default function S39Provider({ children }) {
         payByTestnetS39,
         signBuyFunction,
         payByTestnetQuest,
+        goToProfile,
+        setGoToProfile,
         allUsers,
         setAllUsers,
       }}
