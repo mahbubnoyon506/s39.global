@@ -45,8 +45,7 @@ const Verified = () => {
 
     return (
         <div className="">
-            {/* <p className='text-start text-white fs-2 mb-3 p-0'>VERIFIED</p> */}
-            <h5 className="text-white mb-3 text-start text-uppercase">VERIFIED</h5>
+            <h5 className="dashboard-title">VERIFIED</h5>
             <CSVLink data={verifiedUser} className="mt-4">
                 <span className='my-3 text-white bolder bg-primary p-2 my-2 rounded' >GENNERATE CSV</span>
             </CSVLink>

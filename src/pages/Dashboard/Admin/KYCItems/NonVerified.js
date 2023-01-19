@@ -17,6 +17,7 @@ import PortraitIcon from '@mui/icons-material/Portrait';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 
 const data = [
@@ -45,19 +46,16 @@ const NonVerified = () => {
 
     return (
         <div className="nonverifide" style={{ backgroundColor: '#1a1c33', color: "#ffff" }}>
-            {/* <p className='text-start text-white fs-2 m-0 p-0'>NON VERIFIED</p> */}
-            <h5 className="text-white mb-3 text-start text-uppercase">NON VERIFIED</h5>
-            <div className='d-flex gap-3'>
-
-                <CSVLink data={NonVerifiedUser} className="mt-4">
-                    <span className='my-3 text-white bolder bg-primary p-2 my-2 rounded' >GENNERATE CSV</span>
+            <h5 className="dashboard-title">NON VERIFIED</h5>
+            <div className='d-flex gap-3 align-items-center mb-3'>
+                <CSVLink data={NonVerifiedUser}>
+                    <Button variant='contained'>GENNERATE CSV</Button>
                 </CSVLink>
-
-                <span className='my-3 text-white bolder bg-danger p-2 my-2 rounded' >DELETE</span>
-
+                <div>
+                    <Button variant='contained' className='bg-danger'>DELETE</Button>
+                </div>
             </div>
             <div className='text-white row g-2'>
-
                 <div className='col-12 col-lg-6'>
                     <form action="" className=''>
                         <label for="number">Display</label>

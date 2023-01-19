@@ -10,6 +10,7 @@ import { AiFillDelete, AiFillEye } from 'react-icons/ai';
 import { BiUserPlus } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { CSVLink } from "react-csv";
+import { Button } from '@mui/material';
 
 
 const data = [
@@ -34,13 +35,14 @@ const data = [
 const Pending = () => {
     return (
         <div className="">
-            <h5 className="text-white mb-3 text-start text-uppercase">Pending</h5>
-            {/* <p className='text-start fs-2 text-white my-0 mb-3 py-0'>Pending</p> */}
-            <div className='mb-3'>
-                <CSVLink data={data} className="mt-4">
-                    <span className='my-3 text-white bolder bg-primary p-2 my-2 rounded' >GENNERATE CSV</span>
-                </CSVLink> 
-                <span className=' text-white bolder bg-danger p-2  px-2 rounded' >DELETE</span>
+            <h5 className="dashboard-title">Pending</h5>
+            <div className='d-flex gap-3 align-items-center mb-3'>
+                <CSVLink data={data}>
+                    <Button variant='contained'>GENNERATE CSV</Button>
+                </CSVLink>
+                <div>
+                    <Button variant='contained' className='bg-danger'>DELETE</Button>
+                </div>
             </div>
 
             <div className='text-white row d-flex g-2 mb-2 justify-content-between align-items-center py-2'>
