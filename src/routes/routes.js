@@ -34,7 +34,13 @@ import ClaimToken from "../pages/MinarelTokens/ClaimToken";
 import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWorksDashboard";
 import WithdrawAndDeposit from "../pages/WithdrawAndDeposit/WithdrawAndDeposit";
 import UserDetails from "../pages/Dashboard/User/UserDetails";
-import WalletLogin from "../components/WalletLogin";
+import Userdetails from "../pages/Dashboard/Admin/KYCItems/UserDetails/Userdetails";
+import Verified from "../pages/Dashboard/Admin/KYCItems/Verified";
+import NonVerified from "../pages/Dashboard/Admin/KYCItems/NonVerified";
+import Pending from "../pages/Dashboard/Admin/KYCItems/Pending";
+import KycLogin from "../components/Auth/KYC/KycLogin";
+import KycSignUp from "../components/Auth/KYC/KycSignUp";
+import KycForgetPassword from "../components/Auth/KYC/KycForgetPassword";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -93,6 +99,19 @@ const routes = createBrowserRouter([
       {
         path: '/admin/otp/:token',
         element: <Otp />
+      },
+      // KYC Auth
+      {
+        path: '/kyc/login',
+        element: <KycLogin />
+      },
+      {
+        path: '/kyc/signup',
+        element: <KycSignUp />
+      },
+      {
+        path: '/kyc/forgetpassword',
+        element: <KycForgetPassword />
       },
       {
         path: "/mineraltoken",
@@ -171,6 +190,23 @@ const routes = createBrowserRouter([
       {
         path: "dashboardhowitworks",
         element: <HowItWorksDashboard />,
+      },
+      // KYC Items
+      {
+        path: 'verified',
+        element: <Verified />
+      },
+      {
+        path: 'non-verified',
+        element: <NonVerified />
+      },
+      {
+        path: 'pending',
+        element: <Pending />
+      },
+      {
+        path: 'userdetails',
+        element: <Userdetails />
       },
     ],
   },
