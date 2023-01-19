@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import S39Provider from './contexts/S39GlobalContext';
 import AdminProvider from './contexts/AdminContext';
+import KycProvider from './contexts/KycContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AdminProvider>
       <S39Provider>
-        <App />
+        <KycProvider>
+          <App />
+        </KycProvider>
       </S39Provider>
     </AdminProvider>
   </React.StrictMode>

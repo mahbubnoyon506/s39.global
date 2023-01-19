@@ -47,9 +47,9 @@ const Profile = ({ expiryTimestamp }) => {
     const [copyTextWalletAddress, setCopyTextWalletAddress] = useState("");
     const [tabIndex, setTabIndex] = useState(locations?.name || 0);
 
-
-
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
 
     useEffect(() => {
         getBalanceTestnet();

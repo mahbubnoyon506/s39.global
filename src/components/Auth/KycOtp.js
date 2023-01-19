@@ -1,21 +1,17 @@
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { AiFillLock } from "react-icons/ai";
+import { useNavigate, useParams } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { useTimer } from "react-timer-hook";
-import coin from '../../assets/images/coin2.png'
-import { FaPaste } from "react-icons/fa";
-import swal from "sweetalert";
-import { useNavigate, useParams } from "react-router-dom";
 import { AdminContext } from "../../contexts/AdminContext";
-import axios from "axios";
+import swal from "sweetalert";
 
-
-const Otp = () => {
-
+const KycOtp = ({ expiryTimestamp }) => {
   const { token } = useParams();
   const { admin, setAdmin } = useContext(AdminContext);
   const [forEnable, setForEnable] = useState(false);
@@ -24,22 +20,9 @@ const Otp = () => {
 
   useEffect(() => {
     if (admin?._id) {
-      navigate("/admin/dashboard");
+      navigate("/admin");
     }
   }, [admin, navigate]);
-
-
-  const expiryTimestamp = new Date();
-  expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 180);
-  const [isLoading, setIsLoading] = useState(true);
-  const [modalShow, setModalShow] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-
 
   // for maintaining re-send otp button's disable enable
   const enableing = () => {
@@ -64,7 +47,7 @@ const Otp = () => {
 
   const resendOTP = () => {
     axios
-      .get(`https://testnetback.s39global.com/api/v1/admin/resend-otp`, {
+      .get(`https://backend.dslcommerce.com/api/admin/resend-otp`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -98,7 +81,7 @@ const Otp = () => {
     const otp = e.target.otp.value;
     axios
       .post(
-        `https://testnetback.s39global.com/api/v1/admin/verify-otp/`,
+        `https://backend.dslcommerce.com/api/admin/verify-otp/`,
         {
           otp,
         },
@@ -111,7 +94,7 @@ const Otp = () => {
       .then((res) => {
         if (res.status === 200) {
           setAdmin(res.data.admin);
-          localStorage.setItem("adminS39Global", res.data.token);
+          localStorage.setItem("adminDslCommerce", res.data.token);
           localStorage.removeItem("verify-tokens");
           navigate("/admin/dashboard");
         }
@@ -144,19 +127,20 @@ const Otp = () => {
     );
     setPasteText(null);
   };
+
   return (
     <div>
       <div className="handleTheLoginBody">
         <div className="container mx-auto">
-          <div className=" forCard  w-lg-50 p-5 rounded mx-auto">
+          <div className=" forCard  w-50 p-5 rounded mx-auto">
             <div className="mx-auto text-center">
               <img
                 style={{
-                  // marginTop: "-20px",
+                  width: "80px",
+                  marginTop: "-20px",
                 }}
-                src={coin}
-                width={150}
-                className=""
+                src="https://testnet.grighund.net/static/media/logo192.ea779dfe5e580c22a76f.png"
+                className="handleLogoLogin"
                 alt="logo"
               />
               <p className="text-dark mt-3 pb-3">
@@ -185,7 +169,7 @@ const Otp = () => {
                       className="bg-dark text-light border-0"
                       onClick={() => handlePasteText()}
                     >
-                      <FaPaste />
+                      <i className="fas fa-paste"></i>
                     </InputGroup.Text>
                   </CustomTooltip>
                 </InputGroup>
@@ -222,4 +206,4 @@ const Otp = () => {
   );
 };
 
-export default Otp;
+export default KycOtp;

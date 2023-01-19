@@ -6,15 +6,15 @@ import { createContext } from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
-import { DSLCommerceContext } from "./DSLCommerceContext";
+import { S39GlobalContext } from "./S39GlobalContext";
 
 export const KycContext = createContext();
 
 export default function KycProvider({ children }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [kycUser, setKycUser] = useState({});
   const [refetch, setRefetch] = useState(false);
-  const { user } = useContext(DSLCommerceContext);
+  const { user } = useContext(S39GlobalContext);
   const [emailVerified, setEmailVerified] = useState(false);
   const [mobileNoVerify, setmobileNoVerify] = useState(false);
   const [isVerifiedProfile, setisVerifiedProfile] = useState(false);
@@ -45,7 +45,7 @@ export default function KycProvider({ children }) {
           localStorage.setItem("kycUserToken", res.data.token);
           // console.log(res.data.token);
           toast.success("Register Success .");
-          navigate("/kyc/profile");
+          // navigate("/kyc/profile");
         }
       })
       .catch((err) => {
@@ -69,7 +69,7 @@ export default function KycProvider({ children }) {
           localStorage.setItem("kycUserToken", res.data.token);
           // console.log(res.data.token);
           toast.success("Welcome to your profile .");
-          navigate("/kyc/profile");
+          // navigate("/kyc/profile");
         }
       })
       .catch((err) => {

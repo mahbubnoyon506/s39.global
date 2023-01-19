@@ -1,21 +1,19 @@
+import React from "react";
 import { Button } from "@mui/material";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import { FiSend } from "react-icons/fi";
-import { AiOutlineLogin, AiOutlineMail } from "react-icons/ai";
-import "../ForgetPassword.css";
+import { InputGroup } from "react-bootstrap";
 import MailIcon from "@mui/icons-material/Mail";
-import coin from '../../../assets/images/coin2.png'
-import { useNavigate } from "react-router-dom";
+import { FiSend } from "react-icons/fi";
 import swal from "sweetalert";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Form from "react-bootstrap/Form";
+import { AiOutlineLogin } from "react-icons/ai";
 
-const ForgetPassword = () => {
-
+const KycForgetPassword = () => {
   const navigate = useNavigate();
 
   const handleGoToLogin = () => {
-    navigate("/login");
+    navigate("/kyc/login");
   };
 
   const sendResetLink = async (e) => {
@@ -26,7 +24,7 @@ const ForgetPassword = () => {
 
     await axios
       .post(
-        "https://testnetback.s39global.com/api/v1/admin/send-reset-password-link/",
+        "https://backend.dslcommerce.com/api/user-panel/user/send-reset-password-link/",
         { email }
       )
       .then((res) => {
@@ -39,7 +37,7 @@ const ForgetPassword = () => {
             button: "OK!",
             className: "modal_class_success",
           });
-          navigate("/login");
+          navigate("/kyc/login");
         }
       })
       .catch((err) => {
@@ -53,16 +51,20 @@ const ForgetPassword = () => {
         });
       });
   };
+
   return (
     <div>
       <div className="handleTheLoginBody">
         <div className="container mx-auto">
-          <div className=" forCard p-5 rounded mx-auto">
+          <div className=" forCard  w-50 p-5 rounded mx-auto">
             <div className="mx-auto text-center">
               <img
-                src={coin}
+                style={{
+                  width: "80px",
+                  marginTop: "-20px",
+                }}
+                src="https://testnet.grighund.net/static/media/logo192.ea779dfe5e580c22a76f.png"
                 alt="logo"
-                width={150}
               />
               <p className="py-1" style={{ fontSize: "34px" }}>
                 Forget Password
@@ -97,9 +99,9 @@ const ForgetPassword = () => {
                 >
                   <Button
                     style={{ backgroundColor: "#f74545", height: "28px" }}
-                    className="button-34 px-4"
+                    className="button-34 px-4 "
                     type="submit"
-                  // onClick={handleGoToLogin}
+                    // onClick={handleGoToLogin}
                   >
                     <FiSend></FiSend> Send
                   </Button>
@@ -121,4 +123,4 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default KycForgetPassword;

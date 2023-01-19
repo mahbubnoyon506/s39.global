@@ -21,12 +21,10 @@ import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import TermsCondition from "../pages/TermsCondition/TermsCondition";
 import Store from "../pages/Store/Store";
 import ForgetPassword from "../components/Auth/ForgetPassword";
-import Otp from "../components/Auth/Otp";
-import Login from "../components/Auth/Login";
+// import Login from "../components/Auth/Login";
 import Profile from "../pages/Profile/Profile";
 
-import ResetPassword from "../components/Auth/ResetPassword";
-import { useEffect } from "react";
+// import ResetPassword from "../components/Auth/ResetPassword";
 import AdminRoutes from "../components/ProtectedRoutes/AdminRoutes";
 import User from "../pages/Dashboard/User/User";
 import MinarelTokens from "../pages/MinarelTokens/MinarelTokens";
@@ -38,9 +36,15 @@ import Userdetails from "../pages/Dashboard/Admin/KYCItems/UserDetails/Userdetai
 import Verified from "../pages/Dashboard/Admin/KYCItems/Verified";
 import NonVerified from "../pages/Dashboard/Admin/KYCItems/NonVerified";
 import Pending from "../pages/Dashboard/Admin/KYCItems/Pending";
-import KycLogin from "../components/Auth/KYC/KycLogin";
-import KycSignUp from "../components/Auth/KYC/KycSignUp";
-import KycForgetPassword from "../components/Auth/KYC/KycForgetPassword";
+import KycForgetPassword from "../components/Auth/KycForgetPassword";
+import KycLogin from "../pages/KYCArea/KycAccount/KycLogin/KycLogin";
+import KycResetPassword from "../components/Auth/KycResetPassword";
+import KycSignUp from "../pages/KYCArea/KycAccount/KycSignUp/KycSignUp"
+import ResetPassword from "../components/Auth/AdminIssue/ResetPassword";
+import Login from "../components/Auth/AdminIssue/Login";
+import Otp from "../components/Auth/AdminIssue/Otp";
+import KYC from "../pages/KYCArea/KYC/KYC";
+import RequireKycAuth from "../components/Auth/RequireKycAuth";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -100,19 +104,33 @@ const routes = createBrowserRouter([
         path: '/admin/otp/:token',
         element: <Otp />
       },
-      // KYC Auth
+
+      /*******************************  KYC Start ***************************** */
       {
         path: '/kyc/login',
         element: <KycLogin />
+      },
+      {
+        path: '/kyc/login/forgetpassword',
+        element: <KycForgetPassword />
+      },
+      {
+        path: "/kyc/login/resetPassword/:token",
+        element: <KycResetPassword />
       },
       {
         path: '/kyc/signup',
         element: <KycSignUp />
       },
       {
-        path: '/kyc/forgetpassword',
-        element: <KycForgetPassword />
+        path: '/kyc/profile',
+        element:
+          <RequireKycAuth>
+            <KYC />
+          </RequireKycAuth>,
       },
+
+      /****************************** KYC Start End ******************************/
       {
         path: "/mineraltoken",
         element: <MinarelTokens />,

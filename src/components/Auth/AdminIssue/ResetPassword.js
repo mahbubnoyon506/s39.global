@@ -5,7 +5,7 @@ import { FiSend } from "react-icons/fi";
 import { AiOutlineLogin, AiOutlineMail } from "react-icons/ai";
 import "./ForgetPassword.css";
 import MailIcon from "@mui/icons-material/Mail";
-import coin from '../../assets/images/coin2.png'
+import coin from '../../../assets/images/coin2.png'
 import { useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
 import axios from "axios";

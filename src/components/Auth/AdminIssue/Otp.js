@@ -1,19 +1,21 @@
-import { Button } from "@mui/material";
+import { useContext, useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import { FiSend } from "react-icons/fi";
-import { AiOutlineLogin, AiOutlineMail } from "react-icons/ai";
-import "./ForgetPassword.css";
-import MailIcon from "@mui/icons-material/Mail";
-import coin from '../../assets/images/coin2.png'
-import { useNavigate, useParams } from "react-router-dom";
+import { AiFillLock } from "react-icons/ai";
+import { styled } from "@mui/material/styles";
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { useTimer } from "react-timer-hook";
+import coin from '../../../assets/images/coin2.png';
+import { FaPaste } from "react-icons/fa";
 import swal from "sweetalert";
+import { useNavigate, useParams } from "react-router-dom";
+import { AdminContext } from "../../../contexts/AdminContext";
 import axios from "axios";
-import { useContext, useState } from "react";
-import { FaEye, FaEyeSlash, FaLock } from "react-icons/fa";
-import { AdminContext } from "../../contexts/AdminContext";
 
-const AdminOtp = () => {
+
+const Otp = () => {
+
     const { token } = useParams();
     const { admin, setAdmin } = useContext(AdminContext);
     const [forEnable, setForEnable] = useState(false);
@@ -25,6 +27,19 @@ const AdminOtp = () => {
             navigate("/admin/dashboard");
         }
     }, [admin, navigate]);
+
+
+    const expiryTimestamp = new Date();
+    expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 180);
+    const [isLoading, setIsLoading] = useState(true);
+    const [modalShow, setModalShow] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
+    }, []);
+
 
     // for maintaining re-send otp button's disable enable
     const enableing = () => {
@@ -129,30 +144,28 @@ const AdminOtp = () => {
         );
         setPasteText(null);
     };
-
     return (
         <div>
             <div className="handleTheLoginBody">
                 <div className="container mx-auto">
-                    <div className=" forCard p-5 rounded mx-auto">
+                    <div className=" forCard  w-lg-50 p-5 rounded mx-auto">
                         <div className="mx-auto text-center">
                             <img
+                                style={{
+                                    // marginTop: "-20px",
+                                }}
                                 src={coin}
-                                alt="logo"
                                 width={150}
+                                className=""
+                                alt="logo"
                             />
-                            <p className="py-1" style={{ fontSize: "34px" }}>
-                                OTP
+                            <p className="text-dark mt-3 pb-3">
+                                Please check your email for OTP
                             </p>
                         </div>
-                        <hr />
-                        <div className="mt-4 pt-2">
+
+                        <div className="mt-3 pt-2">
                             <form onSubmit={handleOTP}>
-                                {/* <InputGroup className="mb-3 mt-3">
-                                    <InputGroup.Text className='bg-dark border-0 text-white'><FaLock /></InputGroup.Text>
-                                    <Form.Control aria-label="Amount (to the nearest dollar)" className='inputBackground' placeholder='Enter new password' type="number" required name="otp" />
-                                    
-                                </InputGroup> */}
                                 <InputGroup className="mb-3 mt-3">
                                     <InputGroup.Text className="bg-dark text-light border-0">
                                         <AiFillLock></AiFillLock>
@@ -172,30 +185,35 @@ const AdminOtp = () => {
                                             className="bg-dark text-light border-0"
                                             onClick={() => handlePasteText()}
                                         >
-                                            <i className="fas fa-paste"></i>
+                                            <FaPaste />
                                         </InputGroup.Text>
                                     </CustomTooltip>
                                 </InputGroup>
-                                <div className='mx-auto text-center'>
-                                    <Button style={{ backgroundColor: '#f74545' }} className='button-34 ps-5 pe-5 pt-2 pb-2' type="submit">
+
+                                <br />
+                                <div className="mx-auto text-center">
+                                    <Button
+                                        className="button-34 submit_OTP_btn ps-4 pe-4"
+                                        type="submit"
+                                    >
                                         Submit
                                     </Button>
                                 </div>
-                                <div className='mx-auto text-center'>
-                                    <Button
-                                        disabled={!forEnable}
-                                        onClick={() => resendOTP()}
-                                        style={{ backgroundColor: '#f74545' }} className='button-34 ps-5 pe-5 pt-2 pb-2' type="submit">
-                                        Re-Send OTP
-                                    </Button>
-                                </div>
-                                <div className="text-center text-dark fw-bolder mt-3">
-                                    <span>{minutes}</span>:
-                                    <span>{seconds < 10 ? `0${seconds}` : seconds}</span>
-                                </div>
-
-
                             </form>
+                            <div className="mx-auto text-center mt-3">
+                                <Button
+                                    disabled={!forEnable}
+                                    className="button-34 resend_OTP_btn border-0 text-center ps-4 pe-4 pt-2 pb-2"
+                                    type="button"
+                                    onClick={() => resendOTP()}
+                                >
+                                    Re-Send OTP
+                                </Button>
+                            </div>
+                            <div className="text-center text-dark fw-bolder mt-3">
+                                <span>{minutes}</span>:
+                                <span>{seconds < 10 ? `0${seconds}` : seconds}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -204,4 +222,4 @@ const AdminOtp = () => {
     );
 };
 
-export default AdminOtp;
+export default Otp;
