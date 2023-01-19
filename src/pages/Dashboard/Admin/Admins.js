@@ -112,7 +112,7 @@ const Admins = ({ currentItems }) => {
                     ) : (
                       <img
                         className="imgAdmin"
-                        src="https://backend.dslcommerce.com/assets/1660396587217.jpeg"
+                        src="https://testnetback.s39global.com/assets/1660396587217.jpeg"
                         alt="profilePic"
                       />
                     )}

@@ -16,7 +16,7 @@ export default function WishlistProvider({ children }) {
     // console.log("wishlist", product);
 
     await axios
-      .post(`https://backend.dslcommerce.com/api/wishlist/create`, {
+      .post(`https://testnetback.s39global.com/api/wishlist/create`, {
         walletAddress: user?.walletAddress,
         productId: product._id,
       })
@@ -50,10 +50,10 @@ export default function WishlistProvider({ children }) {
 
   useEffect(() => {
     axios
-      .get(`https://backend.dslcommerce.com/api/wishlist/${user?.walletAddress}`)
+      .get(`https://testnetback.s39global.com/api/wishlist/${user?.walletAddress}`)
       .then((res) => {
         // console.log(res.data)
-        fetch(`https://backend.dslcommerce.com/api/product/`)
+        fetch(`https://testnetback.s39global.com/api/product/`)
           .then((res) => res.json())
           .then((result) => {
             setWishlistProducts(

@@ -53,7 +53,7 @@ export default function MobileVerifyModal({
     e.preventDefault();
 
     await axios
-      .post(`https://backend.dslcommerce.com/api/number/otp`, {
+      .post(`https://testnetback.s39global.com/api/number/otp`, {
         phone: mobile,
         otp: otpCode,
       })
@@ -173,9 +173,8 @@ export default function MobileVerifyModal({
             />
             <button
               disabled={disabled ? true : false}
-              className={`btn btn-outline-secondary ${
-                otpCode !== "" ? "bg-danger" : "bg-secondary"
-              } text-light`}
+              className={`btn btn-outline-secondary ${otpCode !== "" ? "bg-danger" : "bg-secondary"
+                } text-light`}
               onClick={hendelSubmit}
               type="submit"
               id="button-addon2"
@@ -197,9 +196,8 @@ export default function MobileVerifyModal({
               disabled={minutes == 0 && seconds == 0 ? false : true}
               type="submit"
               onClick={handleVerifyMobile}
-              className={`submit banner-button2 font14 text-decoration-none rounded text-white p-2 ${
-                minutes == 0 && seconds == 0 ? "bg-primary" : "bg-secondary"
-              }`}
+              className={`submit banner-button2 font14 text-decoration-none rounded text-white p-2 ${minutes == 0 && seconds == 0 ? "bg-primary" : "bg-secondary"
+                }`}
               id="font14"
             >
               Resend OTP (<span>{minutes}</span>:

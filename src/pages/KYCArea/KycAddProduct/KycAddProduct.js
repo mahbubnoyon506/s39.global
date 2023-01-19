@@ -29,7 +29,7 @@ const KycAddProduct = ({ addressData }) => {
   var createdAt = date
 
   useEffect(() => {
-    fetch('https://backend.dslcommerce.com/api/category/')
+    fetch('https://testnetback.s39global.com/api/category/')
       .then(res => res.json())
       .then(data => setGetCategory(data))
   }, [])
@@ -50,7 +50,7 @@ const KycAddProduct = ({ addressData }) => {
       setimageLoader(true);
 
       await axios
-        .post(`https://backend.dslcommerce.com/api/product/upload`, formData)
+        .post(`https://testnetback.s39global.com/api/product/upload`, formData)
         .then((res) => {
           // console.log("image form data", res.data)
           // setImg(res?.data?.images);
@@ -153,7 +153,7 @@ const KycAddProduct = ({ addressData }) => {
     }
     else {
       // console.log(data, "p")
-      await axios.post('https://backend.dslcommerce.com/api/product/', data)
+      await axios.post('https://testnetback.s39global.com/api/product/', data)
         .then(res => {
           if (res.status === 200) {
             // console.log("submited", res)

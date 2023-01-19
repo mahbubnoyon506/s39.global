@@ -33,9 +33,6 @@ import HowItWorksDashboard from "../pages/Dashboard/HowItWorksDashboard/HowItWor
 import WithdrawAndDeposit from "../pages/WithdrawAndDeposit/WithdrawAndDeposit";
 import UserDetails from "../pages/Dashboard/User/UserDetails";
 import Userdetails from "../pages/Dashboard/Admin/KYCItems/UserDetails/Userdetails";
-import Verified from "../pages/Dashboard/Admin/KYCItems/Verified";
-import NonVerified from "../pages/Dashboard/Admin/KYCItems/NonVerified";
-import Pending from "../pages/Dashboard/Admin/KYCItems/Pending";
 import KycForgetPassword from "../components/Auth/KycForgetPassword";
 import KycLogin from "../pages/KYCArea/KycAccount/KycLogin/KycLogin";
 import KycResetPassword from "../components/Auth/KycResetPassword";
@@ -45,6 +42,9 @@ import Login from "../components/Auth/AdminIssue/Login";
 import Otp from "../components/Auth/AdminIssue/Otp";
 import KYC from "../pages/KYCArea/KYC/KYC";
 import RequireKycAuth from "../components/Auth/RequireKycAuth";
+import Verified from "../pages/Dashboard/Admin/KYCItems/verified/Verified";
+import NonVerified from "../pages/Dashboard/Admin/KYCItems/verified/NonVerified";
+import Pending from "../pages/Dashboard/Admin/KYCItems/Pending/Pending";
 
 const time = new Date();
 time.setSeconds(time.getSeconds() + 180);
@@ -119,7 +119,7 @@ const routes = createBrowserRouter([
         element: <KycResetPassword />
       },
       {
-        path: '/kyc/signup',
+        path: '/kyc/sign-up',
         element: <KycSignUp />
       },
       {
@@ -221,11 +221,23 @@ const routes = createBrowserRouter([
         element: <Verified />
       },
       {
+        path: 'verified/:verifiedPerPage',
+        element: <Verified />
+      },
+      {
         path: 'non-verified',
         element: <NonVerified />
       },
       {
+        path: 'non-verified/:nonVerifiedPerPage',
+        element: <NonVerified />
+      },
+      {
         path: 'pending',
+        element: <Pending />
+      },
+      {
+        path: 'pending/:pendingPerPage',
         element: <Pending />
       },
       {

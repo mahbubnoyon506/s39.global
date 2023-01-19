@@ -55,7 +55,7 @@ const KycMobile = ({ expiryTimestamp }) => {
   //   console.log("handleVerifyMobileOTP", mobile, otpCode);
 
   //   await axios
-  //     .post(`https://backend.dslcommerce.com/api/number/otp`, {
+  //     .post(`https://testnetback.s39global.com/api/number/otp`, {
   //       phone: mobile,
   //       otp: otpCode,
   //     })
@@ -88,7 +88,7 @@ const KycMobile = ({ expiryTimestamp }) => {
       // setLoading(true);
       // setEmailVerify(true);
       await axios
-        .post("https://backend.dslcommerce.com/api/number/", {
+        .post("https://testnetback.s39global.com/api/number/", {
           phone: mobile,
         })
         .then((res) => {
@@ -151,7 +151,7 @@ const KycMobile = ({ expiryTimestamp }) => {
 
     await axios
       .put(
-        `https://backend.dslcommerce.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
+        `https://testnetback.s39global.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
         data
       )
       .then((res) => {

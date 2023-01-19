@@ -24,14 +24,14 @@ function UserDetails() {
     // console.log(walletAddress);
 
     useEffect(() => {
-        fetch(`https://backend.dslcommerce.com/api/user-panel/user/${walletAddress}`)
+        fetch(`https://testnetback.s39global.com/api/user-panel/user/${walletAddress}`)
             .then(res => res.json())
             .then(data => setUserInfo(data.result))
     }, [walletAddress]);
 
 
     useEffect(() => {
-        fetch(`https://backend.dslcommerce.com/api/address/data/${walletAddress}`)
+        fetch(`https://testnetback.s39global.com/api/address/data/${walletAddress}`)
             .then(res => res.json())
             .then(data => setUserAddress(data.result))
     }, [walletAddress]);
@@ -40,7 +40,7 @@ function UserDetails() {
     console.log("userAddress", userAddress)
 
     useEffect(() => {
-        fetch(`https://backend.dslcommerce.com/api/photo-id/data/${walletAddress}`)
+        fetch(`https://testnetback.s39global.com/api/photo-id/data/${walletAddress}`)
             .then(res => res.json())
             .then(data => setPhotoId(data.result))
     }, [walletAddress]);

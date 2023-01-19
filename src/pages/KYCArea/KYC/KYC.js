@@ -50,10 +50,10 @@ const KYC = () => {
     const getPhotoIddata = async () => {
       await axios
         .get(
-          `https://backend.dslcommerce.com/api/photo-id/data/${kycUser?.walletAddress}`,
+          `https://testnetback.s39global.com/api/photo-id/data/${kycUser?.walletAddress}`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+              Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
             },
           }
         )
@@ -69,10 +69,10 @@ const KYC = () => {
     const getAddressData = async () => {
       await axios
         .get(
-          `https://backend.dslcommerce.com/api/address/data/${kycUser?.walletAddress}`,
+          `https://testnetback.s39global.com/api/address/data/${kycUser?.walletAddress}`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+              Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
             },
           }
         )
@@ -86,10 +86,10 @@ const KYC = () => {
   const getProfile = async () => {
     await axios
       .get(
-        `https://backend.dslcommerce.com/api/user-panel/user/${kycUser?.walletAddress}`,
+        `https://testnetback.s39global.com/api/user-panel/user/${kycUser?.walletAddress}`,
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+            Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
           },
         }
       )
@@ -107,7 +107,7 @@ const KYC = () => {
   const isaddressPosted = localStorage.getItem("addressPosted");
 
   // const logout = () => {
-  //   localStorage.removeItem("kycUserToken");
+  //   localStorage.removeItem("kycUserTokenS39Testnet");
   //   navigate("/");
   // };
   // console.log(userProfileData.email, "Emtiazzzzzzzzzzz");

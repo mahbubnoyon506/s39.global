@@ -59,7 +59,7 @@ export default function EmailVerifyModal({
     e.preventDefault();
 
     await axios
-      .post(`https://backend.dslcommerce.com/api/email/otp/${email}`, {
+      .post(`https://testnetback.s39global.com/api/email/otp/${email}`, {
         otp: otpCode,
       })
 

@@ -24,7 +24,7 @@ const ForgetPassword = () => {
 
     await axios
       .post(
-        "https://backend.dslcommerce.com/api/admin/send-reset-password-link/",
+        "https://testnetback.s39global.com/api/admin/send-reset-password-link/",
         { email }
       )
       .then((res) => {
@@ -101,7 +101,7 @@ const ForgetPassword = () => {
                     style={{ backgroundColor: "#f74545", height: "28px" }}
                     className="button-34 px-4"
                     type="submit"
-                    // onClick={handleGoToLogin}
+                  // onClick={handleGoToLogin}
                   >
                     <FiSend></FiSend> Send
                   </Button>
