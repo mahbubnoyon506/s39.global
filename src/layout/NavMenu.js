@@ -18,15 +18,15 @@ import LoginButton from '../components/LoginButton/LoginButton';
 
 const NavMenu = () => {
     const { logOut, connectToMetamask, walletModal, closeWalletModal, goToProfile, setGoToProfile } = useContext(S39GlobalContext);
-    const navigate = useNavigate;
+    const navigate = useNavigate();
     useEffect(() => {
         const go = () => {
             if (goToProfile) {
 
+                navigate("/profile");
                 setTimeout(() => {
                     setGoToProfile(false);
                 }, 1000);
-                return navigate("/profile");
             }
         }
         go();

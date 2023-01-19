@@ -469,12 +469,19 @@ const Profile = ({ expiryTimestamp }) => {
         }
     };
 
-
-
     return (
 
         <div className='bg-darkblue text-white' style={{ overflow: 'hidden' }}>
-            <div className='container py-5'>
+            <div className='container pb-5 pt-4'>
+                <div className='mx-auto text-center mb-3'>
+                    <button className='kyc-profile-btn'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Please complete your Kyc
+                    </button>
+                </div>
                 <div className="row g-5" >
                     <div className="col-lg-6 md-mb-5 border-md-0 py-2 py-lg-5">
                         <h4 className='handleAlignBtn d-none d-lg-block'>PROFILE</h4>
@@ -636,9 +643,9 @@ const Profile = ({ expiryTimestamp }) => {
                                                 style={{ backgroundColor: "#15407f", border: '1px solid #15407F' }}
                                                 type="button"
                                                 onClick={copyToClipboardWalletAddress}
-                                                
+
                                             >
-                                                <FaRegCopy size={32} color='#fff' className='p-1'/>
+                                                <FaRegCopy size={32} color='#fff' className='p-1' />
                                             </button>
                                         </div>
                                     </div>
@@ -670,8 +677,10 @@ const Profile = ({ expiryTimestamp }) => {
                                         </div>
                                         <p className='text-start'>Please share the affiliate code and start earning.</p>
                                         <div className='d-flex justify-content-start'>
-                                            <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 me-2 mine-mineral' style={{background: "#15407F",}}>MINE MINERAL TOKENS</Button>
-                                            <Button onClick={Logout} className='btn rounded-0 border-0 button-logut' style={{background: "#FF5421",}}>LOGOUT</Button>
+
+                                            {/* <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 me-2 mine-mineral' style={{background: "#15407F",}}>MINE MINERAL TOKENS</Button> */}
+                                            <Button onClick={() => navigate(-1)} className='btn rounded-0 border-0 me-2 profile-cancel' style={{ background: "#15407F", }}>CANCEL</Button>
+                                            <Button onClick={Logout} className='btn rounded-0 border-0 button-logut' style={{ background: "#FF5421", }}>LOGOUT</Button>
                                         </div>
                                     </div>
                                 </div>
