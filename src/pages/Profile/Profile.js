@@ -474,7 +474,7 @@ const Profile = ({ expiryTimestamp }) => {
         <div className='bg-darkblue text-white' style={{ overflow: 'hidden' }}>
             <div className='container pb-5 pt-4'>
                 <div className='mx-auto text-center mb-3'>
-                    <button className='kyc-profile-btn'>
+                    <button onClick={() => navigate('/kyc/profile')} className='kyc-profile-btn'>
                         <span></span>
                         <span></span>
                         <span></span>

@@ -192,7 +192,7 @@ const KycMobile = ({ expiryTimestamp }) => {
               international
               defaultCountry="SG"
               countryCallingCodeEditable={true}
-              className="form-control"
+              className="form-control d-flex"
               type="text"
               onChange={setMobile}
               value={mobile}
