@@ -9,7 +9,7 @@ import AddNewAdmin from './AddNewAdmin';
 import swal from 'sweetalert';
 import axios from 'axios';
 import { Tooltip } from '@mui/material';
-import Pagination from './adminPagination/Pagination';
+import Pagination from '../../../components/Pagination/Pagination';
 
 
 const Admins = ({ currentItems }) => {
@@ -72,38 +72,13 @@ const Admins = ({ currentItems }) => {
     });
   }
 
-
-  //****************************** Pagination Start ******************************/
-  const { allAdmins } = useParams();
-  const navigate = useNavigate();
-  const [getPage, setPage] = useState(1);
-  const [show, setShow] = useState(2);
-  const [lastPage, setLastPage] = useState(0);
-  const [sliceAdmins, setSliceAdmins] = useState([]);
-  // console.log(sliceProducts)
-
-  useEffect(() => {
-    const lastPage = Math.ceil(allAdmin?.length / show);
-    setLastPage(lastPage);
-  }, [allAdmin, show]);
-
-  useEffect(() => {
-    if (allAdmins) {
-      const page = parseInt(allAdmins);
-      const getSlicingCategory = allAdmin?.slice((page - 1) * show, page * show);
-      setSliceAdmins([...getSlicingCategory]);
-      setPage(parseInt(page));
-    } else {
-      const getSlicingProduct = allAdmin?.slice(0, show);
-      setSliceAdmins([...getSlicingProduct]);
-    }
-  }, [allAdmin, show, allAdmins]);
-
-  const pageHandle = (jump) => {
-    navigate(`/admin/admins/${jump}`);
-    setPage(parseInt(jump));
-  };
-  //****************************** Pagination End ******************************/
+  // pagination code
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage] = useState(3);
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = allAdmin.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(allAdmin.length / recordsPerPage)
 
   return (
     <div className='adminBody'>
@@ -125,7 +100,7 @@ const Admins = ({ currentItems }) => {
               </tr>
             </thead>
             <tbody>
-              {allAdmin?.map((admin) => (
+              {currentRecords?.map((admin) => (
                 <tr className="tableRow" key={admin._id}>
                   <td align="center">
                     {admin?.avatar ? (
@@ -157,17 +132,11 @@ const Admins = ({ currentItems }) => {
               ))}
             </tbody>
           </Table>
-          <div className="">
-            {sliceAdmins?.length ? (
-              <Pagination
-                lastPage={lastPage}
-                page={getPage}
-                pageHandle={pageHandle}
-              />
-            ) : (
-              <></>
-            )}
-          </div>
+          <Pagination
+            nPages={nPages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
 
         <AddNewAdmin
