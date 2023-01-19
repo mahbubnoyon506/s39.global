@@ -64,7 +64,7 @@ const Verified = () => {
                     </thead>
                     <tbody>
                         {
-                            verifiedUser?.map((d, index) => (
+                           data.map((d, index) => (
                                 <tr style={{ borderBottom: "1px solid white" }} className=' ' >
                                     <td style={{ padding: '15px 0px 15px 35px' }} className=''>
                                         <input type="checkbox" /> {index + 1}</td>
@@ -77,7 +77,7 @@ const Verified = () => {
                                     </td> */}
                                     <td className='text-start' style={{ textTransform: 'uppercase' }} >{d.name}</td>
                                     <td className='text-start '>{d?.email}</td>
-                                    <td className='text-start '>{d?.mobile}</td>
+                                    <td className='text-start '>{d?.phone}</td>
                                     {/* <td className='text-start adminHidden'>{d.kycPending === true ? 'PENDING' : ''}</td> */}
                                     <td className='text-start '>
 

@@ -97,7 +97,7 @@ const NonVerified = () => {
                     </thead>
                     <tbody>
                         {
-                            NonVerifiedUser?.map((d, index) => (
+                            data.map((d, index) => (
                                 <tr style={{ borderBottom: "1px solid white" }} className=' ' >
                                     <td style={{ padding: '15px 0px 15px 35px' }} className=''>
                                         <input type="checkbox" /> {index + 1}</td>
