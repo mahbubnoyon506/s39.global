@@ -21,7 +21,7 @@ const KycMyProduct = () => {
   // console.log(allProduct)
 
   useEffect(() => {
-    fetch("https://backend.dslcommerce.com/api/category/")
+    fetch("https://testnetback.s39global.com/api/category/")
       .then((res) => res.json())
       .then((data) => setGetCategory(data));
   }, []);
@@ -32,7 +32,7 @@ const KycMyProduct = () => {
 
   useEffect(() => {
     fetch(
-      `https://backend.dslcommerce.com/api/product/get/${user?.walletAddress}`
+      `https://testnetback.s39global.com/api/product/get/${user?.walletAddress}`
     )
       .then((res) => res.json())
       .then((data) => setMyProducts(data.result));
@@ -41,7 +41,7 @@ const KycMyProduct = () => {
   // console.log(myProducts, 'emtiazzzzzzz');
 
   const logout = () => {
-    localStorage.removeItem("kycUserToken");
+    localStorage.removeItem("kycUserTokenS39Testnet");
     navigate("/");
   };
 

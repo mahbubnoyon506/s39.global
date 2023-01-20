@@ -24,7 +24,7 @@ const KycForgetPassword = () => {
 
     await axios
       .post(
-        "https://backend.dslcommerce.com/api/user-panel/user/send-reset-password-link/",
+        "https://testnetback.s39global.com/api/user-panel/user/send-reset-password-link/",
         { email }
       )
       .then((res) => {
@@ -101,7 +101,7 @@ const KycForgetPassword = () => {
                     style={{ backgroundColor: "#f74545", height: "28px" }}
                     className="button-34 px-4 "
                     type="submit"
-                    // onClick={handleGoToLogin}
+                  // onClick={handleGoToLogin}
                   >
                     <FiSend></FiSend> Send
                   </Button>

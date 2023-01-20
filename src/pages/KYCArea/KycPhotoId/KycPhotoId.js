@@ -57,8 +57,8 @@ const KycPhotoId = ({ photoIddata }) => {
     setRefetch,
   } = useContext(KycContext);
 
-  console.log(photoIddata, "photo id data");
 
+  console.log('Getting kyc photo id', photoIddata)
   useEffect(() => {
     // {    walletAddress: user?.walletAddress,
     //     photoId: photoIdNumber,
@@ -87,9 +87,9 @@ const KycPhotoId = ({ photoIddata }) => {
 
     setphotoIdFrontLoader(true);
     await axios
-      .post(`https://backend.dslcommerce.com/api/photo-id/upload`, formdata, {
+      .post(`https://testnetback.s39global.com/api/photo-id/upload`, formdata, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
         },
       })
       .then((res) => {
@@ -116,9 +116,9 @@ const KycPhotoId = ({ photoIddata }) => {
 
     setphotoIdBackLoader(true);
     await axios
-      .post(`https://backend.dslcommerce.com/api/photo-id/upload`, formdata, {
+      .post(`https://testnetback.s39global.com/api/photo-id/upload`, formdata, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
         },
       })
       .then((res) => {
@@ -145,9 +145,9 @@ const KycPhotoId = ({ photoIddata }) => {
 
     setdrivingFrontLoader(true);
     await axios
-      .post(`https://backend.dslcommerce.com/api/photo-id/upload`, formdata, {
+      .post(`https://testnetback.s39global.com/api/photo-id/upload`, formdata, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
         },
       })
       .then((res) => {
@@ -174,9 +174,9 @@ const KycPhotoId = ({ photoIddata }) => {
 
     setdrivingBackLoader(true);
     await axios
-      .post(`https://backend.dslcommerce.com/api/photo-id/upload`, formdata, {
+      .post(`https://testnetback.s39global.com/api/photo-id/upload`, formdata, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
         },
       })
       .then((res) => {
@@ -204,9 +204,9 @@ const KycPhotoId = ({ photoIddata }) => {
 
     setPassportImgLoader(true);
     await axios
-      .post(`https://backend.dslcommerce.com/api/photo-id/upload`, formdata, {
+      .post(`https://testnetback.s39global.com/api/photo-id/upload`, formdata, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
         },
       })
       .then((res) => {
@@ -244,9 +244,9 @@ const KycPhotoId = ({ photoIddata }) => {
     };
 
     await axios
-      .post(`https://backend.dslcommerce.com/api/photo-id`, dataObj, {
+      .post(`https://testnetback.s39global.com/api/photo-id`, dataObj, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
         },
       })
       .then((res) => {
@@ -258,7 +258,7 @@ const KycPhotoId = ({ photoIddata }) => {
 
             await axios
               .put(
-                `https://backend.dslcommerce.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
+                `https://testnetback.s39global.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
                 data
               )
               .then((res) => {
@@ -326,6 +326,7 @@ const KycPhotoId = ({ photoIddata }) => {
   };
 
   // useEffect(() => {}, []);
+
 
   return (
     <div className="">

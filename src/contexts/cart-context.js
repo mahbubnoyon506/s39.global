@@ -22,7 +22,7 @@ export default function CartProvider({ children }) {
   const addItemToCart = async (item) => {
     console.log("cartItem", item);
     await axios
-      .post(`https://backend.dslcommerce.com/api/cart/`, item)
+      .post(`https://testnetback.s39global.com/api/cart/`, item)
       .then((res) => {
         console.log(res.data)
         if (res.status === 200) {
@@ -50,7 +50,7 @@ export default function CartProvider({ children }) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://backend.dslcommerce.com/api/cart/${user?.walletAddress}`)
+      .get(`https://testnetback.s39global.com/api/cart/${user?.walletAddress}`)
       .then((res) => {
         // console.log("res.data");
         // console.log(res.data);

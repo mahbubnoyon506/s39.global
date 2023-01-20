@@ -43,17 +43,17 @@ const KYC = () => {
   } = useContext(KycContext);
   const { user, openWalletModal } = useContext(S39GlobalContext);
 
-  console.log("from kycs", photoIddata, addressData, "user", kycUser);
-  // console.log(kycUser)
+  // console.log("from kycs", photoIddata, addressData, "user", kycUser);
+  console.log(photoIddata)
 
   useEffect(() => {
     const getPhotoIddata = async () => {
       await axios
         .get(
-          `https://backend.dslcommerce.com/api/photo-id/data/${kycUser?.walletAddress}`,
+          `https://testnetback.s39global.com/api/photo-id/data/${kycUser?.walletAddress}`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+              Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
             },
           }
         )
@@ -69,10 +69,10 @@ const KYC = () => {
     const getAddressData = async () => {
       await axios
         .get(
-          `https://backend.dslcommerce.com/api/address/data/${kycUser?.walletAddress}`,
+          `https://testnetback.s39global.com/api/address/data/${kycUser?.walletAddress}`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+              Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
             },
           }
         )
@@ -86,10 +86,10 @@ const KYC = () => {
   const getProfile = async () => {
     await axios
       .get(
-        `https://backend.dslcommerce.com/api/user-panel/user/${kycUser?.walletAddress}`,
+        `https://testnetback.s39global.com/api/user-panel/user/${kycUser?.walletAddress}`,
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+            Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
           },
         }
       )
@@ -107,7 +107,7 @@ const KYC = () => {
   const isaddressPosted = localStorage.getItem("addressPosted");
 
   // const logout = () => {
-  //   localStorage.removeItem("kycUserToken");
+  //   localStorage.removeItem("kycUserTokenS39Testnet");
   //   navigate("/");
   // };
   // console.log(userProfileData.email, "Emtiazzzzzzzzzzz");
@@ -146,13 +146,13 @@ const KYC = () => {
         <div className="container px-4">
           <div className="pt-3 mb-4 d-flex flex-column flex-lg-row align-items-center justify-content-between">
             <span className="fs-4 fw-bold text-uppercase text-white ">
-              S39.Global
+            S39GLOBAL.COM
             </span>
 
             <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-              <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 me-2 mine-mineral text-white' style={{ background: "#15407F", }}>MINE MINERAL TOKENS</Button>
+              <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 p-2 me-2 mine-mineral text-white fw-bold' style={{ background: "#15407F", }}>MINE MINERAL TOKENS</Button>
               <button
-                className="border-0 p-2 fw-bold rounded-2 fs-5"
+                className="border-0 p-2 fw-bold rounded-2"
                 onClick={() => navigate("/profile")}
               >
                 My Profile

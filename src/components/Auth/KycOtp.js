@@ -47,7 +47,7 @@ const KycOtp = ({ expiryTimestamp }) => {
 
   const resendOTP = () => {
     axios
-      .get(`https://backend.dslcommerce.com/api/admin/resend-otp`, {
+      .get(`https://testnetback.s39global.com/api/admin/resend-otp`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -81,7 +81,7 @@ const KycOtp = ({ expiryTimestamp }) => {
     const otp = e.target.otp.value;
     axios
       .post(
-        `https://backend.dslcommerce.com/api/admin/verify-otp/`,
+        `https://testnetback.s39global.com/api/admin/verify-otp/`,
         {
           otp,
         },

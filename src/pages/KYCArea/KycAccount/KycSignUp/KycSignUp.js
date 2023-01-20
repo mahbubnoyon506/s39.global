@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { toast } from "react-hot-toast";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { BiLeftArrowAlt } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { KycContext } from "../../../../contexts/KycContext";
 import { S39GlobalContext } from "../../../../contexts/S39GlobalContext";
 
 const KycSignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const { handleRegister } = useContext(KycContext);
+  const { handleRegister, isGet, setIsGet } = useContext(KycContext);
 
   const { user } = useContext(S39GlobalContext);
   const [userName, setUserName] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isGet) {
+      navigate("/kyc/profile");
+
+      setTimeout(() => {
+        setIsGet(false);
+      }, 2000);
+    }
+  }, [isGet]);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

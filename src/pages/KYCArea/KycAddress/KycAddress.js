@@ -70,9 +70,9 @@ const KycAddress = ({ addressData }) => {
     };
 
     await axios
-      .post(`https://backend.dslcommerce.com/api/address`, formData, {
+      .post(`https://testnetback.s39global.com/api/address`, formData, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
         },
       })
       .then((res) => {
@@ -84,7 +84,7 @@ const KycAddress = ({ addressData }) => {
 
             await axios
               .put(
-                `https://backend.dslcommerce.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
+                `https://testnetback.s39global.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
                 data
               )
               .then((res) => {

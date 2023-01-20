@@ -80,7 +80,7 @@ const KycProfile = ({ getProfile }) => {
 
     await axios
       .put(
-        `https://backend.dslcommerce.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
+        `https://testnetback.s39global.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
         dataUser
       )
       .then((res) => {

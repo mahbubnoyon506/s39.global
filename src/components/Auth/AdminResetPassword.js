@@ -26,7 +26,7 @@ const AdminResetPassword = () => {
 
     axios
       .post(
-        "https://backend.dslcommerce.com/api/admin/reset-password/",
+        "https://testnetback.s39global.com/api/admin/reset-password/",
         { newPassword: confirmPassword },
         {
           headers: {

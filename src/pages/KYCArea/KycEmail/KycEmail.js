@@ -62,7 +62,7 @@ const KycEmail = ({ expiryTimestamp }) => {
     if (email.length > 0 && email.includes("@" && ".")) {
       // setLoading(true);
       await axios
-        .post("https://backend.dslcommerce.com/api/email/emailsend", {
+        .post("https://testnetback.s39global.com/api/email/emailsend", {
           email: email,
         })
         .then((res) => {
@@ -113,7 +113,7 @@ const KycEmail = ({ expiryTimestamp }) => {
 
   const handleVerifyOTP = async (otpCode) => {
     await axios
-      .post(`https://backend.dslcommerce.com/api/email/otp/${email}`, {
+      .post(`https://testnetback.s39global.com/api/email/otp/${email}`, {
         otp: otpCode,
       })
 
@@ -164,7 +164,7 @@ const KycEmail = ({ expiryTimestamp }) => {
 
     await axios
       .put(
-        `https://backend.dslcommerce.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
+        `https://testnetback.s39global.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
         data
       )
       .then((res) => {

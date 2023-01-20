@@ -26,7 +26,7 @@ const KycResetPassword = () => {
 
     axios
       .post(
-        "https://backend.dslcommerce.com/api/user-panel/user/reset-password/",
+        "https://testnetback.s39global.com/api/user-panel/user/reset-password/",
         { newPassword: confirmPassword },
         {
           headers: {

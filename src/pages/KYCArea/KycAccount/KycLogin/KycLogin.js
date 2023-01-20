@@ -9,8 +9,18 @@ import { KycContext } from "../../../../contexts/KycContext";
 
 const KycLogin = () => {
   const [isVisible, setVisible] = useState(false);
-  const { handleUserLogin, kycUser } = useContext(KycContext);
+  const { handleUserLogin, kycUser, isGet, setIsGet } = useContext(KycContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isGet) {
+      navigate("/kyc/profile");
+
+      setTimeout(() => {
+        setIsGet(false);
+      }, 2000);
+    }
+  }, [isGet]);
 
   const handleShow = () => {
     setVisible(!isVisible);
@@ -29,6 +39,7 @@ const KycLogin = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (kycUser?._id) {
       navigate("/kyc/profile");
     }

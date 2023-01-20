@@ -16,11 +16,10 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
     return (
         <nav>
             <ul className='pagination justify-content-center'>
-                <li className="page-item">
+                <li className="page-item" >
                     <button className="page-link" 
                         onClick={prevPage} 
                         href='#'>
-                        
                         <FaAngleDoubleLeft/>
                     </button>
                 </li>

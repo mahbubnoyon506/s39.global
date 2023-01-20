@@ -20,31 +20,34 @@ export default function KycProvider({ children }) {
   const [isVerifiedProfile, setisVerifiedProfile] = useState(false);
   const [isVerifiedPhotId, setisVerifiedPhotId] = useState(false);
   const [isVerifiedAddress, setisVerifiedAddress] = useState(false);
+  const [isGet, setIsGet] = useState(false);
 
   //get current user data..........
   useEffect(() => {
     axios
-      .get(`https://backend.dslcommerce.com/api/user-panel/`, {
+      .get(`https://testnetback.s39global.com/api/user-panel/`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
         },
       })
       .then((res) => {
         // console.log(res.data);
         setKycUser(res.data.result);
+        // setIsGet(true);
       });
   }, [refetch, user]);
 
   //************************************ User Register ***********************************
   const handleRegister = async (data) => {
     await axios
-      .post(`https://backend.dslcommerce.com/api/user-panel/signup`, data)
+      .post(`https://testnetback.s39global.com/api/user-panel/signup`, data)
       .then((res) => {
         if (res.status === 200) {
           setRefetch(!refetch);
-          localStorage.setItem("kycUserToken", res.data.token);
+          localStorage.setItem("kycUserTokenS39Testnet", res.data.token);
           // console.log(res.data.token);
           toast.success("Register Success .");
+          setIsGet(true);
           // navigate("/kyc/profile");
         }
       })
@@ -62,20 +65,21 @@ export default function KycProvider({ children }) {
   //************************************ User login ************************************
   const handleUserLogin = async (data) => {
     await axios
-      .post(`https://backend.dslcommerce.com/api/user-panel/signin`, data)
+      .post(`https://testnetback.s39global.com/api/user-panel/signin`, data)
       .then((res) => {
         if (res.status === 200) {
           setRefetch(!refetch);
-          localStorage.setItem("kycUserToken", res.data.token);
+          localStorage.setItem("kycUserTokenS39Testnet", res.data.token);
           // console.log(res.data.token);
           toast.success("Welcome to your profile .");
           // navigate("/kyc/profile");
+          setIsGet(true);
         }
       })
       .catch((err) => {
         swal({
           title: "Attention",
-          text: `${err.response.data.message}`,
+          text: "Email does not exit!",
           icon: "warning",
           button: "OK!",
           className: "modal_class_success",
@@ -88,7 +92,7 @@ export default function KycProvider({ children }) {
   //   console.log(dataUser, "data to update");
   //   await axios
   //     .put(
-  //       `https://backend.dslcommerce.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
+  //       `https://testnetback.s39global.com/api/user-panel/user/update/${kycUser?.walletAddress}`,
   //       dataUser
   //     )
   //     .then((res) => {
@@ -116,9 +120,9 @@ export default function KycProvider({ children }) {
   // //************************************ User Address ***********************************
   // const handleAddress = async (data) => {
   //   await axios
-  //     .post(`https://backend.dslcommerce.com/api/address`, data, {
+  //     .post(`https://testnetback.s39global.com/api/address`, data, {
   //       headers: {
-  //         Authorization: `Bearer ${localStorage.getItem("kycUserToken")}`,
+  //         Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
   //       },
   //     })
   //     .then((res) => {
@@ -142,7 +146,7 @@ export default function KycProvider({ children }) {
   //user logout
   const logout = () => {
     setKycUser("");
-    localStorage.removeItem("kycUserToken");
+    localStorage.removeItem("kycUserTokenS39Testnet");
   };
 
   return (
@@ -164,6 +168,8 @@ export default function KycProvider({ children }) {
         isVerifiedAddress,
         isVerifiedPhotId,
         isVerifiedProfile,
+        isGet,
+        setIsGet,
         setisVerifiedAddress,
         setisVerifiedPhotId,
         setisVerifiedProfile
