@@ -64,22 +64,24 @@ export default function KycProvider({ children }) {
 
   //************************************ User login ************************************
   const handleUserLogin = async (data) => {
+    console.log(data, "data");
     await axios
       .post(`https://testnetback.s39global.com/api/user-panel/signin`, data)
       .then((res) => {
         if (res.status === 200) {
           setRefetch(!refetch);
           localStorage.setItem("kycUserTokenS39Testnet", res.data.token);
-          // console.log(res.data.token);
+          // console.log(res.data.token);1
           toast.success("Welcome to your profile .");
           // navigate("/kyc/profile");
           setIsGet(true);
         }
       })
       .catch((err) => {
+        // console.log(err, "err")
         swal({
           title: "Attention",
-          text: "Email does not exit!",
+          text: `${err.response.data.message}`,
           icon: "warning",
           button: "OK!",
           className: "modal_class_success",
