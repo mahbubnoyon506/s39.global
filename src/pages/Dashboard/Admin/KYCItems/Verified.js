@@ -79,8 +79,7 @@ const Verified = () => {
                                     <td className='text-start '>{d?.phone}</td>
                                     {/* <td className='text-start adminHidden'>{d.kycPending === true ? 'PENDING' : ''}</td> */}
                                     <td className='text-start '>
-
-                                        <Link to='#'>
+                                        <Link to='/admin/userdetails'>
                                             <span className='bg-primary p-2 me-3 rounded'>
                                                 < AiFillEye className='fs-5 text-white rounded' />
                                             </span>

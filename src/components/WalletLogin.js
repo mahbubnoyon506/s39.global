@@ -37,15 +37,13 @@ export default function WalletLogin() {
                                         <Card.Img variant="top" style={{ width: "50px" }} src="https://i.ibb.co/vVf533V/1.png" className="maskImg mx-auto" />
                                         <Card.Body className='border-0'>
                                             <Card.Title className='walletName'>Metamask</Card.Title>
-                                            <Button
-                                                onClick={() => connectToMetamask()}
-                                                sx={{
-                                                    background: '#F6851B', '&:hover': {
-                                                        backgroundColor: "#F6851B",
-                                                    }
-                                                }} variant="contained" disableElevation>
+                                            <button onClick={() => connectToMetamask()} className='kyc-profile-btn'>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
                                                 Click here to login
-                                            </Button>
+                                            </button>
                                         </Card.Body>
                                     </Card>
                                 </Col>

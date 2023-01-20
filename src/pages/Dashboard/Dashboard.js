@@ -118,31 +118,7 @@ function Dashboard(props) {
           </span>
           USERS
         </NavLink>
-        <NavLink
-          className="dashboardMenu"
-          style={menuLinkStyles}
-          onClick={handleClose}
-          to="reward"
-        >
-          {" "}
-          <span className="navIconAdmin">
-            <FaGift size={20} />
-          </span>
-          REWARD
-        </NavLink>
 
-        <NavLink
-          className="dashboardMenu"
-          style={menuLinkStyles}
-          onClick={handleClose}
-          to="wallets"
-        >
-          {" "}
-          <span className="navIconAdmin">
-            <FaWallet size={20} />
-          </span>
-          WALLETS
-        </NavLink>
         <div>
           <Button
             className="dashboardMenu text-start"
@@ -189,6 +165,32 @@ function Dashboard(props) {
             </Box>
           </Menu>
         </div>
+
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="reward"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <FaGift size={20} />
+          </span>
+          REWARD
+        </NavLink>
+
+        <NavLink
+          className="dashboardMenu"
+          style={menuLinkStyles}
+          onClick={handleClose}
+          to="wallets"
+        >
+          {" "}
+          <span className="navIconAdmin">
+            <FaWallet size={20} />
+          </span>
+          WALLETS
+        </NavLink>
 
         <NavLink
           className="dashboardMenu"
