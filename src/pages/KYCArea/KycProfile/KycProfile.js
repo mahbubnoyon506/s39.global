@@ -10,7 +10,7 @@ import { time_zone } from "../CountryName/cData";
 import "./KycProfile.css";
 import QRCode from "react-qr-code";
 
-const KycProfile = ({ getProfile }) => {
+const KycProfile = ({ getProfile}) => {
   const {
     kycUser,
     handleUpdateUser,

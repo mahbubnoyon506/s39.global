@@ -58,7 +58,7 @@ const KycPhotoId = ({ photoIddata }) => {
   } = useContext(KycContext);
 
 
-  console.log('Getting kyc photo id', photoIddata)
+  // console.log('Getting kyc photo id', photoIddata)
   useEffect(() => {
     // {    walletAddress: user?.walletAddress,
     //     photoId: photoIdNumber,

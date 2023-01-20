@@ -31,6 +31,7 @@ const KYC = () => {
   const [addressData, setaddressData] = useState({});
   const [userProfileData, setuserProfileData] = useState({});
   const [userProfileDataRefetch, setuserProfileDataRefetch] = useState(false);
+
   const {
     kycUser,
     handleUpdateUser,
@@ -44,7 +45,7 @@ const KYC = () => {
   const { user, openWalletModal } = useContext(S39GlobalContext);
 
   // console.log("from kycs", photoIddata, addressData, "user", kycUser);
-  console.log(photoIddata)
+  console.log(photoIddata, 'address data,,,,,,', addressData)
 
   useEffect(() => {
     const getPhotoIddata = async () => {
@@ -150,9 +151,9 @@ const KYC = () => {
             </span>
 
             <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-              <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 p-2 me-2 mine-mineral text-white fw-bold' style={{ background: "#15407F", }}>MINE MINERAL TOKENS</Button>
+              <Button disabled={!photoIddata && !addressData && !userProfileData} onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 p-2 me-2 mine-mineral text-white fw-bold' style={{ background: "#15407F", }}>MINE MINERAL TOKENS</Button>
               <button
-                className="border-0 p-2 fw-bold rounded-2"
+                className="border-0 p-2 fw-bold rounded-2 text-uppercase"
                 onClick={() => navigate("/profile")}
               >
                 My Profile
