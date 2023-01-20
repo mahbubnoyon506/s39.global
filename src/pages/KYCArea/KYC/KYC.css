@@ -52,6 +52,7 @@
   height: 65px;
   width: 65px;
 }
+
 .dslFs {
   font-size: 24px;
   font-weight: bold;
@@ -67,11 +68,79 @@
   border: unset !important;
 }
 
+.imageDivNft {
+  width: 200px;
+  height: 200px;
+  border: 1px solid white;
+}
+
+.selected-video-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.each-selected-video-for-priview {
+  width: 14%;
+}
+
+.each-selected-video-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.each-selected-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.selected-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-bottom: 13px;
+  padding-left: 136px;
+}
+
+.each-selected-image {
+  /* width: inherit;
+    height: inherit;
+    border-radius: 6px; */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.selected-image-remove-button {
+  color: white;
+  background-color: #404040;
+  border-radius: 100px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.category-select {
+  color: white;
+}
+
+.category-select:focus {
+  color: white !important;
+}
+
+.category-select option {
+  background-color: #1a1c33;
+}
+
 @media only screen and (max-width: 576px) {
   #dslKycLogo {
     width: 55px;
     height: 50px;
   }
+
   .dslFs {
     display: none;
   }

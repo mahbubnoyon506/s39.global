@@ -18,12 +18,18 @@ const debounce = (func, delay) => {
 const MinarelTokens = () => {
     const navigate = useNavigate();
     const [ammount, setAmmount] = useState(0.00);
+    const [mintingBot, setMintingBot] = useState("Minting Bot 01");
+    const [mintingAmount, setMintingAmount] = useState(100000);
+    const [neededSPoint, setNeededSPoint] = useState(450);
     const [amountChange, setAmountChange] = useState(false);
     const inputField = useRef(null);
     const [convertedS, setConvertedS] = useState("0.00");
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
+
+
+
     useEffect(() => {
         const handleChange = debounce(function () {
             if (!/^\d*[.]?\d*$/.test(this.value) || parseFloat(this.value) < 0) {
@@ -92,7 +98,41 @@ const MinarelTokens = () => {
         }
     }
 
+    const changeMintingBot = (e) => {
 
+        setMintingBot(e.target.value);
+        // setMintingAmount()
+        // console.log(e.target.value);
+
+        if (e.target.value === "Minting Bot 01") {
+            setMintingAmount(() => 100000);
+            setNeededSPoint(() => 450);
+        }
+        else if (e.target.value === "Minting Bot 02") {
+            setMintingAmount(() => 333333);
+            setNeededSPoint(() => 1500);
+        }
+        else if (e.target.value === "Minting Bot 03") {
+            setMintingAmount(() => 666666);
+            setNeededSPoint(() => 3000);
+        }
+        else if (e.target.value === "Minting Bot 04") {
+            setMintingAmount(() => 3333333);
+            setNeededSPoint(() => 15000);
+        }
+        else if (e.target.value === "Minting Bot 05") {
+            setMintingAmount(() => 6666666);
+            setNeededSPoint(() => 30000);
+        }
+        else if (e.target.value === "Minting Bot 06") {
+            setMintingAmount(() => 33333333);
+            setNeededSPoint(() => 150000);
+        }
+        else if (e.target.value === "Minting Bot 07") {
+            setMintingAmount(() => 50000000);
+            setNeededSPoint(() => 250000);
+        }
+    }
     return (
         <div className='py-2 bg-darkblue' >
             <div className='container' style={{ overflow: 'hidden' }}>
@@ -136,25 +176,34 @@ const MinarelTokens = () => {
                             </div>
                             <form onSubmit={handleSubmit}>
                                 <div className='d-flex justify-content-between primary pb-2'>
-                                    <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Amount</button>
+                                    <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Convert To S Point</button>
                                     {/* <input className='w-100 ps-1' type="text" name="" id="" placeholder='0.00' /> */}
                                     <InputGroup className="w-100 ps-1">
                                         <Form.Control aria-label="Dollar amount (with dot and two decimal places)" type="number" pattern="[0-9]*" inputmode="numeric" step="0.01" min={0.00} placeholder="0.00" defaultValue={"0.00"} ref={inputField} onChange={onchangeAmmountValue} />
                                     </InputGroup>
                                 </div>
                                 <div className='d-flex justify-content-between primary pb-2'>
+                                    <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Amount</button>
+
+                                    <InputGroup className="w-100 ps-1">
+                                        <Form.Control aria-label="Amount (to the nearest dollar)" type="text" value={mintingAmount?.toLocaleString('en-US')} onChange={e => setMintingAmount(e.target.value)} readOnly />
+                                    </InputGroup>
+
+                                </div>
+                                <div className='d-flex justify-content-between primary pb-2'>
                                     <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Select Minting Bot</button>
-                                    <select className='w-100' name="" id="">
-                                        <option value="">Minting Bot 01</option>
-                                        <option value="">Minting Bot 02</option>
-                                        <option value="">Minting Bot 03</option>
-                                        <option value="">Minting Bot 04</option>
-                                        <option value="">Minting Bot 05</option>
-                                        <option value="">Minting Bot 06</option>
-                                        <option value="">Minting Bot 07</option>
+                                    <select className='w-100' name="" id="" value={mintingBot} onChange={changeMintingBot}>
+                                        <option value="Minting Bot 01">Minting Bot 01</option>
+                                        <option value="Minting Bot 02">Minting Bot 02</option>
+                                        <option value="Minting Bot 03">Minting Bot 03</option>
+                                        <option value="Minting Bot 04">Minting Bot 04</option>
+                                        <option value="Minting Bot 05">Minting Bot 05</option>
+                                        <option value="Minting Bot 06">Minting Bot 06</option>
+                                        <option value="Minting Bot 07">Minting Bot 07</option>
                                     </select>
                                 </div>
-                                <input className='primary w-100 border-0 py-2 my-2 fs-lg-4 text-uppercase' style={{ background: '#165CA9' }} type="submit" value="Start Minting" />
+                                <p style={{ fontSize: '18px', fontWeight: '700' }} className="text-warning my-2 text-center">You need {neededSPoint?.toLocaleString('en-US')} S Point for minting</p>
+                                <input className='primary w-100 border-0 py-2 mb-2 mt-0 fs-lg-4 text-uppercase' style={{ background: '#165CA9' }} type="submit" value="Start Minting" />
                             </form>
                         </Card.Body>
                     </Card>

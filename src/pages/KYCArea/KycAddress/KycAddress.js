@@ -8,6 +8,7 @@ import { KycContext } from "../../../contexts/KycContext";
 import { S39GlobalContext } from "../../../contexts/S39GlobalContext";
 import { countryName } from "../CountryName/cData";
 import "./KycAddress.css";
+import "../KYC/KYC.css";
 
 const KycAddress = ({ addressData }) => {
   const {

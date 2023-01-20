@@ -9,6 +9,7 @@ import { BsStarFill } from "react-icons/bs";
 import swal from "sweetalert";
 import { KycContext } from "../../../contexts/KycContext";
 import { S39GlobalContext } from "../../../contexts/S39GlobalContext";
+import "../KYC/KYC.css";
 
 const KycPhotoId = ({ photoIddata }) => {
   const [photoIdType, setPhotoIdType] = useState("photoId");

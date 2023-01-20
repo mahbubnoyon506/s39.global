@@ -45,7 +45,7 @@ const KYC = () => {
   const { user, openWalletModal } = useContext(S39GlobalContext);
 
   // console.log("from kycs", photoIddata, addressData, "user", kycUser);
-  console.log(photoIddata, 'address data,,,,,,', addressData)
+  // console.log(photoIddata, 'address data,,,,,,', addressData)
 
   useEffect(() => {
     const getPhotoIddata = async () => {
@@ -147,7 +147,7 @@ const KYC = () => {
         <div className="container px-4">
           <div className="pt-3 mb-4 d-flex flex-column flex-lg-row align-items-center justify-content-between">
             <span className="fs-4 fw-bold text-uppercase text-white ">
-            S39GLOBAL.COM
+              S39GLOBAL.COM
             </span>
 
             <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
@@ -256,11 +256,11 @@ const KYC = () => {
                   />
                 )}
               </Tab>
-              {console.log(
+              {/* {console.log(
                 isVerifiedAddress == false,
                 addressData?.isVerified,
                 "test"
-              )}
+              )} */}
 
               <Tab>
                 ADDRESS PROOF
