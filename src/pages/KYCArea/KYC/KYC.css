@@ -61,7 +61,7 @@
 }
 
 .react-tabs__tab--selected {
-  color: #ffc107;
+  color: #ffc107 !important;
   background: unset !important;
   border-color: unset !important;
   border-radius: unset !important;
