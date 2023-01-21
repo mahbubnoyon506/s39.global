@@ -24,11 +24,10 @@ const MinarelTokens = () => {
     const [amountChange, setAmountChange] = useState(false);
     const inputField = useRef(null);
     const [convertedS, setConvertedS] = useState("0.00");
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
-
-
 
     useEffect(() => {
         const handleChange = debounce(function () {
@@ -76,26 +75,31 @@ const MinarelTokens = () => {
             else {
                 setConvertedS(() => "0.00");
             }
-
         }
-
     }
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (convertedS >= 10 || convertedS >= 10.00) {
-
-            navigate(`/claimtoken/${ammount}/${convertedS}`)
+        if ((convertedS >= neededSPoint)) {
+            navigate(`/claimtoken/${parseFloat(neededSPoint).toFixed(2)}/${convertedS}`)
         }
         else {
             swal({
-                text: "Please enter an amount greater than 10.00",
+                text: `You need minimum ${parseFloat(neededSPoint).toFixed(2)?.toLocaleString('en-US')} S Point for minting`,
                 icon: "warning",
                 button: "OK!",
                 className: "modal_class_success",
             });
         }
+        // else {
+        //     swal({
+        //         text: "Please enter an amount greater than 10.00",
+        //         icon: "warning",
+        //         button: "OK!",
+        //         className: "modal_class_success",
+        //     });
+        // }
     }
 
     const changeMintingBot = (e) => {
@@ -134,7 +138,7 @@ const MinarelTokens = () => {
         }
     }
     return (
-        <div className='py-2 bg-darkblue' >
+        <div className='py-2 bg-darkblue'>
             <div className='container' style={{ overflow: 'hidden' }}>
                 <h2 className='dashboard-title text-center py-5'>Mineral Tokens</h2>
                 <div className='row g-5'>
@@ -142,8 +146,8 @@ const MinarelTokens = () => {
                         <div className="d-flex justify-content-center align-items-center mx-auto" style={{ background: '#121936', borderRadius: '100px', width: '170px', height: '170px', boxShadow: `0px 0px 15px 15px #33518C` }}>
                             <div>
                                 <p className="primary text-center" style={{ fontSize: '20px', fontWeight: '700', marginBottom: '0px' }}>$0</p>
-                                <p className="primary text-center" style={{ fontSize: '12px' }}>(Amount in Piggy Bank)</p>
-                                <p className="circle-title text-center">rewards</p>
+                                <p className="primary text-center" style={{ fontSize: '12px' }}>(Available Amount)</p>
+                                <p className="circle-title text-center">s39</p>
                             </div>
                         </div>
                     </div>
@@ -151,8 +155,8 @@ const MinarelTokens = () => {
                         <div className="d-flex justify-content-center align-items-center mx-auto" style={{ background: '#121936', borderRadius: '100px', width: '170px', height: '170px', boxShadow: `0px 0px 15px 15px #33518C` }}>
                             <div>
                                 <p className="primary text-center" style={{ fontSize: '20px', fontWeight: '700', marginBottom: '0px' }}>$0</p>
-                                <p className="primary text-center" style={{ fontSize: '12px' }}>(Amount in Piggy Bank)</p>
-                                <p className="circle-title text-center">invested</p>
+                                <p className="primary text-center" style={{ fontSize: '12px' }}>(Available Amount)</p>
+                                <p className="circle-title text-center">s point</p>
                             </div>
                         </div>
                     </div>
@@ -160,9 +164,10 @@ const MinarelTokens = () => {
                         <div className="d-flex justify-content-center align-items-center mx-auto" style={{ background: '#121936', borderRadius: '100px', width: '170px', height: '170px', boxShadow: `0px 0px 15px 15px #33518C` }}>
                             <div>
                                 <p className="primary text-center" style={{ fontSize: '20px', fontWeight: '700', marginBottom: '0px' }}>$0</p>
-                                <p className="primary text-center" style={{ fontSize: '12px' }}>(Amount in Piggy Bank)</p>
-                                <p className="circle-title text-center">Price</p>
+                                <p className="primary text-center" style={{ fontSize: '12px' }}>(Available Amount)</p>
+                                <p className="circle-title-3rd-child text-center">MINERAL TOKEN</p>
                             </div>
+
                         </div>
                     </div>
                 </div>

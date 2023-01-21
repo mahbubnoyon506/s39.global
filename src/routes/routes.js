@@ -142,7 +142,7 @@ const routes = createBrowserRouter([
         element: <MinarelTokens />,
       },
       {
-        path: "/claimtoken/:staked/:reward",
+        path: "/claimtoken/:neededSPoint/:givenSPoint",
         element: <ClaimToken />,
       },
       {

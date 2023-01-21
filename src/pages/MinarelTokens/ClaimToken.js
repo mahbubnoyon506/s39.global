@@ -19,16 +19,61 @@ const ClaimToken = () => {
     const [age, setAge] = React.useState("");
     const [dateEarlier, setDateEarlier] = useState("");
     const { user, openWalletModal, getBalanceTestnet, closeWalletModal, logOut, setUserRefetch, userRefetch } = useContext(S39GlobalContext);
-    const { staked, reward } = useParams();
+    const { neededSPoint, givenSPoint } = useParams();
     const navigate = useNavigate();
+    const [getTheContractDay, setGetTheContractDay] = useState(1000);
+    const [daily, setDaily] = useState(0.13);
+    const [reward, setReward] = useState(100000);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+
+        const findingTheDay = () => {
+            if (neededSPoint == 450) {
+                setGetTheContractDay(() => 1000);
+                setDaily(() => 0.13);
+                setReward(() => 100000);
+            }
+            else if (neededSPoint == 1500) {
+                setGetTheContractDay(() => 950);
+                setDaily(() => 0.14);
+                setReward(() => 333333);
+            }
+            else if (neededSPoint == 3000) {
+                setGetTheContractDay(() => 900);
+                setDaily(() => 0.15);
+                setReward(() => 666666);
+            }
+            else if (neededSPoint == 15000) {
+                setGetTheContractDay(() => 850);
+                setDaily(() => 0.16);
+                setReward(() => 3333333);
+            }
+            else if (neededSPoint == 30000) {
+                setGetTheContractDay(() => 800);
+                setDaily(() => 0.17);
+                setReward(() => 6666666);
+            }
+            else if (neededSPoint == 150000) {
+                setGetTheContractDay(() => 750);
+                setDaily(() => 0.18);
+                setReward(() => 33333333);
+            }
+            else if (neededSPoint == 250000) {
+                setGetTheContractDay(() => 700);
+                setDaily(() => 0.19);
+                setReward(() => 50000000);
+            }
+
+
+        }
+        findingTheDay();
+
         // Get the current date
         var currentDate = new Date();
 
         // Add 15 days to the current date
-        currentDate.setDate(currentDate.getDate() + 15);
+        currentDate.setDate(currentDate.getDate() + parseFloat(getTheContractDay));
 
         // Format the date as "mm/dd/yyyy"
         var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
@@ -100,7 +145,7 @@ const ClaimToken = () => {
     console.log(today); // Output: "01/05/2023"
 
     return (
-        <div className='py-5 bg-darkblue' style={{ minHeight: "100vh" }}>
+        <div className='py-5 bg-darkblue' style={{ minHeight: "55vh" }}>
             <div className='container' style={{ overflow: 'hidden' }}>
                 <div className="">
                     <div className=''>
@@ -108,31 +153,17 @@ const ClaimToken = () => {
                             <Card.Body>
                                 <div className='d-md-flex justify-content-between align-items-center pb-2'>
                                     <div>
-                                        <p className='mb-0'>10% APR</p>
+                                        <p className='mb-0'>Daily {daily}% APR</p>
                                     </div>
                                     <div className='mx-auto text-center mx-md-0 text-md-end mt-2 mt-md-0'>
-                                        {/* <Button sx={{ maxWidth: '220px' }} variant='contained'>Pool duration: 30Days</Button> */}
-                                        <FormControl sx={{ minWidth: "220px", backgroundColor: "#1976d2", color: "#fff" }} className="ms-0 ms-md-2 rouneded">
-                                            <Select
-                                                value={age}
-                                                onChange={handleChange}
-                                                displayEmpty
-                                                inputProps={{ 'aria-label': 'Without label' }}
-                                                className="text-light  rouneded"
-                                            >
-                                                <MenuItem value="" className="text-uppercase">POOL DURATION: 15 DAYS</MenuItem>
-                                                <MenuItem value={30} className="text-uppercase">POOL DURATION: 30 DAYS</MenuItem>
-                                                <MenuItem value={45} className="text-uppercase">POOL DURATION: 45 DAYS</MenuItem>
-                                                <MenuItem value={60} className="text-uppercase">POOL DURATION: 60 DAYS</MenuItem>
-                                            </Select>
-                                            {/* <FormHelperText>Without label</FormHelperText> */}
-                                        </FormControl>
+                                        <Button variant='contained'>Pool duration: {parseFloat(getTheContractDay).toLocaleString("en-US")} Days</Button>
+
 
                                     </div>
                                 </div>
                                 <div className='d-flex justify-content-between py-3'>
-                                    <p>Min Stake: 10 S POINTS</p>
-                                    <p>Max Stake: 2500000 S POINTS</p>
+                                    <p>Min Stake: 450 S POINTS</p>
+                                    <p>Max Stake: 250,000 S POINTS</p>
                                 </div>
                                 <div className='pb-4'>
                                     <div className='d-flex justify-content-between align-items-center '>
@@ -160,7 +191,7 @@ const ClaimToken = () => {
                                 <div className='row gx-2'>
                                     <div className='col-4 py-2' style={{ border: '1px dashed #fff' }}>
                                         <p className='mb-0 text-center'>Staked</p>
-                                        <p className='mb-0 text-center'>{staked}</p>
+                                        <p className='mb-0 text-center'>{neededSPoint}</p>
                                     </div>
                                     <div className='col-4 py-2' style={{ border: '1px dashed #fff' }}>
                                         <p className='mb-0 text-center'>Reward</p>
@@ -168,13 +199,13 @@ const ClaimToken = () => {
                                     </div>
                                     <div className='col-4 py-2' style={{ border: '1px dashed #fff' }}>
                                         <p className='mb-0 text-center'>Accumulated</p>
-                                        <p className='mb-0 text-center'>200</p>
+                                        <p className='mb-0 text-center'>{(reward / getTheContractDay).toFixed(2)}</p>
                                     </div>
                                 </div>
                                 <div className='mt-4'>
                                     <div className='d-flex justify-content-between'>
                                         <p className='mb-0'>Total value locked:</p>
-                                        <p className='mb-0'>{reward} POINTS</p>
+                                        <p className='mb-0'>{(reward / getTheContractDay).toFixed(2)}  POINTS</p>
                                     </div>
                                     {(user?.walletAddress || user?.walletAddress === "undefined")
                                         ? <Button sx={{ width: '100%' }} variant='contained' onClick={() => navigate("/claiming")}>Claim</Button> :
