@@ -38,7 +38,7 @@ const NonVerified = () => {
     const [NonVerifiedUser, setNonVerifiedUser] = useState([]);
 
     useEffect(() => {
-        fetch('https://backend.dslcommerce.com/api/user-panel/all')
+        fetch('https://testnetback.s39global.com/api/user-panel/all')
             .then(res => res.json())
             .then(data => setNonVerifiedUser(data?.result))
     }, [])

@@ -30,7 +30,7 @@ const KycAddress = ({ addressData }) => {
   const [file, setFile] = useState("");
   const [addressProofImg, setAddressProofImg] = useState("");
 
-  console.log("KYC USER ADDRESS", addressData);
+  // console.log("KYC USER ADDRESS", addressData);
 
   useEffect(() => {
     setAddress1(kycUser?.address1);
