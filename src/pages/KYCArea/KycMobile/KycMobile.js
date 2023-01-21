@@ -17,7 +17,7 @@ const KycMobile = ({ expiryTimestamp }) => {
   const [otpVerify, setOtpVerify] = useState();
   const [isError, setError] = useState(false);
   const [mobile, setMobile] = useState("");
-  console.log(mobile, "This is number");
+  // console.log(mobile, "This is number");
   const [disableAfterActivationMobile, setDisableAfterActivationMobile] =
     useState(false);
   const [disableAfterActivation, setDisableAfterActivation] = useState(false);
@@ -31,7 +31,7 @@ const KycMobile = ({ expiryTimestamp }) => {
     setisVerifiedProfile,
   } = useContext(KycContext);
 
-  console.log(kycUser);
+  // console.log(kycUser);
 
   useEffect(() => {
     if (kycUser && kycUser.mobileVerified) {
@@ -105,7 +105,6 @@ const KycMobile = ({ expiryTimestamp }) => {
               button: "OK!",
               className: "modal_class_success",
             });
-
             setOtpVerify(res.data.otp);
 
             setTimeout(() => {

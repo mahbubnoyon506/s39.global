@@ -61,7 +61,6 @@ export default function MobileVerifyModal({
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
-          console.log(res.data.message);
           setmobileNoVerify(true);
           setOpenMobile(false);
           setOtpVerify(res.data.message);
