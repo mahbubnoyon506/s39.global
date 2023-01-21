@@ -35,7 +35,7 @@ const Verified = () => {
     const [verifiedUser, setVerifiedUser] = useState([]);
 
     useEffect(() => {
-        fetch('https://backend.dslcommerce.com/api/user-panel/all')
+        fetch('https://testnetback.s39global.com/api/user-panel/all')
             .then(res => res.json())
             .then(data => setVerifiedUser(data?.result))
     }, [])
@@ -63,7 +63,7 @@ const Verified = () => {
                     </thead>
                     <tbody>
                         {
-                           data.map((d, index) => (
+                            data.map((d, index) => (
                                 <tr style={{ borderBottom: "1px solid white" }} className=' ' >
                                     <td style={{ padding: '15px 0px 15px 35px' }} className=''>
                                         <input type="checkbox" /> {index + 1}</td>

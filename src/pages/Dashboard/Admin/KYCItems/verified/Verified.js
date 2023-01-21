@@ -182,7 +182,7 @@ const Verified = () => {
                     onClick={() =>
                       navigate(
                         {
-                          pathname: `/admin/verified/${d.walletAddress}`,
+                          pathname: `/admin/kycuser-details/${d.walletAddress}`,
                         },
                         { state: { from: location.pathname } }
                       )

@@ -337,7 +337,7 @@ const Pending = () => {
                 <td className="text-start ">Pending</td>
                 <td className="text-start ">
                   <Tooltip title="View user details" placement="top">
-                    <Link to={`/admin/pending/${d.walletAddress}`}>
+                    <Link to={`/admin/kycuser-details/${d.walletAddress}`}>
                       <span
                         style={{ cursor: "pointer" }}
                         className="bg-primary p-2 me-3 rounded"
