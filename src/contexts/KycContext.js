@@ -21,6 +21,7 @@ export default function KycProvider({ children }) {
   const [isVerifiedPhotId, setisVerifiedPhotId] = useState(false);
   const [isVerifiedAddress, setisVerifiedAddress] = useState(false);
   const [isGet, setIsGet] = useState(false);
+  const [refetchUser, setRefetchUser] = useState(false);
 
   //get current user data..........
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function KycProvider({ children }) {
           },
         })
         .then((res) => {
-          console.log(res.data);
+          console.log(res.data, "khela");
           setKycUser(res.data.result);
           setIsGet(true);
         })
@@ -96,6 +97,100 @@ export default function KycProvider({ children }) {
         });
       });
   };
+
+  // delete Data
+
+  const deleteData = async (wallet) => {
+
+    await axios
+      .delete(`https://testnetback.s39global.com/api/user-panel/deletephoto/${wallet}`)
+      .then((res) => {
+        if (res.status === 200) {
+          // swal({
+          //   text: res.data.message,
+          //   icon: "success",
+          //   button: "OK!",
+          //   className: "modal_class_success",
+          // });
+
+        }
+        setRefetchUser(!refetchUser);
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+        setRefetchUser(!refetchUser);
+        // swal({
+        //   title: "Attention",
+        //   text: error.response.data.message,
+        //   icon: "warning",
+        //   button: "OK!",
+        //   className: "modal_class_success",
+        // });
+      });
+
+
+    await axios
+      .delete(`https://testnetback.s39global.com/api/user-panel/deleteuser/${wallet}`)
+      .then((res) => {
+        if (res.status === 200) {
+          // swal({
+          //   text: res.data.message,
+          //   icon: "success",
+          //   button: "OK!",
+          //   className: "modal_class_success",
+          // });
+
+
+        }
+        setRefetchUser(!refetchUser);
+      })
+      .catch((error) => {
+        console.log(error.response.data.message)
+        setRefetchUser(!refetchUser);
+        // swal({
+        //   title: "Attention",
+        //   text: error.response.data.message,
+        //   icon: "warning",
+        //   button: "OK!",
+        //   className: "modal_class_success",
+        // });
+      });
+
+
+    await axios
+      .delete(`https://testnetback.s39global.com/api/user-panel/deleteaddress/${wallet}`)
+      .then((res) => {
+        if (res.status === 200) {
+          // swal({
+          //   text: res.data.message,
+          //   icon: "success",
+          //   button: "OK!",
+          //   className: "modal_class_success",
+          // });
+
+        }
+        setRefetchUser(!refetchUser);
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+        setRefetchUser(!refetchUser);
+        // swal({
+        //   title: "Attention",
+        //   text: error.response.data.message,
+        //   icon: "warning",
+        //   button: "OK!",
+        //   className: "modal_class_success",
+        // });
+      })
+
+    swal({
+      text: "Deleted User",
+      icon: "success",
+      button: "OK!",
+      className: "modal_class_success",
+    });
+
+  }
 
   // // ************************************User Update ************************************
   // const handleUpdateUser = async (dataUser) => {
@@ -169,9 +264,12 @@ export default function KycProvider({ children }) {
         // handleUpdateUser,
         // handleAddress,
         refetch,
+        setRefetchUser,
+        refetchUser,
         setRefetch,
         logout,
         emailVerified,
+        deleteData,
         setEmailVerified,
         mobileNoVerify,
         setmobileNoVerify,

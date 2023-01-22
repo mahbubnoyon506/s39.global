@@ -11,6 +11,8 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { BiArrowBack } from "react-icons/bi";
 import swal from "sweetalert";
+import { useContext } from "react";
+import { KycContext } from "../../../../../contexts/KycContext";
 
 function UserDetails() {
     const { walletAddress } = useParams();
@@ -19,7 +21,7 @@ function UserDetails() {
     const [userAddress, setUserAddress] = useState();
     const [photoId, setPhotoId] = useState();
     const navigate = useNavigate();
-
+    const { deleteData } = useContext(KycContext);
     const location = useLocation();
     const prevLocation = location?.state?.from;
 
@@ -58,31 +60,9 @@ function UserDetails() {
         validRegDate = registrationDate;
     }
 
-    const deleteUser = (id) => {
-        axios
-            .delete(`https://testnetback.s39global.com/api/user-panel/delete/${id}`)
-            .then((res) => {
-                // if (res.status === 200) {
-                // toast.success(res?.data?.message);
-                swal({
-                    text: `${res?.data?.message}`,
-                    icon: "success",
-                    button: "OK!",
-                    className: "modal_class_success",
-                });
-                navigate(-1);
-                // }
-            })
-            .catch((err) => {
-                // toast.error("Something went wrong!");
-                swal({
-                    title: "Attention",
-                    text: "Something went wrong!",
-                    icon: "warning",
-                    button: "OK!",
-                    className: "modal_class_success",
-                });
-            });
+    const deleteUser = (wallet) => {
+        deleteData(wallet)
+        navigate(-1);
     };
 
     const verifyUser = (id) => {
@@ -319,7 +299,7 @@ function UserDetails() {
                                     )}
                                     <div className="text-center pt-2">
                                         <button
-                                            onClick={() => deleteUser(userInfo?._id)}
+                                            onClick={() => deleteUser(userInfo?.walletAddress)}
                                             className=" btn btn-danger uBtn px-4  rounded text-uppercase"
                                         >
                                             DELETE{" "}
