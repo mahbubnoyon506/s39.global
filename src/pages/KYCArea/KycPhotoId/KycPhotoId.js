@@ -472,7 +472,7 @@ const KycPhotoId = ({ photoIddata }) => {
                       <div className="each-selected-video-container">
                         <img
                           className="each-selected-image"
-                          // src={URL.createObjectURL(image)}
+                          // src={URL.createObjectURL(image)} 
                           src={photoIdFrontImg}
                           alt=""
                         />
@@ -489,8 +489,9 @@ const KycPhotoId = ({ photoIddata }) => {
                 {photoIdFrontImgForPreview && !photoIdFrontImg && (
                   <div>
                     <img
+                    className="each-selected-image"
                       src={photoIdFrontImgForPreview}
-                      style={{ maxWidth: "60px", marginTop: "10px" }}
+                      style={{  marginTop: "10px" }}
                       alt=""
                     />
                   </div>
@@ -543,8 +544,9 @@ const KycPhotoId = ({ photoIddata }) => {
                 {photoIdBackImgForPreview && !photoIdBackImg && (
                   <div>
                     <img
+                    className="each-selected-image"
                       src={photoIdBackImgForPreview}
-                      style={{ maxWidth: "60px", marginTop: "10px" }}
+                      style={{  marginTop: "10px" }}
                       alt=""
                     />
                   </div>
