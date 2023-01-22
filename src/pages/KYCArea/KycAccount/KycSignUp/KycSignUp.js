@@ -26,7 +26,7 @@ const KycSignUp = () => {
         setIsGet(false);
       }, 2000);
     }
-  }, [isGet]);
+  }, [isGet, navigate, setIsGet]);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

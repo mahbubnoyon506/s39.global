@@ -12,7 +12,7 @@ export const KycContext = createContext();
 
 export default function KycProvider({ children }) {
   // const navigate = useNavigate();
-  const [kycUser, setKycUser] = useState({});
+  const [kycUser, setKycUser] = useState(null);
   const [refetch, setRefetch] = useState(false);
   const { user } = useContext(S39GlobalContext);
   const [emailVerified, setEmailVerified] = useState(false);
@@ -24,17 +24,24 @@ export default function KycProvider({ children }) {
 
   //get current user data..........
   useEffect(() => {
-    axios
-      .get(`https://testnetback.s39global.com/api/user-panel/`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
-        },
-      })
-      .then((res) => {
-        // console.log(res.data);
-        setKycUser(res.data.result);
-        // setIsGet(true);
-      });
+    const current = async () => {
+      await axios
+        .get(`https://testnetback.s39global.com/api/user-panel`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("kycUserTokenS39Testnet")}`,
+          },
+        })
+        .then((res) => {
+          console.log(res.data);
+          setKycUser(res.data.result);
+          // setIsGet(true);
+        })
+        .catch((err) => {
+          console.log(err);
+          setKycUser(null)
+        })
+    }
+    current();
   }, [refetch, user]);
 
   //************************************ User Register ***********************************
