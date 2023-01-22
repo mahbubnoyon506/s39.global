@@ -89,7 +89,7 @@ const User = () => {
                           <Link to={`/admin/userdetails/${user?._id}`}
                             className="editBtn py-2"
                           >
-                            <FaEye color="#fff" size={25} />
+                            <FaEye color="#fff" size={20} />
                           </Link>
                         </Tooltip>
                         <Tooltip title="Delete User" placement="top">
@@ -97,7 +97,7 @@ const User = () => {
                             onClick={() => setOpendialog(user)}
                             className="deleteBtn"
                           >
-                            <FaTrash color="#fff" size={20} />
+                            <FaTrash color="#fff" size={15} />
                           </button>
                         </Tooltip>
                       </div>
