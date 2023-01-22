@@ -21,9 +21,10 @@ const ClaimToken = () => {
     const { user, openWalletModal, getBalanceTestnet, closeWalletModal, logOut, setUserRefetch, userRefetch } = useContext(S39GlobalContext);
     const { neededSPoint, givenSPoint } = useParams();
     const navigate = useNavigate();
-    const [getTheContractDay, setGetTheContractDay] = useState(1000);
+    const [getTheContractDay, setGetTheContractDay] = useState(0);
     const [daily, setDaily] = useState(0.13);
     const [reward, setReward] = useState(100000);
+    const [dateRefetch, setDateRefetch] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -33,58 +34,142 @@ const ClaimToken = () => {
                 setGetTheContractDay(() => 1000);
                 setDaily(() => 0.13);
                 setReward(() => 100000);
+                // Get the current date
+                var currentDate = new Date();
+
+                // Add 15 days to the current date
+                currentDate.setDate(currentDate.getDate() + 1000);
+
+                // Format the date as "mm/dd/yyyy"
+                var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                var day = currentDate.getDate().toString().padStart(2, '0');
+                var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
+
+                console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
+
+                setDateEarlier(() => formattedDate);
+
             }
             else if (neededSPoint == 1500) {
                 setGetTheContractDay(() => 950);
                 setDaily(() => 0.14);
                 setReward(() => 333333);
+                // Get the current date
+                var currentDate = new Date();
+
+                // Add 15 days to the current date
+                currentDate.setDate(currentDate.getDate() + 950);
+
+                // Format the date as "mm/dd/yyyy"
+                var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                var day = currentDate.getDate().toString().padStart(2, '0');
+                var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
+
+                console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
+
+                setDateEarlier(() => formattedDate);
+
+
             }
             else if (neededSPoint == 3000) {
                 setGetTheContractDay(() => 900);
                 setDaily(() => 0.15);
                 setReward(() => 666666);
+                // Get the current date
+                var currentDate = new Date();
+
+                // Add 15 days to the current date
+                currentDate.setDate(currentDate.getDate() + 900);
+
+                // Format the date as "mm/dd/yyyy"
+                var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                var day = currentDate.getDate().toString().padStart(2, '0');
+                var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
+
+                console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
+
+                setDateEarlier(() => formattedDate);
             }
             else if (neededSPoint == 15000) {
                 setGetTheContractDay(() => 850);
                 setDaily(() => 0.16);
                 setReward(() => 3333333);
+                // Get the current date
+                var currentDate = new Date();
+
+                // Add 15 days to the current date
+                currentDate.setDate(currentDate.getDate() + 850);
+
+                // Format the date as "mm/dd/yyyy"
+                var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                var day = currentDate.getDate().toString().padStart(2, '0');
+                var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
+
+                console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
+
+                setDateEarlier(() => formattedDate);
             }
             else if (neededSPoint == 30000) {
                 setGetTheContractDay(() => 800);
                 setDaily(() => 0.17);
                 setReward(() => 6666666);
+                // Get the current date
+                var currentDate = new Date();
+
+                // Add 15 days to the current date
+                currentDate.setDate(currentDate.getDate() + 800);
+
+                // Format the date as "mm/dd/yyyy"
+                var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                var day = currentDate.getDate().toString().padStart(2, '0');
+                var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
+
+                console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
+
+                setDateEarlier(() => formattedDate);
             }
             else if (neededSPoint == 150000) {
                 setGetTheContractDay(() => 750);
                 setDaily(() => 0.18);
                 setReward(() => 33333333);
+                // Get the current date
+                var currentDate = new Date();
+
+                // Add 15 days to the current date
+                currentDate.setDate(currentDate.getDate() + 750);
+
+                // Format the date as "mm/dd/yyyy"
+                var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                var day = currentDate.getDate().toString().padStart(2, '0');
+                var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
+
+                console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
+
+                setDateEarlier(() => formattedDate);
             }
             else if (neededSPoint == 250000) {
                 setGetTheContractDay(() => 700);
                 setDaily(() => 0.19);
                 setReward(() => 50000000);
+                // Get the current date
+                var currentDate = new Date();
+
+                // Add 15 days to the current date
+                currentDate.setDate(currentDate.getDate() + 700);
+
+                // Format the date as "mm/dd/yyyy"
+                var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                var day = currentDate.getDate().toString().padStart(2, '0');
+                var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
+
+                console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
+
+                setDateEarlier(() => formattedDate);
             }
-
-
         }
         findingTheDay();
+    }, []);
 
-        // Get the current date
-        var currentDate = new Date();
-
-        // Add 15 days to the current date
-        currentDate.setDate(currentDate.getDate() + parseFloat(getTheContractDay));
-
-        // Format the date as "mm/dd/yyyy"
-        var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-        var day = currentDate.getDate().toString().padStart(2, '0');
-        var formattedDate = day + '/' + month + '/' + currentDate.getFullYear();
-
-        console.log(formattedDate); // 02/05/2023 (assuming the current date is 2021-01-05)
-
-        setDateEarlier(() => formattedDate);
-
-    }, [])
 
     const handleChange = (event) => {
         setAge(event.target.value);
