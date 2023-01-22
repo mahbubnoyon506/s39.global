@@ -153,7 +153,7 @@ const WithdrawAndDeposit = () => {
 
                                                 <div className='mt-3'>
                                                     <div className='row'>
-                                                        <div className='col'>
+                                                        <div className='col'> 
 
                                                             <p>Fee per transation</p>
                                                             <p>Maximum Withdraw Limit</p>
