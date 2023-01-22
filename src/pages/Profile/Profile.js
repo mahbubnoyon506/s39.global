@@ -679,8 +679,8 @@ const Profile = ({ expiryTimestamp }) => {
                                         <div className='d-flex justify-content-start'>
 
                                             {/* <Button onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 me-2 mine-mineral' style={{background: "#15407F",}}>MINE MINERAL TOKENS</Button> */}
-                                            <Button onClick={() => navigate(-1)} className='btn rounded-0 border-0 me-2 profile-cancel' style={{ background: "#15407F", }}>CANCEL</Button>
-                                            <Button onClick={Logout} className='btn rounded-0 border-0 button-logut' style={{ background: "#FF5421", }}>LOGOUT</Button>
+                                            <Button onClick={() => navigate(-1)} className='btn rounded-0 border-0 me-2 w-50' style={{ background: "#15407F", }}>CANCEL</Button>
+                                            <Button onClick={Logout} className='btn rounded-0 border-0 w-50' style={{ background: "#FF5421", }}>LOGOUT</Button>
                                         </div>
                                     </div>
                                 </div>
