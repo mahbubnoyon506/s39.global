@@ -157,7 +157,7 @@ const WithdrawAndDeposit = () => {
 
                                                             <p>Fee per transation</p>
                                                             <p>Maximum Withdraw Limit</p>
-                                                            <p>Once you confirm your purchase, there is nothing more for you to do until the Pre-Sale concludes. Tolens will be sent to your Wallet shortly after purchase</p>
+                                                            {/* <p>Once you confirm your purchase, there is nothing more for you to do until the Pre-Sale concludes. Tolens will be sent to your Wallet shortly after purchase</p> */}
                                                         </div>
                                                         <div className='col'>
                                                             <p>: 0.0200000000 {selectedItem}</p>

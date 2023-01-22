@@ -18,6 +18,7 @@ import LoginButton from '../components/LoginButton/LoginButton';
 
 const NavMenu = () => {
     const { logOut, connectToMetamask, walletModal, closeWalletModal, goToProfile, setGoToProfile } = useContext(S39GlobalContext);
+    const [expanded, setExpanded] = useState(false);
     const navigate = useNavigate();
     useEffect(() => {
         const go = () => {
@@ -56,7 +57,7 @@ const NavMenu = () => {
 
     return (
         <div className="position-sticky top-0" style={{ zIndex: 1023, borderBottom: '1px solid #FEF6A3' }}>
-            <Navbar className='bg-darkblue py-3' collapseOnSelect expand="lg" >
+            <Navbar className='bg-darkblue py-3' collapseOnSelect expand="lg" expanded={expanded} onToggle={setExpanded}>
                 <Container>
                     <Navbar.Brand as={Link} to="/" href="#/home"><img src={Logo} alt="" style={{minHeight:'55px'}}/></Navbar.Brand>
                     <Navbar.Toggle className='text-white' aria-controls="responsive-navbar-nav"  >
@@ -66,9 +67,11 @@ const NavMenu = () => {
                         <Nav className="me-auto text-white">
                         </Nav>
                         <Nav className='text-white text-center d-flex justify-content-center align-items-center ' >
-                            <NavLink as={Link} to='howItWorks' className='me-lg-5 font-mira py-1 py-lg-0' style={activeClass} href="#howItWorks">HOW IT WORKS</NavLink>
-                            <NavLink className='me-lg-5 font-mira py-1 py-lg-0' as={Link} to="projects" style={activeClass} href="#projects">PROJECTS</NavLink>
+                            <NavLink onClick={()=>{setExpanded(false)}} as={Link} to='/howItWorks' className='me-lg-5 font-mira py-2 py-lg-0' style={activeClass} href="#howItWorks">HOW IT WORKS</NavLink>
+                            <NavLink onClick={()=>{setExpanded(false)}} className='me-lg-5 font-mira py-2 py-lg-0' as={Link} to="/projects" style={activeClass} href="#projects">PROJECTS</NavLink>
+                            <div onClick={()=>{setExpanded(false)}} className=' py-3 py-lg-0'>
                             <LoginButton></LoginButton>
+                            </div>
 
                             {/* {user?.walletAddress ?
                                 <Nav.Link as={Link} to='profile' href="#login"><TopButton><img style={{ marginLeft: '-15px', marginRight: '-10px' }} src={coin} width={50} alt="" />Profile</TopButton></Nav.Link>
