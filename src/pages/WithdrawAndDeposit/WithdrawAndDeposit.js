@@ -151,7 +151,7 @@ const WithdrawAndDeposit = () => {
                                                 <label className='pb-2 ps-1'>Available 250.00000000000 {selectedItem}</label> <br />
                                                 <input type="text" className='w-100 bg-black border border-secondary rounded ps-2 py-2 text-light' placeholder='Enter Amount' />
 
-                                                <div className='mt-3'>
+                                                <div className='mt-3'> 
                                                     <div className='row'>
                                                         <div className='col'> 
 
