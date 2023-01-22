@@ -199,9 +199,19 @@
     line-height: 111.6%;
 }
 
+.centerInSm{
+
+}
+
 @media only screen and (max-width: 580px) {
     body {
         overflow-x: hidden;
+    }
+
+    .centerInSm{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .bannerTitle,

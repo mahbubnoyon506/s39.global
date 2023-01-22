@@ -30,7 +30,9 @@ function Banner() {
                                 :
                                 <Button onClick={() => openWalletModal()} sx={{ fontSize: '', fontWeight: '700', color: '#000A17', borderRadius: '45px', background: '#FFC000', '&:hover': { background: '#09626C', color: '#fff' } }} variant='contained'>LOGIN WITH WALLET <FaAngleRight size={18} /> </Button>
                         } */}
+                        <div className='centerInSm'>
                         <LoginButton></LoginButton>
+                        </div>
                     </div>
                     <div className='col-lg-6 col-sm-12 mt-4 mt-lg-0' >
                         <img className='' width="100%" src={BannerPhoto} alt="" />

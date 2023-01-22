@@ -150,11 +150,12 @@ const AddNewAdmin = (props) => {
                     international
                     defaultCountry="SG"
                     countryCallingCodeEditable={true}
-                    className="form-control handleModalBody"
+                    className="form-control handleModalBody "
                     type="text"
                     value={value}
                     onChange={setValue}
                     required
+                    style={{display:'flex' }}
                     inputProps={{
                       name: "phone",
                       required: true,

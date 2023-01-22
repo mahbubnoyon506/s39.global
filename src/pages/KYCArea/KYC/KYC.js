@@ -152,12 +152,12 @@ const KYC = () => {
 
             <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
               <Button disabled={!photoIddata && !addressData && !userProfileData} onClick={() => navigate("/mineraltoken")} className='btn rounded-0 border-0 p-2 me-2 mine-mineral text-white fw-bold' style={{ background: "#15407F", }}>MINE MINERAL TOKENS</Button>
-              <button
-                className="border-0 p-2 fw-bold rounded-2 text-uppercase"
+              <Button style={{ background: "#15407F", }}
+                className="btn rounded-0 border-0 p-2 me-2 mine-mineral text-white fw-bold"
                 onClick={() => navigate("/profile")}
               >
                 My Profile
-              </button>
+              </Button>
             </div>
           </div>
         </div>

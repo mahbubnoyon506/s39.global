@@ -146,7 +146,7 @@ const Otp = () => {
     };
     return (
         <div>
-            <div className="handleTheLoginBody">
+            <div className="handleTheLoginBody" style={{minHeight:'100vh'}}>
                 <div className="container mx-auto">
                     <div className=" forCard  w-lg-50 p-5 rounded mx-auto">
                         <div className="mx-auto text-center">

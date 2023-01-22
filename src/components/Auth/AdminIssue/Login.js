@@ -39,9 +39,9 @@ const Login = () => {
     };
 
     return (
-        <div className='handleTheLoginBody'>
-            <div className='container mx-auto'>
-                <div className='pt-5 forCard w-md-50 p-5 rounded mx-auto'>
+        <div style={{minHeight:'100vh'}} className='handleTheLoginBody'>
+            <div className='container mx-auto' >
+                <div className='pt-5 forCard w-md-50 p-5 rounded mx-auto ' >
                     <div className='mx-auto text-center'>
                         <img src={coin} className='' width={150} alt="logo" />
                     </div>

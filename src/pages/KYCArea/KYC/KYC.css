@@ -108,7 +108,9 @@
   /* width: inherit;
     height: inherit;
     border-radius: 6px; */
-  width: 100%;
+  /* width: 100%; */
+  min-width: 450px;
+  max-width: 550px;
   height: auto;
   object-fit: contain;
 }
@@ -145,3 +147,18 @@
     display: none;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .each-selected-image {
+    /* width: inherit;
+      height: inherit;
+      border-radius: 6px; */
+    /* width: 100%; */
+    min-width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+ 

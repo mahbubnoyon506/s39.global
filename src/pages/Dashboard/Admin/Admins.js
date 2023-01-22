@@ -74,7 +74,7 @@ const Admins = ({ currentItems }) => {
 
   // pagination code
   const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage] = useState(3);
+  const [recordsPerPage] = useState(5);
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = allAdmin.slice(indexOfFirstRecord, indexOfLastRecord);

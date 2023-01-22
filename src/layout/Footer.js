@@ -21,11 +21,11 @@ const Footer = () => {
                     <Link to='/store' className='py-1 hover-color font-khula text-uppercase text-white d-block text-decoration-none' style={{ fontSize: '18px' }}>store</Link>
 
                     <div className='d-flex gap-3 justify-content-center '>
-                        <a className='' href="#" target="_blank" rel="noopener noreferrer"><AiFillInstagram size='40' color='#fff' /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><AiFillTwitterCircle size='40' color='#fff' /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><AiOutlineWhatsApp size='40' color='#fff' /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><BsFacebook size='40' color='#fff' /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><BsLinkedin size='40' color='#fff' /></a>
+                        <a className='' href="#" target="_blank" rel="noopener noreferrer"><AiFillInstagram size='30' color='#fff' /></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><AiFillTwitterCircle size='30' color='#fff' /></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><AiOutlineWhatsApp size='30' color='#fff' /></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><BsFacebook size='27' color='#fff' /></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><BsLinkedin size='27' color='#fff' /></a>
 
                     </div>
                     <p className='font-khula mt-3' style={{ fontSize: '12px' }}>© {year} S39 Global. All rights reserved.</p>
