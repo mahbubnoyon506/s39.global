@@ -57,7 +57,7 @@ const KycAddress = ({ addressData }) => {
     formData.append("state", state || addressData?.state);
     formData.append("country", country || addressData?.country);
     formData.append("zipCode", zipCode || addressData?.zipCode);
-    formData.append("file", file);
+    formData.append("file", file || addressData?.file);
 
     const data = {
       walletAddress: user?.walletAddress,
@@ -78,6 +78,8 @@ const KycAddress = ({ addressData }) => {
       })
       .then((res) => {
         if (res.status === 200) {
+          // console.log("res", res.data)
+          // console.log("res", res.data.message)
           const updateAddressStatus = async () => {
             const data = {
               isAddress: true,
@@ -95,7 +97,7 @@ const KycAddress = ({ addressData }) => {
                   setisVerifiedAddress(!isVerifiedAddress);
                   setRefetch(!refetch);
                   swal({
-                    text: "Successfully updated your address .",
+                    text: `${res.data.message}`,
                     icon: "success",
                     button: "OK!",
                     className: "modal_class_success",

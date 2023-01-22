@@ -33,7 +33,8 @@ export default function EmailVerifyModal({
   otpCode,
   setOtpCode,
   email,
-  setDisableAfterActivation
+  setDisableAfterActivation,
+  handleUpdateUser
 }) {
   const [isOtpError, setOtpError] = useState(false);
 
@@ -68,12 +69,13 @@ export default function EmailVerifyModal({
           setOtpVerify(res.data.message);
           setEmailVerified(true);
           setRefetch(!refetch);
-          swal({
-            text: res.data.message,
-            icon: "success",
-            button: "OK!",
-            className: "modal_class_success",
-          });
+          handleUpdateUser();
+          // swal({
+          //   text: res.data.message,
+          //   icon: "success",
+          //   button: "OK!",
+          //   className: "modal_class_success",
+          // });
         }
         setOpenEmail(false);
       })
@@ -165,7 +167,7 @@ export default function EmailVerifyModal({
       {/* <Modal */}
       <Dialog
         open={open}
-        onClose={otpVerify == otpCode && handleClose}
+        onClose={otpCode && handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         className="text-center"
@@ -221,7 +223,7 @@ export default function EmailVerifyModal({
               type="submit"
               id="button-addon2"
             >
-              Verify
+              Verify and Submit
             </button>
           </form>
 

@@ -37,6 +37,7 @@ const KycMobile = ({ expiryTimestamp }) => {
     if (kycUser && kycUser.mobileVerified) {
       setMobile(kycUser?.mobile);
       setOtpVerify(true);
+      setmobileNoVerify(true);
     }
   }, [kycUser]);
 
@@ -179,6 +180,11 @@ const KycMobile = ({ expiryTimestamp }) => {
       });
   };
 
+  const getPhoneNumber = (e) => {
+    setMobile(e);
+    setDisableAfterActivationMobile(false);
+  }
+
   return (
     <div>
       <Form className="default-width-container">
@@ -193,7 +199,7 @@ const KycMobile = ({ expiryTimestamp }) => {
               countryCallingCodeEditable={true}
               className="form-control d-flex"
               type="text"
-              onChange={setMobile}
+              onChange={getPhoneNumber}
               value={mobile}
               style={{ border: "none" }}
               // disabled={user.mobileNo ? true : false}
@@ -222,10 +228,10 @@ const KycMobile = ({ expiryTimestamp }) => {
                 borderTopLeftRadius: "0px",
               }}
             >
-              Verify
+              {(!mobileNoVerify || mobile != kycUser.mobile) ? "Verify" : "Verified"}
             </Button>
           </div>
-          {!mobileNoVerify ? (
+          {/* {!mobileNoVerify ? (
             <Button className="mt-4 text-uppercase" variant="primary" disabled>
               {" "}
               Submit
@@ -239,7 +245,7 @@ const KycMobile = ({ expiryTimestamp }) => {
               {" "}
               Submit
             </Button>
-          )}
+          )} */}
         </Form.Group>
       </Form>
       {/* <MobileVerifyModal
@@ -259,6 +265,8 @@ const KycMobile = ({ expiryTimestamp }) => {
       /> */}
 
       <MobileVerifyModal
+        mobileNoVerify={mobileNoVerify}
+        handleUpdateUser={handleUpdateUser}
         otpCode={otpCode}
         setOtpCode={setOtpCode}
         handleVerifyMobile={handleVerifyMobile}

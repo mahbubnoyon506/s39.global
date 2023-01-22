@@ -409,7 +409,7 @@ function UserDetails() {
                                     className="img-fluid"
                                     //   src={userAddress?.file}
 
-                                    src={`${(photoId?.passportImg) ? photoId?.passportImg : "https://testnetback.s39global.com/public/passportSample.png"}`}
+                                    src={`${(userAddress?.file) ? userAddress?.file : "https://testnetback.s39global.com/public/passportSample.png"}`}
                                     alt="address proof"
                                 />
                             </div>
