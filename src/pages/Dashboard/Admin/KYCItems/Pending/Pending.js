@@ -18,12 +18,14 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import swal from "sweetalert";
 import Pagination from "../../../../../components/PaginationKyc/Pagination";
+import { useContext } from "react";
+import { KycContext } from "../../../../../contexts/KycContext";
 
 const Pending = () => {
 
   const { pendingPerPage } = useParams();
   const navigate = useNavigate();
-
+  const { deleteData, refetchUser } = useContext(KycContext);
   const [pendingUsers, setPendingUserUsers] = useState([]);
   const [allPendingUsers, setAllPendingUsers] = useState([]);
   console.log(allPendingUsers);
@@ -41,7 +43,7 @@ const Pending = () => {
 
   useEffect(() => {
     fetchPendingUsers();
-  }, []);
+  }, [refetchUser]);
 
   const selectUser = (e, id) => {
     let ids = [];
@@ -128,7 +130,7 @@ const Pending = () => {
 
   //******************************** delete user ********************************
 
-  const deleteUser = (id) => {
+  const deleteUser = (wallet) => {
     swal({
       text: "Are you sure, you want to delete this user?",
       icon: "warning",
@@ -136,28 +138,9 @@ const Pending = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios
-          .delete(`https://testnetback.s39global.com/api/user-panel/delete/${id}`)
-          .then((res) => {
-            if (res.status === 200) {
-              swal({
-                text: res.data.message,
-                icon: "success",
-                button: "OK!",
-                className: "modal_class_success",
-              });
-              fetchPendingUsers();
-            }
-          })
-          .catch((error) => {
-            swal({
-              title: "Attention",
-              text: error.response.data.message,
-              icon: "warning",
-              button: "OK!",
-              className: "modal_class_success",
-            });
-          });
+        deleteData(wallet)
+        // fetchPendingUsers();
+
       }
     });
   };
@@ -358,7 +341,7 @@ const Pending = () => {
 
                   <Tooltip title="Delete the user." placement="top">
                     <span
-                      onClick={() => deleteUser(d?._id)}
+                      onClick={() => deleteUser(d?.walletAddress)}
                       className="bg-danger p-2 rounded"
                       style={{ cursor: "pointer" }}
                     >

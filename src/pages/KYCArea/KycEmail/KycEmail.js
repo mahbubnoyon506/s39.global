@@ -232,7 +232,7 @@ const KycEmail = ({ expiryTimestamp }) => {
               disabled={
                 email?.length === 0 ||
                   disableAfterActivation ||
-                  (otpVerify === true || email === kycUser.email)
+                  (otpVerify === true)
                   ? true
                   : false
               }
