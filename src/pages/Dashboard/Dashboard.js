@@ -24,6 +24,7 @@ import { S39GlobalContext } from "../../contexts/S39GlobalContext";
 import swal from "sweetalert";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { AdminContext } from "../../contexts/AdminContext";
 
 const menuLinkStyles = ({ isActive }) => {
   return {
@@ -37,13 +38,14 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hide, setHide] = useState(false);
-  const { user, openWalletModal, closeWalletModal, logOut } = useContext(S39GlobalContext);
+  const { user, openWalletModal, closeWalletModal, } = useContext(S39GlobalContext);
+  const { logout } = useContext(AdminContext);
   // console.log(user)
   const navigate = useNavigate();
 
 
   const Logout = () => {
-    logOut();
+    logout();
     // setOpen(false);
     navigate("/");
     closeWalletModal();
@@ -72,13 +74,20 @@ function Dashboard(props) {
     setAnchorEl(null);
   };
 
+  const handleClose3 = () => {
+    setAnchorEl(null);
+    setMobileOpen(false);
+  }
+
   const year = new Date().getFullYear();
 
   const drawer = (
     <div className="sideBar">
       {/* <Toolbar /> */}
       <div className="pt-3">
-        <img className="mx-auto" src={logo} alt="" style={{ width: "200px" , height:"50px"}} />
+
+        <img className="mx-auto" src={logo} alt="" style={{width: "200px" , height:"50px", cursor: "pointer" }} onClick={() => navigate("/")} />
+
       </div>
       <hr />
       <div className="menuDiv">
@@ -147,17 +156,17 @@ function Dashboard(props) {
             }
           >
             <Box sx={{ paddingRight: '30px' }}>
-              <Link className="text-decoration-none" onClick={handleClose2} to="verified">
+              <Link className="text-decoration-none" onClick={() => handleClose3()} to="verified">
                 <MenuItem sx={{ color: "black" }} value={10}>
                   Verified{" "}
                 </MenuItem>
               </Link>
-              <Link className="text-decoration-none" onClick={handleClose2} to="non-verified">
+              <Link className="text-decoration-none" onClick={() => handleClose3()} to="non-verified">
                 <MenuItem sx={{ color: "black" }} value={20}>
                   Non Verified
                 </MenuItem>
               </Link>
-              <Link className="text-decoration-none" onClick={handleClose2} to="pending">
+              <Link className="text-decoration-none" onClick={() => handleClose3()} to="pending">
                 <MenuItem sx={{ color: "black" }} value={30}>
                   Pending
                 </MenuItem>

@@ -404,11 +404,12 @@ function UserDetails() {
                             </div>
 
                             <div className="col-12 col-lg-6 max-w-100 px-4 mt-2">
-                                <label for="address proof image">Address Proof Image</label>
+                                <label for="address proof image">Address Proof Image</label> <br />
                                 <img
-                                    className="max-w-100"
+                                    className="img-fluid"
                                     //   src={userAddress?.file}
-                                    src={photoId?.passportImg}
+
+                                    src={`${(photoId?.passportImg) ? photoId?.passportImg : "https://testnetback.s39global.com/public/passportSample.png"}`}
                                     alt="address proof"
                                 />
                             </div>
@@ -491,18 +492,18 @@ function UserDetails() {
                                 {photoId?.photoIdType === "passport" && (
                                     <>
                                         <label for="address proof image">Passport photo</label>
-                                        <img src={photoId?.passportImg} alt="passport" />
+                                        <img src={`${(photoId?.passportImg) ? photoId?.passportImg : "https://testnetback.s39global.com/public/passportSample.png"}`} alt="passport" className="img-fluid" />
                                     </>
                                 )}
 
                                 {photoId?.photoIdType === "photoId" && (
                                     <>
                                         <label for="address proof image">Photo ID front</label>
-                                        <img src={photoId?.photoIdFrontImg} alt="photoId-front" />
+                                        <img src={`${(photoId?.photoIdFrontImg) ? photoId?.photoIdFrontImg : "https://testnetback.s39global.com/public/photoIdDefault.png"}`} className="img-fluid" alt="photoId-front" />
                                         <label className="mt-1" for="address proof image">
                                             Photo ID back
                                         </label>
-                                        <img src={photoId?.photoIdBackImg} alt="photoId-back" />
+                                        <img src={`${(photoId?.photoIdBackImg) ? photoId?.photoIdBackImg : "https://testnetback.s39global.com/public/photoIdDefault.png"}`} alt="photoId-back" className="img-fluid" />
                                     </>
                                 )}
 
@@ -512,14 +513,16 @@ function UserDetails() {
                                             Driving license front
                                         </label>
                                         <img
-                                            src={photoId?.drivingFrontImg}
+                                            src={`${(photoId?.drivingFrontImg) ? photoId?.drivingFrontImg : "https://testnetback.s39global.com/public/drivingSample.png"}`}
+                                            className="img-fluid"
                                             alt="driving-license-back"
                                         />
                                         <label className="mt-1" for="address proof image">
                                             Driving license back
                                         </label>
                                         <img
-                                            src={photoId?.drivingBackImg}
+                                            className="img-fluid"
+                                            src={`${(photoId?.drivingBackImg) ? photoId?.drivingBackImg : "https://testnetback.s39global.com/public/drivingSample.png"}`}
                                             alt="driving-license-back"
                                         />
                                     </>
