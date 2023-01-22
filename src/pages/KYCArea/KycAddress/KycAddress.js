@@ -283,7 +283,8 @@ const KycAddress = ({ addressData }) => {
 
             {addressProofImg && !file && (
               <img
-                style={{ maxWidth: "80px", marginBottom: "20px" }}
+              className="each-selected-image"
+                style={{ marginBottom: "20px" }}
                 src={addressProofImg}
                 alt=""
               />
