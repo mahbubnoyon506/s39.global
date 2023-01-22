@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div>
-      <WalletLogin></WalletLogin>
+      <WalletLogin></WalletLogin> 
       <RouterProvider router={routes} /> 
       <BackToTop />
     </div>
