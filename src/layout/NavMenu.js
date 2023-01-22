@@ -59,7 +59,7 @@ const NavMenu = () => {
         <div className="position-sticky top-0" style={{ zIndex: 1023, borderBottom: '1px solid #FEF6A3' }}>
             <Navbar className='bg-darkblue py-3' collapseOnSelect expand="lg" expanded={expanded} onToggle={setExpanded}>
                 <Container>
-                    <Navbar.Brand  onClick={()=>{setExpanded(false)}}  as={Link} to="/" href="#/home"><img src={Logo} alt="" style={{minHeight:'55px'}}/></Navbar.Brand>
+                    <Navbar.Brand  onClick={()=>{setExpanded(false)}}  as={Link} to="/" href="#/home"><img src={Logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle className='text-white' aria-controls="responsive-navbar-nav"  >
                         <MenuIcon style={{ fontSize: '40px' }} id="responsive-navbar-nav" />
                     </Navbar.Toggle>
