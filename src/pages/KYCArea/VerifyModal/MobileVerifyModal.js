@@ -33,6 +33,8 @@ export default function MobileVerifyModal({
   otpCode,
   setOtpCode,
   setmobileNoVerify,
+  handleUpdateUser,
+  mobileNoVerify
 }) {
   const [isOtpError, setOtpError] = useState(false);
 
@@ -64,12 +66,13 @@ export default function MobileVerifyModal({
           setmobileNoVerify(true);
           setOpenMobile(false);
           setOtpVerify(res.data.message);
-          swal({
-            text: res.data.message,
-            icon: "success",
-            button: "OK!",
-            className: "modal_class_success",
-          });
+          handleUpdateUser();
+          // swal({
+          //   text: res.data.message,
+          //   icon: "success",
+          //   button: "OK!",
+          //   className: "modal_class_success",
+          // });
         }
       })
       .catch((err) => {
@@ -178,7 +181,7 @@ export default function MobileVerifyModal({
               type="submit"
               id="button-addon2"
             >
-              Verify
+              Verify and Submit
             </button>
           </form>
 

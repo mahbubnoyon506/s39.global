@@ -39,9 +39,9 @@ const KycEmail = ({ expiryTimestamp }) => {
   // } = useContext(KycContext);
 
   useEffect(() => {
-    if (kycUser) {
+    if (kycUser && kycUser?.emailVerified) {
       setEmail(kycUser?.email);
-      setEmailVerified(kycUser?.emailVerified);
+      setEmailVerified(true);
     }
   }, [kycUser]);
 
@@ -211,7 +211,7 @@ const KycEmail = ({ expiryTimestamp }) => {
               placeholder="Email Address"
               onChange={(e) => {
                 setEmail(e.target.value.toLocaleLowerCase());
-                setEmailVerified(false);
+                setDisableAfterActivation(false);
               }}
               style={{
                 borderTopRightRadius: "0px",
@@ -221,16 +221,18 @@ const KycEmail = ({ expiryTimestamp }) => {
               // disabled={user.email ? true : false}
               required
             />
-            {console.log(
+            {/* {console.log(
               emailVerified,
               email?.length === 0,
               disableAfterActivation,
               "cobe check"
-            )}
+            )} */}
             <Button
               onClick={handleVerifyEmail}
               disabled={
-                emailVerified || email?.length === 0 || disableAfterActivation
+                email?.length === 0 ||
+                  disableAfterActivation ||
+                  (otpVerify === true || email === kycUser.email)
                   ? true
                   : false
               }
@@ -238,20 +240,20 @@ const KycEmail = ({ expiryTimestamp }) => {
                 borderBottomLeftRadius: "0px",
                 borderTopLeftRadius: "0px",
               }}
-              variant="secondary"
+              variant="primary"
             >
-              {!emailVerified ? "Verify" : "Verified"}
+              {(!emailVerified || email != kycUser.email) ? "Verify" : "Verified"}
             </Button>
           </div>
           {console.log(kycUser)}
-          <Button
+          {/* <Button
             onClick={handleUpdateUser}
             className="mt-3 text-uppercase"
             as="input"
             type="submit"
             value="Submit"
             disabled={kycUser?.emailVerified === true ? true : false}
-          />
+          /> */}
 
           {/* {!emailVerified ? (
             <Button
@@ -272,6 +274,7 @@ const KycEmail = ({ expiryTimestamp }) => {
         </Form.Group>
       </Form>
       <EmailVerifyModal
+        handleUpdateUser={handleUpdateUser}
         handleVerifyEmail={handleVerifyEmail}
         handleVerifyOTP={handleVerifyOTP}
         minutes={minutes}

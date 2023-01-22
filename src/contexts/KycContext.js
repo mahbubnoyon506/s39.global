@@ -34,7 +34,7 @@ export default function KycProvider({ children }) {
         .then((res) => {
           console.log(res.data);
           setKycUser(res.data.result);
-          // setIsGet(true);
+          setIsGet(true);
         })
         .catch((err) => {
           console.log(err);
@@ -50,11 +50,11 @@ export default function KycProvider({ children }) {
       .post(`https://testnetback.s39global.com/api/user-panel/signup`, data)
       .then((res) => {
         if (res.status === 200) {
-          setRefetch(!refetch);
           localStorage.setItem("kycUserTokenS39Testnet", res.data.token);
           // console.log(res.data.token);
           toast.success("Register Success .");
           setIsGet(true);
+          setRefetch(!refetch);
           // navigate("/kyc/profile");
         }
       })
@@ -76,12 +76,13 @@ export default function KycProvider({ children }) {
       .post(`https://testnetback.s39global.com/api/user-panel/signin`, data)
       .then((res) => {
         if (res.status === 200) {
-          setRefetch(!refetch);
           localStorage.setItem("kycUserTokenS39Testnet", res.data.token);
           // console.log(res.data.token);1
           toast.success("Welcome to your profile .");
           // navigate("/kyc/profile");
+          setRefetch(!refetch);
           setIsGet(true);
+
         }
       })
       .catch((err) => {

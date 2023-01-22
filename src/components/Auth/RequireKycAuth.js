@@ -8,11 +8,13 @@ const RequireKycAuth = ({ children }) => {
   let location = useLocation();
   // console.log(admin.role)
 
-  if (kycUser) {
+  if (kycUser && kycUser !== null && kycUser !== undefined) {
     <Navigate to="/kyc/profile" state={{ from: location }} />
     return children;
   }
-  return <Navigate to="/kyc/login" state={{ from: location }} />;
+  else {
+    return <Navigate to="/kyc/login" state={{ from: location }} />;
+  }
 
 }
 

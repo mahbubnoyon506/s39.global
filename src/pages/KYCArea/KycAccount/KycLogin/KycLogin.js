@@ -12,15 +12,15 @@ const KycLogin = () => {
   const { handleUserLogin, kycUser, isGet, setIsGet } = useContext(KycContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (isGet) {
-      navigate("/kyc/profile");
+  // useEffect(() => {
+  //   if (isGet) {
+  //     navigate("/kyc/profile");
 
-      setTimeout(() => {
-        setIsGet(false);
-      }, 2000);
-    }
-  }, [isGet]);
+  //     setTimeout(() => {
+  //       setIsGet(false);
+  //     }, 2000);
+  //   }
+  // }, [isGet]);
 
   const handleShow = () => {
     setVisible(!isVisible);
