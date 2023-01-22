@@ -78,7 +78,7 @@ function Dashboard(props) {
     <div className="sideBar">
       {/* <Toolbar /> */}
       <div className="pt-3">
-        <img className="mx-auto" src={logo} alt="" style={{ width: "220px" }} />
+        <img className="mx-auto" src={logo} alt="" style={{ width: "200px" , height:"50px"}} />
       </div>
       <hr />
       <div className="menuDiv">
