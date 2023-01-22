@@ -30,7 +30,7 @@ const User = () => {
 
   // pagination code
   const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage] = useState(2);
+  const [recordsPerPage] = useState(5);
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = filterUsers.slice(indexOfFirstRecord, indexOfLastRecord);

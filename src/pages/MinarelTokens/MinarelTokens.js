@@ -181,14 +181,14 @@ const MinarelTokens = () => {
                             </div>
                             <form onSubmit={handleSubmit}>
                                 <div className='d-flex justify-content-between primary pb-2'>
-                                    <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Convert To S Point</button>
+                                    <button className='border-0 primary px-3 py-2 mineralMintingButton' disabled style={{ background: '#000' }}>Convert To S Point</button>
                                     {/* <input className='w-100 ps-1' type="text" name="" id="" placeholder='0.00' /> */}
                                     <InputGroup className="w-100 ps-1">
                                         <Form.Control aria-label="Dollar amount (with dot and two decimal places)" type="number" pattern="[0-9]*" inputmode="numeric" step="0.01" min={0.00} placeholder="0.00" defaultValue={"0.00"} ref={inputField} onChange={onchangeAmmountValue} />
                                     </InputGroup>
                                 </div>
                                 <div className='d-flex justify-content-between primary pb-2'>
-                                    <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Amount</button>
+                                    <button className='border-0 primary px-3 py-2 mineralMintingButton' disabled style={{ background: '#000' }}>Amount</button>
 
                                     <InputGroup className="w-100 ps-1">
                                         <Form.Control aria-label="Amount (to the nearest dollar)" type="text" value={mintingAmount?.toLocaleString('en-US')} onChange={e => setMintingAmount(e.target.value)} readOnly />
@@ -196,7 +196,7 @@ const MinarelTokens = () => {
 
                                 </div>
                                 <div className='d-flex justify-content-between primary pb-2'>
-                                    <button className='border-0 primary px-3 py-2' disabled style={{ background: '#000', minWidth: '200px' }}>Select Minting Bot</button>
+                                    <button className='border-0 primary px-3 py-2 mineralMintingButton' disabled style={{ background: '#000'  }}>Select Minting Bot</button>
                                     <select className='w-100' name="" id="" value={mintingBot} onChange={changeMintingBot}>
                                         <option value="Minting Bot 01">Minting Bot 01</option>
                                         <option value="Minting Bot 02">Minting Bot 02</option>
