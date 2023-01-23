@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import { KycContext } from "../../../../contexts/KycContext";
 import { S39GlobalContext } from "../../../../contexts/S39GlobalContext";
 
@@ -36,20 +37,27 @@ const KycSignUp = () => {
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword?.value;
 
-    if (password !== confirmPassword) {
-      toast.error("Password Not Match");
-      return;
-    }
+    console.log(password, confirmPassword)
 
-    const data = {
-      name: fullName,
-      walletAddress: user?.walletAddress,
-      email: email,
-      username: userName,
-      password: password,
-    };
-    // console.log(data);
-    handleRegister(data);
+    if (password !== confirmPassword) {
+      swal({
+        title: "Attention",
+        text: "Password didn't match.",
+        icon: "warning",
+        button: "OK!",
+        className: "modal_class_success",
+      });
+    } else {
+      const data = {
+        name: fullName,
+        walletAddress: user?.walletAddress,
+        email: email,
+        username: userName,
+        password: password,
+      };
+      // console.log(data);
+      handleRegister(data);
+    }
   };
 
   return (

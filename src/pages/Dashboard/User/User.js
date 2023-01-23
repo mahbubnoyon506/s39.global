@@ -16,7 +16,7 @@ const User = () => {
   const navigate = useNavigate();
   const [openDialog, setOpendialog] = useState(null);
 
-  console.log('Getting all users', allUsers, filterUsers)
+  console.log('Getting all users', getEmail)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,7 +25,6 @@ const User = () => {
   useEffect(() => {
     const userEmail = allUsers.filter((item) => item.email?.includes(getEmail));
     setFilterUsers(userEmail);
-    console.log('getting user email', userEmail)
   }, [allUsers, getEmail])
 
   // pagination code
@@ -43,7 +42,7 @@ const User = () => {
       {/* <Search handleSearch={handleSearch} /> */}
       <div className="mb-5">
         {/* <FaSearch className="" style={{marginRight: '-20px', zIndex: '10'}}/> */}
-        <input onChange={e => setGetEmail(e.target.value)} value={getEmail} className="w-100 py-2 rounded ps-3 border-0" type="search" name="" id="" placeholder="Search by Email" />
+        <input onChange={e => setGetEmail(e.target.value.toLowerCase())} value={getEmail} className="w-100 py-2 rounded ps-3 border-0" type="search" name="" id="" placeholder="Search by Email" />
       </div>
       <div className="tableNormal rounded py-3" style={{ background: '#272D47' }}>
         <div className="tableNormal ">
