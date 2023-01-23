@@ -489,9 +489,9 @@ const KycPhotoId = ({ photoIddata }) => {
                 {photoIdFrontImgForPreview && !photoIdFrontImg && (
                   <div>
                     <img
-                    className="each-selected-image"
+                      className="each-selected-image"
                       src={photoIdFrontImgForPreview}
-                      style={{  marginTop: "10px" }}
+                      style={{ marginTop: "10px" }}
                       alt=""
                     />
                   </div>
@@ -544,9 +544,9 @@ const KycPhotoId = ({ photoIddata }) => {
                 {photoIdBackImgForPreview && !photoIdBackImg && (
                   <div>
                     <img
-                    className="each-selected-image"
+                      className="each-selected-image"
                       src={photoIdBackImgForPreview}
-                      style={{  marginTop: "10px" }}
+                      style={{ marginTop: "10px" }}
                       alt=""
                     />
                   </div>
@@ -607,8 +607,9 @@ const KycPhotoId = ({ photoIddata }) => {
                   !drivingLicenseFrontImg && (
                     <div>
                       <img
+                        className="each-selected-image"
                         src={drivingLicenseFrontImgForPreview}
-                        style={{ maxWidth: "60px", marginTop: "10px" }}
+                        style={{ marginTop: "10px" }}
                         alt=""
                       />
                     </div>
@@ -663,8 +664,9 @@ const KycPhotoId = ({ photoIddata }) => {
                 {drivingLicenseBackImgForPreview && !drivingLicenseBackImg && (
                   <div>
                     <img
+                      className="each-selected-image"
                       src={drivingLicenseBackImgForPreview}
-                      style={{ maxWidth: "60px", marginTop: "10px" }}
+                      style={{ marginTop: "10px" }}
                       alt=""
                     />
                   </div>
@@ -723,8 +725,9 @@ const KycPhotoId = ({ photoIddata }) => {
                 {passportImgForPreview && !passportImg && (
                   <div>
                     <img
+                      className="each-selected-image"
                       src={passportImgForPreview}
-                      style={{ maxWidth: "60px", marginTop: "10px" }}
+                      style={{ marginTop: "10px" }}
                       alt=""
                     />
                   </div>

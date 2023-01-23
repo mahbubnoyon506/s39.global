@@ -2,13 +2,16 @@
     width: 100px;
     border-radius: 50%;
 }
-.swal-title{
+
+.swal-title {
     color: white !important;
 }
-.swal-text{
+
+.swal-text {
     color: white !important;
 }
-.swal-modal{
+
+.swal-modal {
     background-color: #2D313A !important;
 }
 
@@ -18,6 +21,10 @@
     /* z-index: 100; */
     padding-top: 70px;
     padding-right: 50px;
+}
+
+.modelAddAdminBody {
+    margin: '100px 0px !important'
 }
 
 .dailogueAdmin {
@@ -62,7 +69,7 @@
 }
 
 .handleModalBody {
-    background-color: #303651 !important; 
+    background-color: #303651 !important;
 }
 
 .linkTitle {
@@ -77,4 +84,12 @@ textarea {
     color: rgb(177, 185, 195);
     border-radius: 5px;
     width: 100%;
+}
+
+@media only screen and (max-width: 425px) {
+
+    .adminBtnAdd11,
+    .adminBtnAdd {
+        width: 95px;
+    }
 }

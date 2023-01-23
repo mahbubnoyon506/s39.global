@@ -18,6 +18,10 @@ const Admins = ({ currentItems }) => {
   const [modalShowNewAdmin, setModalShowNewAdmin] = useState(false);
   const [refetch, setRefetch] = useState(false);
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
@@ -85,10 +89,9 @@ const Admins = ({ currentItems }) => {
       <h5 className="dashboard-title">Admins</h5>
       <div className='adminCard py-2'>
         <div className="d-flex justify-content-center justify-content-lg-end me-md-4">
-          <button onClick={() => setModalShowNewAdmin(true)} className='adminBtn px-4'>NEW ADMIN</button>
+          <button onClick={handleClickOpen} className='adminBtn px-4'>NEW ADMIN</button>
         </div>
         <div className="tableNormal ">
-
           <Table className='text-white adminDataTable '>
             <thead>
               <tr>
@@ -96,7 +99,7 @@ const Admins = ({ currentItems }) => {
                 <th className='text-start'>Name</th>
                 <th className='text-start adminHidden'>Email</th>
                 <th className='text-start adminHidden'>Mobile</th>
-                <th className='text-start'>Action</th>
+                <th className='text-center'>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -142,10 +145,9 @@ const Admins = ({ currentItems }) => {
         <AddNewAdmin
           refetch={refetch}
           setRefetch={setRefetch}
-          show={modalShowNewAdmin}
-          setModalShowNewAdmin={setModalShowNewAdmin}
+          open={open}
+          setOpen={setOpen}
           onHide={() => setModalShowNewAdmin(false)}
-
         />
       </div>
     </div>

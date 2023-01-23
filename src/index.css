@@ -37,6 +37,10 @@ body {
   color: white !important;
 }
 
+.swal-footer{
+  display: flex;
+  justify-content: center !important;
+}
 .modal_class_success .swal-icon::before {
   background-color: transparent;
 }
