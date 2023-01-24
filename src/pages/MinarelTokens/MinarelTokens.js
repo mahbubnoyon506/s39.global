@@ -191,7 +191,10 @@ const MinarelTokens = () => {
                                     <button className='border-0 primary px-3 py-2 mineralMintingButton' disabled style={{ background: '#000' }}>Amount</button>
 
                                     <InputGroup className="w-100 ps-1">
-                                        <Form.Control aria-label="Amount (to the nearest dollar)" type="text" value={mintingAmount?.toLocaleString('en-US')} onChange={e => setMintingAmount(e.target.value)} readOnly />
+                                        <Form.Control aria-label="Amount (to the nearest dollar)" type="text" 
+                                        // value={mintingAmount?.toLocaleString('en-US')} 
+                                        value={neededSPoint?.toLocaleString('en-US')}
+                                        onChange={e => setMintingAmount(e.target.value)} readOnly />
                                     </InputGroup>
 
                                 </div>
